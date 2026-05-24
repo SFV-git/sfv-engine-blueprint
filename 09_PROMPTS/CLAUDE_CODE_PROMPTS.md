@@ -1,28 +1,54 @@
 ---
-STATUS: UNCONFIRMED
+STATUS: CANON
 VERSION: v0.1.0
 OWNER: WILL
 LAST_UPDATED: 2026-05-24
 ---
 
-# CLAUDE CODE PROMPTS
+# CLAUDE CODE PROMPTS — OPTIMIZED
 
-Prompts for Claude Code implementation sessions.
-
----
-
-## SESSION OPENER TEMPLATE
+## STANDARD SESSION OPENER
+Copy this at the start of every Claude Code session:
 ```
-You are implementing one specific module of the SFV Engine.
-Read CLAUDE.md before anything else.
-Read the target module file and confirm STATUS: CANON before touching anything.
-Rules:
-- Only implement what is in the blueprint file
-- Do not invent missing logic
-- Tag anything unclear as UNCONFIRMED and stop
-- No destructive actions
-- Log everything
-- Commit to Git when module is complete
-Target module: [MODULE NAME]
-Module file: [PATH]
+Read CLAUDE.md and COMPRESSED_CONTEXT.md first.
+Target module: [MODULE FILE PATH]
+Confirm STATUS: CANON then state your build plan in one sentence.
+Wait for my go-ahead before writing any code.
+Model: Sonnet. One module only this session.
+```
+
+## MODULE BRIEF TEMPLATE
+```
+Module: [name]
+File: C:\SFV_BLUEPRINT\[path]
+Build: [exact script/file to create]
+Input: [what it reads]
+Output: [what it produces]
+Must not: [what it cannot touch]
+Success looks like: [one sentence]
+```
+
+## PARALLEL INSTANCE OPENER (overnight)
+```
+You are instance [N] of [TOTAL] running in parallel.
+Your job only: [specific task]
+Do not touch any files outside: [specific folder]
+Read COMPRESSED_CONTEXT.md for system context.
+Use Sonnet. Commit when done. Report completion.
+```
+
+## MID-SESSION COMMANDS
+/compact → compress context when it gets long
+/clear → fresh context between unrelated tasks
+/model claude-sonnet-4-6 → set model explicitly
+/cost → check session token usage
+
+## END OF SESSION CHECKLIST
+```
+[ ] Module complete
+[ ] Tests passed (or paper trial done)
+[ ] Git committed with descriptive message
+[ ] CHANGELOG.md updated
+[ ] VERSION_LOG.md updated if milestone hit
+[ ] SESSION_STATE.md updated with what was built
 ```

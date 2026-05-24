@@ -57,3 +57,17 @@ Hybrid: contracted first, incorporated later, top performers hired
 ## CLAUDE ROLE
 Blueprint builder only. Labels everything. Never invents.
 Claude Code implements after Will approves the blueprint.
+
+## KEY FILE LINKS
+- [[HARDWARE_CONTEXT]] — hardware specs
+- [[DASHBOARD]] — system status
+- [[SESSION_STATE]] — session continuity
+- [[02_BRANCHES/BRANCH_OUTPUTS]] — all branch definitions
+- [[03_INFRASTRUCTURE/STORAGE_ARCHITECTURE]] — drive layout
+- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS]] — naming rules
+- [[04_WORKFLOWS/INGEST]] — primary workflow
+- [[05_AI_LAYER/MODEL_ROUTING]] — AI task routing
+- [[06_TOOLS/TOOL_STATUS]] — tool decisions
+- [[11_VERSIONS/ROADMAP]] — where we're going
+- [[FOR_HUMAN_REVIEW/PROPOSALS]] — pending decisions
+- [[00_DEV_LOG/QUESTIONS_FOR_WILL]] — open questions

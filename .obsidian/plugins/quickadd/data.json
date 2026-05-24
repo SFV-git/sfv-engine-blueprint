@@ -1,5 +1,53 @@
 {
-  "choices": [],
+  "choices": [
+    {
+      "id": "cf858315-63ac-469e-b6ad-e5fa650a4ff6",
+      "name": "Inox Drop",
+      "type": "Capture",
+      "command": false,
+      "appendLink": false,
+      "captureTo": "99_INBOX/SCRATCHPAD.md",
+      "captureToActiveFile": false,
+      "captureToCanvasNodeId": "",
+      "activeFileWritePosition": "cursor",
+      "createFileIfItDoesntExist": {
+        "enabled": false,
+        "createWithTemplate": false,
+        "template": ""
+      },
+      "format": {
+        "enabled": false,
+        "format": ""
+      },
+      "insertAfter": {
+        "enabled": false,
+        "after": "",
+        "insertAtEnd": false,
+        "considerSubsections": false,
+        "createIfNotFound": false,
+        "createIfNotFoundLocation": "top",
+        "inline": false,
+        "replaceExisting": false,
+        "blankLineAfterMatchMode": "auto"
+      },
+      "newLineCapture": {
+        "enabled": false,
+        "direction": "below"
+      },
+      "prepend": true,
+      "task": false,
+      "openFile": false,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "templater": {
+        "afterCapture": "none"
+      }
+    }
+  ],
   "inputPrompt": "single-line",
   "persistInputPromptDrafts": true,
   "useSelectionAsCaptureValue": true,

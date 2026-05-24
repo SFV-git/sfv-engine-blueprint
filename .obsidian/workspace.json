@@ -16,8 +16,19 @@
               "icon": "lucide-git-fork",
               "title": "Graph view"
             }
+          },
+          {
+            "id": "c2a280ed9b9359fd",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -173,11 +184,20 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "templater-obsidian:Templater": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5bebc73c3d507e59",
+  "active": "c2a280ed9b9359fd",
   "lastOpenFiles": [
+    "05_AI_LAYER/COST_ROUTING.md",
+    "COMPRESSED_CONTEXT.md",
+    "99_INBOX/TEMPLATE_DEFAULT.md",
+    "00_DEV_LOG/DECISIONS.md",
+    "SESSION_STATE.md",
+    "07_SCALING/OPERATOR_MODEL.md",
     "12_DATABANKS/TRAINING_DATA.md",
     "CLAUDE.md",
     "FOR_HUMAN_REVIEW/PROPOSALS.md",
@@ -198,12 +218,6 @@
     "10_REFERENCES/CASE_STUDIES.md",
     "10_REFERENCES/TOOL_RESEARCH.md",
     "10_REFERENCES/DEEP_RESEARCH_FINDINGS.md",
-    "09_PROMPTS/EXTRACTION_PROMPTS.md",
-    "09_PROMPTS/RESEARCH_PROMPTS.md",
-    "09_PROMPTS/CHATGPT_PROMPTS.md",
-    "09_PROMPTS/CLAUDE_CODE_PROMPTS.md",
-    "09_PROMPTS/CLAUDE_PROMPTS.md",
-    "08_TESTS/BUILD_READINESS_CHECKLIST.md",
     "FOR_HUMAN_REVIEW",
     "99_INBOX",
     "12_DATABANKS",

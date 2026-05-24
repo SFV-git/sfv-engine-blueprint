@@ -1,53 +1,53 @@
 # SFV ENGINE — CLAUDE CODE CONTEXT
+Read this before touching anything.
 
-Read this file before touching anything in this project.
+## ROLE
+Implement specific blueprint modules. Connect paths. Write scripts.
+Do NOT make architecture decisions. Do NOT invent missing logic.
 
----
+## BEFORE EVERY SESSION
+1. Read this file
+2. Read C:\SFV_BLUEPRINT\COMPRESSED_CONTEXT.md
+3. Read the target module file
+4. Confirm STATUS: CANON before touching anything
+5. State what you will build in one sentence. Wait for confirmation.
 
-## WHO YOU ARE
-You are implementing specific modules of the SFV Engine.
-You are NOT making architecture decisions.
-You are NOT inventing missing logic.
-You are connecting paths that the blueprint already defined.
+## RULES
+- STATUS not CANON → stop immediately
+- No hardcoded paths → use %SFV_ROOT%
+- No destructive actions (delete, overwrite) without explicit confirmation
+- Every session = ONE module only
+- Commit to Git when module is complete
+- If uncertain → tag UNCONFIRMED, stop, report
 
-## CRITICAL RULES
+## MODEL SELECTION
+Use Sonnet for all tasks unless Will specifies otherwise.
+Never use Opus unless explicitly told to.
 
-1. Read STATUS tag before touching any file
-   - CANON only → you may build
-   - Everything else → do not touch
+## SESSION STRUCTURE
+```
+start → read context → state plan → wait → build → test → commit → report
+```
 
-2. Never hardcode paths
-   All paths use %SFV_ROOT% from ENVIRONMENT_CONFIG.md
+## COST RULES
+- Keep context tight. One module per session.
+- Use /compact when context gets long
+- Use /clear between unrelated modules
+- Never load full vault — load target file + COMPRESSED_CONTEXT only
 
-3. Never delete files
-   Mark as REJECTED instead
+## PATHS
+Vault: C:\SFV_BLUEPRINT
+Active storage: %SFV_ROOT% (defined in 03_INFRASTRUCTURE/ENVIRONMENT_CONFIG.md)
+All paths relative. Never hardcode drive letters.
 
-4. Log everything
-   Every action produces a log entry
+## GIT
+Commit message format:
+feat: [what was built]
+fix: [what was corrected]
+docs: [blueprint updated]
 
-5. Commit to Git when complete
-   Every session ends with a clean commit
-
-6. Stop and report when uncertain
-   Tag as UNCONFIRMED and stop. Do not guess.
-
----
-
-## PROJECT STRUCTURE
-See README.md for full vault structure explanation.
-
-## CURRENT BUILD PHASE
-v0.x — Blueprint Foundation
-Nothing gets implemented until Will approves blueprint.
-
-## WHERE TO FIND THINGS
-- Open questions: 00_DEV_LOG/QUESTIONS_FOR_WILL.md
-- Open proposals: FOR_HUMAN_REVIEW/PROPOSALS.md
-- Locked rules: 01_CANON_RULES/RULES.md
-- Environment paths: 03_INFRASTRUCTURE/ENVIRONMENT_CONFIG.md
-- Tool status: 06_TOOLS/TOOL_STATUS.md
-- Current roadmap: 11_VERSIONS/ROADMAP.md
-
-## CONTACT
-All decisions go through Will.
-No autonomy on architecture decisions.
+## WHAT TO BUILD FIRST (in order)
+1. 04_WORKFLOWS/INGEST.md → Python ingest script
+2. 03_INFRASTRUCTURE/NAMING_CONVENTIONS.md → rename script
+3. 04_WORKFLOWS/EXPORT.md → export pipeline
+4. Studio pipeline for Morning Walk (May 28 deadline)

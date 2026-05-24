@@ -16,38 +16,46 @@ LAST_UPDATED: 2026-05-24
 ```dataview
 LIST
 FROM "FOR_HUMAN_REVIEW"
-WHERE status != "REJECTED"
+WHERE file.name != "PROPOSALS"
+SORT file.mtime DESC
 ```
 
 ## UNCONFIRMED ITEMS
 
 ```dataview
-LIST
+LIST file.path
 FROM ""
-WHERE status = "UNCONFIRMED"
+WHERE STATUS = "UNCONFIRMED"
+SORT file.name ASC
 ```
 
 ## OPEN QUESTIONS
-
-```dataview
-LIST
-FROM "00_DEV_LOG"
-WHERE file.name = "QUESTIONS_FOR_WILL"
-```
+![[QUESTIONS_FOR_WILL]]
 
 ## RECENT CHANGES
 
 ```dataview
-TABLE file.mtime AS "Last Modified"
+TABLE file.mtime AS "Modified"
+FROM ""
+WHERE file.mtime >= date(today) - dur(3 days)
 SORT file.mtime DESC
 LIMIT 10
 ```
 
-## NEXT MILESTONES
-- [ ] Morning Walk stress test — May 28 2025
-- [ ] Shamar Tournament — June 6 2025
-- [ ] Brandon Bellotti shoot — this week
-- [ ] ProEdge / Will Wilver outreach — this week
+## CRITICAL DEADLINES
+- 🔴 May 28 (Thursday) — Morning Walk, 50+ models, Studio pipeline
+- 🟡 June 6 — Shamar Tournament, Live pipeline
+- 🟢 This week — Brandon Bellotti visit, first UGC client
 
 ## CURRENT BUILD PHASE
 v0.x — Blueprint Foundation
+
+## WHAT NEEDS WORK
+1. 04_WORKFLOWS/INGEST.md — needs full detail before Thursday
+2. 08_TESTS/PAPER_TRIAL_RUNS.md — Morning Walk walk-through
+3. Scheduling tool decision (Later vs Buffer)
+4. 04_WORKFLOWS/DELIVERY.md — Pixieset setup detail
+
+## SESSION START PROTOCOL
+Claude reads SESSION_STATE.md + this file + QUESTIONS_FOR_WILL.md
+Reports in 3 lines. Waits for Will.
