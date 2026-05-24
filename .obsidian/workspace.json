@@ -16,19 +16,8 @@
               "icon": "lucide-git-fork",
               "title": "Graph view"
             }
-          },
-          {
-            "id": "c2a280ed9b9359fd",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -190,13 +179,23 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c2a280ed9b9359fd",
+  "active": "5bebc73c3d507e59",
   "lastOpenFiles": [
+    "MASTER_CONTEXT.md",
+    "99_INBOX/ollama_daemon.py",
+    "09_PROMPTS/OLLAMA_PROMPTS.md",
+    "99_INBOX/OLLAMA_RESULTS.md",
+    "99_INBOX/TASK_QUEUE.md",
+    "README.md",
+    "SESSION_STATE.md",
+    "07_SCALING/BRANCH_INDEPENDENCE.md",
+    "99_INBOX/ollama_wrapper.py",
+    "05_AI_LAYER/OLLAMA_SETUP.md",
+    "USAGE_OPTIMIZATION.md",
     "05_AI_LAYER/COST_ROUTING.md",
     "COMPRESSED_CONTEXT.md",
     "99_INBOX/TEMPLATE_DEFAULT.md",
     "00_DEV_LOG/DECISIONS.md",
-    "SESSION_STATE.md",
     "07_SCALING/OPERATOR_MODEL.md",
     "12_DATABANKS/TRAINING_DATA.md",
     "CLAUDE.md",
@@ -210,14 +209,6 @@
     "12_DATABANKS/BRAND_BANKS.md",
     "12_DATABANKS/CLIENT_BANKS.md",
     "12_DATABANKS/CONTENT_BANKS.md",
-    "12_DATABANKS/DATABANK_ARCHITECTURE.md",
-    "11_VERSIONS/UPGRADE_CHECKPOINTS.md",
-    "11_VERSIONS/VERSION_LOG.md",
-    "11_VERSIONS/ROADMAP.md",
-    "10_REFERENCES/EXTERNAL_LINKS.md",
-    "10_REFERENCES/CASE_STUDIES.md",
-    "10_REFERENCES/TOOL_RESEARCH.md",
-    "10_REFERENCES/DEEP_RESEARCH_FINDINGS.md",
     "FOR_HUMAN_REVIEW",
     "99_INBOX",
     "12_DATABANKS",
@@ -225,8 +216,6 @@
     "10_REFERENCES",
     "09_PROMPTS",
     "08_TESTS",
-    "07_SCALING",
-    "06_TOOLS",
-    "05_AI_LAYER"
+    "07_SCALING"
   ]
 }

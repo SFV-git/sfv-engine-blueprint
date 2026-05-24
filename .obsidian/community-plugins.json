@@ -4,5 +4,7 @@
   "dataview",
   "obsidian-git",
   "quickadd",
-  "metadata-menu"
+  "metadata-menu",
+  "local-gpt",
+  "ai-providers"
 ]

@@ -53,5 +53,13 @@ Completed:
 
 ## HOW TO START
 Claude reads this + DASHBOARD.md + QUESTIONS_FOR_WILL.md
+Also check 99_INBOX/OLLAMA_RESULTS.md for completed Ollama tasks.
 Reports 3 lines max. Waits for Will's direction.
 Desktop Commander gives direct vault file access — use it.
+
+## OLLAMA DAEMON
+Run overnight: python C:\SFV_BLUEPRINT\99_INBOX\ollama_daemon.py
+Reads TASK_QUEUE.md every 30 seconds.
+Writes results to OLLAMA_RESULTS.md.
+Claude reads results at next session start.
+Add tasks to TASK_QUEUE.md separated by ---
