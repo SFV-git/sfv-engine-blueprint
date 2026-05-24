@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "b341a279fbc0d63f",
+        "id": "de5c579115797e5a",
         "type": "tabs",
         "children": [
           {
-            "id": "5bebc73c3d507e59",
+            "id": "238074f846656621",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -74,7 +74,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "e8fe3f645fd57511",
@@ -157,13 +158,23 @@
               "icon": "lucide-list",
               "title": "Outline"
             }
+          },
+          {
+            "id": "a07238e8b69ee55c",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -179,9 +190,18 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5bebc73c3d507e59",
+  "active": "238074f846656621",
   "lastOpenFiles": [
+    "05_AI_LAYER/OLLAMA_SETUP.md",
     "MASTER_CONTEXT.md",
+    "99_INBOX/Untitled.base",
+    "02_BRANCHES/BRANCH_OUTPUTS.md",
+    "99_INBOX/TEMPLATE_DEFAULT.md",
+    "99_INBOX/Untitled 1.base",
+    "00_DEV_LOG/UNCONFIRMED.md",
+    "Excalidraw/Drawing 2026-05-24 07.07.59.excalidraw.md",
+    "Excalidraw/Drawing 2026-05-24 07.07.57.excalidraw.md",
+    "Excalidraw",
     "99_INBOX/ollama_daemon.py",
     "09_PROMPTS/OLLAMA_PROMPTS.md",
     "99_INBOX/OLLAMA_RESULTS.md",
@@ -190,11 +210,9 @@
     "SESSION_STATE.md",
     "07_SCALING/BRANCH_INDEPENDENCE.md",
     "99_INBOX/ollama_wrapper.py",
-    "05_AI_LAYER/OLLAMA_SETUP.md",
     "USAGE_OPTIMIZATION.md",
     "05_AI_LAYER/COST_ROUTING.md",
     "COMPRESSED_CONTEXT.md",
-    "99_INBOX/TEMPLATE_DEFAULT.md",
     "00_DEV_LOG/DECISIONS.md",
     "07_SCALING/OPERATOR_MODEL.md",
     "12_DATABANKS/TRAINING_DATA.md",
@@ -204,18 +222,10 @@
     "99_INBOX/TO_REVIEW.md",
     "99_INBOX/CHAT_EXTRACTS.md",
     "99_INBOX/RAW_IDEAS.md",
-    "12_DATABANKS/TASTE_BANKS.md",
-    "12_DATABANKS/RESEARCH_BANKS.md",
-    "12_DATABANKS/BRAND_BANKS.md",
-    "12_DATABANKS/CLIENT_BANKS.md",
-    "12_DATABANKS/CONTENT_BANKS.md",
     "FOR_HUMAN_REVIEW",
     "99_INBOX",
     "12_DATABANKS",
     "11_VERSIONS",
-    "10_REFERENCES",
-    "09_PROMPTS",
-    "08_TESTS",
-    "07_SCALING"
+    "10_REFERENCES"
   ]
 }
