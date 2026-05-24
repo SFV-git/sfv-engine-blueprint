@@ -4,17 +4,30 @@
     "type": "split",
     "children": [
       {
-        "id": "de5c579115797e5a",
+        "id": "df886e90d00e512e",
         "type": "tabs",
         "children": [
           {
-            "id": "238074f846656621",
+            "id": "632ec297e8dedf18",
             "type": "leaf",
             "state": {
               "type": "graph",
               "state": {},
               "icon": "lucide-git-fork",
               "title": "Graph view"
+            }
+          },
+          {
+            "id": "fe1333c80924a1bd",
+            "type": "leaf",
+            "state": {
+              "type": "bases",
+              "state": {
+                "file": "99_INBOX/Untitled.base",
+                "viewName": "Table"
+              },
+              "icon": "lucide-table",
+              "title": "Untitled"
             }
           }
         ]
@@ -74,8 +87,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "e8fe3f645fd57511",
@@ -174,7 +186,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -190,22 +202,29 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "238074f846656621",
+  "active": "632ec297e8dedf18",
   "lastOpenFiles": [
+    "99_INBOX/Untitled.base",
+    "99_INBOX/TO_REVIEW.md",
+    "99_INBOX/TEMPLATE_DEFAULT.md",
+    "99_INBOX/OLLAMA_RESULTS.md",
+    "99_INBOX/RAW_IDEAS.md",
+    "99_INBOX/SCRATCHPAD.md",
+    "99_INBOX/TASK_QUEUE.md",
+    "99_INBOX/Untitled 1.base",
+    "10_REFERENCES/CASE_STUDIES.md",
+    "00_DEV_LOG/QUESTIONS_FOR_WILL.md",
+    "00_DEV_LOG/DECISIONS.md",
+    "Untitled",
+    "Excalidraw/Drawing 2026-05-24 07.07.57.excalidraw.md",
     "05_AI_LAYER/OLLAMA_SETUP.md",
     "MASTER_CONTEXT.md",
-    "99_INBOX/Untitled.base",
     "02_BRANCHES/BRANCH_OUTPUTS.md",
-    "99_INBOX/TEMPLATE_DEFAULT.md",
-    "99_INBOX/Untitled 1.base",
     "00_DEV_LOG/UNCONFIRMED.md",
     "Excalidraw/Drawing 2026-05-24 07.07.59.excalidraw.md",
-    "Excalidraw/Drawing 2026-05-24 07.07.57.excalidraw.md",
     "Excalidraw",
     "99_INBOX/ollama_daemon.py",
     "09_PROMPTS/OLLAMA_PROMPTS.md",
-    "99_INBOX/OLLAMA_RESULTS.md",
-    "99_INBOX/TASK_QUEUE.md",
     "README.md",
     "SESSION_STATE.md",
     "07_SCALING/BRANCH_INDEPENDENCE.md",
@@ -213,19 +232,12 @@
     "USAGE_OPTIMIZATION.md",
     "05_AI_LAYER/COST_ROUTING.md",
     "COMPRESSED_CONTEXT.md",
-    "00_DEV_LOG/DECISIONS.md",
     "07_SCALING/OPERATOR_MODEL.md",
     "12_DATABANKS/TRAINING_DATA.md",
     "CLAUDE.md",
-    "FOR_HUMAN_REVIEW/PROPOSALS.md",
-    "99_INBOX/SCRATCHPAD.md",
-    "99_INBOX/TO_REVIEW.md",
-    "99_INBOX/CHAT_EXTRACTS.md",
-    "99_INBOX/RAW_IDEAS.md",
     "FOR_HUMAN_REVIEW",
     "99_INBOX",
     "12_DATABANKS",
-    "11_VERSIONS",
-    "10_REFERENCES"
+    "11_VERSIONS"
   ]
 }
