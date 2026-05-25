@@ -41,7 +41,18 @@ Human review always final for this branch.
 Sparse, sequential, consistent.
 
 ## INGEST PATH
-%SFV_ROOT%\ACTIVE_STORAGE\BRANCHES\SFV_ARCHIVE\INGEST\
+%BRANCHES_ROOT%\SFV_ARCHIVE\INGEST\
 
 ## OUTPUT PATH
-%SFV_ROOT%\ACTIVE_STORAGE\BRANCHES\SFV_ARCHIVE\EXPORTS\
+%BRANCHES_ROOT%\SFV_ARCHIVE\EXPORT\
+
+## CONNECTED FILES
+- [[04_WORKFLOWS/INGEST|Ingest Workflow]]
+- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[02_BRANCHES/MYTHOLOGY|MYTHOLOGY]] — Archive is the prestige layer of myth
+- [[02_BRANCHES/SFV_STUDIO|SFV_STUDIO]] — best studio work elevates here
+- [[02_BRANCHES/SFV_EVENTS|SFV_EVENTS]] — best event work elevates here
+- [[02_BRANCHES/SFV_LIVE|SFV_LIVE]] — best coverage elevates here
+- [[02_BRANCHES/SFV_ATHLETICS|SFV_ATHLETICS]] — best sports work elevates here
+- [[02_BRANCHES/SFV_404|SFV_404]] — Archive and 404 are creative credibility pair

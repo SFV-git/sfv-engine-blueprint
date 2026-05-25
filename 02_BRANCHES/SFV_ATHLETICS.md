@@ -32,7 +32,15 @@ All sports and athletic disciplines Will shoots.
 Primary background: basketball.
 
 ## INGEST PATH
-%SFV_ROOT%\ACTIVE_STORAGE\BRANCHES\SFV_ATHLETICS\INGEST\
+%BRANCHES_ROOT%\SFV_ATHLETICS\INGEST\
 
 ## OUTPUT PATH
-%SFV_ROOT%\ACTIVE_STORAGE\BRANCHES\SFV_ATHLETICS\EXPORTS\
+%BRANCHES_ROOT%\SFV_ATHLETICS\EXPORT\
+
+## CONNECTED FILES
+- [[04_WORKFLOWS/INGEST|Ingest Workflow]]
+- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[02_BRANCHES/SFV_ARCHIVE|SFV_ARCHIVE]] — best athletics work elevates to Archive
+- [[02_BRANCHES/MYTHOLOGY|MYTHOLOGY]] — athletics background is core to myth
+- [[02_BRANCHES/SFV_UGC|SFV_UGC]] — athlete niche is primary UGC client target

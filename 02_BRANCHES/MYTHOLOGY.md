@@ -38,11 +38,24 @@ What makes a file abbass-relevant:
 Exact auto-detection logic: UNCONFIRMED
 
 ## INGEST PATH
-%SFV_ROOT%\ACTIVE_STORAGE\BRANCHES\MYTHOLOGY\INGEST\
+%BRANCHES_ROOT%\MYTHOLOGY\INGEST\
 
 ## OUTPUT PATH
-%SFV_ROOT%\ACTIVE_STORAGE\BRANCHES\MYTHOLOGY\EXPORTS\
+%BRANCHES_ROOT%\MYTHOLOGY\EXPORTS\
 
 ## NOTES
 abbass is the hub. All other branches can repost to it.
 Hub account bio links entire SFV ecosystem.
+
+## CONNECTED FILES
+- [[04_WORKFLOWS/INGEST|Ingest Workflow]]
+- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[02_BRANCHES/SFV_LIVE|SFV_LIVE]] — event coverage feeds myth
+- [[02_BRANCHES/SFV_STUDIO|SFV_STUDIO]] — portraits feed myth
+- [[02_BRANCHES/SFV_ATHLETICS|SFV_ATHLETICS]] — athletics feeds myth
+- [[02_BRANCHES/SFV_ARCHIVE|SFV_ARCHIVE]] — best work elevates to myth
+- [[02_BRANCHES/SFV_EVENTS|SFV_EVENTS]] — event work feeds myth
+- [[02_BRANCHES/SFV_WORLD|SFV_WORLD]] — life content extends myth
+- [[02_BRANCHES/SFV_404|SFV_404]] — experimental feeds myth
+- [[02_BRANCHES/SFV_UGC|SFV_UGC]] — UGC builds myth through revenue proof

@@ -42,7 +42,19 @@ No. Service clarity and proof of work.
 - Shamar Tournament: June 6 — first full event pipeline test
 
 ## INGEST PATH
-%SFV_ROOT%\ACTIVE_STORAGE\BRANCHES\SFV_EVENTS\INGEST\
+%BRANCHES_ROOT%\SFV_EVENTS\INGEST\
 
 ## OUTPUT PATH
-%SFV_ROOT%\ACTIVE_STORAGE\BRANCHES\SFV_EVENTS\EXPORTS\
+%BRANCHES_ROOT%\SFV_EVENTS\EXPORT\
+
+## CONNECTED FILES
+- [[04_WORKFLOWS/INGEST|Ingest Workflow]]
+- [[04_WORKFLOWS/DELIVERY|Delivery Workflow]]
+- [[04_WORKFLOWS/EXPORT|Export Workflow]]
+- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
+- [[02_BRANCHES/SFV_STUDIO|SFV_STUDIO]] — Morning Walk overlap (May 28)
+- [[02_BRANCHES/SFV_ARCHIVE|SFV_ARCHIVE]] — best event work elevates to Archive
+- [[02_BRANCHES/MYTHOLOGY|MYTHOLOGY]] — event access builds myth
+- [[08_TESTS/PAPER_TRIAL_RUNS|Paper Trial Runs]] — May 28 + June 6 stress tests

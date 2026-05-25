@@ -26,18 +26,18 @@ LEADS: Brandon Bellotti (this week) | ProEdge/Will Wilver (warm)
 PATHS: Vault = C:\SFV_BLUEPRINT | Active storage = D:\SFV_ACTIVE (Seagate One Touch 5TB) | Field ingest = E:\ (SanDisk Extreme 1TB)
 All scripts use env vars from ENVIRONMENT_CONFIG.md — never hardcode paths.
 
-TOOLS ACTIVE: Claude Chat (Sonnet) | Claude Code (Sonnet) | Claude Cowork | Antigravity (local vault executor) | Python | Git | Obsidian | Lightroom Classic | Premiere Pro | Pixieset
+TOOLS ACTIVE: Claude Chat (Sonnet) | Claude Code (Sonnet) | Claude Cowork | Antigravity 2.0 (Google agentic IDE — Gemini 3.5 Flash, FREE preview) | Python | Git | Obsidian | Lightroom Classic | Premiere Pro | Pixieset
 TOOLS LOCAL: Ollama qwen3:14b (R&D Terminal, 24/7 daemon) | Whisper (transcription)
-TOOLS FREE CLOUD: Google AI Studio (Gemini 2.5 Pro, 1M context) | NotebookLM (research synthesis)
+TOOLS FREE CLOUD: Google AI Studio (Gemini 2.5 Pro, 1M context) | NotebookLM (research synthesis) | Antigravity 2.0 (Gemini Flash, free)
 TOOLS FUTURE: n8n | Supabase | Vercel | Docker | Tailscale
 
 TOOL ROLES:
 - Claude Chat = planning, decisions, blueprint sessions (this interface)
-- Claude Code = vault file writes, scripts, git commits
+- Claude Code = single focused module builds requiring deep Claude context
+- Antigravity 2.0 = PRIMARY BUILD ENVIRONMENT — parallel agents, scheduled tasks, Gemini Flash (free). Default model MUST be Gemini 3.5 Flash, not Claude, to avoid token spend.
 - Claude Cowork = desktop file routing, delivery prep
-- Antigravity = local vault executor (state plan → get approval → execute → report diff → stop)
-- Ollama daemon = batch tasks via TASK_QUEUE.md → OLLAMA_RESULTS.md (free, overnight)
-- Google AI Studio = massive context reads (1M tokens), overflow from Claude
+- Ollama daemon = batch AI inference tasks → TASK_QUEUE.md → OLLAMA_RESULTS.md (free)
+- Google AI Studio = massive context reads (1M tokens)
 - NotebookLM = research synthesis for 10_REFERENCES/
 - Opus = only when Will explicitly requests it
 

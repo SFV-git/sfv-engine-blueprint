@@ -47,7 +47,15 @@ No. Network and affiliation building only.
 - Brand and myth building, not revenue
 
 ## INGEST PATH
-%SFV_ROOT%\ACTIVE_STORAGE\BRANCHES\SFV_LIVE\INGEST\
+%BRANCHES_ROOT%\SFV_LIVE\INGEST\
 
 ## OUTPUT PATH
-%SFV_ROOT%\ACTIVE_STORAGE\BRANCHES\SFV_LIVE\EXPORTS\
+%BRANCHES_ROOT%\SFV_LIVE\EXPORT\
+
+## CONNECTED FILES
+- [[04_WORKFLOWS/INGEST|Ingest Workflow]]
+- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[02_BRANCHES/SFV_ARCHIVE|SFV_ARCHIVE]] — best coverage elevates to Archive
+- [[02_BRANCHES/MYTHOLOGY|MYTHOLOGY]] — live coverage builds myth and access narrative
+- [[08_TESTS/PAPER_TRIAL_RUNS|Paper Trial Runs]] — June 6 Shamar pipeline test

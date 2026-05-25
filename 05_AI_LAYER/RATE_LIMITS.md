@@ -98,14 +98,19 @@ LAST_UPDATED: 2026-05-25
 
 ---
 
-### Antigravity (local)
+### Antigravity 2.0 (Google — desktop app + CLI)
 | Limit | Value |
 |-------|-------|
-| Rate limit | NONE — local executor |
-| Cost | $0 |
+| Gemini 3.5 Flash | Effectively unlimited during free preview |
+| Preview pricing | Free — no end date announced |
+| AI Ultra plan (post-preview) | $100/mo — 5x Pro limits |
+| Claude Sonnet inside Antigravity | Hits Anthropic API quota — use sparingly |
+| Parallel agents | Supported — multiple simultaneous builds |
+| Background scheduled tasks | Supported |
 
-**The constraint:** Approval gate (by design — every action needs Will's OK).
-**Strategy:** Use for git audits, file inspection, vault file creation. Not for rapid iteration.
+**The constraint:** Claude model usage inside Antigravity burns API tokens.
+**Fix:** Switch default to Gemini 3.5 Flash in Settings. Use Claude only for hard decisions.
+**Strategy:** Antigravity + Gemini Flash = free parallel agentic builds. Use it heavily.
 
 ---
 

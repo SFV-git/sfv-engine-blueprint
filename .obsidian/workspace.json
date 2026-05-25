@@ -76,6 +76,20 @@
             "id": "e0dc5cda746b0332",
             "type": "leaf",
             "state": {
+              "type": "split-diff-view",
+              "state": {
+                "aFile": ".smart-env/multi/02_BRANCHES_SFV_STUDIO_md.ajson",
+                "bFile": ".smart-env/multi/02_BRANCHES_SFV_STUDIO_md.ajson",
+                "aRef": ""
+              },
+              "icon": "diff",
+              "title": "Diff: 02_BRANCHES_SFV_STUDIO_md.ajson  (Working Tree)"
+            }
+          },
+          {
+            "id": "44629c04deb4ffeb",
+            "type": "leaf",
+            "state": {
               "type": "graph",
               "state": {},
               "icon": "lucide-git-fork",
@@ -83,7 +97,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -272,9 +286,13 @@
       "smart-context:Smart Context: List Named Contexts": false
     }
   },
-  "active": "e0dc5cda746b0332",
+  "active": "44629c04deb4ffeb",
   "lastOpenFiles": [
+    "99_INBOX/ingest.py",
+    "ANTIGRAVITY.md",
+    "00_DEV_LOG/ORPHANS.md",
     "README.md",
+    "99_INBOX/find_orphans.py",
     "05_AI_LAYER/RATE_LIMITS.md",
     "99_INBOX/Untitled.base",
     "03_INFRASTRUCTURE/STACK_INTEGRATION_PLAN.md",
@@ -304,11 +322,7 @@
     "00_DEV_LOG/QUESTIONS_FOR_WILL.md",
     "00_DEV_LOG/DECISIONS.md",
     "Untitled",
-    "Excalidraw/Drawing 2026-05-24 07.07.57.excalidraw.md",
-    "05_AI_LAYER/OLLAMA_SETUP.md",
-    "02_BRANCHES/BRANCH_OUTPUTS.md",
     "Excalidraw",
-    "99_INBOX/ollama_daemon.py",
-    "99_INBOX/ollama_wrapper.py"
+    "99_INBOX/ollama_daemon.py"
   ]
 }
