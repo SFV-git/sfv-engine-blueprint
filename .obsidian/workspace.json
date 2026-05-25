@@ -11,10 +11,24 @@
             "id": "632ec297e8dedf18",
             "type": "leaf",
             "state": {
-              "type": "graph",
+              "type": "markdown",
+              "state": {
+                "file": "03_INFRASTRUCTURE/STACK_INTEGRATION_PLAN.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "STACK_INTEGRATION_PLAN"
+            }
+          },
+          {
+            "id": "0dea0d7a92241fcf",
+            "type": "leaf",
+            "state": {
+              "type": "smart-release-notes-view",
               "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "icon": "file-text",
+              "title": "Release Notes"
             }
           },
           {
@@ -29,8 +43,19 @@
               "icon": "lucide-table",
               "title": "Untitled"
             }
+          },
+          {
+            "id": "ab6032a055592722",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -180,13 +205,23 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "2e3101f483e82cb3",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "smart-connections",
+              "title": "Connections"
+            }
           }
         ],
         "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 318.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -199,26 +234,36 @@
       "bases:Create new base": false,
       "obsidian-excalidraw-plugin:New drawing": false,
       "templater-obsidian:Templater": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "smart-connections:Smart Connections: Open connections view": false,
+      "smart-connections:Toggle Footer Connections": false,
+      "smart-connections:Smart Connections: Open random connection": false,
+      "smart-connections:Smart Lookup: Open lookup view": false
     }
   },
-  "active": "632ec297e8dedf18",
+  "active": "a07238e8b69ee55c",
   "lastOpenFiles": [
-    "99_INBOX/OLLAMA_RESULTS.md",
+    "03_INFRASTRUCTURE/STACK_INTEGRATION_PLAN.md",
+    "99_INBOX/Untitled.base",
+    "12_DATABANKS/BRAND_BANKS.md",
     "99_INBOX/OLLAMA_STAGING/AI_BRIDGE_BUILD_PLAN.md",
+    "99_INBOX/CHAT_EXTRACTS.md",
+    "99_INBOX/OLLAMA_RESULTS.md",
+    "99_INBOX/SCRATCHPAD.md",
+    "99_INBOX/TEMPLATE_DEFAULT.md",
+    "99_INBOX/TO_REVIEW.md",
+    "99_INBOX/Untitled 1.base",
+    "FOR_HUMAN_REVIEW/PROPOSALS.md",
+    "USAGE_OPTIMIZATION.md",
+    "05_AI_LAYER/ANTIGRAVITY_RULES.md",
     "99_INBOX/OLLAMA_STAGING",
     "MASTER_CONTEXT.md",
     "04_WORKFLOWS/ARCHIVE.md",
     "gitignore_for_sfv.txt",
     "New folder",
     "GITHUB_LINK_TEST.md",
-    "99_INBOX/Untitled.base",
-    "99_INBOX/TO_REVIEW.md",
-    "99_INBOX/TEMPLATE_DEFAULT.md",
     "99_INBOX/RAW_IDEAS.md",
-    "99_INBOX/SCRATCHPAD.md",
     "99_INBOX/TASK_QUEUE.md",
-    "99_INBOX/Untitled 1.base",
     "10_REFERENCES/CASE_STUDIES.md",
     "00_DEV_LOG/QUESTIONS_FOR_WILL.md",
     "00_DEV_LOG/DECISIONS.md",
@@ -231,14 +276,7 @@
     "Excalidraw",
     "99_INBOX/ollama_daemon.py",
     "09_PROMPTS/OLLAMA_PROMPTS.md",
-    "README.md",
-    "SESSION_STATE.md",
-    "07_SCALING/BRANCH_INDEPENDENCE.md",
     "99_INBOX/ollama_wrapper.py",
-    "USAGE_OPTIMIZATION.md",
-    "05_AI_LAYER/COST_ROUTING.md",
-    "COMPRESSED_CONTEXT.md",
-    "07_SCALING/OPERATOR_MODEL.md",
     "FOR_HUMAN_REVIEW"
   ]
 }
