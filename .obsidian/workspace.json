@@ -204,6 +204,9 @@
   },
   "active": "632ec297e8dedf18",
   "lastOpenFiles": [
+    "99_INBOX/OLLAMA_RESULTS.md",
+    "99_INBOX/OLLAMA_STAGING/AI_BRIDGE_BUILD_PLAN.md",
+    "99_INBOX/OLLAMA_STAGING",
     "MASTER_CONTEXT.md",
     "04_WORKFLOWS/ARCHIVE.md",
     "gitignore_for_sfv.txt",
@@ -212,7 +215,6 @@
     "99_INBOX/Untitled.base",
     "99_INBOX/TO_REVIEW.md",
     "99_INBOX/TEMPLATE_DEFAULT.md",
-    "99_INBOX/OLLAMA_RESULTS.md",
     "99_INBOX/RAW_IDEAS.md",
     "99_INBOX/SCRATCHPAD.md",
     "99_INBOX/TASK_QUEUE.md",
@@ -237,8 +239,6 @@
     "05_AI_LAYER/COST_ROUTING.md",
     "COMPRESSED_CONTEXT.md",
     "07_SCALING/OPERATOR_MODEL.md",
-    "12_DATABANKS/TRAINING_DATA.md",
-    "FOR_HUMAN_REVIEW",
-    "99_INBOX"
+    "FOR_HUMAN_REVIEW"
   ]
 }
