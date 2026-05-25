@@ -73,31 +73,21 @@
             }
           },
           {
-            "id": "e0dc5cda746b0332",
-            "type": "leaf",
-            "state": {
-              "type": "split-diff-view",
-              "state": {
-                "aFile": ".smart-env/multi/02_BRANCHES_SFV_STUDIO_md.ajson",
-                "bFile": ".smart-env/multi/02_BRANCHES_SFV_STUDIO_md.ajson",
-                "aRef": ""
-              },
-              "icon": "diff",
-              "title": "Diff: 02_BRANCHES_SFV_STUDIO_md.ajson  (Working Tree)"
-            }
-          },
-          {
             "id": "44629c04deb4ffeb",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "00_DEV_LOG/ANTIGRAVITY_SETUP_GUIDE.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ANTIGRAVITY_SETUP_GUIDE"
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -288,11 +278,14 @@
   },
   "active": "44629c04deb4ffeb",
   "lastOpenFiles": [
+    "03_INFRASTRUCTURE/METADATA_SYSTEM.md",
+    "03_INFRASTRUCTURE/MULTI_AGENT_WORKFLOW.md",
     "00_DEV_LOG/ANTIGRAVITY_SETUP_GUIDE.md",
+    "00_DEV_LOG/ORPHANS.md",
+    "99_INBOX/SFV Engine.md",
     "99_INBOX/vault_watcher.py",
     "99_INBOX/ingest.py",
     "ANTIGRAVITY.md",
-    "00_DEV_LOG/ORPHANS.md",
     "README.md",
     "99_INBOX/find_orphans.py",
     "05_AI_LAYER/RATE_LIMITS.md",
@@ -300,7 +293,6 @@
     "03_INFRASTRUCTURE/STACK_INTEGRATION_PLAN.md",
     "99_INBOX/setup_stack.py",
     "05_AI_LAYER/RD_TERMINAL_ARCHITECTURE.md",
-    "03_INFRASTRUCTURE/MULTI_AGENT_WORKFLOW.md",
     "12_DATABANKS/BRAND_BANKS.md",
     "99_INBOX/OLLAMA_STAGING/AI_BRIDGE_BUILD_PLAN.md",
     "99_INBOX/CHAT_EXTRACTS.md",
@@ -321,8 +313,6 @@
     "99_INBOX/RAW_IDEAS.md",
     "99_INBOX/TASK_QUEUE.md",
     "10_REFERENCES/CASE_STUDIES.md",
-    "00_DEV_LOG/QUESTIONS_FOR_WILL.md",
-    "00_DEV_LOG/DECISIONS.md",
     "Untitled"
   ]
 }

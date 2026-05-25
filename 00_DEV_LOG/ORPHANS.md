@@ -1,93 +1,14 @@
 ---
 STATUS: FOR HUMAN REVIEW
-GENERATED: 2026-05-25 06:05
+GENERATED: 2026-05-25 06:48
 ---
 
 # VAULT ORPHANS
-> 55 files with no incoming wikilinks.
+> 2 files with no incoming wikilinks.
 > Review each — add links or flag as intentionally standalone.
 
 ## .
-- [[CHANGELOG]]
-- [[CLAUDE]]
-- [[COMPRESSED_CONTEXT]]
-- [[MASTER_CONTEXT]]
-- [[README]]
-- [[USAGE_OPTIMIZATION]]
-
-## .claude\rules
-- [[blueprint-only]]
-- [[canon-control]]
-- [[file-editing]]
-- [[human-approval]]
-- [[no-assumptions]]
+- [[ANTIGRAVITY]]
 
 ## 00_DEV_LOG
-- [[ANTIGRAVITY_SETUP_GUIDE]]
-- [[DECISIONS]]
-- [[DEV_LOG]]
-- [[REJECTED_CHANGED]]
-- [[UNCONFIRMED]]
-
-## 01_CANON_RULES
-- [[RULES]]
-
-## 03_INFRASTRUCTURE
-- [[METADATA_SYSTEM]]
-- [[MULTI_AGENT_WORKFLOW]]
-- [[STACK_INTEGRATION_PLAN]]
-
-## 04_WORKFLOWS
-- [[ARCHIVE]]
-
-## 05_AI_LAYER
-- [[ANTIGRAVITY_RULES]]
-- [[CLAUDE_API]]
-- [[LOCAL_MODELS]]
-- [[OLLAMA_SETUP]]
-- [[RD_TERMINAL_ARCHITECTURE]]
-
-## 06_TOOLS
-- [[INTEGRATIONS]]
-- [[TOOLBOX]]
-- [[TOOL_STACK]]
-
-## 07_SCALING
-- [[BRANCH_INDEPENDENCE]]
-- [[NATIONWIDE]]
-- [[OPERATOR_MODEL]]
-
-## 08_TESTS
-- [[BUILD_READINESS_CHECKLIST]]
-- [[EDGE_CASES]]
-- [[FAILURE_TESTS]]
-
-## 09_PROMPTS
-- [[CHATGPT_PROMPTS]]
-- [[CLAUDE_CODE_PROMPTS]]
-- [[CLAUDE_PROMPTS]]
-- [[EXTRACTION_PROMPTS]]
-- [[OLLAMA_PROMPTS]]
-- [[RESEARCH_PROMPTS]]
-
-## 10_REFERENCES
-- [[CASE_STUDIES]]
-- [[DEEP_RESEARCH_FINDINGS]]
-- [[EXTERNAL_LINKS]]
-- [[TOOL_RESEARCH]]
-
-## 11_VERSIONS
-- [[UPGRADE_CHECKPOINTS]]
-- [[VERSION_LOG]]
-
-## 12_DATABANKS
-- [[BRAND_BANKS]]
-- [[CONTENT_BANKS]]
-- [[DATABANK_ARCHITECTURE]]
-- [[RESEARCH_BANKS]]
-- [[TASTE_BANKS]]
-- [[TRAINING_DATA]]
-
-## Excalidraw
-- [[Drawing 2026-05-24 07.07.57.excalidraw]]
-- [[Drawing 2026-05-24 07.07.59.excalidraw]]
+- [[ORPHANS]]

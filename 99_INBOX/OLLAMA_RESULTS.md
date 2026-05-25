@@ -358,3 +358,142 @@ This ranking reflects the **lowest daily limits** based on the available informa
 ~35-45 minutes.
 
 ---
+## 2026-05-25 06:45
+**TASK:** READ: 05_AI_LAYER\RATE_LIMITS.md
+
+**RESULT:**
+1. **Google AI Studio Gemini 2.5 Pro** – ~25 requests/day  
+2. **NotebookLM** – ~50 queries/day per notebook  
+3. **Claude Chat (Sonnet)** – ~45–50 messages per 5-hour window (effective daily limit ~15–20 messages, based on daily budget strategy)
+
+---
+## 2026-05-25 06:45
+**TASK:** READ: 04_WORKFLOWS\INGEST.md
+
+**RESULT:**
+~35-45 minutes.
+
+---
+## 2026-05-25 06:46
+**TASK:** READ: 08_TESTS\PAPER_TRIAL_RUNS.md
+
+**RESULT:**
+The **Paper Trial Runs** section for the **Morning Walk (May 28)** is missing several critical steps and checks that are explicitly outlined in the **INGEST WORKFLOW** document. Here's a breakdown of the **missing steps** and **improvements** needed to align the Paper Trial with the full workflow:
+
+---
+
+### **Missing Steps in Paper Trial Runs (Morning Walk)**
+1. **Checksum Verification**  
+   - The trial does not explicitly mention verifying file integrity via checksums (MD5) to ensure no data corruption during transfer.  
+   - **Add:**  
+     - "Checksum verified for all 150+ files (MD5 hash comparison between source and destination)."
+
+2. **Duplicate File Check**  
+   - The trial assumes duplicates are handled but does not detail the process of comparing filenames, file sizes, and hashes against the existing library.  
+   - **Add:**  
+     - "Duplicate check: Compare filenames + file size + hash against existing library. Flag exact/near-duplicates in log."
+
+3. **Log Generation**  
+   - The trial does not mention generating an **INGEST_LOG** file for tracking files copied, failed, duplicates, and errors.  
+   - **Add:**  
+     - "Log file `INGEST_LOG_20260528_STUDIO.txt` written to `SFV_STUDIO/LOGS/` with details of ingest results."
+
+4. **Google Drive File Handling (Beyond Initial Download)**  
+   - The trial only mentions downloading Google Drive files but does not include steps for:  
+     - Manual review of Google Drive content.  
+     - Branch tagging for non-Studio content (e.g., `FOR_HUMAN_REVIEW`).  
+   - **Add:**  
+     - "Manual review of Google Drive files → tag as `SFV_STUDIO` or `FOR_HUMAN_REVIEW` based on content type."
+
+5. **Failure Scenarios (Beyond SD Card Mix-Up)**  
+   - The trial only lists "SD card mix-up" as a failure point but misses other critical failure behaviors:  
+     - Unknown branch assignment → files go to `FOR_HUMAN_REVIEW`.  
+     - Disk full on `D:\` → ingest stops, error printed.  
+     - Script crashes → source files untouched, Will re-runs.  
+   - **Add:**  
+     - "Test failure scenarios: Unknown branch assignment, disk full on `D:\`, and script crash recovery."
+
+6. **Time Budget Alignment**  
+   - The trial does not include the **time estimates** from the Ingest Workflow (e.g., 35–45 minutes total).  
+   - **Add:**  
+     - "Time budget: 35–45 minutes total (SD copy: 5–10 min, rename + duplicate check: 2 min, etc.)."
+
+---
+
+### **Improved Paper Trial Checklist (Morning Walk)**
+Here’s the **updated checklist** with all missing steps and failure points:
+
+```
+1. Insert SD card (camera 1) → INGEST_STAGING auto-populates (or drag files manually).  
+2. Run: `python ingest.py --branch STUDIO --date 20260528`  
+   - Verify:  
+     - Checksum hash (MD5) generated for all 150+ files.  
+     - Files copied to `D:\SFV_ACTIVE\INGEST_STAGING\20260528_STUDIO_PENDING\`.  
+3. Script runs steps 1–8 (copy, verify, branch tag, rename, duplicate check, move to branch folder, log, notify).  
+   - Check:  
+     - Files moved to `D:\SFV_ACTIVE\BRANCHES\SFV_STUDIO\INGEST\20260528\`.  
+     - Log file `INGEST_LOG_20260528_STUDIO.txt` created in `SFV_STUDIO/LOGS/`.  
+4. Repeat for `SFV_EVENTS` branch:  
+   - Run: `python ingest.py --branch EVENTS --date 20260528`.  
+5. Download Google Drive folder → drag to `D:\SFV_ACTIVE\INGEST_STAGING\`.  
+6. Run: `python ingest.py --branch STUDIO --source staging`  
+   - Manual review of Google Drive files → tag as `SFV_STUDIO` or `FOR_HUMAN_REVIEW`.  
+7. Open Lightroom → point to `D:\SFV_ACTIVE\BRANCHES\SFV_STUDIO\INGEST\20260528\`.  
+8. Cull, apply sync preset, export `FULLRES` and `1080SQ` batches.  
+9. Upload to Pixieset (manual first time).  
+10. Gallery link ready for models → schedule content for `SFV_STUDIO` Instagram.  
+```
+
+---
+
+### **Failure Points to Add**
+- **Unknown branch assignment:** Files go to `FOR_HUMAN_REVIEW` with original names.  
+- **Disk full on `D:\`:** Ingest stops, error printed, Will notified.  
+- **Script crash:** Source files untouched, Will re-runs script.  
+- **Time bottleneck:** 150+ files in one Lightroom sync → test export time.  
+
+---
+
+### **Why This Matters**
+- **Data Integrity:** Checksum verification ensures no file corruption.  
+- **Scalability:** Duplicate checks prevent redundant storage.  
+- **Recovery:** Failure scenarios (disk full, script crash) ensure no data loss.  
+- **Time Management:** Time budget helps avoid delays on May 28.  
+
+By adding these steps, the Paper Trial becomes a **comprehensive stress test** for the Morning Walk pipeline, ensuring it handles edge cases and large-scale operations smoothly.
+
+---
+## 2026-05-25 06:46
+**TASK:** READ: 04_WORKFLOWS\DELIVERY.md
+
+**RESULT:**
+1. Notification method for SFV_STUDIO Pixieset delivery (auto or manual) is unconfirmed  
+2. Scheduling tool for Instagram delivery (Later vs Buffer vs other) is unconfirmed  
+3. Platform confirmation for SFV_EVENTS client delivery (Pixieset or different) is unconfirmed  
+4. Platform confirmation for SFV_UGC client delivery (direct download, Drive link, or portal) is unconfirmed  
+5. Ingest workflow confirmation for SFV_STUDIO (INGEST.md) is unconfirmed  
+6. Export workflow confirmation for SFV_STUDIO (EXPORT.md) is unconfirmed  
+7. Pixieset integration validation for SFV_STUDIO delivery paths (%BRANCHES_ROOT%\SFV_STUDIO\DELIVERY\) is unconfirmed  
+8. Lightroom Classic batch export presets and sync settings confirmation is unconfirmed  
+9. WeTransfer replacement system (Pixieset) full integration testing status is unconfirmed  
+10. AI self-audit QC process for SFV_UGC (required for SFV_STUDIO content reliability) is unconfirmed
+
+---
+## 2026-05-25 06:46
+**TASK:** READ: 02_BRANCHES\SFV_UGC.md
+
+**RESULT:**
+1. IG ACCOUNT — needs confirmation of the handle  
+2. PACKAGES — needs final pricing details
+
+---
+## 2026-05-25 06:46
+**TASK:** READ: 05_AI_LAYER\RD_TERMINAL_ARCHITECTURE.md
+
+**RESULT:**
+1. Telemetry Reader + Workflow Dashboard monitors Engine Body performance via logs and provides real-time workflow insights through a lightweight dashboard.  
+2. Client Review Gateway acts as a secure proxy, isolating client access to review assets while keeping Engine Body air-gapped from external networks.  
+3. Workflow Optimization Engine analyzes telemetry data to identify bottlenecks and suggest actionable workflow improvements.  
+4. Sandbox Investor runs isolated trading experiments in a Docker container with strict budget limits, ensuring no risk to Engine Body or vault.
+
+---

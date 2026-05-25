@@ -25,26 +25,25 @@ Keep Claude Sonnet available as secondary for complex blueprint decisions only.
 After this: Antigravity runs free during preview. Zero token spend on routine work.
 
 ## ROLE IN SFV STACK
-Antigravity is the PRIMARY BUILD ENVIRONMENT for the vault.
-It replaces ad-hoc Claude Code sessions for most build tasks.
+Antigravity is the AGENTIC ORCHESTRATOR — complex system integrations,
+automated testing, end-to-end workflow automation.
 
-| What to use Antigravity for | Model |
-|-----------------------------|-------|
-| Writing vault .md files | Gemini 3.5 Flash (free) |
-| Building Python scripts (ingest.py, daemon, etc.) | Gemini 3.5 Flash (free) |
-| Git audits, status, diff inspection | Gemini 3.5 Flash (free) |
-| Running parallel agents on multiple modules | Gemini 3.5 Flash (free) |
-| Scheduled background vault tasks | Gemini 3.5 Flash (free) |
-| Complex architecture decisions | Claude Sonnet 4.6 (when needed) |
-| Hard cross-module reasoning | Claude Opus 4.6 (explicit request only) |
+### Confirmed capabilities (from Antigravity's own session 2026-05-25):
+- **PowerShell/CMD execution** — runs scripts, system commands directly
+- **File editing** — precise contiguous and non-contiguous file write/replace
+- **Async background scheduling** — cron/timer utilities, can run + monitor ollama_daemon.py
+- **Multi-agent orchestration** — spawns concurrent subagents for parallel tasks
+- **Web/internet access** — queries live APIs (Pixieset, Buffer, Later), reads docs
+- **Visual generation** — mockups and UI assets
 
-## ANTIGRAVITY vs CLAUDE CODE
-| Situation | Use |
-|-----------|-----|
-| Building multiple vault files at once | Antigravity (parallel agents) |
-| Background scheduled build tasks | Antigravity (scheduled tasks) |
-| Single focused module, deep context | Claude Code |
-| Planning and blueprint decisions | Claude Chat (this interface) |
+### Division of labor (confirmed):
+| Tool | Focus | When |
+|------|-------|------|
+| Claude Chat | Conceptual + strategic | High-level decisions, planning |
+| Claude Code | Rapid interactive dev | Quick file edits, single scripts |
+| Claude Cowork | Desktop GUI automation | Lightroom, Premiere, file moves |
+| Ollama (local) | High-volume background | Captions, tagging, audits, bulk |
+| **Antigravity** | **Complex integrations + agentic automation** | End-to-end workflows, web research, concurrent subagents, scheduled jobs |
 
 ## WORKSPACE SETUP
 Point Antigravity at: C:\SFV_BLUEPRINT
