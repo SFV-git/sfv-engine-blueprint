@@ -97,6 +97,22 @@ Decision needed: APPROVE / MODIFY FORMAT
 
 ---
 
+### PROPOSAL 007 — Evolved R&D Terminal (Sentinel & Sandbox)
+Date: 2026-05-25
+Proposed by: Antigravity
+
+Evolve the R&D Terminal from a local model box into a dashboard, client review gateway, and isolated sandbox environment.
+Would handle:
+- Visualizing logs and telemetry from both machines.
+- Running a secure reverse proxy/caching server for client review (reels/photos) so Engine Body is isolated from the internet.
+- Running a Docker sandbox for algorithmic trading (Polymarket, stocks) with a small budget ($200-$300).
+
+Details: C:\SFV_BLUEPRINT\05_AI_LAYER\RD_TERMINAL_ARCHITECTURE.md
+
+Decision needed: YES / NO / REVISE SPEC
+
+---
+
 ## APPROVED PROPOSALS
 [Moved here once Will approves — becomes CANON in relevant file]
 

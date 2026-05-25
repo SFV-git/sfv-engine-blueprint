@@ -39,3 +39,9 @@ how it works, and how to build it.
 - 12_DATABANKS/ — content, taste, client, brand, training data
 - 99_INBOX/ — raw ideas, extracts, scratchpad
 - FOR_HUMAN_REVIEW/ — Claude proposals awaiting Will approval
+
+## Existing phrases to link
+- "blueprint brain" → [[SFV Engine]]
+- "system status" → [[DASHBOARD.md]]
+- "open decisions" → [[00_DEV_LOG/QUESTIONS_FOR_WILL.md]]
+- "proposed by Claude" → [[FOR_HUMAN_REVIEW/PROPOSALS.md]]

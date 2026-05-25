@@ -15,8 +15,8 @@ Read this first every session. Report in 3 lines. Wait for Will.
 v0.x — Blueprint Foundation (vault live, Ollama set up, moving to blueprint depth)
 
 ## LAST SESSION — 2026-05-25
-- Antigravity added to stack (role UNCONFIRMED — Will to clarify)
-- STACK_INTEGRATION_PLAN.md written to 03_INFRASTRUCTURE/
+- Antigravity integration confirmed as Live Local Integration Agent
+- STACK_INTEGRATION_PLAN.md updated with confirmed Antigravity role and routing
 - Full model routing defined: Chat/Code/Cowork/Opus/Ollama/Antigravity
 - Token optimization rules documented (7 rules)
 - Two-version plan delivered: V1 (Chat+Obsidian+Ollama+Antigravity), V2 (+Code+Cowork)
@@ -60,8 +60,11 @@ Everything built tonight:
 - THIS WEEK — Brandon Bellotti visit (first UGC client candidate)
 
 ## OLLAMA DAEMON — HOW TO RUN
-Terminal Tab 1: ollama serve
-Terminal Tab 2: python C:\SFV_BLUEPRINT\99_INBOX\ollama_daemon.py
+IMPORTANT: Ollama auto-starts. Do NOT run "ollama serve" — port conflict error.
+IMPORTANT: Run from Windows Terminal (PowerShell), NOT from inside Python (>>> prompt = wrong place).
+Verify Ollama live: open browser → http://localhost:11434 (should say "Ollama is running")
+Then in Windows Terminal:
+  python C:\SFV_BLUEPRINT\99_INBOX\ollama_daemon.py
 Results land in: C:\SFV_BLUEPRINT\99_INBOX\OLLAMA_RESULTS.md
 Add tasks to: C:\SFV_BLUEPRINT\99_INBOX\TASK_QUEUE.md separated by ---
 
@@ -73,7 +76,7 @@ Then re-run daemon.
 - 9 branches: MYTHOLOGY, LIVE, EVENTS, ATHLETICS, STUDIO, UGC, ARCHIVE, WORLD, 404
 - Vault path: C:\SFV_BLUEPRINT
 - Naming conventions: locked (see 03_INFRASTRUCTURE/NAMING_CONVENTIONS.md)
-- Storage: 5TB Seagate=active, Internal NVMe=Engine intelligence
+- Storage: C:\=vault | D:\=Seagate One Touch 5TB (active) | E:\=SanDisk Extreme 1TB (field ingest)
 - SFV_EVENTS delivery: Pixieset
 - abbass catch: auto + manual both
 - Scheduling tool: TBD (open)

@@ -1,15 +1,15 @@
 ---
 STATUS: CANON
-VERSION: v0.1.0
+VERSION: v0.2.0
 OWNER: WILL
-LAST_UPDATED: 2026-05-24
+LAST_UPDATED: 2026-05-25
 ---
 
 # SFV ENGINE — COMPRESSED CONTEXT
 Use this file for cheap model calls. Never re-explain from scratch.
 
 SFV = Will's photo/video/content brand. Sole owner. No equity sharing.
-Engine = intelligent file management + light automation on Engine Body (Ryzen 9 9900X / RTX 5080 / 32GB RAM / Win11).
+Engine = intelligent file management + light automation on Engine Body (Ryzen 9 9900X / RTX 5080 / 64GB RAM / Win11).
 R&D Terminal = RTX 3060 / 16GB / local models 24/7 / never touches production.
 Vault = C:\SFV_BLUEPRINT (Obsidian + Git).
 
@@ -23,12 +23,23 @@ abbass=1 | LIVE=3.5 | EVENTS=5-6.5 | ATHLETICS=3.5 | STUDIO=5.5 | UGC=6.5 | ARCH
 DEADLINES: May 28=Morning Walk (50+ models, Studio pipeline) | June 6=Shamar Tournament (Live pipeline)
 LEADS: Brandon Bellotti (this week) | ProEdge/Will Wilver (warm)
 
-PATHS: All use %SFV_ROOT% = C:\SFV_BLUEPRINT
-ACTIVE STORAGE: 5TB Seagate SSD
-FIELD INGEST: 1TB SanDisk SSD
+PATHS: Vault = C:\SFV_BLUEPRINT | Active storage = D:\SFV_ACTIVE (Seagate One Touch 5TB) | Field ingest = E:\ (SanDisk Extreme 1TB)
+All scripts use env vars from ENVIRONMENT_CONFIG.md — never hardcode paths.
 
-TOOLS ACTIVE: Python | Git | Obsidian | Lightroom Classic | Premiere Pro | Pixieset
-TOOLS APPROVED: Ollama + Qwen3 (R&D) | Whisper | FFmpeg | Claude Code
+TOOLS ACTIVE: Claude Chat (Sonnet) | Claude Code (Sonnet) | Claude Cowork | Antigravity (local vault executor) | Python | Git | Obsidian | Lightroom Classic | Premiere Pro | Pixieset
+TOOLS LOCAL: Ollama qwen3:14b (R&D Terminal, 24/7 daemon) | Whisper (transcription)
+TOOLS FREE CLOUD: Google AI Studio (Gemini 2.5 Pro, 1M context) | NotebookLM (research synthesis)
 TOOLS FUTURE: n8n | Supabase | Vercel | Docker | Tailscale
 
+TOOL ROLES:
+- Claude Chat = planning, decisions, blueprint sessions (this interface)
+- Claude Code = vault file writes, scripts, git commits
+- Claude Cowork = desktop file routing, delivery prep
+- Antigravity = local vault executor (state plan → get approval → execute → report diff → stop)
+- Ollama daemon = batch tasks via TASK_QUEUE.md → OLLAMA_RESULTS.md (free, overnight)
+- Google AI Studio = massive context reads (1M tokens), overflow from Claude
+- NotebookLM = research synthesis for 10_REFERENCES/
+- Opus = only when Will explicitly requests it
+
 RULES: No invention. Label UNCONFIRMED/INFERENCE/FOR HUMAN REVIEW. Will is final authority.
+LOCKED: 9 branches | vault path | naming conventions | storage layout | model routing above

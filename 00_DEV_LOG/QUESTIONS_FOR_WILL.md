@@ -34,6 +34,14 @@ LAST_UPDATED: 2026-05-24
 
 ---
 
+## RESOLVED (2026-05-25)
+
+~~Antigravity role~~ → RESOLVED: local vault executor. ANTIGRAVITY_RULES.md is CANON.
+~~Obsidian plugins~~ → RESOLVED: all installed including Local GPT + Smart Connections.
+~~Ollama serve error~~ → RESOLVED: error = Ollama already running. Skip `ollama serve`. Run daemon only.
+
+---
+
 ## WHEN READY
 
 9. WD EasyStore and WD Passport: audit when?

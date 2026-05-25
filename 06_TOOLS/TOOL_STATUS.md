@@ -24,17 +24,29 @@ Status types:
 |------|--------|-------|
 | Python | INSTALLED | confirmed on Engine |
 | Git | INSTALLED | confirmed on Engine |
-| Obsidian | APPROVED | blueprint brain |
-| Claude API | ACTIVE | planning sessions |
-| Claude Code | APPROVED | implementation phase |
+| Obsidian | ACTIVE | all plugins installed 2026-05-25 |
+| Dataview | ACTIVE | Obsidian plugin — live |
+| Templater | ACTIVE | Obsidian plugin — live |
+| Obsidian Git | ACTIVE | auto-commit — configure interval |
+| Metadata Menu | ACTIVE | Obsidian plugin — live |
+| QuickAdd | ACTIVE | Obsidian plugin — live |
+| Excalidraw | ACTIVE | Obsidian plugin — live |
+| Local GPT | INSTALLED | configure: Ollama / qwen3:14b / localhost:11434 |
+| Smart Connections | ACTIVE | auto-indexes vault — no manual setup needed |
+| Smart Connections Context (core) | ACTIVE | installed 2026-05-25 |
+| Claude Chat (Sonnet) | ACTIVE | planning sessions — this interface |
+| Claude Code (Sonnet) | ACTIVE | implementation — Code tab |
+| Claude Cowork | ACTIVE | desktop automation |
+| Antigravity | ACTIVE | local vault executor — rules in 05_AI_LAYER/ANTIGRAVITY_RULES.md |
+| Google AI Studio | INSTALLED | app installed — Gemini 2.5 Pro, 1M context, free |
+| NotebookLM | INSTALLED | app installed — research synthesis, free |
 | Lightroom Classic | ACTIVE | batch photo export |
 | Premiere Pro | ACTIVE | video editing |
 | Adobe Suite | ACTIVE | full suite |
-| FFmpeg | APPROVED | media processing |
-| Ollama | APPROVED | R&D terminal local models |
-| Qwen3 | APPROVED | primary local model |
-| Whisper | APPROVED | transcription, R&D terminal |
-| Ghostty | APPROVED | terminal tabs |
+| FFmpeg | APPROVED | media processing — not yet configured |
+| Ollama | ACTIVE | R&D terminal — auto-starts, daemon pending |
+| Qwen3 (qwen3:14b) | APPROVED | pull status unconfirmed — run ollama list |
+| Whisper | APPROVED | transcription, R&D terminal — not yet installed |
 | Pixieset | ACTIVE | Studio client delivery |
 | WeTransfer | ACTIVE | temporary delivery |
 | n8n | FUTURE | workflow orchestration |
@@ -43,18 +55,13 @@ Status types:
 | Vercel | FUTURE | dashboard deployment |
 | Tailscale | RESEARCHING | remote access |
 | Canva API | RESEARCHING | graphics Level 6+ |
-| Later | RESEARCHING | IG scheduling |
-| Buffer | RESEARCHING | IG scheduling alternative |
-| OpenClaw | RESEARCHING | R&D terminal agent |
+| Later | RESEARCHING | IG scheduling — decision pending |
+| Buffer | RESEARCHING | IG scheduling alternative — decision pending |
+| Open WebUI | APPROVED | Ollama interface — not yet configured |
 | Apify | RESEARCHING | trend scraping |
-| Open WebUI | APPROVED | Ollama interface |
-| Aditor.ai | RESEARCHING | AI video editing |
-| 21st.dev | FUTURE | dashboard components |
 | Captions app | RESEARCHING | reel captions |
 | CodeRabbit | FUTURE | code review at scale |
-| Obsidian Git | APPROVED | auto-commit vault |
-| Excalidraw | APPROVED | Obsidian system diagrams |
-| Dataview | APPROVED | Obsidian queries |
-| Templater | APPROVED | Obsidian file templates |
+| Ghostty | REJECTED | no Windows support — replaced by Windows Terminal |
+| Windows Terminal | ACTIVE | terminal tabs on Engine Body |
 
 Last updated: 2026-05-24

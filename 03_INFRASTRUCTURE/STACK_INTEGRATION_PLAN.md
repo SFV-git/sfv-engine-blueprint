@@ -20,7 +20,7 @@ LAST_UPDATED: 2026-05-25
 | Claude Chat (claude.ai) | Engine Body | LIVE | Planning, session starts, blueprint decisions |
 | Claude Code (Code tab) | Engine Body | LIVE | Vault edits, scripts, file ops, git |
 | Claude Cowork (desktop) | Engine Body | LIVE | Desktop automation, file routing |
-| Antigravity | Engine Body | UNCONFIRMED | TBD — confirm role with Will |
+| Antigravity | Engine Body | LIVE | Local Integration Agent (complex automated tasks, scripting, background runs, web API research) |
 | Obsidian | Engine Body | LIVE | Vault GUI, Dataview, graph view |
 | Windows Terminal | Engine Body | LIVE | Daemon control, git ops |
 | Ollama qwen3:14b | R&D Terminal | LIVE* | Free local inference, batch tasks |
@@ -63,14 +63,8 @@ Settings > Local GPT:
 
 **Can I do this for you?** NO — Obsidian plugin install requires Will to click. I can write config files if needed.
 
-### STEP 3 — Confirm Antigravity (Will does this)
-UNCONFIRMED: What does Antigravity do in this stack?
-Options I'm aware of (FOR HUMAN REVIEW):
-- INFERENCE: Browser automation agent (automates web tasks)
-- INFERENCE: Prompt routing/orchestration layer
-- Other — Will defines
-
-Once confirmed, I will update COST_ROUTING.md with Antigravity task types.
+### STEP 3 — Confirm Antigravity (Confirmed)
+Antigravity is the local agentic executor and integration developer. It handles end-to-end task execution: writing scripts, running terminal commands, managing background/scheduled operations, conducting web/API research, and coordinating multi-agent checks.
 
 ### STEP 4 — Claude Chat session protocol (already live)
 This is already working. Protocol:
@@ -89,11 +83,11 @@ This is already working. Protocol:
 
 **Wikilinks needed** (I can write these): All branch files in 01_BRANCHES/ need `[[wikilinks]]` added. Say "add wikilinks to branch files" and I'll do it.
 
-### STEP 6 — Antigravity integration (PENDING CONFIRMATION)
-Once Will confirms what Antigravity does:
-- Define task types → update COST_ROUTING.md
-- Define when Antigravity runs vs Ollama vs Claude
-- Add Antigravity tasks to TASK_QUEUE.md format if applicable
+### STEP 6 — Antigravity integration (Confirmed)
+Antigravity executes integration workflows:
+- Builds, runs, and monitors backend scripts (like the Ollama daemon and ingest automation).
+- Researches external API documentation and updates integration blueprints.
+- Spawns specialized subagents for parallel research or deep code audits.
 
 ---
 
@@ -160,8 +154,8 @@ Does it require moving files or desktop automation?
 Is it repeatable, bulk, or overnight?
   → Ollama qwen3:14b — TASK_QUEUE.md → OLLAMA_RESULTS.md
 
-Is it a browser/web task? (UNCONFIRMED)
-  → Antigravity — pending Will confirmation
+Is it a complex system integration (requires planning, scripting, local execution, and API research)?
+  → Antigravity — agentic executor
 
 ```
 
@@ -213,8 +207,8 @@ Sonnet 4.6 handles 95%+ of all SFV blueprint work. Opus only when Will explicitl
 ### Rule 6: Batch before you prompt
 If Will has 5 related questions → ask them all at once. Each session start = 1 read of 3 files only.
 
-### Rule 7: Antigravity for web/automation (UNCONFIRMED)
-If Antigravity handles web tasks, it may reduce Claude Chat web search calls. Confirm role first.
+### Rule 7: Antigravity for integrations and automation
+Antigravity handles local development, scripting, execution, and web research, reducing token usage on manual file syncing and external documentation lookups.
 
 ---
 
@@ -259,13 +253,12 @@ If Antigravity handles web tasks, it may reduce Claude Chat web search calls. Co
 
 ## NEXT ACTIONS (in priority order)
 
-1. **Will confirms:** What does Antigravity do? (blocks routing assignment)
-2. **Will runs:** `ollama list` — confirm qwen3:14b pulled
-3. **Will installs:** Local GPT + Smart Connections in Obsidian
-4. **I build:** 04_WORKFLOWS/INGEST.md — May 28 deadline (say "build INGEST.md")
-5. **I build:** 08_TESTS/PAPER_TRIAL_RUNS.md — Morning Walk walkthrough
-6. **I update:** COST_ROUTING.md — add Antigravity + Cowork routing rules
-7. **I add:** Wikilinks to all branch files (say "add wikilinks")
+1. **Will runs:** `ollama list` — confirm qwen3:14b pulled
+2. **Will installs:** Local GPT + Smart Connections in Obsidian
+3. **I build:** 04_WORKFLOWS/INGEST.md — May 28 deadline (say "build INGEST.md")
+4. **I build:** 08_TESTS/PAPER_TRIAL_RUNS.md — Morning Walk walkthrough
+5. **I update:** COST_ROUTING.md — add Antigravity + Cowork routing rules
+6. **I add:** Wikilinks to all branch files (say "add wikilinks")
 
 ---
 *INFERENCE markers: Antigravity role, Cowork specific SFV tasks — FOR HUMAN REVIEW*
