@@ -288,6 +288,8 @@
   },
   "active": "44629c04deb4ffeb",
   "lastOpenFiles": [
+    "00_DEV_LOG/ANTIGRAVITY_SETUP_GUIDE.md",
+    "99_INBOX/vault_watcher.py",
     "99_INBOX/ingest.py",
     "ANTIGRAVITY.md",
     "00_DEV_LOG/ORPHANS.md",
@@ -321,8 +323,6 @@
     "10_REFERENCES/CASE_STUDIES.md",
     "00_DEV_LOG/QUESTIONS_FOR_WILL.md",
     "00_DEV_LOG/DECISIONS.md",
-    "Untitled",
-    "Excalidraw",
-    "99_INBOX/ollama_daemon.py"
+    "Untitled"
   ]
 }

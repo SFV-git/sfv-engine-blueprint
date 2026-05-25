@@ -326,3 +326,35 @@ By addressing these gaps, the workflow will be more robust and capable of meetin
 15. Include cross-branch validation: check FOR HUMAN REVIEW flag in SFV_STUDIO/INGEST/REPORTS/
 
 ---
+## 2026-05-25 06:20
+**TASK:** READ: 05_AI_LAYER\RATE_LIMITS.md
+
+**RESULT:**
+The three tools with the lowest **explicit daily limits** are as follows, based on the information provided:
+
+1. **Google AI Studio Pro**: ~25 requests per day  
+   *(Explicitly stated in the "LIMITS PER TOOL" section.)*
+
+2. **NotebookLM**: ~50 queries per day (per notebook)  
+   *(Also explicitly stated in the "LIMITS PER TOOL" section.)*
+
+3. **Claude Chat**: 15–20 messages per day (as a recommended target in the "DAILY BUDGET EXAMPLE")  
+   *(While not a hard limit, this is the lowest daily target among the tools, based on the provided guidance.)*
+
+---
+
+### Summary:
+- **Google AI Studio Pro** has the **strictest explicit daily limit** (~25/day).  
+- **NotebookLM** has a higher explicit limit (~50/day), but it's per notebook.  
+- **Claude Chat** has a **target-based limit** (15–20/day), which is lower than the explicit limits of the other two tools, though not a hard cap.  
+
+This ranking reflects the **lowest daily limits** based on the available information.
+
+---
+## 2026-05-25 06:20
+**TASK:** READ: 04_WORKFLOWS\INGEST.md
+
+**RESULT:**
+~35-45 minutes.
+
+---

@@ -80,26 +80,42 @@ def load_context():
     return "\n\n---\n\n".join(parts)
 
 def resolve_file_refs(task_text):
-    """Detect READ: lines, load the file, inject content into task."""
+    """
+    Detect READ: lines, load the file, inject content into task.
+    Handles both forward and back slashes — fixes Windows path separator issue.
+    """
+    import os
     lines = task_text.split("\n")
     instruction_lines = []
     file_blocks = []
     for line in lines:
         stripped = line.strip()
         if stripped.upper().startswith("READ:"):
-            rel_path = stripped[5:].strip()
-            candidates = [VAULT / rel_path, Path(rel_path)]
+            raw = stripped[5:].strip()
+            # Normalize: try both slash styles so watcher-generated paths always resolve
+            normalized = raw.replace("/", os.sep).replace("\\", os.sep)
+            candidates = [
+                VAULT / normalized,          # vault-relative, normalized
+                VAULT / raw,                 # vault-relative, as-is
+                Path(normalized),            # absolute, normalized
+                Path(raw),                   # absolute, as-is
+            ]
             found = False
             for candidate in candidates:
-                if candidate.exists():
-                    content = candidate.read_text(encoding="utf-8")
-                    if len(content) > MAX_FILE_CHARS:
-                        content = content[:MAX_FILE_CHARS] + "\n...[TRUNCATED]"
-                    file_blocks.append(f"FILE: {rel_path}\n---\n{content}\n---")
-                    found = True
-                    break
+                try:
+                    if candidate.exists():
+                        content = candidate.read_text(encoding="utf-8", errors="ignore")
+                        if len(content) > MAX_FILE_CHARS:
+                            content = content[:MAX_FILE_CHARS] + "\n...[TRUNCATED]"
+                        file_blocks.append(f"FILE: {raw}\n---\n{content}\n---")
+                        found = True
+                        break
+                except Exception:
+                    continue
             if not found:
-                file_blocks.append(f"FILE: {rel_path}\n---\nFILE NOT FOUND\n---")
+                # Debug: show what was tried so Will can diagnose
+                tried = str(VAULT / normalized)
+                file_blocks.append(f"FILE: {raw}\n---\nFILE NOT FOUND\nTried: {tried}\n---")
         else:
             instruction_lines.append(line)
     task_instruction = "\n".join(instruction_lines).strip()
