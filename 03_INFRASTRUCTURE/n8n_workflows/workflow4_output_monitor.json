@@ -1,0 +1,82 @@
+{
+  "name": "Workflow 4 — Output Monitor",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "C:\\SFV_BLUEPRINT\\99_INBOX",
+        "events": ["change"],
+        "options": {}
+      },
+      "id": "2b3c4d5e-6f7a-4890-91bc-def234567890",
+      "name": "Watch 99_INBOX",
+      "type": "n8n-nodes-base.localFileTrigger",
+      "typeVersion": 1,
+      "position": [240, 300],
+      "notes": "Watches 99_INBOX for any file change. Guard node filters to DECISION_LOG.md. If VAULT_PATH changes, update the path here and in both Code nodes."
+    },
+    {
+      "parameters": {
+        "jsCode": "const fs = require('fs');\n\nconst raw = $input.first().json;\n\n// Normalise to forward slashes — n8n on Windows emits backslashes\nconst changedPath = (raw.path || raw.name || '').replace(/\\\\/g, '/');\n\nif (!changedPath.endsWith('DECISION_LOG.md')) {\n  return [];\n}\n\nconst vault = (process.env.VAULT_PATH || 'C:\\\\SFV_BLUEPRINT').replace(/\\\\/g, '/');\nconst logPath = vault + '/99_INBOX/DECISION_LOG.md';\nconst content = fs.readFileSync(logPath, 'utf8');\n\nreturn [{ json: { content, vault } }];"
+      },
+      "id": "3c4d5e6f-7a8b-4901-a2cd-ef3456789012",
+      "name": "Guard — DECISION_LOG only",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300],
+      "notes": "Requires NODE_FUNCTION_ALLOW_BUILTIN=fs in n8n env. Returns [] (stops execution) if changed file is not DECISION_LOG.md."
+    },
+    {
+      "parameters": {
+        "jsCode": "const fs = require('fs');\n\nconst { content, vault } = $input.first().json;\nconst lines = content.split('\\n');\n\n// Parse markdown table — skip header, separator, and non-table lines\nconst flagged = [];\nfor (const line of lines) {\n  const t = line.trim();\n  if (!t.startsWith('|')) continue;\n  const cols = t.split('|').map(c => c.trim()).filter(Boolean);\n  if (cols.length < 5) continue;\n  // Skip header row and separator row\n  if (cols[0] === 'Timestamp' || cols[0].startsWith('-')) continue;\n  const status = cols[4];\n  if (status === 'ESCALATED' || status === 'DEFERRED') {\n    flagged.push({\n      timestamp: cols[0],\n      task_id:   cols[1],\n      action:    cols[2],\n      handler:   cols[3],\n      status:    cols[4],\n      output:    cols[5] || ''\n    });\n  }\n}\n\n// Nothing to surface — stop execution cleanly\nif (flagged.length === 0) return [];\n\nconst ts = new Date().toISOString().replace('T', ' ').slice(0, 19);\n\nconst tableRows = flagged.map(r =>\n  `| ${r.timestamp} | ${r.task_id} | ${r.action} | ${r.handler} | ${r.status} | ${r.output} |`\n);\n\nconst summary = [\n  '---',\n  'GENERATED: ' + ts,\n  'SOURCE: DECISION_LOG.md',\n  'REVIEW_REQUIRED: YES',\n  '---',\n  '',\n  '# ESCALATED / DEFERRED ITEMS',\n  '',\n  '> These items could not be resolved by Ollama or are queued for n8n Workflow 3 (Tavily).',\n  '> Review each row. ESCALATED → read handoff JSON. DEFERRED → build Workflow 3.',\n  '',\n  '| Timestamp | Task ID | Action | Handler | Status | Output |',\n  '|-----------|---------|--------|---------|--------|--------|',\n  ...tableRows,\n  ''\n].join('\\n');\n\nconst outputDir = vault + '/99_INBOX/OUTPUTS';\nfs.mkdirSync(outputDir, { recursive: true });\nconst outPath = outputDir + '/ESCALATED_ITEMS.md';\nfs.writeFileSync(outPath, summary, 'utf8');\n\nreturn flagged.map(r => ({ json: { ...r, written_to: outPath } }));"
+      },
+      "id": "4d5e6f7a-8b9c-4012-b3de-f456789012ab",
+      "name": "Parse + Write ESCALATED_ITEMS",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [680, 300],
+      "notes": "Reads markdown table from DECISION_LOG.md. Filters rows where Status = ESCALATED or DEFERRED. Writes OUTPUTS/ESCALATED_ITEMS.md. Returns [] (no-op) if nothing flagged."
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Watch 99_INBOX": {
+      "main": [
+        [
+          {
+            "node": "Guard — DECISION_LOG only",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guard — DECISION_LOG only": {
+      "main": [
+        [
+          {
+            "node": "Parse + Write ESCALATED_ITEMS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1a2b3c4d-5e6f-4789-80ab-cdef12345678",
+  "meta": {
+    "instanceId": "",
+    "_sfv_notes": [
+      "Import: Settings → Workflows → Import from file",
+      "Before activating: set NODE_FUNCTION_ALLOW_BUILTIN=fs in n8n env (add to n8n_env.ps1)",
+      "After activating: trigger fires on any file change in 99_INBOX/ — Guard filters to DECISION_LOG.md",
+      "Output written to: 99_INBOX/OUTPUTS/ESCALATED_ITEMS.md (overwritten on each trigger)",
+      "Diverges from N8N_BLUEPRINT Workflow 4 spec intentionally: monitors DECISION_LOG instead of OUTPUTS/ per Will's 2026-05-26 instruction"
+    ]
+  },
+  "id": "4a1b2c3d-e5f6-4789-a0bc-def123456789",
+  "tags": ["sfv-engine", "monitor"]
+}

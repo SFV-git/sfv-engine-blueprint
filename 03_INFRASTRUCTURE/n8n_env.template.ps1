@@ -15,5 +15,9 @@ $env:QUEUE_PATH = "C:\SFV_BLUEPRINT\99_INBOX\QUEUE"
 $env:OUTPUTS_PATH = "C:\SFV_BLUEPRINT\99_INBOX\OUTPUTS"
 $env:HANDOFFS_PATH = "C:\SFV_BLUEPRINT\99_INBOX\HANDOFFS"
 
+# Allow n8n Code nodes to use Node.js built-in fs module
+# Required by Workflow 4 (Output Monitor) Code nodes
+$env:NODE_FUNCTION_ALLOW_BUILTIN = "fs,path"
+
 # Start n8n after vars are set
 # npx n8n
