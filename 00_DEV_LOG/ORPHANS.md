@@ -1,14 +1,95 @@
 ---
 STATUS: FOR HUMAN REVIEW
-GENERATED: 2026-05-25 06:48
+GENERATED: 2026-05-26 04:22
 ---
 
 # VAULT ORPHANS
-> 2 files with no incoming wikilinks.
+> 57 files with no incoming wikilinks.
 > Review each — add links or flag as intentionally standalone.
 
 ## .
-- [[ANTIGRAVITY]]
+- [[CHANGELOG]]
+- [[CLAUDE]]
+- [[MASTER_CONTEXT]]
+- [[README]]
+- [[USAGE_OPTIMIZATION]]
+
+## .claude\rules
+- [[blueprint-only]]
+- [[canon-control]]
+- [[file-editing]]
+- [[human-approval]]
+- [[no-assumptions]]
 
 ## 00_DEV_LOG
-- [[ORPHANS]]
+- [[2026-05-25_TODAY_CONTROL]]
+- [[ANTIGRAVITY_SETUP_GUIDE]]
+- [[DECISIONS]]
+- [[DEV_LOG]]
+- [[REJECTED_CHANGED]]
+- [[UNCONFIRMED]]
+
+## 01_CANON_RULES
+- [[RULES]]
+
+## 03_INFRASTRUCTURE
+- [[ENGINE_COMMUNICATION_MODEL]]
+- [[METADATA_SYSTEM]]
+- [[MULTI_AGENT_WORKFLOW]]
+- [[STACK_INTEGRATION_PLAN]]
+
+## 04_WORKFLOWS
+- [[ARCHIVE]]
+- [[N8N_BLUEPRINT]]
+
+## 05_AI_LAYER
+- [[AI_USE_CASE_PROFILE]]
+- [[ANTIGRAVITY_RULES]]
+- [[CLAUDE_API]]
+- [[OLLAMA_SETUP]]
+- [[RD_TERMINAL_ARCHITECTURE]]
+
+## 06_TOOLS
+- [[INTEGRATIONS]]
+- [[TOOLBOX]]
+- [[TOOL_STACK]]
+
+## 07_SCALING
+- [[BRANCH_INDEPENDENCE]]
+- [[NATIONWIDE]]
+- [[OPERATOR_MODEL]]
+
+## 08_TESTS
+- [[BUILD_READINESS_CHECKLIST]]
+- [[EDGE_CASES]]
+- [[FAILURE_TESTS]]
+
+## 09_PROMPTS
+- [[CHATGPT_PROMPTS]]
+- [[CLAUDE_CODE_PROMPTS]]
+- [[CLAUDE_PROMPTS]]
+- [[EXTRACTION_PROMPTS]]
+- [[OLLAMA_PROMPTS]]
+- [[RESEARCH_PROMPTS]]
+
+## 10_REFERENCES
+- [[CASE_STUDIES]]
+- [[DEEP_RESEARCH_FINDINGS]]
+- [[EXTERNAL_LINKS]]
+- [[TOOL_RESEARCH]]
+
+## 11_VERSIONS
+- [[UPGRADE_CHECKPOINTS]]
+- [[VERSION_LOG]]
+
+## 12_DATABANKS
+- [[BRAND_BANKS]]
+- [[CONTENT_BANKS]]
+- [[DATABANK_ARCHITECTURE]]
+- [[RESEARCH_BANKS]]
+- [[TASTE_BANKS]]
+- [[TRAINING_DATA]]
+
+## Excalidraw
+- [[Drawing 2026-05-24 07.07.57.excalidraw]]
+- [[Drawing 2026-05-24 07.07.59.excalidraw]]
