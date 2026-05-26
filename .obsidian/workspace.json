@@ -30,9 +30,19 @@
               "icon": "lucide-git-fork",
               "title": "Graph view"
             }
+          },
+          {
+            "id": "d00a87684949d0fa",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -221,10 +231,11 @@
       "smart-context:Smart Context: List Named Contexts": false
     }
   },
-  "active": "2416df81de39d166",
+  "active": "2cbafde7d5fb553c",
   "lastOpenFiles": [
-    "00_DEV_LOG/QUESTIONS_FOR_WILL.md",
+    "04_WORKFLOWS/N8N_BLUEPRINT.md",
     "99_INBOX/CHAT_EXTRACTS.md",
+    "00_DEV_LOG/QUESTIONS_FOR_WILL.md",
     "99_INBOX/OUTPUTS/20260525-TEST-001_OLLAMA_BRANCH_CLASSIFY.md",
     "99_INBOX/OUTPUTS/README.md",
     "99_INBOX/OUTPUTS/20260525-002_INGEST_WASTE_AUDIT.md",
@@ -255,7 +266,6 @@
     "99_INBOX/OLLAMA_STAGING/AI_BRIDGE_BUILD_PLAN.md",
     "99_INBOX/Untitled.base",
     "README.md",
-    "00_DEV_LOG/ANTIGRAVITY_SETUP_GUIDE.md",
     "99_INBOX/vault_watcher.py",
     "99_INBOX/ingest.py",
     "99_INBOX/find_orphans.py"
