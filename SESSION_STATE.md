@@ -70,7 +70,14 @@ v0.x — Blueprint Lock (AI stack design + full blueprint planning. Zero dev wor
 6. Claude Code instance — currently paused, waiting. Do not resume until blueprint work is complete.
 7. Docker install + restart — end of a future session when Will is ready.
 
-## SESSION — 2026-05-26
+## SESSION — 2026-05-26 (CONTINUED)
+### Completed this session:
+- AI_STACK_ARCHITECTURE_BLUEPRINT.md — STATUS: CANON, v1.1, 230 lines. AI stack priority item DONE.
+- Full node linking, file allocation, phase sequence, all tools confirmed.
+- Docker install initiated — requires restart to complete.
+
+### FIRST TASK NEXT SESSION:
+Build a lightweight terminal review system for all FOR HUMAN REVIEW and UNCONFIRMED items across the vault. No tokens — Will yes/no's them. Design + build at session start.
 ### Built (dev work — now paused pending blueprint completion):
 - n8n_env.ps1 — API keys filled, Tavily live, Perplexity web-only
 - .gitignore — n8n_env.ps1, .obsidian/, .smart-env/ excluded

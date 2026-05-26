@@ -1,6 +1,6 @@
 ---
 STATUS: CANON
-VERSION: v1.0
+VERSION: v1.1
 OWNER: WILL
 LAST_UPDATED: 2026-05-26
 ---
@@ -8,18 +8,19 @@ LAST_UPDATED: 2026-05-26
 # SFV Engine — AI Stack Architecture Blueprint
 
 > **Node A (Engine Body):** Ryzen 9 9900X / RTX 5080 / 32GB — Primary production node
+> *Note: RAM-dependent — confirm 64GB upgrade complete before deploying multiple large models simultaneously alongside Qdrant, PostgreSQL, and Redis.*
 > **Node B (R&D Terminal):** RTX 3060 / 16GB — 24/7 Sentinel host
 
 ## Architecture Decision: Hub-and-Spoke 
 
-The AI stack utilizes a strictly controlled hub-and-spoke pattern. At the core, **n8n** is the execution router, passing tasks between inference layers, storage paths, and logic processors. However, the system's overarching decision-maker and orchestrator is **Antigravity 2.0**.
+The AI stack utilizes a strictly controlled hub-and-spoke pattern. At the core, **n8n** is the execution router, passing tasks between inference layers, storage paths, and logic processors. The system's overarching decision-maker and orchestrator is **Antigravity 2.0**.
 
 The strict hierarchy is:
-**Antigravity 2.0 → n8n → [Ollama | Gemini Flash | Claude | Local Tools]**
+**Antigravity 2.0 → n8n → [Ollama | Open WebUI | Gemini Flash | Claude | Local Tools]**
 
 - **Antigravity 2.0 (Tier 1):** Meta-controller. Spawns workflows, audits the codebase, schedules cron jobs, and issues top-level routing instructions.
 - **n8n (Tier 2):** Deterministic workflow branching, trigger management, job queuing, and API connectivity.
-- **Ollama/qwen3:14b (Tier 3 - Inference First Pass):** First-pass classification, embeddings, and routing decisions (free, local, fast).
+- **Ollama / Open WebUI (Tier 3 - Inference First Pass):** First-pass classification, embeddings, and routing decisions (free, local, fast). Open WebUI acts as a unified OpenAI-compatible endpoint.
 - **Gemini / Claude (Tier 4 - Inference Escalation):** Cloud burst execution and high-stakes complex reasoning.
 - **Perplexity (Research Layer):** Web intelligence intake providing structured JSON/MD to the stack.
 
@@ -36,7 +37,7 @@ The strict hierarchy is:
   Perplexity → JSON queue file → %SFV_ROOT%\99_INBOX\QUEUE → n8n File Trigger
 
 [Router Layer — n8n port 5678]
-  ↓ HTTP Request node → Ollama (port 11434) — classify/triage
+  ↓ HTTP Request node → Open WebUI / Ollama (port 11434) — classify/triage
   ↓ Switch node — route by job type
   ↓ Branch A: Local-only → Ollama (summarize, tag, classify, embed)
   ↓ Branch B: Cloud burst → Gemini Flash API (bulk transform, reformat)
@@ -50,183 +51,180 @@ The strict hierarchy is:
   → Antigravity artifact store (structured JSON/MD files)
 ```
 
-### Cross-Node Communication (Node A ↔ Node B)
+### Node Linking & Networking Configuration
 
-```text
-Node B (Sentinel / RTX 3060)
-  Ollama qwen3:14b — 24/7 local inference (port 11434)
-  Health monitor — polls Node A services every 60s
-  Sentinel workflow (Python watchdog / Prometheus + Grafana [FUTURE])
+**1. Direct Ethernet Configuration (Primary LAN)**
+Both NICs must be configured with static IPs on an isolated subnet:
+- **Node A:** `192.168.10.1` (Subnet: `255.255.255.0`)
+- **Node B:** `192.168.10.2` (Subnet: `255.255.255.0`)
+Windows Defender Firewall on both machines must allow inbound SMB (445) and application ports (11434, 5678, 9090, 9182) from the `192.168.10.0/24` subnet.
 
-Communication methods:
-  Node A → Node B: HTTP POST to Node B's Ollama API (direct inference)
-  Node B → Node A: HTTP POST to Node A's n8n webhook (alert/report)
-  Shared: Network folder mount or structured HTTP file exchange
-```
+**2. Tailscale Coexistence Rule (CRITICAL)**
+Tailscale is exclusively for remote access (`100.x.x.x`). Do not advertise `192.168.10.0/24` as a Tailscale subnet route, as Windows gVisor Netstack routing will degrade direct-link throughput. Isolation to the direct IP is mandatory for inter-node production traffic.
 
-**Ollama Distribution — UNCONFIRMED [FOR HUMAN REVIEW]**
-Which node runs Ollama as primary depends on two unresolved factors:
-1. **Ollama's role at runtime** — if Ollama is purely a cheap inference layer (classify, tag, embed), Node B (24/7, always-on) is the natural primary. If Ollama is also used for heavy local generation during active sessions, Node A (RTX 5080) is faster.
-2. **Tailscale connection quality** — if Node A → Node B latency over Tailscale is acceptable for inline inference calls, Node B primary works. If latency is too high for synchronous routing decisions, Node A must be primary.
+**3. Cross-Node File Access (SMB)**
+Node A shares the vault; Node B maps a network drive to `\\192.168.10.1\VaultShare`. This provides native Windows performance (~950 Mbps) for active edits.
 
-Decision rules (to be confirmed by Will after Tailscale is live):
-- Node B primary if: Ollama role = classification/embedding only AND Tailscale latency < 20ms
-- Node A primary if: Ollama used for generation during active sessions OR Tailscale not yet live
-- Both nodes run Ollama regardless — the primary/fallback assignment is a routing config in n8n only
+**4. Ollama Cross-Node Inference**
+Set `OLLAMA_HOST=0.0.0.0:11434` as a system environment variable on Node A. Node B directs heavy inference calls to `http://192.168.10.1:11434/api/generate`.
 
 ### Service Endpoint Registry
 
-| Service | Host | Port | Protocol | Data Direction |
-|---|---|---|---|---|
-| n8n | Node A | 5678 | HTTP (localhost) | Bi-directional router |
-| Ollama (Node A) | Node A | 11434 | HTTP REST | Local fallback or primary (TBD) |
-| Ollama (Node B) | Node B | 11434 | HTTP REST | 24/7 inference or primary (TBD) |
-| Qdrant [FUTURE] | Node A | 6333 | HTTP REST | n8n / Python → Node A |
-| Supabase | Cloud | 443 | HTTPS REST | n8n → Cloud |
-| Claude API | Cloud | 443 | HTTPS REST | n8n / Antigravity → Cloud |
-| Gemini Flash API | Cloud | 443 | HTTPS REST | n8n / Antigravity → Cloud |
+| Service | Host | Port | Protocol | Data Direction | Phase |
+|---|---|---|---|---|---|
+| n8n | Node A | 5678 | HTTP (localhost) | Bi-directional router | Active |
+| PostgreSQL | Node A | 5432 | TCP (localhost) | n8n DB Backend | Immediate |
+| Open WebUI | Node A | 3000 | HTTP REST | Unified Inference API | Phase 1 |
+| n8n-MCP | Node A | stdio | MCP | Claude/Antigravity → n8n | Phase 1 |
+| Ollama (Node A) | Node A | 11434 | HTTP REST | Primary | Active |
+| Ollama (Node B) | Node B | 11434 | HTTP REST | Sentinel fallback | Active |
+| windows_exporter | Nodes A+B| 9182 | HTTP | Metrics → Prometheus | Phase 1 |
+| Qdrant [FUTURE] | Node A | 6333 | HTTP REST | n8n / Python → Node A | Phase 2 |
 
 ***
 
-## Section 2: Token/Cost Routing Strategy
+## Section 2: Storage & Sync Strategy
 
-The routing decision occurs at the classifier level before any expensive API calls are executed. The cheapest capable layer receives the task.
+### File Allocation Strategy
+
+| Component | Node | Drive | Rationale |
+|-----------|------|-------|-----------|
+| Obsidian Vault | A | `C:\` | SSD speed for frequent reads/writes |
+| Ollama models | A | `D:\` | Large models don't need SSD; hot path is GPU VRAM |
+| n8n data & Postgres DB | A | `C:\` | DB read/write performance is critical for webhook speed |
+| Raw media ingest | A | `D:\` | Bulk storage capacity |
+| Queue / handoff files | A | `C:\` | Fast IO for n8n trigger responsiveness |
+| Qdrant vector DB | A | `C:\` | Vector search latency demands SSD |
+
+### Sync Strategy
+- **Vault Sync:** Syncthing (OSS) running as a Windows service handles real-time bidirectional sync over the direct ethernet link between Node A and Node B. Replaces paid Obsidian Sync.
+- **Media Backup:** Scheduled Robocopy task nightly from Node A (`D:\`) to Node B.
+
+***
+
+## Section 3: Token/Cost Routing Strategy
+
+The routing decision occurs at the classifier level before any expensive API calls are executed.
 
 ### Routing Decision Tree
 
 ```text
 INBOUND TASK
   ↓
-[Ollama Classifier] — qwen3:14b via n8n HTTP Request node
+[Ollama / Open WebUI] — qwen3:14b via n8n HTTP Request node
   Output: { tier: "local" | "cloud_cheap" | "cloud_premium", job_type: string }
   ↓
 TIER: local (Free)
-  → Ollama qwen3:14b (Node B preferred, Node A fallback)
-  → Use for: tagging, classification, summarization <2000 tokens, embeddings, metadata extraction, routing decisions, draft generation, Obsidian note formatting
+  → qwen3:14b (General text, metadata)
+  → qwen3.6-coder / DeepSeek Coder V2 Lite (Code, Python ingest authoring)
+  → minicpm-v (Vision, thumbnails, OCR)
+  → Use for: tagging, classification, summarization <2000 tokens, embeddings
 
 TIER: cloud_cheap (Free/Low-Cost Burst)
   → Gemini Flash
-  → Use for: bulk reformatting, caption generation at scale, high-volume transcription cleanup, content structuring, Antigravity orchestration operations, anything requiring >2000 token context without high architectural quality bar
+  → Use for: bulk reformatting, caption generation at scale, Antigravity orchestration ops
 
 TIER: cloud_premium (High Cost)
   → Claude Sonnet (default) / Opus (escalation only)
-  → Use for: architecture documents, final deliverables, blueprint generation, client-facing copy, any task requiring deep system judgment + precision
+  → Use for: architecture documents, final deliverables, deep system judgment
 ```
 
 ### Cost Guard Rules and Escalation Conditions
 
-1. **Classification is always free:** Never call Claude for classification. Use Ollama for all routing decisions.
-2. **Flash free tier limits:** If Gemini Flash hits request limits, fall back to Ollama, not Claude.
-3. **Claude Opus is emergency-only:** Sonnet handles 95% of premium tasks. Opus is explicitly requested by Will for multi-turn complex architecture sessions only.
-4. **Token budget check:** Jobs must be pre-estimated. Tasks >100K tokens route to Gemini Flash's 1M context window.
-5. **Embed locally:** Use `nomic-embed-text` [FUTURE] via Ollama for all embeddings. Never pay for external embedding APIs.
-6. **Escalation Trigger:** A task is only escalated to Claude if Ollama's confidence score evaluates to < 0.75, or if the job envelope explicitly flags it as "final" or "client-facing".
+1. **Classification is always free:** Use Ollama for all routing decisions.
+2. **Flash free tier limits:** If Gemini Flash hits request limits, fall back to Ollama.
+3. **Escalation Trigger:** A task is only escalated to Claude if Ollama's confidence score evaluates to < 0.75, or if the job envelope flags it as "client-facing".
+4. **Code and Vision Routing:** Explicitly route code and vision tasks to the dedicated specialist models (Coder/minicpm-v) on Node A, not the general qwen model.
 
 ***
 
-## Section 3: n8n Trigger Types, Job Envelope Schema & Handoff Patterns
+## Section 4: n8n Triggers, Schemas, & Execution Optimizations
 
 ### Trigger Inventory
 
 | Trigger Type | n8n Node | Use Case |
 |---|---|---|
-| File system watch | Local File Trigger | New media drop in ingest folders, Perplexity queue files in `%SFV_ROOT%\99_INBOX\QUEUE`, Obsidian vault writes |
-| Scheduled cron | Schedule Trigger | Nightly vault sync, daily Sentinel health report, periodic embedding refresh |
-| HTTP webhook | Webhook | Antigravity task dispatch, Python script callbacks, cross-node alerts |
-| Manual | Manual Trigger | Testing, one-off jobs, development runs |
-| n8n internal | Execute Workflow | Sub-workflow calls from orchestrator workflow |
+| File system watch | Local File Trigger | Perplexity queue files in `%SFV_ROOT%\99_INBOX\QUEUE` |
+| Scheduled cron | Schedule Trigger | Daily Sentinel health report, 5-min Ollama pre-warm |
+| HTTP webhook | Webhook | Antigravity task dispatch, cross-node alerts |
+| Manual | Manual Trigger | Testing, development runs |
 
 ### Standard Job Envelope Schema
-
-All JSON payloads passing through the router or residing in `%SFV_ROOT%\99_INBOX\QUEUE` must adhere to this schema:
 
 ```json
 {
   "task_id": "YYYYMMDD-###",
-  "task_type": "CLASSIFY | SUMMARIZE | COMPRESS | RESEARCH | BLUEPRINT | CODE | MEDIA",
+  "task_type": "CLASSIFY | SUMMARIZE | COMPRESS | RESEARCH | BLUEPRINT | CODE | MEDIA | VISION",
   "topic": "String",
-  "prompt": "String",
   "priority": "NORMAL | HIGH | CRITICAL",
   "status": "PENDING | IN_PROGRESS | COMPLETE | ESCALATED | DEFERRED",
-  "output_target": "%SFV_ROOT%\\99_INBOX\\OUTPUTS\\[filename]",
-  "file_path": "Absolute path (if local file trigger)",
-  "vault": "%SFV_ROOT%"
+  "output_target": "%SFV_ROOT%\\99_INBOX\\OUTPUTS\\[filename]"
 }
 ```
 
-### Handoff Patterns
+### Critical Execution Optimizations
 
-#### Pattern A: File-Based Handoff (Primary)
-All tools communicate via structured files on disk. No agent edits canon directly without human approval.
-```text
-Producer writes: %SFV_ROOT%\99_INBOX\QUEUE\{timestamp}_{job_type}.json
-n8n polls via File Trigger: detects new file → ingests → routes
-Consumer writes: %SFV_ROOT%\99_INBOX\OUTPUTS\{output}.md
-Antigravity or Claude reads output path, evaluates, logs to DECISION_LOG.md
-```
-
-#### Pattern B: Webhook Handoff (Real-Time)
-For low-latency tasks where Antigravity needs a synchronous response.
-```text
-Antigravity POST → n8n webhook (sync, waits for response)
-n8n executes → returns { status, output, artifact_path }
-Antigravity receives result directly without polling
-```
-
-#### Pattern C: Ollama Direct (Bypass n8n for Speed)
-Python scripts call Ollama directly for simple inference without routing overhead. Useful for sub-100ms routing latency.
-```python
-# Direct Ollama call
-import httpx
-response = httpx.post("http://[NodeB]:11434/api/generate",
-    json={"model": "qwen3:14b", "prompt": prompt, "stream": False})
-```
+- **Ollama Cold Start Prevention:** Set `OLLAMA_KEEP_ALIVE=10m` and run a cron workflow every 5 minutes to ping the primary models to keep them in VRAM.
+- **SQLite Locking:** SQLite corrupts under parallel webhook hits. **PostgreSQL migration is mandatory** before concurrent execution scaling.
 
 ***
 
-## Section 4: Sentinel Role (Node B)
+## Section 5: Sentinel Role (Node B)
 
-The **Sentinel** resides on Node B (R&D Terminal - RTX 3060). Its role is 24/7 observation, local inference offloading, and Engine Body health monitoring.
+The **Sentinel** resides on Node B (R&D Terminal - RTX 3060) for 24/7 observation and Engine Body health monitoring.
 
-**What it monitors:**
-- Node A services availability (n8n port 5678, webhooks).
-- GPU utilization and queuing bottlenecks.
-- Ollama daemon response status.
-
-**Alerting:**
-If Node A services fail to respond, the Sentinel logs an alert locally and attempts to notify Will via defined fallback channels or dashboard indicators.
+**Monitoring Stack:**
+- **windows_exporter:** Deployed on both nodes to expose CPU, memory, disk, and service states as Prometheus metrics.
+- **Prometheus + Grafana:** Deployed on Node B to scrape metrics (Dashboard ID: 14499) and observe n8n queue depth and queue failures.
 
 ***
 
-## Section 5: Gaps and Mitigations
+## Section 6: Gaps and Mitigations
 
-The following critical Single Points of Failure (SPOFs) and structural gaps exist and are actively mitigated:
+The following critical Single Points of Failure (SPOFs) and gaps exist and are actively mitigated:
 
 | Component | Failure Mode | Impact | Mitigation |
 |---|---|---|---|
-| n8n process crash | All routing stops | **Critical** | Sentinel restarts via Windows Service wrapper / `net start`. Queue mode (Redis) [FUTURE] prevents UI blocking. |
-| Node B offline | Ollama unavailable | **High** | Node A Ollama acts as hot fallback; n8n IF node checks Node B health before routing. |
-| Gemini Free Tier rate limit | Cloud burst lane saturates | **Medium** | Retry queue in n8n with exponential backoff; Ollama fallback for non-critical jobs. |
-| Claude API outage | Premium outputs blocked | **Low** | Queue to file, retry on schedule; Gemini Flash as degraded fallback. |
-| Vault Path Missing | Outputs fail silently | **Medium** | Use `%SFV_ROOT%` consistently. n8n error handlers write to `%SFV_ROOT%\99_INBOX\OUTPUTS\failed_jobs\` instead. |
-| Concurrent Whisper runs | OOM memory crash | **High** | Implement serial media queue; utilize `faster-whisper` [FUTURE] to reduce memory footprint. |
+| n8n SQLite DB | Database lock / corruption | **Critical** | Migrate to PostgreSQL (Immediate priority). |
+| n8n process crash | All routing stops | **Critical** | Queue mode (Redis) [FUTURE] + PostgreSQL prevents UI blocking. |
+| Node B offline | Ollama unavailable | **High** | Node A Ollama acts as hot fallback. |
+| Concurrent Whisper | OOM memory crash | **High** | Serial media queue; deploy `faster-whisper` [FUTURE]. |
+| RAM limits (32GB) | System swap crash | **High** | Enforce model unloading discipline; monitor via Grafana. |
 
 ***
 
-## Section 6: Recommended Add-Ons [FUTURE]
+## Section 7: Prioritized Action Sequence
+
+| Priority | Action | Phase |
+|----------|--------|-------|
+| 🔴 Critical | Migrate n8n to PostgreSQL (before any queue mode work) | Immediate |
+| 🔴 Critical | Add `windows_exporter` to both nodes | Immediate |
+| 🔴 Critical | Set static IPs on direct ethernet NICs; enforce Tailscale isolation | Immediate |
+| 🟠 High | Set `OLLAMA_HOST=0.0.0.0:11434` on Node A; firewall-restrict | Phase 1 |
+| 🟠 High | Deploy n8n-MCP (czlonkowski/n8n-mcp) via Docker | Phase 1 |
+| 🟠 High | Deploy Open WebUI on Node A | Phase 1 |
+| 🟠 High | Add qwen3.6-coder / DeepSeek Coder V2 Lite to Node A | Phase 1 |
+| 🟠 High | Set `OLLAMA_KEEP_ALIVE=10m`; add pre-warm cron | Phase 1 |
+| 🟡 Medium | Add minicpm-v (verify Ollama version compatibility first) | Phase 2 |
+| 🟡 Medium | Deploy Qdrant + nomic-embed-text; begin embedding vault | Phase 2 |
+| 🟡 Medium | Deploy Redis + switch n8n to queue mode | Phase 2 |
+| 🟡 Medium | Set up Syncthing for vault sync Node A → Node B | Phase 2 |
+| 🟢 Low | Configure Prometheus to scrape both windows_exporter instances | Phase 3 |
+
+***
+
+## Section 8: Recommended Add-Ons [FUTURE]
 
 > **STATUS:** [FUTURE]
-> These add-ons are approved by Will, but remain labeled [FUTURE] until explicitly installed and integrated into the active running Engine.
+> These add-ons are approved, but remain labeled [FUTURE] until installed.
 
-1. **Redis [FUTURE]:** Job queue broker for n8n. Separates editor process from execution workers, preventing heavy media jobs from blocking Antigravity webhooks.
-2. **Qdrant [FUTURE]:** Production-grade, Rust-based vector memory layer running locally on Node A. Resolves the gap of missing semantic retrieval and cross-session memory.
-3. **`nomic-embed-text` [FUTURE]:** Local embedding model running via Ollama. Replaces expensive API embeddings and directly feeds Qdrant.
-4. **`faster-whisper` [FUTURE]:** Python Flask backend replacing standard OpenAI Whisper. Dramatically reduces memory usage and speeds up transcription to prevent parallel OOM crashes.
-5. **Prometheus + Grafana [FUTURE]:** Sentinel monitoring stack deployed on Node B. Scrapes n8n metrics to provide real-time observability over queue depth and execution failures.
-6. **n8n-MCP [FUTURE]:** Model Context Protocol server. Exposes n8n workflow states and execution hooks directly to Claude and Antigravity, allowing natural language introspection of n8n.
+1. **Redis [FUTURE]:** Job queue broker for n8n. Separates editor process from execution workers.
+2. **Qdrant [FUTURE]:** Rust-based vector memory layer running locally on Node A.
+3. **`nomic-embed-text` [FUTURE]:** Local embedding model running via Ollama.
+4. **`faster-whisper` [FUTURE]:** Python Flask backend replacing standard OpenAI Whisper.
+5. **Prometheus + Grafana [FUTURE]:** Sentinel monitoring stack deployed on Node B.
 
 ***
 
 > **FOR HUMAN REVIEW:**
-> - Routing escalation threshold (Confidence < 0.75) — APPROVED by Will 2026-05-26. Keep as-is.
-> - Ollama primary node — UNCONFIRMED. Resolve after Tailscale is live and latency is measured. Decision rules documented in Section 1.
+> - minicpm-v Ollama version check — APPROVED 2026-05-26. Run `ollama --version` before Phase 2 deploy to confirm compatibility.
