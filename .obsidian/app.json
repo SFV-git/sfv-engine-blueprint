@@ -1,4 +1,6 @@
 {
   "newFileLocation": "folder",
-  "newFileFolderPath": "99_INBOX"
+  "newFileFolderPath": "99_INBOX",
+  "showUnsupportedFiles": true,
+  "alwaysUpdateLinks": true
 }
