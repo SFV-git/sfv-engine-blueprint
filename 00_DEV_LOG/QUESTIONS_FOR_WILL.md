@@ -34,6 +34,14 @@ LAST_UPDATED: 2026-05-24
 
 ---
 
+## RESOLVED (2026-05-26)
+
+~~SFV_UGC final name~~ → RESOLVED: stays SFV_UGC internally. IG handle may change over time, internal name does not.
+~~Scheduling tool~~ → RESOLVED: Later. Better fit for visual/Instagram-heavy workflow with 8+ accounts.
+~~Tailscale~~ → RESOLVED: approved. Will confirmed yes.
+~~Docker~~ → RESOLVED: confirmed in stack. Install at end of tonight's session (requires restart — don't interrupt current work).
+~~Proposal 007 (Sentinel)~~ → RESOLVED: approved. R&D Terminal architecture is a go.
+
 ## RESOLVED (2026-05-25)
 
 ~~Antigravity role~~ → RESOLVED: local vault executor. ANTIGRAVITY_RULES.md is CANON.
