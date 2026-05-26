@@ -1,0 +1,10 @@
+# Live env files — contain real API keys, never commit
+03_INFRASTRUCTURE/n8n_env.ps1
+
+# Template is committed instead (see n8n_env.template.ps1)
+
+# Obsidian UI state — not vault content
+.obsidian/
+
+# Smart Connections indexes — auto-generated, not vault content
+.smart-env/
