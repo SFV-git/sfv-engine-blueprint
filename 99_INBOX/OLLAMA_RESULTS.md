@@ -497,3 +497,36 @@ By adding these steps, the Paper Trial becomes a **comprehensive stress test** f
 4. Sandbox Investor runs isolated trading experiments in a Docker container with strict budget limits, ensuring no risk to Engine Body or vault.
 
 ---
+## 2026-05-26 00:04
+**TASK:** READ: 00_dev_log/2026-05-25_today_control.md
+
+**RESULT:**
+[[05_AI_LAYER/AI_USE_CASE_PROFILE.md]] — directly references AI use-case hierarchy correction  
+[[03_INFRASTRUCTURE/ENGINE_COMMUNICATION_MODEL.md]] — explicitly mentions building the communication model  
+[[05_AI_LAYER/RATE_LIMITS.md]] — token optimization routing strategy is mentioned in priority order  
+[[04_WORKFLOWS/INGEST.md]] — ingest waste audit targets this file for review  
+[[03_INFRASTRUCTURE/STACK_INTEGRATION_PLAN.md]] — AI stack hierarchy correction impacts this integration plan
+
+---
+## 2026-05-26 00:05
+**TASK:** READ: 05_ai_layer/ai_use_case_profile.md
+
+**RESULT:**
+[[ANTIGRAVITY_RULES.md]] — Explicitly referenced in Tier 1 for system-level rules and canon confirmation.  
+[[RATE_LIMITS.md]] — Connects to Tier 2 Claude's role in blueprint design and routing strategies.  
+[[MULTI_AGENT_WORKFLOW.md]] — Formalizes Perplexity's structured research intake as part of the multi-agent system.  
+[[STACK_INTEGRATION_PLAN.md]] — Links to the routing decision tree and system-wide AI tool integration.  
+[[RD_TERMINAL_ARCHITECTURE.md]] — Connects Ollama's local helper role to R&D Terminal architecture discussions.
+
+---
+## 2026-05-26 00:05
+**TASK:** READ: 03_infrastructure/engine_communication_model.md
+
+**RESULT:**
+[[TASK_QUEUE.md]] — defines the active task list used by the communication model  
+[[QUESTIONS_FOR_WILL.md]] — logs blocked tasks referenced in the model's workflow  
+[[PROPOSALS.md]] — handles Will-approved changes mentioned in status tags  
+[[OLLAMA_RESULTS.md]] — stores outputs from tasks processed by the communication model  
+[[ANTIGRAVITY_RULES.md]] — defines system-level agent rules referenced in assignment tables
+
+---
