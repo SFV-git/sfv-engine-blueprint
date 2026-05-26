@@ -218,7 +218,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 318.5
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -243,6 +243,13 @@
   },
   "active": "0532b528273af76f",
   "lastOpenFiles": [
+    "99_INBOX/HANDOFFS/20260525-TEST-001_HANDOFF.json",
+    "05_AI_LAYER/OLLAMA_PROMPTS/handoff_generator.txt",
+    "05_AI_LAYER/OLLAMA_PROMPTS/handoff_generator.txt.tmp.24424.f9ff388f6095",
+    "05_AI_LAYER/OLLAMA_PROMPTS",
+    "03_INFRASTRUCTURE/n8n_env.ps1",
+    "03_INFRASTRUCTURE/n8n_env.ps1.tmp.24424.f2fb46b0534b",
+    "99_INBOX/DECISION_LOG.md.tmp.20416.18a30f0e9ab7",
     "99_INBOX/ollama_queue_test.py.tmp.20416.c57a63da3f8e",
     "99_INBOX/ollama_queue_test.py.tmp.20416.bb9b2657f024",
     "04_WORKFLOWS/N8N_BLUEPRINT.md",
@@ -264,10 +271,6 @@
     "99_INBOX/DECISION_LOG.md",
     "99_INBOX/QUEUE/20260525-TEST-001_OLLAMA_BRANCH_CLASSIFY.json",
     "99_INBOX/ollama_queue_test.py",
-    "99_INBOX/QUEUE/20260525-001_PERPLEXITY_N8N_INGEST_RESEARCH.json",
-    "99_INBOX/HANDOFFS",
-    "99_INBOX/QUEUE",
-    "99_INBOX/OUTPUTS",
     "03_INFRASTRUCTURE/ENGINE_COMMUNICATION_MODEL.md",
     "05_AI_LAYER/AI_USE_CASE_PROFILE.md",
     "DASHBOARD.md",
@@ -275,9 +278,6 @@
     "99_INBOX/RAW_IDEAS.md",
     "99_INBOX/SCRATCHPAD.md",
     "99_INBOX/SFV Engine.md",
-    "99_INBOX/OLLAMA_STAGING/AI_BRIDGE_BUILD_PLAN.md",
-    "99_INBOX/Untitled.base",
-    "99_INBOX/vault_watcher.py",
-    "99_INBOX/ingest.py"
+    "99_INBOX/OLLAMA_STAGING/AI_BRIDGE_BUILD_PLAN.md"
   ]
 }

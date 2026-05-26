@@ -1,0 +1,16 @@
+{
+  "handoff_id": "20260525-TEST-001-HANDOFF",
+  "task_type": "REASONING",
+  "priority": "NORMAL",
+  "source_task": "C:\\SFV_BLUEPRINT\\99_INBOX\\QUEUE\\20260525-TEST-001_OLLAMA_BRANCH_CLASSIFY.json",
+  "context_budget_tokens": 1500,
+  "summary": "BRANCH: SFV_STUDIO | CONFIDENCE: high | REASON: The filename explicitly includes \"studio_session,\" directly indicating a studio-based media file.",
+  "key_findings": [],
+  "unresolved": [
+    "BRANCH: SFV_STUDIO | CONFIDENCE: high | REASON: The filename explicitly includes \"studio_session,\" directly indicating a studio-based media file."
+  ],
+  "relevant_files": [],
+  "do_not_include": [],
+  "ollama_confidence": "LOW",
+  "escalation_reason": "Confidence below threshold \u2014 escalated to Claude"
+}
