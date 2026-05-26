@@ -1,8 +1,8 @@
 ---
 STATUS: CANON
-VERSION: v0.2.0
+VERSION: v0.3.0
 OWNER: WILL
-LAST_UPDATED: 2026-05-25
+LAST_UPDATED: 2026-05-26
 ---
 
 # SESSION STATE
@@ -11,8 +11,22 @@ Read this first every session. Report in 3 lines. Wait for Will.
 
 ---
 
+## STANDING ORDERS — DO NOT OVERRIDE WITHOUT WILL'S EXPLICIT INSTRUCTION
+1. NO dev work until blueprint is fully planned and Will approves build order
+2. NO deadlines drive decisions — long term correctness over short term delivery
+3. Every feature must be planned to its full scaled form before any code is written
+4. Plan what gets built, by which tool, in what order — FIRST. Always.
+5. Physical node scaling must be accounted for in every architectural decision
+
 ## CURRENT PHASE
-v0.x — Blueprint Foundation (stack operational, ingest built, entering deep blueprint work)
+v0.x — Blueprint Lock (AI stack design + full blueprint planning. Zero dev work until complete.)
+
+## PRIORITY ORDER (locked until Will says otherwise)
+1. AI stack — design and link Claude + Antigravity + Ollama + n8n end to end. Token optimization. Full connection map.
+2. Blueprint development — every workflow, every file, every decision documented before build begins.
+   Includes: ingest (with culling), delivery, AI routing, physical node scaling, multi-computer architecture.
+3. Build order — who builds what, when, in what sequence. Assigned per tool capability.
+4. Dev work — only begins after 1-3 are complete and Will approves.
 
 ## LAST SESSION — 2026-05-25 (MAJOR SESSION)
 
@@ -48,16 +62,32 @@ v0.x — Blueprint Foundation (stack operational, ingest built, entering deep bl
 - Branch name is SFV_STUDIO not "SFV Studio" — all references should use underscore caps
 
 ## WHAT NEEDS ATTENTION NEXT SESSION
-1. Run ingest.py dry run: `python C:\SFV_BLUEPRINT\99_INBOX\ingest.py --branch SFV_STUDIO --tag MORNINGWALK --dry-run`
-2. Test ingest with real files on SanDisk before May 28
-3. Build 08_TESTS/PAPER_TRIAL_RUNS.md (Morning Walk walkthrough — May 28 deadline)
-4. Build 04_WORKFLOWS/DELIVERY.md (Pixieset setup detail)
-5. Will to approve/reject Proposal 007 (Sentinel R&D Terminal architecture)
-6. Approve Tailscale (Proposal 002) — blocks Sentinel Phases 3-5
-7. Approve Docker (blocks Sentinel Phase 6 / trading sandbox)
-8. Scheduling tool decision (Later vs Buffer) — still open
-9. SFV_UGC final handle — still open
-10. git add + commit everything
+1. AI stack connection map — Claude + Antigravity + Ollama + n8n. Full design, token optimization, no code yet.
+2. Ingest blueprint rewrite — culling during import, storage efficiency, full flow design including long term scaling.
+3. Physical node architecture — Engine Body + R&D Terminal + future nodes. How they connect, what runs where.
+4. Build order document — every file, every tool, every sequence. Will approves before anything gets coded.
+5. n8n workflow JSONs have bad UUIDs — DO NOT import until blueprinted and rebuilt correctly.
+6. Claude Code instance — currently paused, waiting. Do not resume until blueprint work is complete.
+7. Docker install + restart — end of a future session when Will is ready.
+
+## SESSION — 2026-05-26
+### Built (dev work — now paused pending blueprint completion):
+- n8n_env.ps1 — API keys filled, Tavily live, Perplexity web-only
+- .gitignore — n8n_env.ps1, .obsidian/, .smart-env/ excluded
+- n8n_env.template.ps1 — safe placeholder for git
+- ollama_queue_test.py — rewritten with Switch node routing + table log format
+- workflow4_output_monitor.json — built but import failing (UUID issue)
+- workflow1_queue_processor.json — built but import failing (UUID issue)
+- QUESTIONS_FOR_WILL.md — 5 decisions resolved: UGC name, Later, Tailscale, Docker, Sentinel
+
+### Decisions locked 2026-05-26:
+- SFV_UGC stays as internal name
+- Scheduling tool: Later
+- Tailscale: approved
+- Docker: approved (install end of session TBD)
+- Proposal 007 Sentinel: approved
+- Ingest routing: Option B fallback (C:\ if D:\ not present)
+- NO MORE DEV WORK until blueprint is complete
 
 ## COMPLETED 2026-05-25 SESSION 2 — COMMUNICATION LAYER
 - 00_DEV_LOG/2026-05-25_TODAY_CONTROL.md — created
