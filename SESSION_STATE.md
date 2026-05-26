@@ -57,7 +57,26 @@ v0.x — Blueprint Foundation (stack operational, ingest built, entering deep bl
 7. Approve Docker (blocks Sentinel Phase 6 / trading sandbox)
 8. Scheduling tool decision (Later vs Buffer) — still open
 9. SFV_UGC final handle — still open
-10. git add + commit everything from tonight
+10. git add + commit everything
+
+## COMPLETED 2026-05-25 SESSION 2 — COMMUNICATION LAYER
+- 00_DEV_LOG/2026-05-25_TODAY_CONTROL.md — created
+- 05_AI_LAYER/AI_USE_CASE_PROFILE.md — created (Antigravity elevated to Tier 1, routing tree defined)
+- 03_INFRASTRUCTURE/ENGINE_COMMUNICATION_MODEL.md — created (full comms model: queue, outputs, handoffs, decision log, routing rules)
+- 99_INBOX/QUEUE/ — created. Perplexity task + Ollama test task queued.
+- 99_INBOX/OUTPUTS/ — created
+- 99_INBOX/HANDOFFS/ — created
+- 99_INBOX/DECISION_LOG.md — created
+- 99_INBOX/ollama_queue_test.py — created (reads JSON from QUEUE → Ollama → writes OUTPUTS → logs DECISION_LOG)
+- 99_INBOX/OUTPUTS/20260525-002_INGEST_WASTE_AUDIT.md — ingest audited. No Claude waste. n8n trigger opps flagged FOR HUMAN REVIEW.
+
+## OLLAMA QUEUE TEST — READY
+  python C:\SFV_BLUEPRINT\99_INBOX\ollama_queue_test.py
+  Test task: QUEUE/20260525-TEST-001_OLLAMA_BRANCH_CLASSIFY.json
+
+## PERPLEXITY TASK — READY (run manually)
+  Task prompt in: QUEUE/20260525-001_PERPLEXITY_N8N_INGEST_RESEARCH.json
+  Save output to: OUTPUTS/20260525-001_PERPLEXITY_N8N_INGEST_RESEARCH.md
 
 ## CRITICAL DEADLINES
 - MAY 28 THURSDAY — Morning Walk, 50+ models, SFV_STUDIO pipeline MUST work

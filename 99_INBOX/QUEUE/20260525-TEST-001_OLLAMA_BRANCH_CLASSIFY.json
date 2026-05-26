@@ -1,0 +1,15 @@
+{
+  "task_id": "20260525-TEST-001",
+  "date": "2026-05-25",
+  "assigned_to": "OLLAMA",
+  "priority": "TEST",
+  "status": "COMPLETE",
+  "topic": "Branch classification test",
+  "prompt": "You are classifying a media file for SFV Engine. The 9 branches are: MYTHOLOGY, SFV_LIVE, SFV_EVENTS, SFV_ATHLETICS, SFV_STUDIO, SFV_UGC, SFV_ARCHIVE, SFV_WORLD, SFV_404. File to classify: 'morningwalk_20260528_portrait_will_studio_session.ARW'. Output exactly: BRANCH: [name] | CONFIDENCE: [high/medium/low] | REASON: [one sentence]",
+  "output_target": "C:\\SFV_BLUEPRINT\\99_INBOX\\OUTPUTS\\20260525-TEST-001_OLLAMA_BRANCH_CLASSIFY.md",
+  "context": "This is a test task. No production media. Prove the queue read \u2192 process \u2192 write loop works.",
+  "review_required_by": "CLAUDE",
+  "canon_approval_required_by": "WILL",
+  "processed_at": "2026-05-25 21:21:03",
+  "output_written_to": "C:\\SFV_BLUEPRINT\\99_INBOX\\OUTPUTS\\20260525-TEST-001_OLLAMA_BRANCH_CLASSIFY.md"
+}

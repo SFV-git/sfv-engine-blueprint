@@ -1,0 +1,22 @@
+{
+  "task_id": "20260525-001",
+  "date": "2026-05-25",
+  "assigned_to": "PERPLEXITY",
+  "priority": "HIGH",
+  "status": "PENDING",
+  "topic": "n8n-first ingest architecture research",
+  "output_target": "C:\\SFV_BLUEPRINT\\99_INBOX\\OUTPUTS\\20260525-001_PERPLEXITY_N8N_INGEST_RESEARCH.md",
+  "prompt": "What parts of a photo and video ingest pipeline can be handled by n8n, local scripts, file watchers, checksum tools, or lightweight local AI instead of Claude or high-cost AI tools? System: Windows 11, Ryzen 9 9900X, RTX 5080, 32GB RAM. Storage: C for vault, D Seagate 5TB for branch media, E SanDisk Extreme 1TB for active ingest. Pipeline ingests from SD cards and USB drives, applies naming conventions, deduplicates via MD5 checksum, routes to branch folders, then triggers AI review for tagging and captioning.",
+  "required_output_sections": [
+    "n8n-suitable tasks",
+    "Python or PowerShell suitable tasks",
+    "tasks requiring AI",
+    "tasks that should NOT use Claude",
+    "recommended SFV ingest architecture",
+    "common failure points",
+    "Windows-specific implementation notes"
+  ],
+  "context": "SFV Engine is a media operating system for a photography and video brand. 9 content branches. Ingest must handle 50+ files per shoot. Token cost minimization is a hard requirement. Claude should only touch tasks requiring genuine reasoning.",
+  "review_required_by": "CLAUDE",
+  "canon_approval_required_by": "WILL"
+}

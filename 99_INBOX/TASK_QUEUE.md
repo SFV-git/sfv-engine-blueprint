@@ -13,3 +13,7 @@ This is a new file added to the SFV vault. Based on its content and purpose, sug
 ---
 READ: 05_ai_layer/ai_use_case_profile.md
 This is a new file added to the SFV vault. Based on its content and purpose, suggest up to 5 wikilinks to other vault files that belong in its CONNECTED FILES section. Format each suggestion as: [[filename]] — one-line reason. Nothing else.
+
+---
+READ: 03_infrastructure/engine_communication_model.md
+This is a new file added to the SFV vault. Based on its content and purpose, suggest up to 5 wikilinks to other vault files that belong in its CONNECTED FILES section. Format each suggestion as: [[filename]] — one-line reason. Nothing else.
