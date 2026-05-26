@@ -17,8 +17,9 @@ from pathlib import Path
 from datetime import datetime
 
 VAULT       = Path(r"C:\SFV_BLUEPRINT")
-QUEUE_DIR   = VAULT / "99_INBOX" / "QUEUE"
-OUTPUT_DIR  = VAULT / "99_INBOX" / "OUTPUTS"
+QUEUE_DIR    = VAULT / "99_INBOX" / "QUEUE"
+OUTPUT_DIR   = VAULT / "99_INBOX" / "OUTPUTS"
+HANDOFFS_DIR = VAULT / "99_INBOX" / "HANDOFFS"
 DECISION_LOG = VAULT / "99_INBOX" / "DECISION_LOG.md"
 OLLAMA_URL  = "http://localhost:11434/api/generate"
 OLLAMA_TAGS = "http://localhost:11434/api/tags"
@@ -157,5 +158,102 @@ def run():
     print(f"Review outputs in: {OUTPUT_DIR}")
     print(f"Decision log: {DECISION_LOG}")
 
+HIGH_CONFIDENCE_KEYWORDS = [
+    "certain", "confident", "clear", "definitive", "branch is", "classification is"
+]
+
+def detect_confidence(response):
+    lower = response.lower()
+    if "unsure" in lower:
+        return "LOW"
+    for kw in HIGH_CONFIDENCE_KEYWORDS:
+        if kw in lower:
+            return "HIGH"
+    return "LOW"
+
+def extract_summary(response):
+    import re
+    sentences = re.split(r'(?<=[.!?])\s+', response.strip())
+    return " ".join(sentences[:3])
+
+def write_handoff(task_id, task_file, response):
+    summary = extract_summary(response)
+    handoff = {
+        "handoff_id": f"{task_id}-HANDOFF",
+        "task_type": "REASONING",
+        "priority": "NORMAL",
+        "source_task": str(task_file),
+        "context_budget_tokens": 1500,
+        "summary": summary,
+        "key_findings": [],
+        "unresolved": [response],
+        "relevant_files": [],
+        "do_not_include": [],
+        "ollama_confidence": "LOW",
+        "escalation_reason": "Confidence below threshold — escalated to Claude"
+    }
+    HANDOFFS_DIR.mkdir(parents=True, exist_ok=True)
+    handoff_path = HANDOFFS_DIR / f"{task_id}_HANDOFF.json"
+    handoff_path.write_text(json.dumps(handoff, indent=2), encoding="utf-8")
+    return handoff_path
+
+def run_with_handoff():
+    print("\nSFV ENGINE — OLLAMA QUEUE BRIDGE (CONFIDENCE ROUTING MODE)")
+    print(f"Queue: {QUEUE_DIR}")
+    print(f"Output: {OUTPUT_DIR}")
+    print(f"Handoffs: {HANDOFFS_DIR}\n")
+
+    if not check_ollama():
+        print("ERROR: Ollama not running. Check: http://localhost:11434")
+        sys.exit(1)
+    print("Ollama: OK")
+
+    model = get_model()
+    print(f"Model: {model}\n")
+
+    tasks = load_pending_tasks()
+    if not tasks:
+        print("No PENDING tasks assigned to OLLAMA found in QUEUE/")
+        print("Add a .json task file with: assigned_to=OLLAMA, status=PENDING")
+        sys.exit(0)
+
+    print(f"Found {len(tasks)} task(s)\n")
+
+    for task_file, task_data in tasks:
+        task_id = task_data.get("task_id", task_file.stem)
+        topic = task_data.get("topic", "unknown")
+        prompt = task_data.get("prompt", "")
+        output_target = task_data.get("output_target", "")
+
+        print(f"  Processing: {task_id} — {topic}")
+        result = ask_ollama(prompt, model)
+
+        confidence = detect_confidence(result)
+        print(f"  Confidence: {confidence}")
+
+        if confidence == "HIGH":
+            out_path = write_output(task_id, topic, result, output_target)
+            update_task_status(task_file, task_data, "COMPLETE", out_path)
+            log_decision(task_id, "PROCESS_AND_WRITE (HIGH CONFIDENCE)", out_path, "COMPLETE")
+            print(f"  Output: {out_path}")
+            print(f"  Status updated: COMPLETE\n")
+        else:
+            handoff_path = write_handoff(task_id, task_file, result)
+            update_task_status(task_file, task_data, "ESCALATED", handoff_path)
+            log_decision(task_id, "ESCALATE_TO_CLAUDE (LOW/MEDIUM CONFIDENCE)", handoff_path, "ESCALATED")
+            print(f"  Handoff written: {handoff_path}")
+            print(f"  Status updated: ESCALATED\n")
+
+    print("Handoff routing complete.")
+    print(f"Outputs: {OUTPUT_DIR}")
+    print(f"Handoffs: {HANDOFFS_DIR}")
+    print(f"Decision log: {DECISION_LOG}")
+
 if __name__ == "__main__":
-    run()
+    print("1. run() — standard mode")
+    print("2. run_with_handoff() — confidence routing mode")
+    choice = input("Select: ")
+    if choice == "2":
+        run_with_handoff()
+    else:
+        run()

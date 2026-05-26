@@ -40,9 +40,19 @@
               "icon": "lucide-file",
               "title": "New tab"
             }
+          },
+          {
+            "id": "0532b528273af76f",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -231,8 +241,10 @@
       "smart-context:Smart Context: List Named Contexts": false
     }
   },
-  "active": "2cbafde7d5fb553c",
+  "active": "0532b528273af76f",
   "lastOpenFiles": [
+    "99_INBOX/ollama_queue_test.py.tmp.20416.c57a63da3f8e",
+    "99_INBOX/ollama_queue_test.py.tmp.20416.bb9b2657f024",
     "04_WORKFLOWS/N8N_BLUEPRINT.md",
     "99_INBOX/CHAT_EXTRACTS.md",
     "00_DEV_LOG/QUESTIONS_FOR_WILL.md",
@@ -265,9 +277,7 @@
     "99_INBOX/SFV Engine.md",
     "99_INBOX/OLLAMA_STAGING/AI_BRIDGE_BUILD_PLAN.md",
     "99_INBOX/Untitled.base",
-    "README.md",
     "99_INBOX/vault_watcher.py",
-    "99_INBOX/ingest.py",
-    "99_INBOX/find_orphans.py"
+    "99_INBOX/ingest.py"
   ]
 }
