@@ -207,7 +207,7 @@ Auto-adds CONNECTED FILES to new .md files + queues Ollama for semantic links.
 - Q001 SFV_404: RESOLVED — own IG account.
 - Q002 Three monitors: RESOLVED — 3 Engine Body, 2 R&D Terminal.
 - Q003 Whisper: RESOLVED — local on R&D Terminal (free).
-- Q004 Canva: PENDING CLARIFICATION.
+- Q004 Canva: REMOVED — not part of stack. Question was an unsourced inference.
 
 ## HOW TO START NEXT SESSION
 1. Claude reads SESSION_STATE.md + DASHBOARD.md + QUESTIONS_FOR_WILL.md

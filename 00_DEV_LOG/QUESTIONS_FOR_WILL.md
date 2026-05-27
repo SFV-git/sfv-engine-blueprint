@@ -9,13 +9,6 @@ LAST_UPDATED: 2026-05-27
 
 ---
 
-## NEEDS CLARIFICATION
-
-9. Canva — original question referenced "Level 6+ accounts" but source of that framing is unclear.
-   Simple version: Do you use Canva or plan to? If yes, for which branches?
-
----
-
 ## WHEN READY
 
 10. WD EasyStore and WD Passport: audit when?
