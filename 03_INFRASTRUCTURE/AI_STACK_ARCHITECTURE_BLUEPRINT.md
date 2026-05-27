@@ -53,20 +53,23 @@ The strict hierarchy is:
 
 ### Node Linking & Networking Configuration
 
-**1. Direct Ethernet Configuration (Primary LAN)**
-Both NICs must be configured with static IPs on an isolated subnet:
-- **Node A:** `192.168.10.1` (Subnet: `255.255.255.0`)
-- **Node B:** `192.168.10.2` (Subnet: `255.255.255.0`)
-Windows Defender Firewall on both machines must allow inbound SMB (445) and application ports (11434, 5678, 9090, 9182) from the `192.168.10.0/24` subnet.
+**1. Direct Ethernet Configuration (ICS — confirmed 2026-05-27)**
+Engine Body shares WiFi internet to R&D Terminal via Windows ICS over direct ethernet cable.
+- **Node A (Engine Body):** `192.168.137.1` (ICS host — assigned automatically by Windows)
+- **Node B (R&D Terminal):** `192.168.137.239` (ICS client — DHCP assigned)
+- **Node A Tailscale:** `100.118.181.52`
+- **Node A home WiFi:** `192.168.2.12`
+Windows Defender Firewall on both machines must allow inbound SMB (445) and application ports (11434, 5678, 9090, 9182) from the `192.168.137.0/24` subnet.
+NOTE: R&D Terminal has no WiFi card. Internet provided via ICS through ethernet. Long-term: add USB WiFi adapter to restore clean architecture.
 
 **2. Tailscale Coexistence Rule (CRITICAL)**
 Tailscale is exclusively for remote access (`100.x.x.x`). Do not advertise `192.168.10.0/24` as a Tailscale subnet route, as Windows gVisor Netstack routing will degrade direct-link throughput. Isolation to the direct IP is mandatory for inter-node production traffic.
 
 **3. Cross-Node File Access (SMB)**
-Node A shares the vault; Node B maps a network drive to `\\192.168.10.1\VaultShare`. This provides native Windows performance (~950 Mbps) for active edits.
+Node A shares the vault as `VaultShare`; Node B maps a network drive to `\\192.168.137.1\VaultShare`. This provides native Windows performance for active edits.
 
 **4. Ollama Cross-Node Inference**
-Set `OLLAMA_HOST=0.0.0.0:11434` as a system environment variable on Node A. Node B directs heavy inference calls to `http://192.168.10.1:11434/api/generate`.
+Set `OLLAMA_HOST=0.0.0.0:11434` as a system environment variable on Node A. Node B directs heavy inference calls to `http://192.168.137.1:11434/api/generate`.
 
 ### Service Endpoint Registry
 
