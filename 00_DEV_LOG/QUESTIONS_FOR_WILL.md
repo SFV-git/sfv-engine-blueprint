@@ -1,36 +1,43 @@
 ---
 STATUS: CANON
-VERSION: v0.1.0
+VERSION: v0.2.0
 OWNER: WILL
-LAST_UPDATED: 2026-05-24
+LAST_UPDATED: 2026-05-27
 ---
 
 # QUESTIONS FOR WILL
 
 ---
 
-## CRITICAL — needed before workflows get built
+## NEEDS CLARIFICATION
 
-1. SFV_UGC final name — still pending. What's the handle?
-
-2. Scheduling tool — Later, Buffer, or other?
-   Must handle 8+ accounts natively.
-
-3. SFV_404 — own IG account confirmed or different platform?
-
-4. Three monitors — confirmed current setup or still planned?
+9. Canva — original question referenced "Level 6+ accounts" but source of that framing is unclear.
+   Simple version: Do you use Canva or plan to? If yes, for which branches?
 
 ---
 
-## IMPORTANT — needed before AI layer gets designed
+## WHEN READY
 
-5. Whisper: local on R&D terminal (free) or API (cost per use)?
+10. WD EasyStore and WD Passport: audit when?
 
-6. Docker: confirmed in the stack or still evaluating?
+11. Porsche SSD file system fix: when?
 
-7. Remote access: Tailscale approved or evaluating alternatives?
+12. Caption voice: define tone per branch when ready.
 
-8. Canva for Level 6+ accounts: approved or evaluating?
+13. Video export specs: define resolution/format per branch.
+
+14. qwen3:14b pull: confirm complete before running daemon.
+    Check with: ollama list (in Windows Terminal)
+
+---
+
+## RESOLVED (2026-05-27)
+
+~~SFV_404 platform~~ → RESOLVED: own IG account confirmed.
+
+~~Three monitors~~ → RESOLVED: 3 monitors on Engine Body, 2 on R&D Terminal. Current confirmed setup.
+
+~~Whisper~~ → RESOLVED: local on R&D Terminal (free). No API cost.
 
 ---
 
@@ -52,16 +59,15 @@ LAST_UPDATED: 2026-05-24
 
 ## WHEN READY
 
-9. WD EasyStore and WD Passport: audit when?
+~~WD EasyStore and WD Passport: audit when?~~ (still open)
 
-10. Porsche SSD file system fix: when?
+~~Porsche SSD file system fix: when?~~ (still open)
 
-11. Caption voice: define tone per branch when ready.
+~~Caption voice: define tone per branch when ready.~~ (still open)
 
-12. Video export specs: define resolution/format per branch.
+~~Video export specs: define resolution/format per branch.~~ (still open)
 
-13. qwen3:14b pull: confirm complete before running daemon.
-    Check with: ollama list (in Windows Terminal)
+~~qwen3:14b pull: confirm complete before running daemon.~~ (still open)
 
 ---
-Last updated: 2026-05-24
+Last updated: 2026-05-27

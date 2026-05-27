@@ -70,6 +70,40 @@ v0.x — Blueprint Lock (AI stack design + full blueprint planning. Zero dev wor
 6. Claude Code instance — currently paused, waiting. Do not resume until blueprint work is complete.
 7. Docker install + restart — end of a future session when Will is ready.
 
+## SESSION — 2026-05-27 (ENGINE BODY + R&D TERMINAL NETWORK)
+
+### Completed this session:
+- OLLAMA_HOST=0.0.0.0:11434 set at Machine scope on Engine Body — Ollama now cross-node accessible
+- Firewall rules created on Engine Body (scoped to 192.168.137.0/24): ports 11434, 5678, 9182
+- File and Printer Sharing enabled on Engine Body (32 rules) and R&D Terminal
+- Network Discovery enabled on Engine Body (52 rules) and R&D Terminal
+- VaultShare fixed — was incorrectly pointing to C:\, corrected to C:\SFV_BLUEPRINT
+- Engine Body ethernet interface changed from Public → Private profile (was blocking SMB)
+- WinRM configured on Engine Body via winrm quickconfig — Node B added to TrustedHosts
+- sfvshare local account created on Engine Body to work around Microsoft account/PIN blocking SMB
+- V: drive mapped on R&D Terminal — \\192.168.137.1\VaultShare → V:\ persistent, confirmed working
+- AI_STACK_ARCHITECTURE_BLUEPRINT.md updated with real IPs (192.168.137.x subnet, confirmed)
+- RD_TERMINAL_ARCHITECTURE.md status updated to CANON (Proposal 007 approved)
+
+### Node networking — CONFIRMED LIVE:
+- Engine Body: 192.168.137.1 (ICS), 192.168.2.12 (WiFi), 100.118.181.52 (Tailscale)
+- R&D Terminal: 192.168.137.239 (ICS client), internet via Engine Body ICS
+- Both nodes fully linked. R&D Terminal has live read/write vault access via V:\
+- Ollama on Engine Body reachable from R&D Terminal at http://192.168.137.1:11434
+- Blueprint Section 1 (networking) physically implemented and confirmed
+
+### R&D Terminal Phase 1 installs — DONE:
+- Ollama ✅ | Tailscale ✅ | Python ✅ | Git ✅ | Syncthing ✅ | windows_exporter ✅
+- ICS internet via Engine Body ethernet ✅ | DNS set to 8.8.8.8 ✅
+- Docker/WSL2 — DEFERRED to Phase 2 (not blocking anything now)
+
+### WHAT NEEDS ATTENTION NEXT SESSION:
+1. Syncthing — configure on both nodes (vault folder sync, bidirectional)
+2. n8n workflows — rebuild with correct UUIDs, import and test
+3. PostgreSQL — migrate n8n off SQLite (🔴 Critical per blueprint before scaling)
+4. OLLAMA_HOST env var — confirm Ollama restart applied the new binding
+5. n8n workflow blueprints still not built — queue processor UUID fix pending
+
 ## SESSION — 2026-05-26 (CONTINUED)
 ### Completed this session:
 - AI_STACK_ARCHITECTURE_BLUEPRINT.md — STATUS: CANON, v1.1, 230 lines. AI stack priority item DONE.
@@ -156,6 +190,24 @@ Auto-adds CONNECTED FILES to new .md files + queues Ollama for semantic links.
 - Model routing: Sonnet default, Opus on request, Gemini Flash for Antigravity
 - Windows Terminal replaces Ghostty
 - All paths via ENVIRONMENT_CONFIG.md — never hardcode
+
+## DECISIONS LOCKED 2026-05-27 (REVIEW SESSION)
+- P001 OpenClaw: DEFERRED — Ollama + Antigravity cover it. Revisit post-v1.0.
+- P003 UPS: DEFERRED — Will confirmed eventual yes. Buy when full stack running.
+- P004 Idle Throttling: APPROVED — R&D Terminal idles by default, Will gives heads-up before shoot.
+- P005 SFV World → are.na: APPROVED — rejected WORLD content queued with tag/description. Will has hard veto per piece.
+- P006 Git Commit Convention: APPROVED — format locked.
+- U001 Cross-branch dedup: APPROVED WITH MODIFICATION — write proxy/pointer .txt noting original location instead of blocking. Will decides routing.
+- U002 Docker doc: FIXED — RD_TERMINAL_ARCHITECTURE.md updated UNCONFIRMED → APPROVED.
+- FHR001 n8n file watcher: APPROVED — negligible load. System idles by default.
+- FHR002 n8n notify: APPROVED.
+- FHR003 Ollama classifier: APPROVED — must tag/describe unknown-branch files for Will to decide after the fact.
+- FHR004 Gemini Flash: ADDED to stack, low priority.
+- FHR005 Google Colab: APPROVED — add to stack.
+- Q001 SFV_404: RESOLVED — own IG account.
+- Q002 Three monitors: RESOLVED — 3 Engine Body, 2 R&D Terminal.
+- Q003 Whisper: RESOLVED — local on R&D Terminal (free).
+- Q004 Canva: PENDING CLARIFICATION.
 
 ## HOW TO START NEXT SESSION
 1. Claude reads SESSION_STATE.md + DASHBOARD.md + QUESTIONS_FOR_WILL.md

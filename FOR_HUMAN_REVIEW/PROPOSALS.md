@@ -1,8 +1,8 @@
 ---
 STATUS: CANON
-VERSION: v0.1.0
+VERSION: v0.2.0
 OWNER: WILL
-LAST_UPDATED: 2026-05-24
+LAST_UPDATED: 2026-05-27
 ---
 
 # FOR HUMAN REVIEW — PROPOSALS
@@ -14,107 +14,77 @@ Nothing here gets built until Will explicitly approves.
 
 ## OPEN PROPOSALS
 
-### PROPOSAL 001 — OpenClaw as R&D Terminal Agent
-Date: 2026-05-24
-Proposed by: Claude
-
-OpenClaw is an open source autonomous AI agent (250k+ GitHub stars).
-Runs locally on R&D terminal. 100+ built-in skills.
-Handles file operations, research, proposal generation continuously.
-Bring your own API key — no subscription needed.
-
-Potential role: R&D terminal's autonomous layer.
-Would handle: routine research, trend monitoring, blueprint audits.
-Risk: ecosystem still experimental.
-
-Decision needed: YES / NO / RESEARCH MORE
-
----
-
-### PROPOSAL 002 — Tailscale for Node Connection
-Date: 2026-05-24
-Proposed by: Claude
-
-Tailscale creates a private encrypted network between Engine and R&D terminal.
-Also enables remote access from anywhere (school, location shoots).
-Free tier available. Simple setup.
-
-Decision needed: APPROVE / EVALUATE ALTERNATIVES
-
----
-
-### PROPOSAL 003 — UPS for Engine Protection
-Date: 2026-05-24
-Proposed by: Claude
-
-Recommendation: APC Back-UPS 1500VA (~$150 CAD)
-Protects overnight runs from power interruption.
-Prevents corrupt files during ingest.
-Relevant given electricity constraint at lab location.
-
-Decision needed: YES / NOT YET / DIFFERENT SPEC
-
----
-
-### PROPOSAL 004 — R&D Terminal Idle Throttling
-Date: 2026-05-24
-Proposed by: Claude
-
-R&D terminal should reduce CPU/GPU load when no active tasks.
-Ollama has idle mode. Estimated 40-60% power reduction during idle.
-Relevant given electricity cost concern at mall studio.
-
-Decision needed: YES / CONFIGURE DIFFERENTLY
-
----
-
-### PROPOSAL 005 — SFV World as are.na Output Channel
-Date: 2026-05-24
-Proposed by: Claude
-
-Unused/overflow content from SFV_WORLD automatically queued for are.na.
-Simple rule: Will rejects from WORLD → goes to are.na pipeline folder.
-are.na upload: manual for now, API integration possible later.
-
-Decision needed: YES / DIFFERENT LOGIC
-
----
-
-### PROPOSAL 006 — Git Commit Convention
-Date: 2026-05-24
-Proposed by: Claude
-
-Proposed commit message format:
-```
-feat: [new thing added]
-fix: [something corrected]
-docs: [blueprint updated]
-vault: auto-commit [timestamp]
-status: [file] moved from [old status] to [new status]
-```
-
-Decision needed: APPROVE / MODIFY FORMAT
-
----
-
-### PROPOSAL 007 — Evolved R&D Terminal (Sentinel & Sandbox)
-Date: 2026-05-25
-Proposed by: Antigravity
-
-Evolve the R&D Terminal from a local model box into a dashboard, client review gateway, and isolated sandbox environment.
-Would handle:
-- Visualizing logs and telemetry from both machines.
-- Running a secure reverse proxy/caching server for client review (reels/photos) so Engine Body is isolated from the internet.
-- Running a Docker sandbox for algorithmic trading (Polymarket, stocks) with a small budget ($200-$300).
-
-Details: C:\SFV_BLUEPRINT\05_AI_LAYER\RD_TERMINAL_ARCHITECTURE.md
-
-Decision needed: YES / NO / REVISE SPEC
+*None currently open.*
 
 ---
 
 ## APPROVED PROPOSALS
-[Moved here once Will approves — becomes CANON in relevant file]
+
+### PROPOSAL 002 — Tailscale for Node Connection
+Date: 2026-05-24 | Approved: 2026-05-26
+Tailscale private network between Engine Body and R&D Terminal.
+Remote access from school, location shoots.
+→ APPROVED by Will 2026-05-26. Installed on both nodes.
+
+---
+
+### PROPOSAL 004 — R&D Terminal Idle Throttling
+Date: 2026-05-24 | Approved: 2026-05-27
+R&D Terminal idles by default. Will gives heads-up before a shoot.
+Ollama idle mode active. ~40-60% power reduction when no active tasks.
+n8n file watcher is negligible load — approved to run passively.
+→ APPROVED by Will 2026-05-27.
+
+---
+
+### PROPOSAL 005 — SFV World as are.na Output Channel
+Date: 2026-05-24 | Approved: 2026-05-27
+Will-rejected content from SFV_WORLD → auto-queued to are.na pipeline folder.
+Must be tagged/described so Will can decide final destination after the fact.
+Manual upload to are.na for now. API integration later.
+Will retains hard veto on any individual piece.
+→ APPROVED by Will 2026-05-27.
+
+---
+
+### PROPOSAL 006 — Git Commit Convention
+Date: 2026-05-24 | Approved: 2026-05-27
+Commit format locked:
+  feat: [new thing added]
+  fix: [something corrected]
+  docs: [blueprint updated]
+  vault: auto-commit [timestamp]
+  status: [file] moved from [old status] to [new status]
+→ APPROVED by Will 2026-05-27.
+
+---
+
+### PROPOSAL 007 — Evolved R&D Terminal (Sentinel & Sandbox)
+Date: 2026-05-25 | Approved: 2026-05-26
+Full Sentinel architecture approved. Four roles: telemetry dashboard,
+client review gateway, workflow optimization (Ollama), trading sandbox (Docker).
+Details: 05_AI_LAYER/RD_TERMINAL_ARCHITECTURE.md
+→ APPROVED by Will 2026-05-26.
+
+---
+
+## DEFERRED PROPOSALS
+
+### PROPOSAL 001 — OpenClaw as R&D Terminal Agent
+Date: 2026-05-24 | Deferred: 2026-05-27
+Decided by: Claude (Will delegated)
+OpenClaw deferred — no gap in current stack.
+Ollama daemon + Antigravity already cover local batch + agentic orchestration.
+If gaps appear post-v1.0, evaluate CrewAI or Open Interpreter as more mature alternatives.
+→ DEFERRED — revisit post-v1.0.
+
+---
+
+### PROPOSAL 003 — UPS for Engine Protection
+Date: 2026-05-24 | Deferred: 2026-05-27
+APC Back-UPS 1500VA (~$150 CAD). Will confirmed eventual YES — not yet.
+Purchase when full stack is running and lab setup is finalized.
+→ DEFERRED — confirmed planned, timing TBD.
 
 ---
 

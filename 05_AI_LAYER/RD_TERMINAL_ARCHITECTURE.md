@@ -99,7 +99,7 @@ Client browser → R&D Terminal (reverse proxy + cache)
 - Tailscale (Proposal 002) — required
 - nginx or Caddy as reverse proxy (lightweight)
 - Simple React or Next.js client review app
-- Docker recommended for isolation (Proposal — Docker status: UNCONFIRMED)
+- Docker required for isolation (Proposal — Docker status: APPROVED 2026-05-26)
 
 ---
 
@@ -164,7 +164,7 @@ Docker container (R&D Terminal only):
 - Recovery: rebuild container from scratch
 
 ### Dependencies
-- Docker (Proposal — status: UNCONFIRMED — decision needed)
+- Docker (APPROVED 2026-05-26)
 - Polymarket API access
 - Alpaca API access (free tier available)
 - Set budget before activating — Will controls this number
