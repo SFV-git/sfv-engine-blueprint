@@ -19,8 +19,7 @@ LAST_UPDATED: 2026-05-27
 
 13. Video export specs: define resolution/format per branch.
 
-14. qwen3:14b pull: confirm complete before running daemon.
-    Check with: ollama list (in Windows Terminal)
+~~14. qwen3:14b pull: confirm complete before running daemon.~~ → RESOLVED: confirmed in ollama list. 9.3 GB. Daemon clear to use it.
 
 ---
 
