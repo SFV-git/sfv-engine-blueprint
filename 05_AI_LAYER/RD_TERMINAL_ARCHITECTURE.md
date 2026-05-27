@@ -1,16 +1,12 @@
 ---
-STATUS: FOR HUMAN REVIEW
-VERSION: v0.1.0
+STATUS: CANON
+VERSION: v0.2.0
 OWNER: WILL
-LAST_UPDATED: 2026-05-25
-PROPOSED_BY: Antigravity
-PROPOSAL_REF: FOR_HUMAN_REVIEW/PROPOSALS.md#007
+LAST_UPDATED: 2026-05-27
+APPROVED: 2026-05-26 — Proposal 007 confirmed by Will
 ---
 
 # R&D TERMINAL ARCHITECTURE — THE SENTINEL
-
-> PROPOSAL — not CANON until Will approves.
-> Decision needed in PROPOSALS.md: YES / NO / REVISE SPEC
 
 ## CONCEPT
 Evolve the R&D Terminal from a local model serving box into a full Sentinel node.
