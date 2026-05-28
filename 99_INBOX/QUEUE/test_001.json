@@ -1,0 +1,4 @@
+{
+  "model": "qwen3:14b",
+  "prompt": "Reply in exactly one sentence: confirm you are Ollama running qwen3:14b and the SFV Queue Processor is working."
+}
