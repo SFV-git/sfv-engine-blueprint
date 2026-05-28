@@ -98,15 +98,23 @@ v0.x — Blueprint Lock (AI stack design + full blueprint planning. Zero dev wor
 - Docker/WSL2 — DEFERRED to Phase 2 (not blocking anything now)
 
 ### WHAT NEEDS ATTENTION NEXT SESSION:
-1. n8n workflows — rebuild with correct UUIDs, import and test
+1. n8n workflows — import workflow JSONs into n8n UI and test with a live queue task
 2. PostgreSQL — migrate n8n off SQLite (🔴 Critical per blueprint before scaling)
-3. n8n workflow blueprints still not built — queue processor UUID fix pending
+3. Delete SYNC_TEST.txt from vault root
+4. Git commit — all session changes uncommitted
 
 ### COMPLETED THIS SESSION (2026-05-28):
 - Ollama cross-node confirmed live — 192.168.137.239 hitting Engine Body at 0.0.0.0:11434 ✅
 - qwen3:14b confirmed in ollama list — daemon clear to use it ✅
 - Syncthing installed on both nodes (was missing from Engine Body) ✅
 - Syncthing configured — SFV_BLUEPRINT folder bidirectional sync, both nodes live ✅
+- Claude Code installed on Engine Body — dangerously-skip-permissions pattern established ✅
+- n8n workflow JSONs rebuilt by Claude Code with correct structure:
+  - 03_INFRASTRUCTURE/n8n_workflows/workflow1_queue_processor.json ✅
+  - 03_INFRASTRUCTURE/n8n_workflows/workflow4_output_monitor.json ✅
+  - Routing logic: OLLAMA / RESEARCH / HANDOFF per task_type
+  - PENDING status filter — skips already-processed tasks
+- SYNC_TEST.txt in vault root — needs manual delete
 
 ## SESSION — 2026-05-26 (CONTINUED)
 ### Completed this session:
