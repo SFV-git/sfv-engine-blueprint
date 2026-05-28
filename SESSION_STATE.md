@@ -98,11 +98,15 @@ v0.x — Blueprint Lock (AI stack design + full blueprint planning. Zero dev wor
 - Docker/WSL2 — DEFERRED to Phase 2 (not blocking anything now)
 
 ### WHAT NEEDS ATTENTION NEXT SESSION:
-1. Syncthing — configure on both nodes (vault folder sync, bidirectional)
-2. n8n workflows — rebuild with correct UUIDs, import and test
-3. PostgreSQL — migrate n8n off SQLite (🔴 Critical per blueprint before scaling)
-4. OLLAMA_HOST env var — confirm Ollama restart applied the new binding
-5. n8n workflow blueprints still not built — queue processor UUID fix pending
+1. n8n workflows — rebuild with correct UUIDs, import and test
+2. PostgreSQL — migrate n8n off SQLite (🔴 Critical per blueprint before scaling)
+3. n8n workflow blueprints still not built — queue processor UUID fix pending
+
+### COMPLETED THIS SESSION (2026-05-28):
+- Ollama cross-node confirmed live — 192.168.137.239 hitting Engine Body at 0.0.0.0:11434 ✅
+- qwen3:14b confirmed in ollama list — daemon clear to use it ✅
+- Syncthing installed on both nodes (was missing from Engine Body) ✅
+- Syncthing configured — SFV_BLUEPRINT folder bidirectional sync, both nodes live ✅
 
 ## SESSION — 2026-05-26 (CONTINUED)
 ### Completed this session:

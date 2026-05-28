@@ -1,5 +1,5 @@
 # This directory is a Syncthing folder marker.
 # Do not delete.
 
-folderID: z3xwl-rognv
-created: 2026-05-27T20:34:57-03:00
+folderID: nmdvf-xmbct
+created: 2026-05-28T02:28:20-03:00
