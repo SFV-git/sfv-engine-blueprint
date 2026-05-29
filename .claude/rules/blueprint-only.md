@@ -20,3 +20,11 @@ Do:
 - Map every path and workflow
 - Tag everything correctly
 - Propose improvements to FOR_HUMAN_REVIEW/
+
+## CONNECTED FILES
+- [[PROPOSALS|Proposals for Human Review]]
+- [[DECISIONS|Decisions]]
+- [[NAMING_CONVENTIONS|Naming Conventions]]
+- [[SEMANTIC_LINKS_RUN|Semantic Links Run]]
+- [[BUILD_READINESS_CHECKLIST|Build Readiness Checklist]]
+- [[N8N_BLUEPRINT|N8N Blueprint]]

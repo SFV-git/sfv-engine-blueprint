@@ -14,3 +14,13 @@ LAST_UPDATED: 2026-05-24
 - Always update LAST_UPDATED when modifying a file
 - Always add an entry to CHANGELOG.md after modifying files
 - Always commit to Git after significant changes
+
+## CONNECTED FILES
+- [[RULES|Canon Rules]]
+- [[CHANGELOG|Change Log]]
+- [[VERSION_LOG|Version Log]]
+- [[ENVIRONMENT_CONFIG|Environment Configuration]]
+- [[DEV_LOG|Development Log]]
+- [[SEMANTIC_LINKS_RUN|Semantic Links Run]]
+- [[PENDING_REVIEW|Pending Review]]
+- [[MASTER_CONTEXT|Master Context]]

@@ -19,3 +19,10 @@ Replace this line with your content.
 - Related: [[MASTER_CONTEXT]]
 - Branch: [[]]
 - Workflow: [[]]
+
+## CONNECTED FILES
+- [[MASTER_CONTEXT|Master Context]]
+- [[DECISIONS|Decisions Log]]
+- [[BRANCH_OUTPUTS|Branch Outputs]]
+- [[INGEST|Ingest Workflow]]
+- [[CONTENT_BANKS|Content Banks]]

@@ -18,3 +18,12 @@ Before touching ANY file, read the STATUS tag.
 
 If a file has no STATUS tag, stop and report it.
 Never create files without a status tag.
+
+## CONNECTED FILES
+- [[DECISIONS|Decisions]]
+- [[PENDING_REVIEW|Pending Review]]
+- [[UNCONFIRMED|Unconfirmed Files]]
+- [[REJECTED_CHANGED|Rejected Changes]]
+- [[RULES|Canon Rules]]
+- [[ORPHANS|Orphaned Files]]
+- [[QUESTIONS_FOR_WILL|Questions for Will]]

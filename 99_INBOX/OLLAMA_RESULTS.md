@@ -557,3 +557,13 @@ Wait, the user said up to 5. Let me check again. The file references n8n, Antigr
 [[03_infrastructure/networking_configuration.md]] — Outlines direct Ethernet, SMB, and Tailscale networking rules for node communication.
 
 ---
+
+## CONNECTED FILES
+- [[INGEST|Ingest Workflow]]
+- [[PAPER_TRIAL_RUNS|Paper Trial Runs]]
+- [[BRANCH_OUTPUTS|Branch Outputs]]
+- [[OLLAMA_SETUP|Ollama Setup Guide]]
+- [[STORAGE_ARCHITECTURE|Storage Architecture]]
+- [[QUALITY_CONTROL|Quality Control]]
+- [[ENVIRONMENT_CONFIG|Environment Configuration]]
+- [[MYTHOLOGY|Mythology Branch]]
