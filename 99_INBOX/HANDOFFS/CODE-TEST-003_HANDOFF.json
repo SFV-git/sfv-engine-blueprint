@@ -1,0 +1,16 @@
+{
+  "handoff_id": "CODE-TEST-003-HANDOFF",
+  "task_type": "REASONING",
+  "priority": "NORMAL",
+  "source_task": "C:/SFV_BLUEPRINT/99_INBOX/QUEUE/TEST_CODE_003.json",
+  "context_budget_tokens": 1500,
+  "summary": "```python\ndef greet(): return \"hello\"\n```",
+  "key_findings": [],
+  "unresolved": [
+    "```python\ndef greet(): return \"hello\"\n```"
+  ],
+  "relevant_files": [],
+  "do_not_include": [],
+  "ollama_confidence": "LOW",
+  "escalation_reason": "ollama_confidence=LOW â€” escalated to Claude"
+}

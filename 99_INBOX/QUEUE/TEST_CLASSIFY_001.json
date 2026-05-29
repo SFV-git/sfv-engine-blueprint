@@ -1,0 +1,9 @@
+{
+  "task_id": "CLASSIFY-TEST-001",
+  "task_type": "CLASSIFY",
+  "status": "ESCALATED",
+  "prompt": "Reply with one word: CONFIRMED",
+  "created": "2026-05-29",
+  "processed_at": "2026-05-29 07:20:45",
+  "output_written_to": "C:/SFV_BLUEPRINT/99_INBOX/HANDOFFS/CLASSIFY-TEST-001_HANDOFF.json"
+}

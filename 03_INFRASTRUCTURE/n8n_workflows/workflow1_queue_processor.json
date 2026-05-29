@@ -102,7 +102,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [900, 420],
-      "notes": "RESEARCH → marks DEFERRED (Workflow 3 not built yet). BLUEPRINT/CODE → writes HANDOFF JSON for Claude. Both paths update task status and log to DECISION_LOG."
+      "notes": "RESEARCH → writes HANDOFF JSON for Claude. Updates task status to ESCALATED and logs to DECISION_LOG."
     }
   ],
   "pinData": {},
@@ -143,16 +143,16 @@
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "00000000-0000-0000-0000-000000000001",
+  "versionId": "00000000-0000-0000-0000-000000000002",
   "meta": {
     "instanceId": "sfv-engine-local",
     "_sfv_notes": [
       "Import: n8n Settings → Workflows → Import from file",
-      "Pre-requisites: run n8n_env.ps1 first — sets OLLAMA_URL, OLLAMA_MODEL, VAULT_PATH, NODE_FUNCTION_ALLOW_BUILTIN=fs,path",
-      "HTTP Request body: if 'specifyBody: json' fails on your n8n version, open Call Ollama node and switch Body to 'Raw/JSON', paste: {\"model\":\"qwen3:14b\",\"prompt\":\"{{$json.prompt}}\",\"stream\":false}",
+      "Pre-requisites: run n8n_env.ps1 first — sets OLLAMA_URL, VAULT_PATH, NODE_FUNCTION_ALLOW_BUILTIN=fs,path",
+      "Model routing: CODE→qwen2.5-coder:7b, VISION→minicpm-v:8b, CLASSIFY/SUMMARIZE/default→qwen3:14b, RESEARCH→HANDOFF",
       "Confidence routing: HIGH → OUTPUTS/[task_id]_RESULT.md | LOW → HANDOFFS/[task_id]_HANDOFF.json",
-      "RESEARCH tasks: marked DEFERRED until Workflow 3 (Tavily) is built",
-      "This workflow mirrors the routing logic in 99_INBOX/ollama_queue_test.py — both must stay in sync"
+      "RESEARCH tasks: write HANDOFF directly for Claude (no Perplexity/Tavily integration active)",
+      "keep_alive=10m on all Ollama calls — pairs with Workflow 2 pre-warm cron"
     ]
   },
   "id": "7a8b9c0d-1e2f-4a3b-4c5d-6e7f8a9b0c1d",
