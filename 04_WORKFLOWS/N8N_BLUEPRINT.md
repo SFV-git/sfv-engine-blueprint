@@ -331,3 +331,4 @@ n8n JSON schema changes between versions. Import failures are opaque. Build manu
 - [[MULTI_AGENT_WORKFLOW|Multi-Agent Workflow Design]]
 - [[INTEGRATIONS|Integrations]]
 - [[EXTERNAL_LINKS|External Links]]
+- [[AI_BRIDGE_BUILD_PLAN|AI Bridge Build Plan]]

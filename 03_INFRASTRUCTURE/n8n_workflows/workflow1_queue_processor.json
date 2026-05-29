@@ -17,14 +17,14 @@
     },
     {
       "parameters": {
-        "jsCode": "const fs = require('fs');\nconst path = require('path');\n\nconst raw = $input.first().json;\nconst filePath = (raw.path || '').replace(/\\\\/g, '/');\n\n// Only process .json files\nif (!filePath.endsWith('.json')) return [];\n\nlet task;\ntry {\n  task = JSON.parse(fs.readFileSync(filePath, 'utf8'));\n} catch(e) {\n  return [];\n}\n\n// Skip non-PENDING tasks (e.g. already processed on restart)\nif ((task.status || '').toUpperCase() !== 'PENDING') return [];\n\nconst OLLAMA_TYPES  = ['CLASSIFY', 'SUMMARIZE', 'COMPRESS'];\nconst HANDOFF_TYPES = ['BLUEPRINT', 'CODE'];\nconst task_type = (task.task_type || 'CLASSIFY').toUpperCase();\n\nlet route;\nif (OLLAMA_TYPES.includes(task_type))  route = 'OLLAMA';\nelse if (task_type === 'RESEARCH')     route = 'RESEARCH';\nelse if (HANDOFF_TYPES.includes(task_type)) route = 'HANDOFF';\nelse route = 'OLLAMA';\n\nconst vault = 'C:/SFV_BLUEPRINT';\n\nreturn [{\n  json: {\n    task_id:      task.task_id || path.basename(filePath, '.json'),\n    topic:        task.topic || 'unknown',\n    task_type,\n    prompt:       task.prompt || '',\n    priority:     task.priority || 'NORMAL',\n    output_target: (task.output_target || '').replace(/\\\\/g, '/'),\n    file_path:    filePath,\n    route,\n    vault\n  }\n}];"
+        "jsCode": "const fs = require('fs');\nconst path = require('path');\n\nconst raw = $input.first().json;\nconst filePath = (raw.path || '').replace(/\\\\/g, '/');\n\n// Only process .json files\nif (!filePath.endsWith('.json')) return [];\n\nlet task;\ntry {\n  task = JSON.parse(fs.readFileSync(filePath, 'utf8'));\n} catch(e) {\n  return [];\n}\n\n// Skip non-PENDING tasks (e.g. already processed on restart)\nif ((task.status || '').toUpperCase() !== 'PENDING') return [];\n\nconst task_type = (task.task_type || 'CLASSIFY').toUpperCase();\n\nlet route, model;\nif (task_type === 'RESEARCH') {\n  route = 'RESEARCH';\n  model = null;\n} else if (task_type === 'CODE') {\n  route = 'OLLAMA';\n  model = 'qwen2.5-coder:7b';\n} else if (task_type === 'VISION') {\n  route = 'OLLAMA';\n  model = 'minicpm-v:8b';\n} else {\n  // CLASSIFY, SUMMARIZE, COMPRESS, BLUEPRINT, and anything else\n  route = 'OLLAMA';\n  model = 'qwen3:14b';\n}\n\nconst vault = 'C:/SFV_BLUEPRINT';\n\nreturn [{\n  json: {\n    task_id:      task.task_id || path.basename(filePath, '.json'),\n    topic:        task.topic || 'unknown',\n    task_type,\n    prompt:       task.prompt || '',\n    priority:     task.priority || 'NORMAL',\n    output_target: (task.output_target || '').replace(/\\\\/g, '/'),\n    file_path:    filePath,\n    route,\n    model,\n    vault\n  }\n}];"
       },
       "id": "2b3c4d5e-6f7a-4b8c-9d0e-1f2a3b4c5d6e",
       "name": "Read Task",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [460, 300],
-      "notes": "Reads task JSON, determines route (OLLAMA / RESEARCH / HANDOFF). Returns [] for non-PENDING tasks — stops execution cleanly."
+      "notes": "Reads task JSON, sets route and model. CODE→qwen2.5-coder:7b, VISION→minicpm-v:8b, RESEARCH→HANDOFF, all others→qwen3:14b. Returns [] for non-PENDING tasks."
     },
     {
       "parameters": {
@@ -54,7 +54,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [680, 300],
-      "notes": "true (output 0) → Ollama path. false (output 1) → Non-Ollama Handler (RESEARCH=DEFERRED, BLUEPRINT/CODE=HANDOFF)."
+      "notes": "true (output 0) → Ollama (CODE=qwen2.5-coder:7b, VISION=minicpm-v:8b, default=qwen3:14b). false (output 1) → Non-Ollama Handler (RESEARCH→HANDOFF)."
     },
     {
       "parameters": {
@@ -65,7 +65,7 @@
         "sendBody": true,
         "contentType": "json",
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ model: $json.model || 'qwen3:14b', prompt: $json.prompt, stream: false }) }}",
+        "jsonBody": "={{ JSON.stringify({ model: $json.model || 'qwen3:14b', prompt: $json.prompt, stream: false, keep_alive: '10m' }) }}",
         "options": {
           "timeout": 300000,
           "response": {
@@ -80,7 +80,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [900, 180],
-      "notes": "POSTs to Ollama. Requires OLLAMA_URL and OLLAMA_MODEL env vars (set by n8n_env.ps1). Timeout 5 min for large prompts."
+      "notes": "POSTs to Ollama with model from task (CODE=qwen2.5-coder:7b, VISION=minicpm-v:8b, default=qwen3:14b). keep_alive=10m. Timeout 5 min."
     },
     {
       "parameters": {
@@ -95,7 +95,7 @@
     },
     {
       "parameters": {
-        "jsCode": "const fs = require('fs');\n\nconst task = $input.first().json;\nconst vault = task.vault;\nconst ts = new Date().toISOString().replace('T', ' ').slice(0, 19);\n\nlet status, outPath, action, handler;\n\nif (task.route === 'RESEARCH') {\n  // Tavily path — not built yet. Mark DEFERRED, log it.\n  outPath = task.file_path;\n  status  = 'DEFERRED';\n  action  = 'DEFERRED_TO_N8N';\n  handler = 'N8N_TAVILY';\n\n  const taskData = JSON.parse(fs.readFileSync(task.file_path, 'utf8'));\n  taskData.status = 'DEFERRED';\n  taskData.processed_at = ts;\n  taskData.note = 'Awaiting Workflow 3 (Tavily) build — trigger manually when ready';\n  fs.writeFileSync(task.file_path, JSON.stringify(taskData, null, 2), 'utf8');\n\n} else {\n  // BLUEPRINT or CODE — skip Ollama, write handoff directly for Claude\n  const handoff = {\n    handoff_id:            task.task_id + '-HANDOFF',\n    task_type:             task.task_type,\n    priority:              task.priority,\n    source_task:           task.file_path,\n    context_budget_tokens: 1500,\n    summary:               'task_type=' + task.task_type + ' requires Claude — direct handoff, Ollama not consulted.',\n    key_findings:          [],\n    unresolved:            [task.prompt],\n    relevant_files:        [],\n    do_not_include:        [],\n    ollama_confidence:     'LOW',\n    escalation_reason:     'task_type=' + task.task_type + ' requires Claude — direct handoff'\n  };\n  const handoffsDir = vault + '/99_INBOX/HANDOFFS';\n  fs.mkdirSync(handoffsDir, { recursive: true });\n  outPath = handoffsDir + '/' + task.task_id + '_HANDOFF.json';\n  fs.writeFileSync(outPath, JSON.stringify(handoff, null, 2), 'utf8');\n\n  const taskData = JSON.parse(fs.readFileSync(task.file_path, 'utf8'));\n  taskData.status = 'ESCALATED';\n  taskData.processed_at = ts;\n  taskData.output_written_to = outPath;\n  fs.writeFileSync(task.file_path, JSON.stringify(taskData, null, 2), 'utf8');\n\n  status  = 'ESCALATED';\n  action  = 'DIRECT_HANDOFF (' + task.task_type + ')';\n  handler = 'CLAUDE';\n}\n\n// Append table row to DECISION_LOG.md\nconst row = `| ${ts} | ${task.task_id} | ${action} | ${handler} | ${status} | ${outPath.replace(vault, '%VAULT%')} |\\n`;\nfs.appendFileSync(vault + '/99_INBOX/DECISION_LOG.md', row, 'utf8');\n\nreturn [{ json: { task_id: task.task_id, route: task.route, status, output: outPath } }];"
+        "jsCode": "const fs = require('fs');\n\nconst task = $input.first().json;\nconst vault = task.vault;\nconst ts = new Date().toISOString().replace('T', ' ').slice(0, 19);\n\n// RESEARCH tasks → write HANDOFF for Claude (no Perplexity integration)\nconst handoff = {\n  handoff_id:            task.task_id + '-HANDOFF',\n  task_type:             'RESEARCH',\n  priority:              task.priority,\n  source_task:           task.file_path,\n  context_budget_tokens: 1500,\n  summary:               'task_type=RESEARCH requires deep research — direct handoff to Claude.',\n  key_findings:          [],\n  unresolved:            [task.prompt],\n  relevant_files:        [],\n  do_not_include:        [],\n  ollama_confidence:     'N/A',\n  escalation_reason:     'task_type=RESEARCH — direct handoff, no Perplexity integration active'\n};\n\nconst handoffsDir = vault + '/99_INBOX/HANDOFFS';\nfs.mkdirSync(handoffsDir, { recursive: true });\nconst outPath = handoffsDir + '/' + task.task_id + '_HANDOFF.json';\nfs.writeFileSync(outPath, JSON.stringify(handoff, null, 2), 'utf8');\n\nconst taskData = JSON.parse(fs.readFileSync(task.file_path, 'utf8'));\ntaskData.status = 'ESCALATED';\ntaskData.processed_at = ts;\ntaskData.output_written_to = outPath;\nfs.writeFileSync(task.file_path, JSON.stringify(taskData, null, 2), 'utf8');\n\nconst status = 'ESCALATED';\nconst action = 'RESEARCH_HANDOFF';\nconst handler = 'CLAUDE';\n\nconst row = `| ${ts} | ${task.task_id} | ${action} | ${handler} | ${status} | ${outPath.replace(vault, '%VAULT%')} |\\n`;\nfs.appendFileSync(vault + '/99_INBOX/DECISION_LOG.md', row, 'utf8');\n\nreturn [{ json: { task_id: task.task_id, route: task.route, status, output: outPath } }];"
       },
       "id": "6f7a8b9c-0d1e-4f2a-3b4c-5d6e7f8a9b0c",
       "name": "Non-Ollama Handler",

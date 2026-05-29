@@ -96,3 +96,6 @@ Model: qwen3:14b  |  Files: 11
 - [[SEMANTIC_LINKS_WORKER_C|Semantic Links Worker C]]
 - [[SEMANTIC_LINKS_WORKER_E|Semantic Links Worker E]]
 - [[SEMANTIC_LINKS_WORKER_F|Semantic Links Worker F]]
+- [[SEMANTIC_LINKS_PYTHON_G|Semantic Links Python G]]
+- [[SEMANTIC_LINKS_PYTHON_H|Semantic Links Python H]]
+- [[SEMANTIC_LINKS_PYTHON_retry|Semantic Links Python Retry]]
