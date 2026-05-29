@@ -1,0 +1,8 @@
+{
+  "task_id": "CC-TEST-002",
+  "task_type": "OLLAMA",
+  "status": "PENDING",
+  "prompt": "Reply with exactly: WORKFLOW1 CONFIRMED",
+  "model": "qwen3:14b",
+  "created": "2026-05-29"
+}
