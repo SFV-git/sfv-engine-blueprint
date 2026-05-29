@@ -25,5 +25,10 @@ See DECISIONS.md for full list.
 See QUESTIONS_FOR_WILL.md and UNCONFIRMED.md.
 
 ## CONNECTED FILES
-- [[SESSION_STATE|Session State]]
-- [[DASHBOARD|Dashboard]]
+- [[DECISIONS|Decisions Made]]
+- [[QUESTIONS_FOR_WILL|Questions for Will]]
+- [[UNCONFIRMED|Unconfirmed Items]]
+- [[BRANCH_OUTPUTS|Branch Outputs]]
+- [[STORAGE_ARCHITECTURE|Storage Architecture]]
+- [[NAMING_CONVENTIONS|Naming Conventions]]
+- [[HARDWARE_CONTEXT|Hardware Context]]

@@ -59,13 +59,13 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "={{ $env[\"OLLAMA_URL\"] }}/api/generate",
+        "url": "http://127.0.0.1:11434/api/generate",
         "sendHeaders": false,
         "sendQuery": false,
         "sendBody": true,
         "contentType": "json",
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ model: $env[\"OLLAMA_MODEL\"] || 'qwen3:14b', prompt: $json.prompt, stream: false }) }}",
+        "jsonBody": "={{ JSON.stringify({ model: $json.model || 'qwen3:14b', prompt: $json.prompt, stream: false }) }}",
         "options": {
           "timeout": 300000,
           "response": {

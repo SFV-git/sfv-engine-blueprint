@@ -25,5 +25,9 @@ Will's directive: get the full stack running together. Hands-off operation.
 Target: Will steps back. Stack runs itself.
 
 ## CONNECTED FILES
-- [[SESSION_STATE|Session State]]
-- [[DASHBOARD|Dashboard]]
+- [[N8N_BLUEPRINT|N8N Blueprint]]
+- [[OLLAMA_SETUP|Ollama Setup]]
+- [[STORAGE_ARCHITECTURE|Storage Architecture]]
+- [[INGEST|Ingest]]
+- [[ENVIRONMENT_CONFIG|Environment Config]]
+- [[DATABANK_ARCHITECTURE|Databank Architecture]]

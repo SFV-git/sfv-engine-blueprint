@@ -65,5 +65,8 @@ LAST_UPDATED: 2026-05-27
 Last updated: 2026-05-27
 
 ## CONNECTED FILES
-- [[SESSION_STATE|Session State]]
-- [[DASHBOARD|Dashboard]]
+- [[STORAGE_ARCHITECTURE|Storage Architecture]]
+- [[BRANCH_OUTPUTS|Branch Outputs]]
+- [[DELIVERY|Delivery]]
+- [[OLLAMA_SETUP|Ollama Setup]]
+- [[ANTIGRAVITY_SETUP_GUIDE|Antigravity Setup Guide]]

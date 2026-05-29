@@ -64,3 +64,13 @@ Not imaginary future infrastructure.
 ## RULE 12 — ENGINE INTELLIGENCE PERSISTS
 Hardware is replaceable.
 Engine intelligence lives in config and scripts, not the machine.
+
+## CONNECTED FILES
+- [[ENVIRONMENT_CONFIG|Environment Configuration]]
+- [[METADATA_SYSTEM|Metadata System]]
+- [[VERSION_LOG|Version Log]]
+- [[RD_TERMINAL_ARCHITECTURE|R&D Terminal Architecture]]
+- [[QUALITY_CONTROL|Quality Control]]
+- [[MULTI_AGENT_WORKFLOW|Multi-Agent Workflow]]
+- [[DATABANK_ARCHITECTURE|Databank Architecture]]
+- [[BUILD_READINESS_CHECKLIST|Build Readiness Checklist]]

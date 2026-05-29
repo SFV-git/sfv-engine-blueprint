@@ -95,5 +95,11 @@ GENERATED: 2026-05-26 04:22
 - [[Drawing 2026-05-24 07.07.59.excalidraw]]
 
 ## CONNECTED FILES
-- [[SESSION_STATE|Session State]]
+- [[DEV_LOG|Development Log]]
+- [[PENDING_REVIEW|Pending Review]]
+- [[QUESTIONS_FOR_WILL|Questions for Will]]
 - [[DASHBOARD|Dashboard]]
+- [[SESSION_STATE|Session State]]
+- [[METADATA_SYSTEM|Metadata System]]
+- [[STACK_INTEGRATION_PLAN|Stack Integration Plan]]
+- [[QUALITY_CONTROL|Quality Control]]

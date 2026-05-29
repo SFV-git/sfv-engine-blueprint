@@ -54,5 +54,11 @@ Nothing here gets built until moved to CANON.
 - First Maritime city target after Halifax
 
 ## CONNECTED FILES
-- [[SESSION_STATE|Session State]]
-- [[DASHBOARD|Dashboard]]
+- [[SFV_404|SFV_404 Platform]]
+- [[BRAND_BANKS|Brand Banks]]
+- [[HARDWARE_CONTEXT|Hardware Context]]
+- [[N8N_BLUEPRINT|n8n Implementation Phase]]
+- [[SFV_EVENTS|SFV_EVENTS Delivery Method]]
+- [[DATABANK_ARCHITECTURE|Databank Architecture]]
+- [[STORAGE_ARCHITECTURE|Storage Architecture Audit]]
+- [[NATIONWIDE|Nationwide Expansion Timeline]]

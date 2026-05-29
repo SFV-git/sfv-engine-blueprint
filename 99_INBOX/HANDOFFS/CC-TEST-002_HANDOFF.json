@@ -1,0 +1,16 @@
+{
+  "handoff_id": "CC-TEST-002-HANDOFF",
+  "task_type": "REASONING",
+  "priority": "NORMAL",
+  "source_task": "C:/SFV_BLUEPRINT/99_INBOX/QUEUE/TEST_CLAUDE_CODE_RUN.json",
+  "context_budget_tokens": 1500,
+  "summary": "WORKFLOW1 CONFIRMED",
+  "key_findings": [],
+  "unresolved": [
+    "WORKFLOW1 CONFIRMED"
+  ],
+  "relevant_files": [],
+  "do_not_include": [],
+  "ollama_confidence": "LOW",
+  "escalation_reason": "ollama_confidence=LOW â€” escalated to Claude"
+}

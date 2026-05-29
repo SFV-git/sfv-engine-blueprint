@@ -278,5 +278,11 @@ Do MYTHOLOGY and SFV_WORLD first. Show me the plan. Wait for approval.
 *Run dry-run first. Test with real files before May 28.*
 
 ## CONNECTED FILES
-- [[SESSION_STATE|Session State]]
-- [[DASHBOARD|Dashboard]]
+- [[ORPHANS|Orphans Log]]
+- [[MODEL_ROUTING|Model Routing Rules]]
+- [[STORAGE_ARCHITECTURE|Storage Architecture]]
+- [[VERSION_LOG|Version History]]
+- [[AI_USE_CASE_PROFILE|AI Use Case Profile]]
+- [[INGEST|Ingest Workflow Spec]]
+- [[ANTIGRAVITY|Antigravity Context File]]
+- [[QUALITY_CONTROL|Quality Control Policies]]

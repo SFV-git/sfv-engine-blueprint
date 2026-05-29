@@ -70,5 +70,11 @@ Local models 24/7. Research. Proposals only.
 Never touches production directly.
 
 ## CONNECTED FILES
-- [[SESSION_STATE|Session State]]
-- [[DASHBOARD|Dashboard]]
+- [[NAMING_CONVENTIONS|Naming Conventions]]
+- [[STORAGE_ARCHITECTURE|Storage Architecture]]
+- [[ENVIRONMENT_CONFIG|Environment Config]]
+- [[ARCHIVE|Archive]]
+- [[LOCAL_MODELS|Local Models]]
+- [[CLAUDE_CODE_PROMPTS|Claude Code Prompts]]
+- [[PROPOSALS|Proposals]]
+- [[ROADMAP|Roadmap]]

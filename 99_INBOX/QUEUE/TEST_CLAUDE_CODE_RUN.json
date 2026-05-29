@@ -1,8 +1,10 @@
 {
   "task_id": "CC-TEST-002",
   "task_type": "OLLAMA",
-  "status": "PENDING",
+  "status": "ESCALATED",
   "prompt": "Reply with exactly: WORKFLOW1 CONFIRMED",
   "model": "qwen3:14b",
-  "created": "2026-05-29"
+  "created": "2026-05-29",
+  "processed_at": "2026-05-29 06:14:44",
+  "output_written_to": "C:/SFV_BLUEPRINT/99_INBOX/HANDOFFS/CC-TEST-002_HANDOFF.json"
 }
