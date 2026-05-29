@@ -52,6 +52,8 @@ Local models = handle 80% of repetitive tasks.
 This is the primary method for minimizing API costs and usage limits.
 
 ## CONNECTED FILES
-- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
-- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
-- [[COMPRESSED_CONTEXT|Compressed Context]]
+- [[05_AI_LAYER/LOCAL_MODELS|Local Models]]
+- [[05_AI_LAYER/ANTIGRAVITY_RULES|Antigravity Rules]]
+- [[05_AI_LAYER/CLAUDE_API|Claude API]]
+- [[05_AI_LAYER/OLLAMA_SETUP|Ollama Setup]]
+- [[03_INFRASTRUCTURE/METADATA_SYSTEM|Metadata System]]

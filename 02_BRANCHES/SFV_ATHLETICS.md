@@ -38,9 +38,9 @@ Primary background: basketball.
 %BRANCHES_ROOT%\SFV_ATHLETICS\EXPORT\
 
 ## CONNECTED FILES
-- [[04_WORKFLOWS/INGEST|Ingest Workflow]]
-- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
-- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
-- [[02_BRANCHES/SFV_ARCHIVE|SFV_ARCHIVE]] — best athletics work elevates to Archive
-- [[02_BRANCHES/MYTHOLOGY|MYTHOLOGY]] — athletics background is core to myth
-- [[02_BRANCHES/SFV_UGC|SFV_UGC]] — athlete niche is primary UGC client target
+- [[03_INFRASTRUCTURE/STORAGE_ARCHITECTURE|Storage Architecture]]
+- [[05_AI_LAYER/AI_USE_CASE_PROFILE|AI Use Case Profile]]
+- [[05_AI_LAYER/QUALITY_CONTROL|Quality Control]]
+- [[12_DATABANKS/CLIENT_BANKS|Client Banks]]
+- [[04_WORKFLOWS/UGC_PRE_PRODUCTION|UGC Pre-Production]]
+- [[09_PROMPTS/EXTRACTION_PROMPTS|Extraction Prompts]]

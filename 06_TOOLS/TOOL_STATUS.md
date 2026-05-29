@@ -67,4 +67,9 @@ Status types:
 Last updated: 2026-05-24
 
 ## CONNECTED FILES
-- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[ANTIGRAVITY_RULES|Antigravity Rules]]
+- [[COST_ROUTING|Cost Routing]]
+- [[OLLAMA_SETUP|Ollama Setup]]
+- [[CLAUDE_CODE_SESSION_2026-05-29|Claude Code Session]]
+- [[AI_USE_CASE_PROFILE|AI Use Case Profile]]
+- [[MODEL_ROUTING|Model Routing]]

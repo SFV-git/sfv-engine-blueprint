@@ -117,6 +117,11 @@ Will is final authority.
 Unclear items labeled: UNCONFIRMED / INFERENCE / FOR HUMAN REVIEW
 
 ## CONNECTED FILES
-- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
-- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
-- [[COMPRESSED_CONTEXT|Compressed Context]]
+- [[MODEL_ROUTING|Model Routing]]
+- [[RULES|Canon Rules]]
+- [[OLLAMA_SETUP|Ollama Setup]]
+- [[MULTI_AGENT_WORKFLOW|Multi-Agent Workflow]]
+- [[ANTIGRAVITY|Antigravity]]
+- [[SFV_ATHLETICS|SFV Athletics]]
+- [[CULLING|Culling]]
+- [[EDGE_CASES|Edge Cases]]

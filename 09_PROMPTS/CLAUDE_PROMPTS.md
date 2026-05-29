@@ -34,5 +34,9 @@ Proposal: [describe proposal]
 ```
 
 ## CONNECTED FILES
-- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
-- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
+- [[MASTER_CONTEXT|MASTER_CONTEXT.md]]
+- [[DASHBOARD|DASHBOARD.md]]
+- [[RULES|CANON RULES]]
+- [[PROPOSALS|PROPOSALS.md]]
+- [[COST_ROUTING|Cost Routing]]
+- [[RATE_LIMITS|Rate Limits]]

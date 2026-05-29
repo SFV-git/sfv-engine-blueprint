@@ -41,6 +41,8 @@ every item on this list must be checked.
 [ ] Rollback possible via Git if something goes wrong
 
 ## CONNECTED FILES
-- [[04_WORKFLOWS/INGEST|Ingest Workflow]]
-- [[04_WORKFLOWS/DELIVERY|Delivery Workflow]]
-- [[08_TESTS/PAPER_TRIAL_RUNS|Paper Trial Runs]]
+- [[ENVIRONMENT_CONFIG|Environment Config]]
+- [[TOOL_STATUS|Tool Status]]
+- [[UNCONFIRMED|Unconfirmed Items]]
+- [[DATABANK_ARCHITECTURE|Databank Architecture]]
+- [[VERSION_LOG|Version Log]]

@@ -48,5 +48,9 @@ See TOOL_STATUS.md for full status tracking.
 - OpenClaw (R&D terminal agent — FOR HUMAN REVIEW)
 
 ## CONNECTED FILES
-- [[06_TOOLS/TOOL_STATUS|Tool Status]]
-- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[N8N_BLUEPRINT|N8N Blueprint]]
+- [[OLLAMA_SETUP|Ollama Setup]]
+- [[DASHBOARD|Dashboard]]
+- [[ENVIRONMENT_CONFIG|Environment Config]]
+- [[ENGINE_COMMUNICATION_MODEL|Engine Communication Model]]
+- [[EXTRACTION_PROMPTS|Extraction Prompts]]

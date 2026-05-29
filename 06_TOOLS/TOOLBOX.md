@@ -73,5 +73,11 @@ See TOOL_STATUS.md for current status of each.
 - Apify: trend scraping
 
 ## CONNECTED FILES
-- [[06_TOOLS/TOOL_STATUS|Tool Status]]
-- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[TOOL_STATUS|Tool Status]]
+- [[OLLAMA_SETUP|Ollama Setup]]
+- [[N8N_BLUEPRINT|n8n Blueprint]]
+- [[TOOL_RESEARCH|Tool Research]]
+- [[DATABANK_ARCHITECTURE|Databank Architecture]]
+- [[CLAUDE_API|Claude API]]
+- [[CLAUDE_CODE_SESSION_2026-05-29|Claude Code Session]]
+- [[MASTER_CONTEXT|Master Context]]

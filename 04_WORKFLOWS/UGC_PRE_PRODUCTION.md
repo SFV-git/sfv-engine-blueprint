@@ -141,7 +141,11 @@ Intake can be:
 ---
 
 ## CONNECTED FILES
-- [[04_WORKFLOWS/INGEST.md]]
-- [[04_WORKFLOWS/DELIVERY.md]]
-- [[03_INFRASTRUCTURE/MULTI_AGENT_WORKFLOW.md]]
-- [[05_AI_LAYER/AI_USE_CASE_PROFILE.md]]
+- [[CLIENT_BANKS|Client Banks]]
+- [[SFV_WORLD|SFV World]]
+- [[EXPORT|Export Workflow]]
+- [[QUESTIONS_FOR_WILL|Questions for Will]]
+- [[STORAGE_ARCHITECTURE|Storage Architecture]]
+- [[NAMING_CONVENTIONS|Naming Conventions]]
+- [[STACK_INTEGRATION_PLAN|Stack Integration Plan]]
+- [[DEV_LOG|Development Log]]

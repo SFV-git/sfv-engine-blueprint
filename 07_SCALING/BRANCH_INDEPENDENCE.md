@@ -50,5 +50,11 @@ GROUP D — Hub:             abbass (all groups feed this)
 ```
 
 ## CONNECTED FILES
-- [[COMPRESSED_CONTEXT|Compressed Context]]
-- [[02_BRANCHES/SFV_UGC|SFV_UGC]]
+- [[ENVIRONMENT_CONFIG|Environment Config]]
+- [[STORAGE_ARCHITECTURE|Storage Architecture]]
+- [[INGEST|Ingest]]
+- [[EXPORT|Export]]
+- [[N8N_BLUEPRINT|N8N Blueprint]]
+- [[SFV_UGC|SFV UGC]]
+- [[SFV_ARCHIVE|SFV Archive]]
+- [[SFV_ATHLETICS|SFV Athletics]]

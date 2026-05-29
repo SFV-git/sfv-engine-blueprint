@@ -47,12 +47,9 @@ Sparse, sequential, consistent.
 %BRANCHES_ROOT%\SFV_ARCHIVE\EXPORT\
 
 ## CONNECTED FILES
-- [[04_WORKFLOWS/INGEST|Ingest Workflow]]
-- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
-- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
-- [[02_BRANCHES/MYTHOLOGY|MYTHOLOGY]] — Archive is the prestige layer of myth
-- [[02_BRANCHES/SFV_STUDIO|SFV_STUDIO]] — best studio work elevates here
-- [[02_BRANCHES/SFV_EVENTS|SFV_EVENTS]] — best event work elevates here
-- [[02_BRANCHES/SFV_LIVE|SFV_LIVE]] — best coverage elevates here
-- [[02_BRANCHES/SFV_ATHLETICS|SFV_ATHLETICS]] — best sports work elevates here
-- [[02_BRANCHES/SFV_404|SFV_404]] — Archive and 404 are creative credibility pair
+- [[04_WORKFLOWS/EXPORT|Export Workflow]]
+- [[03_INFRASTRUCTURE/MULTI_AGENT_WORKFLOW|Multi-Agent Workflow]]
+- [[09_PROMPTS/EXTRACTION_PROMPTS|Extraction Prompts]]
+- [[12_DATABANKS/BRAND_BANKS|Brand Banks]]
+- [[03_INFRASTRUCTURE/STORAGE_ARCHITECTURE|Storage Architecture]]
+- [[11_VERSIONS/ROADMAP|Roadmap]]

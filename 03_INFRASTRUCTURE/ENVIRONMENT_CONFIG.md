@@ -71,4 +71,7 @@ Every path references a variable from this file.
 - E:\ = SanDisk Extreme = field ingest
 
 ## CONNECTED FILES
-- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
+- [[STORAGE_ARCHITECTURE|Storage Architecture]]
+- [[OLLAMA_SETUP|Ollama Setup]]
+- [[BRANCH_INDEPENDENCE|Branch Independence]]
+- [[PROPOSALS|Proposals]]

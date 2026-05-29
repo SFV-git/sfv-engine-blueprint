@@ -94,5 +94,11 @@ Proxies can be stored in cloud. Originals stay on Engine.
 - [ ] Confirm %SFV_ROOT% permanent location
 
 ## CONNECTED FILES
-- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
-- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
+- [[ENVIRONMENT_CONFIG|Environment Config]]
+- [[NAMING_CONVENTIONS|Naming Conventions]]
+- [[BRANCH_OUTPUTS|Branch Outputs]]
+- [[INGEST|Ingest]]
+- [[EXPORT|Export]]
+- [[ARCHIVE|Archive]]
+- [[CULLING|Culling]]
+- [[PENDING_REVIEW|Pending Review]]

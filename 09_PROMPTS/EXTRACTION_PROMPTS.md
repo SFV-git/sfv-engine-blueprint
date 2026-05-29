@@ -34,5 +34,10 @@ Session content: [PASTE OR DESCRIBE]
 ```
 
 ## CONNECTED FILES
-- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
-- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
+- [[01_CANON_RULES/RULES|Canon Rules]]
+- [[00_DEV_LOG/UNCONFIRMED|Unconfirmed Items]]
+- [[00_DEV_LOG/PROPOSALS|Proposals]]
+- [[03_INFRASTRUCTURE/METADATA_SYSTEM|Metadata System]]
+- [[04_WORKFLOWS/UGC_PRE_PRODUCTION|UGC Pre-Production]]
+- [[00_DEV_LOG/QUESTIONS_FOR_WILL|Questions for Will]]
+- [[03_INFRASTRUCTURE/STORAGE_ARCHITECTURE|Storage Architecture]]

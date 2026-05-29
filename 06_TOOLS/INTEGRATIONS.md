@@ -58,5 +58,9 @@ How external tools connect to the SFV Engine.
 - Connects: Engine scripts, local models, Claude API, scheduling tools
 
 ## CONNECTED FILES
-- [[06_TOOLS/TOOL_STATUS|Tool Status]]
-- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[TOOL_STATUS|Tool Status]]
+- [[COST_ROUTING|Cost Routing]]
+- [[N8N_BLUEPRINT|N8N Blueprint]]
+- [[STORAGE_ARCHITECTURE|Storage Architecture]]
+- [[CLAUDE_API|Claude API]]
+- [[MODEL_ROUTING|Model Routing]]

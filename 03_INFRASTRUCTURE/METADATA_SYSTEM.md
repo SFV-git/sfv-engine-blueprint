@@ -47,5 +47,10 @@ Metadata enables search, sorting, routing, and AI processing.
 - Local model on R&D terminal handles clustering
 
 ## CONNECTED FILES
-- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
-- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
+- [[ENVIRONMENT_CONFIG|Environment Config]]
+- [[NAMING_CONVENTIONS|Naming Conventions]]
+- [[DATABANK_ARCHITECTURE|Databank Architecture]]
+- [[STORAGE_ARCHITECTURE|Storage Architecture]]
+- [[INGEST|Ingest]]
+- [[RD_TERMINAL_ARCHITECTURE|RD Terminal Architecture]]
+- [[CLIENT_BANKS|Client Banks]]

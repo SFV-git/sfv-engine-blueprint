@@ -138,6 +138,8 @@ Will request arrives
 - Routing decision tree added.
 
 ## CONNECTED FILES
-- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
-- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
-- [[COMPRESSED_CONTEXT|Compressed Context]]
+- [[ANTIGRAVITY_RULES|Antigravity Rules]]
+- [[N8N_BLUEPRINT|n8n Blueprint]]
+- [[OLLAMA_SETUP|Ollama Setup]]
+- [[CLAUDE_API|Claude API]]
+- [[ANTIGRAVITY_SETUP_GUIDE|Antigravity Setup Guide]]

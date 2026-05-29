@@ -14,13 +14,11 @@ Four distinct roles, all isolated from the Engine Body (the worker).
 Engine Body stays heads-down on production. R&D Terminal watches, serves, and experiments.
 
 ## CONNECTED FILES
-- [[05_AI_LAYER/LOCAL_MODELS|Local Models]]
-- [[03_INFRASTRUCTURE/STORAGE_ARCHITECTURE|Storage Architecture]]
 - [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
-- [[FOR_HUMAN_REVIEW/PROPOSALS|Proposals]]
+- [[04_WORKFLOWS/INGEST|Ingest]]
+- [[06_TOOLS/TOOL_STACK|Tool Stack]]
 - [[COMPRESSED_CONTEXT|Compressed Context]]
-
----
+- [[FOR_HUMAN_REVIEW/PROPOSALS|Proposals]]
 
 ## HARDWARE BASELINE (R&D TERMINAL)
 - GPU: RTX 3060 (12GB VRAM)

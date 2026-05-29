@@ -51,5 +51,9 @@ Engine must handle:
 - Potential agency-level deals (e.g. ProEdge — all trainers on one package)
 
 ## CONNECTED FILES
-- [[COMPRESSED_CONTEXT|Compressed Context]]
-- [[02_BRANCHES/SFV_UGC|SFV_UGC]]
+- [[BRANCH_INDEPENDENCE|Branch Independence]]
+- [[OPERATOR_MODEL|Operator Model]]
+- [[INGEST|Ingest]]
+- [[CLIENT_BANKS|Client Banks]]
+- [[DASHBOARD|Dashboard]]
+- [[MULTI_AGENT_WORKFLOW|Multi-Agent Workflow]]

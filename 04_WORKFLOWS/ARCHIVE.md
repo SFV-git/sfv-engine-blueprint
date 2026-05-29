@@ -44,6 +44,6 @@ Cold storage = raw files and project files no longer needed actively.
 - [ ] Design archive index structure
 
 ## CONNECTED FILES
-- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
-- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
-- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[STORAGE_ARCHITECTURE|Storage Architecture]]
+- [[METADATA_SYSTEM|Metadata System]]
+- [[DELIVERY|Delivery]]

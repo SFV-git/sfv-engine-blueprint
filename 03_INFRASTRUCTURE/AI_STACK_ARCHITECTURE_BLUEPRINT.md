@@ -233,5 +233,8 @@ The following critical Single Points of Failure (SPOFs) and gaps exist and are a
 > - minicpm-v Ollama version check — APPROVED 2026-05-26. Run `ollama --version` before Phase 2 deploy to confirm compatibility.
 
 ## CONNECTED FILES
-- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
-- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
+- [[ANTIGRAVITY|Antigravity 2.0]]
+- [[N8N_BLUEPRINT|n8n Workflow Blueprint]]
+- [[CLAUDE_API|Claude API Integration]]
+- [[OLLAMA_SETUP|Ollama Local Inference Setup]]
+- [[ENVIRONMENT_CONFIG|Environment Networking Configuration]]

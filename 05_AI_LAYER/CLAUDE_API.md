@@ -49,5 +49,7 @@ GOOD: "Best 18 selects from LIVE shoot. Sequence for carousel."
 
 ## CONNECTED FILES
 - [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
-- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
+- [[05_AI_LAYER/LOCAL_MODELS|Local Models]]
+- [[05_AI_LAYER/QUALITY_CONTROL|Quality Control]]
+- [[05_AI_LAYER/MODEL_ROUTING|Model Routing]]
 - [[COMPRESSED_CONTEXT|Compressed Context]]

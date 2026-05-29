@@ -66,6 +66,8 @@ If unsure, say UNSURE — never guess.
 Output exactly what is asked. No extra commentary.
 
 ## CONNECTED FILES
-- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
-- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
-- [[COMPRESSED_CONTEXT|Compressed Context]]
+- [[QUALITY_CONTROL|Quality Control]]
+- [[LOCAL_MODELS|Local Models]]
+- [[MYTHOLOGY|Mythology]]
+- [[ENGINE_COMMUNICATION_MODEL|Engine Communication Model]]
+- [[MODEL_ROUTING|Model Routing]]

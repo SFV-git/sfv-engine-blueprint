@@ -61,3 +61,7 @@ Walk-through: TBD — define before June 6
 ## CONNECTED FILES
 - [[04_WORKFLOWS/INGEST|Ingest Workflow]]
 - [[04_WORKFLOWS/DELIVERY|Delivery Workflow]]
+- [[04_WORKFLOWS/UGC_PRE_PRODUCTION|UGC Pre-Production]]
+- [[03_INFRASTRUCTURE/STORAGE_ARCHITECTURE|Storage Architecture]]
+- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
+- [[02_BRANCHES/SFV_STUDIO|SFV Studio]]

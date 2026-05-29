@@ -35,6 +35,10 @@ Unusual situations the Engine needs to handle gracefully.
 - Drive nearly full during ingest → warning at 85%, stop at 95%
 
 ## CONNECTED FILES
-- [[04_WORKFLOWS/INGEST|Ingest Workflow]]
 - [[04_WORKFLOWS/DELIVERY|Delivery Workflow]]
-- [[08_TESTS/PAPER_TRIAL_RUNS|Paper Trial Runs]]
+- [[05_AI_LAYER/QUALITY_CONTROL|Quality Control]]
+- [[04_WORKFLOWS/INGEST|Ingest Workflow]]
+- [[07_SCALING/BRANCH_INDEPENDENCE|Branch Independence]]
+- [[00_DEV_LOG/PENDING_REVIEW|Pending Review]]
+- [[03_INFRASTRUCTURE/STORAGE_ARCHITECTURE|Storage Architecture]]
+- [[FOR_HUMAN_REVIEW/PROPOSALS|Proposals]]

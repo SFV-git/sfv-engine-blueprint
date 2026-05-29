@@ -41,6 +41,7 @@ SFV_ARCHIVE: Full res + social specs
 - n8n: orchestrate export triggers [FUTURE]
 
 ## CONNECTED FILES
-- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
-- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
-- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[N8N_BLUEPRINT|N8N Blueprint]]
+- [[BRANCH_OUTPUTS|Branch Outputs]]
+- [[SFV_EVENTS|SFV_EVENTS]]
+- [[TOOLBOX|Toolbox]]

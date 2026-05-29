@@ -50,6 +50,9 @@ QC is a technical system. It does not replace Will's creative judgment.
 Will reviews every deliverable before client sees it.
 
 ## CONNECTED FILES
-- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
-- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
-- [[COMPRESSED_CONTEXT|Compressed Context]]
+- [[TRAINING_DATA|Training Data]]
+- [[BRAND_BANKS|Brand Banks]]
+- [[MODEL_ROUTING|Model Routing]]
+- [[RD_TERMINAL_ARCHITECTURE|R&D Terminal Architecture]]
+- [[LOCAL_MODELS|Local Models]]
+- [[SFV_UGC|SFV_UGC]]

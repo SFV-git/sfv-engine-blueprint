@@ -62,8 +62,8 @@ YES — one of two primary growth accounts.
 - [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
 - [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
 - [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
-- [[02_BRANCHES/SFV_EVENTS|SFV_EVENTS]] — Morning Walk overlap (May 28)
-- [[02_BRANCHES/SFV_UGC|SFV_UGC]] — both primary growth accounts
-- [[02_BRANCHES/SFV_ARCHIVE|SFV_ARCHIVE]] — best studio work elevates to Archive
-- [[02_BRANCHES/MYTHOLOGY|MYTHOLOGY]] — portraits feed myth
-- [[08_TESTS/PAPER_TRIAL_RUNS|Paper Trial Runs]] — Morning Walk stress test
+- [[02_BRANCHES/SFV_EVENTS|SFV_EVENTS]]
+- [[02_BRANCHES/SFV_UGC|SFV_UGC]]
+- [[02_BRANCHES/SFV_ARCHIVE|SFV_ARCHIVE]]
+- [[02_BRANCHES/MYTHOLOGY|MYTHOLOGY]]
+- [[08_TESTS/PAPER_TRIAL_RUNS|Paper Trial Runs]]

@@ -265,5 +265,11 @@ Antigravity handles local development, scripting, execution, and web research, r
 *Everything else: based on confirmed vault state as of 2026-05-24*
 
 ## CONNECTED FILES
-- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
-- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
+- [[SESSION_STATE|Session State Management]]
+- [[DASHBOARD|System Dashboard Interface]]
+- [[COMPRESSED_CONTEXT|Context Compression Protocol]]
+- [[ENVIRONMENT_CONFIG|Environment Configuration]]
+- [[DEV_LOG|Development Log Repository]]
+- [[QUESTIONS_FOR_WILL|Pending Clarifications]]
+- [[OLLAMA_SETUP|Ollama Integration Guide]]
+- [[ANTIGRAVITY_SETUP_GUIDE|Antigravity Configuration]]

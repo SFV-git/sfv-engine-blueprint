@@ -13,16 +13,12 @@ No file is ever lost. Every file is verified before it moves.
 This is the first step of every pipeline — it must be bulletproof.
 
 ## CONNECTED FILES
-- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
-- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
+- [[03_INFRASTRUCTURE/METADATA_SYSTEM|Metadata System]]
+- [[03_INFRASTRUCTURE/STORAGE_ARCHITECTURE|Storage Architecture]]
+- [[07_SCALING/BRANCH_INDEPENDENCE|Branch Independence]]
+- [[08_TESTS/FAILURE_TESTS|Failure Tests]]
+- [[08_TESTS/EDGE_CASES|Edge Cases]]
 - [[04_WORKFLOWS/CULLING|Culling Workflow]]
-- [[04_WORKFLOWS/EXPORT|Export Workflow]]
-- [[04_WORKFLOWS/DELIVERY|Delivery Workflow]]
-- [[02_BRANCHES/SFV_STUDIO|SFV_STUDIO]] — primary ingest branch (Morning Walk)
-- [[02_BRANCHES/SFV_EVENTS|SFV_EVENTS]] — overlaps Studio for Morning Walk
-- [[08_TESTS/PAPER_TRIAL_RUNS|Paper Trial Runs]] — May 28 stress test
-
----
 
 ## INGEST SOURCES (all types)
 

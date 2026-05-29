@@ -53,6 +53,8 @@ Will reviews proposals before Engine acts on them.
 ```
 
 ## CONNECTED FILES
-- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
-- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
-- [[COMPRESSED_CONTEXT|Compressed Context]]
+- [[ENGINE_COMMUNICATION_MODEL|Engine Communication Model]]
+- [[METADATA_SYSTEM|Metadata System]]
+- [[OLLAMA_SETUP|Ollama Setup]]
+- [[STORAGE_ARCHITECTURE|Storage Architecture]]
+- [[USAGE_OPTIMIZATION|Usage Optimization]]

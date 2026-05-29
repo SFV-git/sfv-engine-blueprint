@@ -49,6 +49,8 @@ Accounts that need scheduling:
 WeTransfer — used currently, will be replaced by proper delivery system.
 
 ## CONNECTED FILES
-- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
-- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
-- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[QUALITY_CONTROL|Quality Control]]
+- [[TOOLBOX|Toolbox]]
+- [[EXPORT|Export]]
+- [[UGC_PRE_PRODUCTION|UGC Pre-Production]]
+- [[AI_USE_CASE_PROFILE|AI Use Case Profile]]

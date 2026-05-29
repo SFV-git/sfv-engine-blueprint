@@ -106,5 +106,9 @@ Be specific. No generic advice.
 ```
 
 ## CONNECTED FILES
+- [[05_AI_LAYER/QUALITY_CONTROL|Quality Control]]
+- [[03_INFRASTRUCTURE/METADATA_SYSTEM|Metadata System]]
+- [[12_DATABANKS/BRAND_BANKS|Brand Banks]]
+- [[12_DATABANKS/RESEARCH_BANKS|Research Banks]]
 - [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
-- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
+- [[08_TESTS/FAILURE_TESTS|Failure Tests]]

@@ -54,5 +54,10 @@ Use Sonnet. Commit when done. Report completion.
 ```
 
 ## CONNECTED FILES
-- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
-- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
+- [[CLAUDE|CLAUDE.md]]
+- [[COMPRESSED_CONTEXT|COMPRESSED_CONTEXT.md]]
+- [[CHANGELOG|CHANGELOG.md]]
+- [[VERSION_LOG|VERSION_LOG.md]]
+- [[SESSION_STATE|SESSION_STATE.md]]
+- [[COST_ROUTING|Cost Routing]]
+- [[RATE_LIMITS|Rate Limits]]

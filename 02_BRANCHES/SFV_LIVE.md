@@ -53,9 +53,9 @@ No. Network and affiliation building only.
 %BRANCHES_ROOT%\SFV_LIVE\EXPORT\
 
 ## CONNECTED FILES
-- [[04_WORKFLOWS/INGEST|Ingest Workflow]]
-- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
+- [[04_WORKFLOWS/DELIVERY|Delivery Workflow]]
+- [[04_WORKFLOWS/EXPORT|Export Workflow]]
+- [[04_WORKFLOWS/UGC_PRE_PRODUCTION|UGC Pre-Production]]
+- [[02_BRANCHES/SFV_ARCHIVE|SFV_ARCHIVE]]
 - [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
-- [[02_BRANCHES/SFV_ARCHIVE|SFV_ARCHIVE]] — best coverage elevates to Archive
-- [[02_BRANCHES/MYTHOLOGY|MYTHOLOGY]] — live coverage builds myth and access narrative
-- [[08_TESTS/PAPER_TRIAL_RUNS|Paper Trial Runs]] — June 6 Shamar pipeline test
+- [[08_TESTS/PAPER_TRIAL_RUNS|Paper Trial Runs]]

@@ -35,6 +35,8 @@ AI handles technical culling. Will handles creative culling.
 - Duplicate grouping shows groups for Will to pick best from
 
 ## CONNECTED FILES
-- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
-- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
-- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[05_AI_LAYER/RD_TERMINAL_ARCHITECTURE|RD Terminal Architecture]]
+- [[03_INFRASTRUCTURE/MULTI_AGENT_WORKFLOW|Multi-Agent Workflow]]
+- [[02_BRANCHES/BRANCH_OUTPUTS|Branch Outputs]]
+- [[00_DEV_LOG/DECISIONS|Decisions]]
+- [[00_DEV_LOG/PENDING_REVIEW|Pending Review]]

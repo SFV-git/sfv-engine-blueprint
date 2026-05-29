@@ -79,10 +79,8 @@ Modular — new client types added as Will expands:
 - [[04_WORKFLOWS/INGEST|Ingest Workflow]]
 - [[04_WORKFLOWS/DELIVERY|Delivery Workflow]]
 - [[04_WORKFLOWS/EXPORT|Export Workflow]]
+- [[05_AI_LAYER/QUALITY_CONTROL|Quality Control]]
 - [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
+- [[02_BRANCHES/SFV_STUDIO|SFV_STUDIO]]
+- [[12_DATABANKS/CLIENT_BANKS|Client Banks]]
 - [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
-- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
-- [[05_AI_LAYER/QUALITY_CONTROL|Quality Control]] — AI self-audit before delivery
-- [[02_BRANCHES/SFV_STUDIO|SFV_STUDIO]] — both primary growth accounts
-- [[02_BRANCHES/MYTHOLOGY|MYTHOLOGY]] — revenue proof builds myth
-- [[12_DATABANKS/CLIENT_BANKS|Client Banks]] — client profiles live here

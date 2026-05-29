@@ -41,5 +41,5 @@ for further myth building.
 - [[04_WORKFLOWS/INGEST|Ingest Workflow]]
 - [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
 - [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
-- [[02_BRANCHES/MYTHOLOGY|MYTHOLOGY]] — World content extends the myth into personal life
-- [[02_BRANCHES/SFV_ARCHIVE|SFV_ARCHIVE]] — rare World shots can elevate to Archive
+- [[02_BRANCHES/MYTHOLOGY|MYTHOLOGY]]
+- [[02_BRANCHES/SFV_ARCHIVE|SFV_ARCHIVE]]

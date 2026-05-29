@@ -92,5 +92,8 @@ BAD:  "Here are 400 photos from the shoot, analyze them"
 GOOD: "18 selects from LIVE_20250606_SHAMAR. Sequence for carousel."
 
 ## CONNECTED FILES
-- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
-- [[COMPRESSED_CONTEXT|Compressed Context]]
+- [[MODEL_ROUTING|Model Routing]]
+- [[CLAUDE_API|Claude API]]
+- [[LOCAL_MODELS|Local Models]]
+- [[QUALITY_CONTROL|Quality Control]]
+- [[AI_USE_CASE_PROFILE|AI Use Case Profile]]
