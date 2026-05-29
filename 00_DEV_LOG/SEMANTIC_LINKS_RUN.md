@@ -89,3 +89,10 @@ Model: qwen3:14b  |  Files: 11
 
 
 ---
+
+## CONNECTED FILES
+- [[SEMANTIC_LINKS_WORKER_A|Semantic Links Worker A]]
+- [[SEMANTIC_LINKS_WORKER_B|Semantic Links Worker B]]
+- [[SEMANTIC_LINKS_WORKER_C|Semantic Links Worker C]]
+- [[SEMANTIC_LINKS_WORKER_E|Semantic Links Worker E]]
+- [[SEMANTIC_LINKS_WORKER_F|Semantic Links Worker F]]

@@ -53,3 +53,4 @@ GOOD: "Best 18 selects from LIVE shoot. Sequence for carousel."
 - [[05_AI_LAYER/QUALITY_CONTROL|Quality Control]]
 - [[05_AI_LAYER/MODEL_ROUTING|Model Routing]]
 - [[COMPRESSED_CONTEXT|Compressed Context]]
+- [[EXTERNAL_LINKS|External Links]]

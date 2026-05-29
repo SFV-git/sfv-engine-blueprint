@@ -32,3 +32,8 @@ for wf in wfs:
     except urllib.error.HTTPError as e:
         print(f"HTTP Error: {e.code}")
         print(e.read().decode())
+
+# CONNECTED FILES
+# - [[N8N_BLUEPRINT|N8N Blueprint]]
+# - [[ENGINE_COMMUNICATION_MODEL|Engine Communication Model]]
+# - [[INGEST|Ingest Workflow]]

@@ -213,3 +213,9 @@ def run():
 
 if __name__ == "__main__":
     run()
+
+# CONNECTED FILES
+# - [[OLLAMA_SETUP|Ollama Setup]]
+# - [[FILE_EDITING|File Editing]]
+# - [[SEMANTIC_LINKS_RUN|Semantic Links Run]]
+# - [[ANTIGRAVITY_SETUP_GUIDE|Antigravity Setup Guide]]

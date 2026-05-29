@@ -84,3 +84,4 @@ Modular — new client types added as Will expands:
 - [[02_BRANCHES/SFV_STUDIO|SFV_STUDIO]]
 - [[12_DATABANKS/CLIENT_BANKS|Client Banks]]
 - [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[CASE_STUDIES|Case Studies]]

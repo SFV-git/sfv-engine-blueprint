@@ -410,3 +410,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# CONNECTED FILES
+# - [[ENVIRONMENT_CONFIG|Environment Configuration]]
+# - [[INGEST|Ingest Workflow Specification]]
+# - [[BRANCH_OUTPUTS|Branch Output Structure]]

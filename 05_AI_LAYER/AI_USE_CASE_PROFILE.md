@@ -143,3 +143,4 @@ Will request arrives
 - [[OLLAMA_SETUP|Ollama Setup]]
 - [[CLAUDE_API|Claude API]]
 - [[ANTIGRAVITY_SETUP_GUIDE|Antigravity Setup Guide]]
+- [[RESEARCH_BANKS|Research Banks]]

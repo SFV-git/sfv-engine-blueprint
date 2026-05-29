@@ -19,6 +19,7 @@ Engine Body stays heads-down on production. R&D Terminal watches, serves, and ex
 - [[06_TOOLS/TOOL_STACK|Tool Stack]]
 - [[COMPRESSED_CONTEXT|Compressed Context]]
 - [[FOR_HUMAN_REVIEW/PROPOSALS|Proposals]]
+- [[RESEARCH_BANKS|Research Banks]]
 
 ## HARDWARE BASELINE (R&D TERMINAL)
 - GPU: RTX 3060 (12GB VRAM)

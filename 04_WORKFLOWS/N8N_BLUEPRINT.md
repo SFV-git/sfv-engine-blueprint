@@ -329,3 +329,5 @@ n8n JSON schema changes between versions. Import failures are opaque. Build manu
 - [[UGC_PRE_PRODUCTION|UGC Pre-Production Workflow]]
 - [[STACK_INTEGRATION_PLAN|Stack Integration Plan]]
 - [[MULTI_AGENT_WORKFLOW|Multi-Agent Workflow Design]]
+- [[INTEGRATIONS|Integrations]]
+- [[EXTERNAL_LINKS|External Links]]

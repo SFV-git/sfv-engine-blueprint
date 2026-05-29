@@ -97,3 +97,4 @@ GOOD: "18 selects from LIVE_20250606_SHAMAR. Sequence for carousel."
 - [[LOCAL_MODELS|Local Models]]
 - [[QUALITY_CONTROL|Quality Control]]
 - [[AI_USE_CASE_PROFILE|AI Use Case Profile]]
+- [[INTEGRATIONS|Integrations]]

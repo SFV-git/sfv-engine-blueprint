@@ -102,3 +102,4 @@ Proxies can be stored in cloud. Originals stay on Engine.
 - [[ARCHIVE|Archive]]
 - [[CULLING|Culling]]
 - [[PENDING_REVIEW|Pending Review]]
+- [[UPGRADE_CHECKPOINTS|Upgrade Checkpoints]]

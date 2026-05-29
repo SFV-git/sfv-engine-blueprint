@@ -149,3 +149,10 @@ try:
             f.write(r + "\\n")
 except Exception as e:
     log(f"Failed to write report: {e}")
+
+# CONNECTED FILES
+# - [[VERSION_LOG|Version Log]]
+# - [[FILE_EDITING|File Editing]]
+# - [[INGEST|Ingest]]
+# - [[CLAUDE|Claude]]
+# - [[BUILD_READINESS_CHECKLIST|Build Readiness Checklist]]

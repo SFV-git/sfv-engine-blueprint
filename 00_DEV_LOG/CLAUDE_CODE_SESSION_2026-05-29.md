@@ -109,3 +109,4 @@ New key should live in machine environment variable only.
 - [[SFV_404|SFV 404]]
 - [[PROPOSALS|Proposals]]
 - [[PENDING_REVIEW|Pending Review]]
+- [[UPGRADE_CHECKPOINTS|Upgrade Checkpoints]]

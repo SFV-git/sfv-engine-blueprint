@@ -232,3 +232,8 @@ def run():
 
 if __name__ == "__main__":
     run()
+
+# CONNECTED FILES
+# - [[OLLAMA|Ollama Integration]]
+# - [[OLLAMA_SETUP|Ollama Setup]]
+# - [[NAMING_CONVENTIONS|Naming Conventions]]

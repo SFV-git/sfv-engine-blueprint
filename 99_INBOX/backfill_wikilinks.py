@@ -141,3 +141,11 @@ if __name__ == "__main__":
     print(f"\nSFV ENGINE — BACKFILL WIKILINKS")
     print(f"Vault: {VAULT}\n")
     backfill()
+
+# CONNECTED FILES
+# - [[COMPRESSED_CONTEXT|Compressed Context]]
+# - [[SESSION_STATE|Session State]]
+# - [[DASHBOARD|Dashboard]]
+# - [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+# - [[04_WORKFLOWS/INGEST|Ingest Workflow]]
+# - [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]

@@ -73,3 +73,4 @@ Last updated: 2026-05-24
 - [[CLAUDE_CODE_SESSION_2026-05-29|Claude Code Session]]
 - [[AI_USE_CASE_PROFILE|AI Use Case Profile]]
 - [[MODEL_ROUTING|Model Routing]]
+- [[INTEGRATIONS|Integrations]]

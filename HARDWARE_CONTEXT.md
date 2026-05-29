@@ -68,3 +68,4 @@ Change one line in ENVIRONMENT_CONFIG to migrate drives.
 - [[BUILD_READINESS_CHECKLIST|Build Readiness Checklist]]
 - [[STACK_INTEGRATION_PLAN|Stack Integration Plan]]
 - [[METADATA_SYSTEM|Metadata System]]
+- [[UPGRADE_CHECKPOINTS|Upgrade Checkpoints]]

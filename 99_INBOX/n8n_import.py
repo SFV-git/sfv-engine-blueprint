@@ -55,3 +55,10 @@ if wf1_id:
         print(f"ACTIVATE FAILED  status={act.status_code}  body={act.text[:200]}")
 else:
     print("SKIPPED activation — workflow1 id not captured (may already exist).")
+
+# CONNECTED FILES
+# - [[N8N_BLUEPRINT|N8n Blueprint]]
+# - [[INGEST|Ingest Workflow]]
+# - [[ENVIRONMENT_CONFIG|Environment Configuration]]
+# - [[WORKFLOWS|Workflows Management]]
+# - [[ENGINE_COMMUNICATION_MODEL|Engine Communication Model]]

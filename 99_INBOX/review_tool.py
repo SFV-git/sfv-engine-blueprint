@@ -27,3 +27,9 @@ with open(out_path, 'w', encoding='utf-8') as out:
             out.write(f"{idx}. Line {idx}: {text}\n")
         out.write("\n")
 print(f"Found {c} items")
+
+# CONNECTED FILES
+# - [[PENDING_REVIEW|Pending Review]]
+# - [[UNCONFIRMED|Unconfirmed Items]]
+# - [[FOR_HUMAN_REVIEW/PROPOSALS|Proposals for Human Review]]
+# - [[human-approval|Human Approval Rules]]
