@@ -61,3 +61,4 @@ Use Sonnet. Commit when done. Report completion.
 - [[SESSION_STATE|SESSION_STATE.md]]
 - [[COST_ROUTING|Cost Routing]]
 - [[RATE_LIMITS|Rate Limits]]
+- [[MODEL_ROUTING|Model Routing]]

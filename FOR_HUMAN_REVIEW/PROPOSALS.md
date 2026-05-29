@@ -92,5 +92,9 @@ Purchase when full stack is running and lab setup is finalized.
 [Moved here once Will rejects — stays for record]
 
 ## CONNECTED FILES
-- [[DASHBOARD|Dashboard]]
-- [[SESSION_STATE|Session State]]
+- [[ENVIRONMENT_CONFIG|Environment Config]]
+- [[OLLAMA_SETUP|Ollama Setup]]
+- [[SFV_WORLD|SFV World]]
+- [[RD_TERMINAL_ARCHITECTURE|RD Terminal Architecture]]
+- [[NAMING_CONVENTIONS|Naming Conventions]]
+- [[EXPORT|Export]]

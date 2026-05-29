@@ -37,9 +37,9 @@ Every workflow needs a defined failure behavior.
 - R&D terminal offline → Engine continues without AI assist, flags tasks for later
 
 ## CONNECTED FILES
-- [[08_TESTS/EDGE_CASES|Edge Cases]]
-- [[03_INFRASTRUCTURE/METADATA_SYSTEM|Metadata System]]
-- [[05_AI_LAYER/CLAUDE_API|Claude API]]
-- [[FOR_HUMAN_REVIEW/PROPOSALS|Proposals]]
-- [[08_TESTS/BUILD_READINESS_CHECKLIST|Build Readiness Checklist]]
-- [[03_INFRASTRUCTURE/STORAGE_ARCHITECTURE|Storage Architecture]]
+- [[04_WORKFLOWS/INGEST|Ingest]]
+- [[05_AI_LAYER/LOCAL_MODELS|Local Models]]
+- [[05_AI_LAYER/QUALITY_CONTROL|Quality Control]]
+- [[04_WORKFLOWS/DELIVERY|Delivery]]
+- [[03_INFRASTRUCTURE/ENGINE_COMMUNICATION_MODEL|Engine Communication Model]]
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]

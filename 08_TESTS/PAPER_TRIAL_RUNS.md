@@ -59,9 +59,8 @@ Walk-through: TBD — define before June 6
 6. Only then write the code
 
 ## CONNECTED FILES
-- [[04_WORKFLOWS/INGEST|Ingest Workflow]]
-- [[04_WORKFLOWS/DELIVERY|Delivery Workflow]]
-- [[04_WORKFLOWS/UGC_PRE_PRODUCTION|UGC Pre-Production]]
-- [[03_INFRASTRUCTURE/STORAGE_ARCHITECTURE|Storage Architecture]]
-- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
-- [[02_BRANCHES/SFV_STUDIO|SFV Studio]]
+- [[04_WORKFLOWS/EXPORT|Export Workflow]]
+- [[03_INFRASTRUCTURE/METADATA_SYSTEM|Metadata System]]
+- [[06_TOOLS/INTEGRATIONS|Integrations]]
+- [[04_WORKFLOWS/CULLING|Culling Workflow]]
+- [[06_TOOLS/TOOLBOX|Toolbox]]

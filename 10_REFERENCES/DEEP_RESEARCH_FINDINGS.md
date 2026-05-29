@@ -56,4 +56,9 @@ Use API key mode with spend cap for parallel overnight sessions.
 
 ## CONNECTED FILES
 - [[COMPRESSED_CONTEXT|Compressed Context]]
-- [[12_DATABANKS/RESEARCH_BANKS|Research Banks]]
+- [[N8N_BLUEPRINT|n8n Blueprint]]
+- [[MODEL_ROUTING|Model Routing]]
+- [[COST_ROUTING|Cost Routing]]
+- [[QUALITY_CONTROL|Quality Control]]
+- [[STORAGE_ARCHITECTURE|Storage Architecture]]
+- [[AI_STACK_ARCHITECTURE_BLUEPRINT|AI Stack Architecture Blueprint]]

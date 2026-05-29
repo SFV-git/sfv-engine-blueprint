@@ -26,5 +26,10 @@ What actually happened. Not where we are going (see ROADMAP.md).
 Branch definitions complete and paper-trial ready.
 
 ## CONNECTED FILES
-- [[SESSION_STATE|Session State]]
-- [[DASHBOARD|Dashboard]]
+- [[BRANCH_OUTPUTS|Branch Outputs]]
+- [[MYTHOLOGY|Mythology]]
+- [[PAPER_TRIAL_RUNS|Paper Trial Runs]]
+- [[STORAGE_ARCHITECTURE|Storage Architecture]]
+- [[TOOL_STACK|Tool Stack]]
+- [[NAMING_CONVENTIONS|Naming Conventions]]
+- [[ENVIRONMENT_CONFIG|Environment Config]]

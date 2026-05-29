@@ -34,10 +34,9 @@ Session content: [PASTE OR DESCRIBE]
 ```
 
 ## CONNECTED FILES
-- [[01_CANON_RULES/RULES|Canon Rules]]
-- [[00_DEV_LOG/UNCONFIRMED|Unconfirmed Items]]
-- [[00_DEV_LOG/PROPOSALS|Proposals]]
-- [[03_INFRASTRUCTURE/METADATA_SYSTEM|Metadata System]]
-- [[04_WORKFLOWS/UGC_PRE_PRODUCTION|UGC Pre-Production]]
-- [[00_DEV_LOG/QUESTIONS_FOR_WILL|Questions for Will]]
-- [[03_INFRASTRUCTURE/STORAGE_ARCHITECTURE|Storage Architecture]]
+- [[04_WORKFLOWS/INGEST|Ingest Workflow]]
+- [[03_INFRASTRUCTURE/STACK_INTEGRATION_PLAN|Stack Integration Plan]]
+- [[04_WORKFLOWS/ARCHIVE|Archive Workflow]]
+- [[05_AI_LAYER/QUALITY_CONTROL|Quality Control]]
+- [[00_DEV_LOG/DECISIONS|Decisions Log]]
+- [[05_AI_LAYER/MODEL_ROUTING|Model Routing]]

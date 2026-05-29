@@ -41,5 +41,7 @@ Notes: Trainer at ProEdge gym. Failed reels before. Struggling gym.
 Opportunity: individual client OR ProEdge content ecosystem (all trainers).
 
 ## CONNECTED FILES
-- [[12_DATABANKS/DATABANK_ARCHITECTURE|Databank Architecture]]
-- [[COMPRESSED_CONTEXT|Compressed Context]]
+- [[METADATA_SYSTEM|Metadata System]]
+- [[UGC_PRE_PRODUCTION|UGC Pre-Production]]
+- [[EXPORT|Export]]
+- [[INGEST|Ingest]]

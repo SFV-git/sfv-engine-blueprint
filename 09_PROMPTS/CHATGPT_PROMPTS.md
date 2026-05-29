@@ -32,7 +32,8 @@ Return a clean, specific prompt I can copy and use directly.
 ```
 
 ## CONNECTED FILES
-- [[05_AI_LAYER/MODEL_ROUTING|Model Routing]]
-- [[05_AI_LAYER/LOCAL_MODELS|Local Models]]
-- [[05_AI_LAYER/AI_USE_CASE_PROFILE|AI Use Case Profile]]
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[09_PROMPTS/CLAUDE_PROMPTS|Claude Prompts]]
+- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
+- [[09_PROMPTS/OLLAMA_PROMPTS|Ollama Prompts]]
 - [[05_AI_LAYER/QUALITY_CONTROL|Quality Control]]

@@ -27,5 +27,7 @@ Will's are.na used as primary aesthetic reference source.
 Collections feed into Taste Banks and Brand Banks.
 
 ## CONNECTED FILES
-- [[12_DATABANKS/DATABANK_ARCHITECTURE|Databank Architecture]]
-- [[COMPRESSED_CONTEXT|Compressed Context]]
+- [[TASTE_BANKS|Taste Banks]]
+- [[BRANCH_OUTPUTS|Branch Outputs]]
+- [[QUESTIONS_FOR_WILL|Questions for Will]]
+- [[DATABANK_ARCHITECTURE|Databank Architecture]]

@@ -68,3 +68,10 @@ What it does: creates local semantic embeddings of all vault notes.
 Result: search vault semantically without feeding Claude full file contents.
 Instead of pasting a whole file → ask Smart Connections → paste only relevant snippet.
 Saves tokens on every session that involves vault lookup.
+
+## CONNECTED FILES
+- [[OLLAMA_SETUP|Ollama Setup Guide]]
+- [[COMPRESSED_CONTEXT|Compressed Context]]
+- [[CLAUDE_CODE_SESSION_2026-05-29|Claude Code Session 2026-05-29]]
+- [[CLAUDE|Claude]]
+- [[LOCAL_MODELS|Local Models]]

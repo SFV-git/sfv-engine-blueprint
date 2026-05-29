@@ -60,3 +60,13 @@ LAST_UPDATED: 2026-05-24
 - qwen3:14b: confirm pull complete
 - Ollama daemon: test run
 - Wikilinks: add to branch files for graph view
+
+## CONNECTED FILES
+- [[MYTHOLOGY|Mythology Branch]]
+- [[SFV_LIVE|SFV Live Branch]]
+- [[STORAGE_ARCHITECTURE|Storage Architecture]]
+- [[NAMING_CONVENTIONS|Naming Conventions]]
+- [[MODEL_ROUTING|Model Routing]]
+- [[OLLAMA_SETUP|Ollama Setup]]
+- [[TOOL_STATUS|Tool Status]]
+- [[COST_ROUTING|Cost Routing]]

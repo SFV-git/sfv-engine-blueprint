@@ -226,3 +226,12 @@ Auto-adds CONNECTED FILES to new .md files + queues Ollama for semantic links.
 2. Claude reads OLLAMA_RESULTS.md for overnight output
 3. Reports 3 lines max
 4. Waits for Will
+
+## CONNECTED FILES
+- [[ANTIGRAVITY_RULES|Antigravity Rules]]
+- [[MODEL_ROUTING|Model Routing]]
+- [[INGEST|Ingest Workflow]]
+- [[STACK_INTEGRATION_PLAN|Stack Integration Plan]]
+- [[MULTI_AGENT_WORKFLOW|Multi-Agent Workflow]]
+- [[PROPOSALS|Proposals for Human Review]]
+- [[RATE_LIMITS|Rate Limits Documentation]]

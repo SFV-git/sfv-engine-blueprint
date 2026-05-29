@@ -57,5 +57,8 @@ Includes:
 - Content goals
 
 ## CONNECTED FILES
-- [[12_DATABANKS/DATABANK_ARCHITECTURE|Databank Architecture]]
+- [[DATABANK_ARCHITECTURE|Databank Architecture]]
 - [[COMPRESSED_CONTEXT|Compressed Context]]
+- [[SFV_UGC|SFV UGC]]
+- [[UGC_PRE_PRODUCTION|UGC Pre-Production]]
+- [[BRAND_BANKS|Brand Banks]]

@@ -59,3 +59,12 @@ Change one line in ENVIRONMENT_CONFIG to migrate drives.
 - NVMe expansion (when active storage fills)
 - NAS (only when real bottleneck exists)
 - Second Engine node (v9.x)
+
+## CONNECTED FILES
+- [[STORAGE_ARCHITECTURE|Storage Architecture]]
+- [[ENVIRONMENT_CONFIG|Environment Configuration]]
+- [[LOCAL_MODELS|Local Models Setup]]
+- [[OPERATOR_MODEL|Operator Model]]
+- [[BUILD_READINESS_CHECKLIST|Build Readiness Checklist]]
+- [[STACK_INTEGRATION_PLAN|Stack Integration Plan]]
+- [[METADATA_SYSTEM|Metadata System]]

@@ -110,5 +110,6 @@ Be specific. No generic advice.
 - [[03_INFRASTRUCTURE/METADATA_SYSTEM|Metadata System]]
 - [[12_DATABANKS/BRAND_BANKS|Brand Banks]]
 - [[12_DATABANKS/RESEARCH_BANKS|Research Banks]]
-- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
 - [[08_TESTS/FAILURE_TESTS|Failure Tests]]
+- [[12_DATABANKS/CONTENT_BANKS|Content Banks]]
+- [[11_VERSIONS/VERSION_LOG|Version Log]]

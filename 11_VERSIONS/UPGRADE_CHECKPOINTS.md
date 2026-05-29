@@ -56,5 +56,10 @@ Recommendation: APC Back-UPS 1500VA
 Protects: overnight runs, ingest during storms, prevents corrupt files
 
 ## CONNECTED FILES
-- [[SESSION_STATE|Session State]]
-- [[DASHBOARD|Dashboard]]
+- [[CLAUDE_CODE_SESSION_2026-05-29|Claude Code Session]]
+- [[STORAGE_ARCHITECTURE|Storage Architecture]]
+- [[HARDWARE_CONTEXT|Hardware Context]]
+- [[SFV_ARCHIVE|SFV Archive]]
+- [[MULTI_AGENT_WORKFLOW|Multi-Agent Workflow]]
+- [[RD_TERMINAL_ARCHITECTURE|RD Terminal Architecture]]
+- [[PROPOSALS|Proposals]]

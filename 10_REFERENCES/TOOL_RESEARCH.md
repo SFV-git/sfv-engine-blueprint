@@ -54,5 +54,10 @@ Primary cost-reduction tool for AI tasks.
 Status: APPROVED
 
 ## CONNECTED FILES
-- [[COMPRESSED_CONTEXT|Compressed Context]]
-- [[12_DATABANKS/RESEARCH_BANKS|Research Banks]]
+- [[RD_TERMINAL_ARCHITECTURE|RD Terminal Architecture]]
+- [[DATABASE_ARCHITECTURE|Database Architecture]]
+- [[DASHBOARD|Dashboard]]
+- [[UGC_PRE_PRODUCTION|UGC Pre-Production]]
+- [[SFV_UGC|SFV UGC]]
+- [[LOCAL_MODELS|Local Models]]
+- [[TOOL_STATUS|Tool Status]]

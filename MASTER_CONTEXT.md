@@ -71,3 +71,13 @@ Claude Code implements after Will approves the blueprint.
 - [[11_VERSIONS/ROADMAP]] — where we're going
 - [[FOR_HUMAN_REVIEW/PROPOSALS]] — pending decisions
 - [[00_DEV_LOG/QUESTIONS_FOR_WILL]] — open questions
+
+## CONNECTED FILES
+- [[04_WORKFLOWS/INGEST|Ingest Workflow]]
+- [[04_WORKFLOWS/CULLING|Culling Workflow]]
+- [[04_WORKFLOWS/EXPORT|Export Workflow]]
+- [[04_WORKFLOWS/DELIVERY|Delivery Workflow]]
+- [[04_WORKFLOWS/ARCHIVE|Archive Workflow]]
+- [[HARDWARE_CONTEXT|Hardware Specifications]]
+- [[02_BRANCHES/BRANCH_OUTPUTS|Branch Outputs]]
+- [[SFV_UGC|SFV UGC]]

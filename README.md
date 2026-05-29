@@ -45,3 +45,10 @@ how it works, and how to build it.
 - "system status" → [[DASHBOARD.md]]
 - "open decisions" → [[00_DEV_LOG/QUESTIONS_FOR_WILL.md]]
 - "proposed by Claude" → [[FOR_HUMAN_REVIEW/PROPOSALS.md]]
+
+## CONNECTED FILES
+- [[DASHBOARD.md|System Status]]
+- [[00_DEV_LOG/QUESTIONS_FOR_WILL.md|Open Decisions]]
+- [[FOR_HUMAN_REVIEW/PROPOSALS.md|Claude Proposals]]
+- [[01_CANON_RULES/RULES.md|Canon Rules]]
+- [[11_VERSIONS/ROADMAP.md|Roadmap]]

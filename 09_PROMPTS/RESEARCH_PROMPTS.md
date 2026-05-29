@@ -34,5 +34,7 @@ Keep it practical. No generic advice.
 ```
 
 ## CONNECTED FILES
-- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
-- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
+- [[05_AI_LAYER/LOCAL_MODELS|Local Models]]
+- [[04_WORKFLOWS/UGC_PRE_PRODUCTION|UGC Pre-Production]]
+- [[05_AI_LAYER/AI_USE_CASE_PROFILE|AI Use Case Profile]]
+- [[05_AI_LAYER/MODEL_ROUTING|Model Routing]]

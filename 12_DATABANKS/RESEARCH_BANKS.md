@@ -33,5 +33,7 @@ What's working in each niche.
 Used for: content map generation, template updates.
 
 ## CONNECTED FILES
-- [[12_DATABANKS/DATABANK_ARCHITECTURE|Databank Architecture]]
-- [[COMPRESSED_CONTEXT|Compressed Context]]
+- [[RD_TERMINAL_ARCHITECTURE|RD Terminal Architecture]]
+- [[CONTENT_BANKS|Content Banks]]
+- [[AI_USE_CASE_PROFILE|AI Use Case Profile]]
+- [[METADATA_SYSTEM|Metadata System]]

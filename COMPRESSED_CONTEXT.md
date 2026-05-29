@@ -43,3 +43,12 @@ TOOL ROLES:
 
 RULES: No invention. Label UNCONFIRMED/INFERENCE/FOR HUMAN REVIEW. Will is final authority.
 LOCKED: 9 branches | vault path | naming conventions | storage layout | model routing above
+
+## CONNECTED FILES
+- [[BRANCH_OUTPUTS|Branch Outputs]]
+- [[ANTIGRAVITY_SETUP_GUIDE|Antigravity Setup Guide]]
+- [[CLAUDE_CODE_SESSION_2026-05-29|Claude Code Session Notes]]
+- [[ENVIRONMENT_CONFIG|Environment Configuration]]
+- [[RULES|Canon Rules]]
+- [[DEEP_RESEARCH_FINDINGS|Deep Research Findings]]
+- [[OLLAMA_SETUP|Ollama Setup]]

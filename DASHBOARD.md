@@ -59,3 +59,13 @@ v0.x — Blueprint Foundation
 ## SESSION START PROTOCOL
 Claude reads SESSION_STATE.md + this file + QUESTIONS_FOR_WILL.md
 Reports in 3 lines. Waits for Will.
+
+## CONNECTED FILES
+- [[QUESTIONS_FOR_WILL|Questions for Will]]
+- [[INGEST|Ingest Workflow]]
+- [[PAPER_TRIAL_RUNS|Paper Trial Runs]]
+- [[DELIVERY|Delivery Workflow]]
+- [[SESSION_STATE|Session State]]
+- [[SFV_STUDIO|SFV Studio]]
+- [[SFV_LIVE|SFV Live]]
+- [[SFV_UGC|SFV UGC]]

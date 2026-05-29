@@ -57,3 +57,12 @@ Never commit without Will's explicit approval.
 ## WHAT YOU ARE NOT
 Not a planner. Not an architect. Not a decision-maker.
 Claude Chat handles planning. Will makes decisions. You build.
+
+## CONNECTED FILES
+- [[COMPRESSED_CONTEXT|COMPRESSED_CONTEXT.md]]
+- [[ENVIRONMENT_CONFIG|ENVIRONMENT_CONFIG.md]]
+- [[NAMING_CONVENTIONS|NAMING_CONVENTIONS.md]]
+- [[COST_ROUTING|COST_ROUTING.md]]
+- [[RATE_LIMITS|RATE_LIMITS.md]]
+- [[PAPER_TRIAL_RUNS|PAPER_TRIAL_RUNS.md]]
+- [[DELIVERY|DELIVERY.md]]

@@ -37,5 +37,9 @@ Reference links for tools and resources in the SFV stack.
 - are.na: https://www.are.na
 
 ## CONNECTED FILES
-- [[COMPRESSED_CONTEXT|Compressed Context]]
-- [[12_DATABANKS/RESEARCH_BANKS|Research Banks]]
+- [[OLLAMA_SETUP|Ollama Setup]]
+- [[N8N_BLUEPRINT|n8n Blueprint]]
+- [[CLAUDE_API|Claude API]]
+- [[UGC_PRE_PRODUCTION|UGC Pre-Production]]
+- [[DELIVERY|Delivery]]
+- [[CLAUDE_CODE_SESSION_2026-05-29|Claude Code Session]]

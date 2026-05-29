@@ -33,5 +33,7 @@ Fed from: are.na, Will's selections, shoot outcomes.
 Audio direction per branch for reels.
 
 ## CONNECTED FILES
-- [[12_DATABANKS/DATABANK_ARCHITECTURE|Databank Architecture]]
-- [[COMPRESSED_CONTEXT|Compressed Context]]
+- [[QUALITY_CONTROL|Quality Control]]
+- [[METADATA_SYSTEM|Metadata System]]
+- [[BRAND_BANKS|Brand Banks]]
+- [[CONTENT_BANKS|Content Banks]]

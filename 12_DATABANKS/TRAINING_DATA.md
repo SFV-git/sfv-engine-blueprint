@@ -40,5 +40,9 @@ After ~10 deliveries per client: QC accuracy improves significantly.
 System proposes client-specific QC rule updates → Will approves.
 
 ## CONNECTED FILES
-- [[12_DATABANKS/DATABANK_ARCHITECTURE|Databank Architecture]]
-- [[COMPRESSED_CONTEXT|Compressed Context]]
+- [[QUALITY_CONTROL|Quality Control]]
+- [[CLIENT_BANKS|Client Banks]]
+- [[DECISIONS|Decisions]]
+- [[REJECTED_CHANGED|Rejected Changed]]
+- [[INGEST|Ingest]]
+- [[AI_USE_CASE_PROFILE|AI Use Case Profile]]
