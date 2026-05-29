@@ -58,7 +58,7 @@ else:
 
 # CONNECTED FILES
 # - [[N8N_BLUEPRINT|N8n Blueprint]]
-# - [[INGEST|Ingest Workflow]]
-# - [[ENVIRONMENT_CONFIG|Environment Configuration]]
-# - [[WORKFLOWS|Workflows Management]]
 # - [[ENGINE_COMMUNICATION_MODEL|Engine Communication Model]]
+# - [[INGEST|Ingest Workflow]]
+# - [[WORKFLOWS|Workflows Management]]
+# - [[ENVIRONMENT_CONFIG|Environment Configuration]]

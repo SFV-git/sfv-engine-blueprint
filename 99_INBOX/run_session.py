@@ -152,7 +152,7 @@ except Exception as e:
 
 # CONNECTED FILES
 # - [[VERSION_LOG|Version Log]]
-# - [[FILE_EDITING|File Editing]]
-# - [[INGEST|Ingest]]
-# - [[CLAUDE|Claude]]
+# - [[N8N_BLUEPRINT|N8N Workflows Blueprint]]
+# - [[TASK_QUEUE|Task Queue Management]]
 # - [[BUILD_READINESS_CHECKLIST|Build Readiness Checklist]]
+# - [[ENGINE_COMMUNICATION_MODEL|Engine Communication Model]]

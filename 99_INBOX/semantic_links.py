@@ -215,7 +215,7 @@ if __name__ == "__main__":
     run()
 
 # CONNECTED FILES
-# - [[OLLAMA_SETUP|Ollama Setup]]
-# - [[FILE_EDITING|File Editing]]
 # - [[SEMANTIC_LINKS_RUN|Semantic Links Run]]
-# - [[ANTIGRAVITY_SETUP_GUIDE|Antigravity Setup Guide]]
+# - [[SEMANTIC_LINKS_WORKER_A|Semantic Links Worker A]]
+# - [[SEMANTIC_LINKS_WORKER_B|Semantic Links Worker B]]
+# - [[OLLAMA_SETUP|Ollama Setup]]

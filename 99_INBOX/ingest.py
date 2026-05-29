@@ -412,6 +412,6 @@ if __name__ == "__main__":
     main()
 
 # CONNECTED FILES
-# - [[ENVIRONMENT_CONFIG|Environment Configuration]]
-# - [[INGEST|Ingest Workflow Specification]]
-# - [[BRANCH_OUTPUTS|Branch Output Structure]]
+# - [[ENVIRONMENT_CONFIG|Environment Config]]
+# - [[INGEST|Ingest Workflow]]
+# - [[NAMING_CONVENTIONS|Naming Conventions]]

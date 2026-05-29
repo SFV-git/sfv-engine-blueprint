@@ -161,3 +161,11 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# CONNECTED FILES
+# - [[00_BRANCHES|Branch Structure]]
+# - [[01_INGEST|Ingest Workflow]]
+# - [[02_EDIT|Edit Workflow]]
+# - [[03_EXPORT|Export Workflow]]
+# - [[04_ARCHIVE|Archive Workflow]]
+# - [[05_LOGS|Logs Management]]

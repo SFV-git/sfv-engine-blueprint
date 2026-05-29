@@ -256,3 +256,8 @@ def run():
 
 if __name__ == "__main__":
     run()
+
+# CONNECTED FILES
+# - [[DECISION_LOG|Decision Log]]
+# - [[OLLAMA|Ollama]]
+# - [[CLAUDE|Claude]]

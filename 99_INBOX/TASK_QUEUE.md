@@ -37,3 +37,11 @@ This is a new file added to the SFV vault. Based on its content and purpose, sug
 ---
 READ: 00_dev_log/semantic_links_worker_f.md
 This is a new file added to the SFV vault. Based on its content and purpose, suggest up to 5 wikilinks to other vault files that belong in its CONNECTED FILES section. Format each suggestion as: [[filename]] — one-line reason. Nothing else.
+
+---
+READ: 00_dev_log/semantic_links_python_h.md
+This is a new file added to the SFV vault. Based on its content and purpose, suggest up to 5 wikilinks to other vault files that belong in its CONNECTED FILES section. Format each suggestion as: [[filename]] — one-line reason. Nothing else.
+
+---
+READ: 00_dev_log/semantic_links_python_g.md
+This is a new file added to the SFV vault. Based on its content and purpose, suggest up to 5 wikilinks to other vault files that belong in its CONNECTED FILES section. Format each suggestion as: [[filename]] — one-line reason. Nothing else.

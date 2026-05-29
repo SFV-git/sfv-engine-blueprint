@@ -159,3 +159,9 @@ if __name__ == "__main__":
     worker_id = sys.argv[1]
     paths = [Path(p) for p in sys.argv[2:]]
     run(worker_id, paths)
+
+# CONNECTED FILES
+# - [[OLLAMA_SETUP|OLLAMA Setup]]
+# - [[SEMANTIC_LINKS_WORKER|Semantic Links Worker]]
+# - [[SECTION_RE|Section Regex Patterns]]
+# - [[ANTIGRAVITY_SETUP|Antigravity Setup Guide]]
