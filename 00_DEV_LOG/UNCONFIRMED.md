@@ -52,3 +52,7 @@ Nothing here gets built until moved to CANON.
 - Exact Halifax office timeline
 - Company car timeline
 - First Maritime city target after Halifax
+
+## CONNECTED FILES
+- [[SESSION_STATE|Session State]]
+- [[DASHBOARD|Dashboard]]

@@ -28,6 +28,9 @@ for name, path in WORKFLOWS:
 
     payload.pop("id", None)
     payload.pop("versionId", None)
+    payload.pop("active", None)
+    payload.pop("meta", None)
+    payload.pop("tags", None)
 
     resp = requests.post(f"{BASE_URL}/workflows", headers=HEADERS, json=payload)
     if resp.status_code in (200, 201):
@@ -42,10 +45,9 @@ for name, path in WORKFLOWS:
 # Activate workflow1
 wf1_id = imported_ids.get("workflow1_queue_processor")
 if wf1_id:
-    act = requests.patch(
-        f"{BASE_URL}/workflows/{wf1_id}",
+    act = requests.post(
+        f"{BASE_URL}/workflows/{wf1_id}/activate",
         headers=HEADERS,
-        json={"active": True},
     )
     if act.status_code == 200:
         print(f"ACTIVATED workflow1 id={wf1_id}")

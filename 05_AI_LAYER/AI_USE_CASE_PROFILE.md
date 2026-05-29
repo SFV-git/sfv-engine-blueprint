@@ -136,3 +136,8 @@ Will request arrives
 - Ollama given a defined role. Was previously undefined.
 - Perplexity formalized as structured research intake. Was previously ad hoc.
 - Routing decision tree added.
+
+## CONNECTED FILES
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
+- [[COMPRESSED_CONTEXT|Compressed Context]]

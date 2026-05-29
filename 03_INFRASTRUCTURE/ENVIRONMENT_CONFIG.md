@@ -69,3 +69,6 @@ Every path references a variable from this file.
 - C:\ = vault only
 - D:\ = Seagate One Touch = active storage
 - E:\ = SanDisk Extreme = field ingest
+
+## CONNECTED FILES
+- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]

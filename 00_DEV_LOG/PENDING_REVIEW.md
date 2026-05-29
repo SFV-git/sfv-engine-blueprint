@@ -131,3 +131,7 @@ Path: C:\SFV_BLUEPRINT\FOR_HUMAN_REVIEW\PROPOSALS.md
 - Specific business items: ~14
 - Specific technical items: ~14
 - Total actionable items: ~50
+
+## CONNECTED FILES
+- [[SESSION_STATE|Session State]]
+- [[DASHBOARD|Dashboard]]

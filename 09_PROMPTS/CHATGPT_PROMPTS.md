@@ -30,3 +30,7 @@ Task I need the AI to do: [DESCRIBE TASK]
 Constraints: [LIST CONSTRAINTS]
 Return a clean, specific prompt I can copy and use directly.
 ```
+
+## CONNECTED FILES
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]

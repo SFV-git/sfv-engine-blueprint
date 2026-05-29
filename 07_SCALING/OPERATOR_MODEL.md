@@ -45,3 +45,7 @@ Technical review only. Creative taste stays with Will.
 ## OWNERSHIP RULE
 Nobody gets equity in SFV except Will.
 No exceptions without Will's explicit future decision.
+
+## CONNECTED FILES
+- [[COMPRESSED_CONTEXT|Compressed Context]]
+- [[02_BRANCHES/SFV_UGC|SFV_UGC]]

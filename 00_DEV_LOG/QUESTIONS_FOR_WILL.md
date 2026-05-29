@@ -63,3 +63,7 @@ LAST_UPDATED: 2026-05-27
 
 ---
 Last updated: 2026-05-27
+
+## CONNECTED FILES
+- [[SESSION_STATE|Session State]]
+- [[DASHBOARD|Dashboard]]

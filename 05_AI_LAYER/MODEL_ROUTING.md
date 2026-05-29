@@ -50,3 +50,8 @@ Task arrives
 Claude API = reserved for strategy, art direction, final decisions.
 Local models = handle 80% of repetitive tasks.
 This is the primary method for minimizing API costs and usage limits.
+
+## CONNECTED FILES
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
+- [[COMPRESSED_CONTEXT|Compressed Context]]

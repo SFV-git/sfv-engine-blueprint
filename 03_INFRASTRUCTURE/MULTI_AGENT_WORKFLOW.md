@@ -261,3 +261,7 @@ Everything else → current stack handles it
 ---
 *Written: 2026-05-25. All Antigravity rules sourced from 05_AI_LAYER/ANTIGRAVITY_RULES.md (CANON).*
 *Google tool assessments: INFERENCE — FOR HUMAN REVIEW before purchasing any API access.*
+
+## CONNECTED FILES
+- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
+- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]

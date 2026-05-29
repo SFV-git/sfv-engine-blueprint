@@ -35,3 +35,8 @@ Every workflow needs a defined failure behavior.
 ## R&D TERMINAL FAILURES
 - Local model fails → task escalates to Claude API with cost warning
 - R&D terminal offline → Engine continues without AI assist, flags tasks for later
+
+## CONNECTED FILES
+- [[04_WORKFLOWS/INGEST|Ingest Workflow]]
+- [[04_WORKFLOWS/DELIVERY|Delivery Workflow]]
+- [[08_TESTS/PAPER_TRIAL_RUNS|Paper Trial Runs]]

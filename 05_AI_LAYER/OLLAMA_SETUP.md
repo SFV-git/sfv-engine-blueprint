@@ -64,3 +64,8 @@ Revenue: UGC content retainers + EVENTS on-site portraits
 Your role: handle specific low-value tasks only. Be structured. Never make creative decisions.
 If unsure, say UNSURE — never guess.
 Output exactly what is asked. No extra commentary.
+
+## CONNECTED FILES
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
+- [[COMPRESSED_CONTEXT|Compressed Context]]

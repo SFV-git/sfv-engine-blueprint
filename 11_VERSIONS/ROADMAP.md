@@ -114,3 +114,7 @@ Render nodes, distributed workloads.
 
 ## v10.x.x — COMMERCIAL ENGINE
 SFV Engine deployable/licensable product.
+
+## CONNECTED FILES
+- [[SESSION_STATE|Session State]]
+- [[DASHBOARD|Dashboard]]

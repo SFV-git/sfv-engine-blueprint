@@ -25,3 +25,7 @@ Will defines these. Claude documents them.
 ## ARE.NA COLLECTIONS
 Will's are.na used as primary aesthetic reference source.
 Collections feed into Taste Banks and Brand Banks.
+
+## CONNECTED FILES
+- [[12_DATABANKS/DATABANK_ARCHITECTURE|Databank Architecture]]
+- [[COMPRESSED_CONTEXT|Compressed Context]]

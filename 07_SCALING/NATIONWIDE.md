@@ -49,3 +49,7 @@ Engine must handle:
 ## CLIENT MODEL AT SCALE
 - Individual clients (trainers, athletes, businesses)
 - Potential agency-level deals (e.g. ProEdge — all trainers on one package)
+
+## CONNECTED FILES
+- [[COMPRESSED_CONTEXT|Compressed Context]]
+- [[02_BRANCHES/SFV_UGC|SFV_UGC]]

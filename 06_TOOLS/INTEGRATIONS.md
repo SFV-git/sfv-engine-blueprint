@@ -56,3 +56,7 @@ How external tools connect to the SFV Engine.
 ## N8N [FUTURE]
 - Purpose: workflow orchestration and model routing
 - Connects: Engine scripts, local models, Claude API, scheduling tools
+
+## CONNECTED FILES
+- [[06_TOOLS/TOOL_STATUS|Tool Status]]
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]

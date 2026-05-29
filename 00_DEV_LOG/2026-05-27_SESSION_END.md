@@ -23,3 +23,7 @@ Will's directive: get the full stack running together. Hands-off operation.
 6. First live ingest test if time allows
 
 Target: Will steps back. Stack runs itself.
+
+## CONNECTED FILES
+- [[SESSION_STATE|Session State]]
+- [[DASHBOARD|Dashboard]]

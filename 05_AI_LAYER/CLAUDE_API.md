@@ -46,3 +46,8 @@ Always:
 Example:
 BAD: "Here are 400 photos, analyze them"
 GOOD: "Best 18 selects from LIVE shoot. Sequence for carousel."
+
+## CONNECTED FILES
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
+- [[COMPRESSED_CONTEXT|Compressed Context]]

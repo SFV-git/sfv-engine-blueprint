@@ -42,3 +42,8 @@ Cold storage = raw files and project files no longer needed actively.
 - [ ] Fix Porsche SSD file system issue
 - [ ] Define archive timing thresholds
 - [ ] Design archive index structure
+
+## CONNECTED FILES
+- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
+- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]

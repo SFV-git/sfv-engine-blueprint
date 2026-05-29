@@ -46,3 +46,7 @@ See TOOL_STATUS.md for full status tracking.
 - Scheduling tool for 8 IG accounts (Later vs Buffer vs other)
 - Aditor.ai (research needed)
 - OpenClaw (R&D terminal agent — FOR HUMAN REVIEW)
+
+## CONNECTED FILES
+- [[06_TOOLS/TOOL_STATUS|Tool Status]]
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]

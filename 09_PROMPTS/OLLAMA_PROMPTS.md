@@ -104,3 +104,7 @@ Output:
 - Outfit/location notes
 Be specific. No generic advice.
 ```
+
+## CONNECTED FILES
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]

@@ -90,3 +90,7 @@ Purchase when full stack is running and lab setup is finalized.
 
 ## REJECTED PROPOSALS
 [Moved here once Will rejects — stays for record]
+
+## CONNECTED FILES
+- [[DASHBOARD|Dashboard]]
+- [[SESSION_STATE|Session State]]

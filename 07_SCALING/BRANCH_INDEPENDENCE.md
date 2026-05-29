@@ -48,3 +48,7 @@ GROUP B — Service:         STUDIO + UGC + EVENTS
 GROUP C — Lifestyle:       WORLD + abbass
 GROUP D — Hub:             abbass (all groups feed this)
 ```
+
+## CONNECTED FILES
+- [[COMPRESSED_CONTEXT|Compressed Context]]
+- [[02_BRANCHES/SFV_UGC|SFV_UGC]]

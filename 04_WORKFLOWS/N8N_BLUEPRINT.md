@@ -319,3 +319,8 @@ n8n JSON schema changes between versions. Import failures are opaque. Build manu
 - **RISK:** Workflow 5 must write to `COMPRESSED_CONTEXT_DRAFT.md` not the CANON file. Ollama cannot auto-overwrite CANON.
 - **MONITOR:** Tavily free tier = 1,000 credits/month. Watch usage once automated workflows are live.
 - **CONFIRMED:** `ollama_queue_test.py` already exists and tested. Extend it — do not rebuild.
+
+## CONNECTED FILES
+- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
+- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]

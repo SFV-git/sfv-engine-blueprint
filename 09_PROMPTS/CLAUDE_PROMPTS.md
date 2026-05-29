@@ -32,3 +32,7 @@ If it doesn't conflict with canon: add to FOR_HUMAN_REVIEW/PROPOSALS.md
 If it conflicts: explain why and suggest an alternative.
 Proposal: [describe proposal]
 ```
+
+## CONNECTED FILES
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]

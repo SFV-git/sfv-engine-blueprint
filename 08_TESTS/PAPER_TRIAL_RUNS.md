@@ -57,3 +57,7 @@ Walk-through: TBD — define before June 6
 4. Fix the break in the blueprint
 5. Re-run the paper trial
 6. Only then write the code
+
+## CONNECTED FILES
+- [[04_WORKFLOWS/INGEST|Ingest Workflow]]
+- [[04_WORKFLOWS/DELIVERY|Delivery Workflow]]

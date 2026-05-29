@@ -38,3 +38,7 @@ TRAINING_DATA/
 Over time: system learns client-specific quality baseline.
 After ~10 deliveries per client: QC accuracy improves significantly.
 System proposes client-specific QC rule updates → Will approves.
+
+## CONNECTED FILES
+- [[12_DATABANKS/DATABANK_ARCHITECTURE|Databank Architecture]]
+- [[COMPRESSED_CONTEXT|Compressed Context]]

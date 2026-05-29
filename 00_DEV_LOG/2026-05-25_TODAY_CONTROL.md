@@ -44,3 +44,7 @@ Build the Engine communication layer and fix the AI stack hierarchy before touch
 
 ## RULE REMINDER
 Will request → task queue → cheapest capable layer → output file → review if needed → canon only after approval
+
+## CONNECTED FILES
+- [[SESSION_STATE|Session State]]
+- [[DASHBOARD|Dashboard]]

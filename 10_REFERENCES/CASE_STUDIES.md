@@ -31,3 +31,7 @@ RESEARCH only — not direct architecture sources.
 ---
 
 Add case studies here as research discovers relevant examples.
+
+## CONNECTED FILES
+- [[COMPRESSED_CONTEXT|Compressed Context]]
+- [[12_DATABANKS/RESEARCH_BANKS|Research Banks]]

@@ -31,3 +31,7 @@ Fed from: are.na, Will's selections, shoot outcomes.
 
 ## MUSIC REFERENCES [FUTURE]
 Audio direction per branch for reels.
+
+## CONNECTED FILES
+- [[12_DATABANKS/DATABANK_ARCHITECTURE|Databank Architecture]]
+- [[COMPRESSED_CONTEXT|Compressed Context]]

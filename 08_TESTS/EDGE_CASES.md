@@ -33,3 +33,8 @@ Unusual situations the Engine needs to handle gracefully.
 ## TECHNICAL EDGE CASES
 - File system on Porsche SSD still broken → Engine routes around it, flags for fix
 - Drive nearly full during ingest → warning at 85%, stop at 95%
+
+## CONNECTED FILES
+- [[04_WORKFLOWS/INGEST|Ingest Workflow]]
+- [[04_WORKFLOWS/DELIVERY|Delivery Workflow]]
+- [[08_TESTS/PAPER_TRIAL_RUNS|Paper Trial Runs]]

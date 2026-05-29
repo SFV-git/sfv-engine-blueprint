@@ -51,3 +51,8 @@ Will reviews proposals before Engine acts on them.
 3. ollama pull llama3.1
 4. (optional) install Open WebUI for browser interface
 ```
+
+## CONNECTED FILES
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
+- [[COMPRESSED_CONTEXT|Compressed Context]]

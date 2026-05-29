@@ -35,3 +35,7 @@ Reference links for tools and resources in the SFV stack.
 
 ## REFERENCE PLATFORMS
 - are.na: https://www.are.na
+
+## CONNECTED FILES
+- [[COMPRESSED_CONTEXT|Compressed Context]]
+- [[12_DATABANKS/RESEARCH_BANKS|Research Banks]]

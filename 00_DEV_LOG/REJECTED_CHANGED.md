@@ -41,3 +41,7 @@ Rejected in favor of centralized Engine body + separate R&D terminal.
 
 ### NAS as first build
 Rejected. NAS only after real storage bottlenecks exist.
+
+## CONNECTED FILES
+- [[SESSION_STATE|Session State]]
+- [[DASHBOARD|Dashboard]]

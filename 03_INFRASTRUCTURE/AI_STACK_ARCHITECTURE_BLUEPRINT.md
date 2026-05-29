@@ -231,3 +231,7 @@ The following critical Single Points of Failure (SPOFs) and gaps exist and are a
 
 > **FOR HUMAN REVIEW:**
 > - minicpm-v Ollama version check — APPROVED 2026-05-26. Run `ollama --version` before Phase 2 deploy to confirm compatibility.
+
+## CONNECTED FILES
+- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
+- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]

@@ -68,3 +68,7 @@ Not used for vault creation (Python script instead).
 ### R&D Terminal role
 Local models 24/7. Research. Proposals only.
 Never touches production directly.
+
+## CONNECTED FILES
+- [[SESSION_STATE|Session State]]
+- [[DASHBOARD|Dashboard]]

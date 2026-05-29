@@ -3,6 +3,7 @@
   "nodes": [
     {
       "parameters": {
+        "triggerOn": "folder",
         "path": "C:\\SFV_BLUEPRINT\\99_INBOX\\QUEUE",
         "events": ["add"],
         "options": {}

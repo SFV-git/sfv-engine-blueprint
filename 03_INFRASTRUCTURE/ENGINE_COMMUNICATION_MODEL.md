@@ -163,3 +163,7 @@ Test prompt: "Read this task. Classify which SFV branch it belongs to. Output: b
 Previously: Will manually coordinated between agents.
 Now: Will puts a request in the queue. The system routes it, processes it, and surfaces output for review.
 Will's role is direction and approval — not agent-jumping.
+
+## CONNECTED FILES
+- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
+- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]

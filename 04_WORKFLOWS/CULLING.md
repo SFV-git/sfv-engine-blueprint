@@ -33,3 +33,8 @@ AI handles technical culling. Will handles creative culling.
 - AI never makes final creative selections
 - Auto-rejects are flagged, never permanently deleted until Will confirms
 - Duplicate grouping shows groups for Will to pick best from
+
+## CONNECTED FILES
+- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
+- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]

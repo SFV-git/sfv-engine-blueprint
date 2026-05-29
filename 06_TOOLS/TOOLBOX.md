@@ -71,3 +71,7 @@ See TOOL_STATUS.md for current status of each.
 - Vercel + 21st.dev: dashboard stack
 - Google Stitch MCP: design tool integration
 - Apify: trend scraping
+
+## CONNECTED FILES
+- [[06_TOOLS/TOOL_STATUS|Tool Status]]
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]

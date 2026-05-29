@@ -53,3 +53,7 @@ Local models for 80% of tasks, premium API for 20%.
 ### Lesson 10 — Parallel Agent Costs
 Multiple Claude Code agents running simultaneously use quota N times faster.
 Use API key mode with spend cap for parallel overnight sessions.
+
+## CONNECTED FILES
+- [[COMPRESSED_CONTEXT|Compressed Context]]
+- [[12_DATABANKS/RESEARCH_BANKS|Research Banks]]

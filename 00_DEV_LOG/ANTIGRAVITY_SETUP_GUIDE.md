@@ -276,3 +276,7 @@ Do MYTHOLOGY and SFV_WORLD first. Show me the plan. Wait for approval.
 ---
 *Built: 2026-05-25. ingest.py written and ready at 99_INBOX/ingest.py.*
 *Run dry-run first. Test with real files before May 28.*
+
+## CONNECTED FILES
+- [[SESSION_STATE|Session State]]
+- [[DASHBOARD|Dashboard]]

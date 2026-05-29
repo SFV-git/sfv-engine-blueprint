@@ -48,3 +48,6 @@ Used by: content map generation, template updates.
 QC approved and rejected reels.
 Fed by: every UGC delivery outcome.
 Used by: QC system training, improving accuracy over time.
+
+## CONNECTED FILES
+- [[COMPRESSED_CONTEXT|Compressed Context]]

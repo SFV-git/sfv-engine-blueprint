@@ -90,3 +90,7 @@ Always:
 Example:
 BAD:  "Here are 400 photos from the shoot, analyze them"
 GOOD: "18 selects from LIVE_20250606_SHAMAR. Sequence for carousel."
+
+## CONNECTED FILES
+- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
+- [[COMPRESSED_CONTEXT|Compressed Context]]

@@ -45,3 +45,7 @@ Metadata enables search, sorting, routing, and AI processing.
 - PERSON_ID foundations for repeat subject recognition
 - Relevant for SFV_STUDIO bulk shoots (Morning Walk)
 - Local model on R&D terminal handles clustering
+
+## CONNECTED FILES
+- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
+- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]

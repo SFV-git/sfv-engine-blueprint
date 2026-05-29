@@ -92,3 +92,7 @@ Proxies can be stored in cloud. Originals stay on Engine.
 - [ ] Audit WD My Passport contents and size
 - [ ] Fix Porsche SSD file system issue (Mac compatibility)
 - [ ] Confirm %SFV_ROOT% permanent location
+
+## CONNECTED FILES
+- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
+- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]

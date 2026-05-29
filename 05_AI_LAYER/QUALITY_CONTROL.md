@@ -48,3 +48,8 @@ Client-specific QC improves with each batch.
 ## NOTES
 QC is a technical system. It does not replace Will's creative judgment.
 Will reviews every deliverable before client sees it.
+
+## CONNECTED FILES
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
+- [[COMPRESSED_CONTEXT|Compressed Context]]

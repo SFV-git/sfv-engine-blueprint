@@ -39,3 +39,8 @@ SFV_ARCHIVE: Full res + social specs
 - Lightroom Classic: photo batch export (Studio, Events, Archive)
 - FFmpeg: video export and format conversion
 - n8n: orchestrate export triggers [FUTURE]
+
+## CONNECTED FILES
+- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
+- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]

@@ -52,3 +52,7 @@ Local model runner. Free. Runs Qwen, Llama, DeepSeek locally.
 RTX 3060 on R&D terminal handles 7B-13B models well.
 Primary cost-reduction tool for AI tasks.
 Status: APPROVED
+
+## CONNECTED FILES
+- [[COMPRESSED_CONTEXT|Compressed Context]]
+- [[12_DATABANKS/RESEARCH_BANKS|Research Banks]]

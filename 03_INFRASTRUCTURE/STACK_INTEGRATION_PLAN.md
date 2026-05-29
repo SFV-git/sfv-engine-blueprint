@@ -263,3 +263,7 @@ Antigravity handles local development, scripting, execution, and web research, r
 ---
 *INFERENCE markers: Antigravity role, Cowork specific SFV tasks — FOR HUMAN REVIEW*
 *Everything else: based on confirmed vault state as of 2026-05-24*
+
+## CONNECTED FILES
+- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
+- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]

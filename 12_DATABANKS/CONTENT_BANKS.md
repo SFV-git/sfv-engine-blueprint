@@ -55,3 +55,7 @@ Includes:
 - CTA rotation
 - Funnel balance
 - Content goals
+
+## CONNECTED FILES
+- [[12_DATABANKS/DATABANK_ARCHITECTURE|Databank Architecture]]
+- [[COMPRESSED_CONTEXT|Compressed Context]]

@@ -52,3 +52,7 @@ Use Sonnet. Commit when done. Report completion.
 [ ] VERSION_LOG.md updated if milestone hit
 [ ] SESSION_STATE.md updated with what was built
 ```
+
+## CONNECTED FILES
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]

@@ -65,3 +65,6 @@ Status types:
 | Windows Terminal | ACTIVE | terminal tabs on Engine Body |
 
 Last updated: 2026-05-24
+
+## CONNECTED FILES
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]

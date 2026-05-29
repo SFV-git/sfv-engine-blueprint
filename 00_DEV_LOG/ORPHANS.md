@@ -93,3 +93,7 @@ GENERATED: 2026-05-26 04:22
 ## Excalidraw
 - [[Drawing 2026-05-24 07.07.57.excalidraw]]
 - [[Drawing 2026-05-24 07.07.59.excalidraw]]
+
+## CONNECTED FILES
+- [[SESSION_STATE|Session State]]
+- [[DASHBOARD|Dashboard]]

@@ -126,3 +126,6 @@ Sequential per branch. Consistent across all posts. Never skip numbers.
 - Copy of Copy of...
 - Random dump folder names
 - Spaces in filenames
+
+## CONNECTED FILES
+- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]

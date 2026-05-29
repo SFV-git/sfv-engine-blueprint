@@ -54,3 +54,7 @@ Action: monitor, throttle R&D terminal during idle, consider home option if cost
 Trigger: any power instability event
 Recommendation: APC Back-UPS 1500VA
 Protects: overnight runs, ingest during storms, prevents corrupt files
+
+## CONNECTED FILES
+- [[SESSION_STATE|Session State]]
+- [[DASHBOARD|Dashboard]]

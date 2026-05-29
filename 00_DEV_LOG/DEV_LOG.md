@@ -23,3 +23,7 @@ See DECISIONS.md for full list.
 
 ### Items still open
 See QUESTIONS_FOR_WILL.md and UNCONFIRMED.md.
+
+## CONNECTED FILES
+- [[SESSION_STATE|Session State]]
+- [[DASHBOARD|Dashboard]]

@@ -31,3 +31,7 @@ Updated by R&D terminal research.
 ## COMPETITOR REFERENCES
 What's working in each niche.
 Used for: content map generation, template updates.
+
+## CONNECTED FILES
+- [[12_DATABANKS/DATABANK_ARCHITECTURE|Databank Architecture]]
+- [[COMPRESSED_CONTEXT|Compressed Context]]

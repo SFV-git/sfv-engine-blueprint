@@ -186,3 +186,7 @@ CONTENT:
 
 OR: Use the improved daemon (daemon v3) which auto-reads referenced files.
 See: 99_INBOX/ollama_daemon.py — upgrade pending.
+
+## CONNECTED FILES
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[COMPRESSED_CONTEXT|Compressed Context]]

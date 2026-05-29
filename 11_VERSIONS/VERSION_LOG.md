@@ -24,3 +24,7 @@ What actually happened. Not where we are going (see ROADMAP.md).
 
 ## Next version target: v0.2.0
 Branch definitions complete and paper-trial ready.
+
+## CONNECTED FILES
+- [[SESSION_STATE|Session State]]
+- [[DASHBOARD|Dashboard]]
