@@ -1,8 +1,8 @@
 ---
 STATUS: CANON
-VERSION: v0.3.0
+VERSION: v0.4.0
 OWNER: WILL
-LAST_UPDATED: 2026-05-26
+LAST_UPDATED: 2026-05-29
 ---
 
 # SESSION STATE
@@ -20,6 +20,80 @@ Read this first every session. Report in 3 lines. Wait for Will.
 
 ## CURRENT PHASE
 v0.x — Blueprint Lock (AI stack design + full blueprint planning. Zero dev work until complete.)
+
+---
+
+## SESSION — 2026-05-29 (AI STACK PHASE 1 EXECUTION — ENGINE BODY)
+
+### Completed this session:
+- vault_watcher auto-start on boot — Startup folder VBS launcher (Task Scheduler required admin, blocked)
+- Wikilinks backfilled across vault — 66 files ADDED, 12 already had, 11 skipped
+- backfill_wikilinks.py written — C:\SFV_BLUEPRINT\99_INBOX\backfill_wikilinks.py
+- Semantic links script written — C:\SFV_BLUEPRINT\99_INBOX\semantic_links.py (Ollama-driven per-file linking)
+- n8n workflows imported and live:
+  - workflow1_queue_processor → id=FwTeEPL7w5vlPwO7, active=true
+  - workflow4_output_monitor → id=oUw9qPMw6CpHEIv8
+  - workflow2_model_prewarm → id=6OtCtcsw6FANtm8j, active=true (fires every 5 min)
+- workflow1 routing updated by task_type:
+  - CODE → qwen2.5-coder:7b
+  - VISION → minicpm-v:8b
+  - CLASSIFY / SUMMARIZE / default → qwen3:14b
+  - RESEARCH → HANDOFFS
+  - keep_alive=10m on all Ollama calls
+- CC-TEST-002 confirmed full queue end-to-end (file trigger → Ollama → HANDOFFS escalation)
+- start_n8n.ps1 + SFV_N8N.vbs created — n8n auto-starts on login with NODES_EXCLUDE=[], OLLAMA_URL, OLLAMA_MODEL set
+- OLLAMA_KEEP_ALIVE=10m set at Machine scope, Ollama restarted, responsive
+- Specialist models pulled on Engine Body:
+  - qwen2.5-coder:7b (4.7 GB) ✅
+  - minicpm-v:8b (5.5 GB) ✅
+- UGC_PRE_PRODUCTION.md blueprint written — full pre-production manager spec (04_WORKFLOWS/)
+- n8n_import.py written — 99_INBOX/n8n_import.py
+- localFileTrigger node enabled in n8n via NODES_EXCLUDE=[] env var
+- n8n hardcoded http://127.0.0.1:11434 (localhost resolves to IPv6 in Node 18+)
+
+### Git commits this session:
+- 8b84ad4 — vault_watcher auto-start, wikilinks backfilled
+- 86cf7ae — n8n workflows imported and tested
+- 3a91b5f — Ollama specialist models, keep-alive, pre-warm cron, task_type routing
+- da700df — VISION route confirmation
+
+### Route test results — FLAG FOR REVIEW:
+- VISION-TEST-002 → minicpm-v:8b → COMPLETE (high-conf → OUTPUTS) ✅
+- CLASSIFY-TEST-001 → qwen3:14b → ESCALATED (low-conf → HANDOFFS) ⚠️
+- CODE-TEST-003 → qwen2.5-coder:7b → ESCALATED (low-conf → HANDOFFS) ⚠️
+
+**2/3 false escalations on trivial prompts.** Cost routing breaks if Ollama always escalates.
+Diagnosis prompt sent to Claude Code at session end — read HANDOFF files + workflow1 confidence logic.
+DO NOT auto-fix. Will reviews next session.
+
+### Engine Body — AI Stack Phase 1 Status:
+- ✅ OLLAMA_HOST=0.0.0.0:11434
+- ✅ OLLAMA_KEEP_ALIVE=10m
+- ✅ Pre-warm cron active (workflow2, every 5 min)
+- ✅ Specialist models loaded (general, code, vision)
+- ✅ task_type routing in workflow1
+- ✅ n8n auto-starts on login
+- ✅ vault_watcher auto-starts on login
+- ❌ Confidence escalation logic — 2/3 false escalations (BLOCKER)
+- ❌ Docker not installed — blocks Open WebUI + n8n-MCP
+- ❌ PostgreSQL migration — n8n still on SQLite (🔴 Critical before scaling)
+- ❌ Antigravity → n8n direct trigger not wired
+
+### R&D Terminal:
+- Updating to Windows 11 — paused all R&D work this session
+- Sentinel Phase 1 deferred until back online
+
+### WHAT NEEDS ATTENTION NEXT SESSION:
+1. **Fix confidence escalation logic in workflow1** — read Claude Code diagnosis output first
+2. **Docker install on Engine Body** — unlocks Open WebUI + n8n-MCP + n8n queue mode
+3. **PostgreSQL migration for n8n** — daytime task, Will supervises
+4. **Antigravity → n8n direct trigger** — wire the orchestrator into the queue
+5. **R&D Terminal post-Win11 setup** — reinstall Ollama, Tailscale, Syncthing, Claude Code
+6. **UGC Pre-Production app build** — blueprint ready in 04_WORKFLOWS/, Claude Code can scaffold
+7. **Test RESEARCH route** — requires Perplexity API confirmation
+8. **Semantic links script** — confirm it ran cleanly, audit results
+
+---
 
 ## PRIORITY ORDER (locked until Will says otherwise)
 1. AI stack — design and link Claude + Antigravity + Ollama + n8n end to end. Token optimization. Full connection map.

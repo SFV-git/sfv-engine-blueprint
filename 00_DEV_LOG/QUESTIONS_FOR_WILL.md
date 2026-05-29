@@ -1,11 +1,23 @@
 ---
 STATUS: CANON
-VERSION: v0.2.0
+VERSION: v0.3.0
 OWNER: WILL
-LAST_UPDATED: 2026-05-27
+LAST_UPDATED: 2026-05-29
 ---
 
 # QUESTIONS FOR WILL
+
+---
+
+## URGENT — REVIEW FIRST NEXT SESSION
+
+**workflow1 confidence escalation logic — 2/3 false escalations**
+Route tests 2026-05-29 results:
+- VISION → minicpm-v:8b → COMPLETE ✅
+- CLASSIFY → qwen3:14b → ESCALATED (should not have)
+- CODE → qwen2.5-coder:7b → ESCALATED (should not have)
+
+Cost routing breaks if Ollama always escalates. Claude Code diagnosis prompt was sent — read its findings first, then decide fix direction. DO NOT auto-patch.
 
 ---
 
