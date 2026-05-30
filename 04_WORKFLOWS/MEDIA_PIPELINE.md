@@ -84,6 +84,8 @@ fields for MEDIA tasks:
 | `file_path` | YES | Absolute path to the source video or audio file on Node A |
 | `output_format` | YES | Format for the output transcript. Default: `md`. Options: `md`, `json`, `txt` |
 
+See JOB_ENVELOPE_SPEC.md for the canonical schema. MEDIA tasks use optional fields: `file_path`, `output_format`.
+
 [FOR HUMAN REVIEW]: Confirm whether `output_format` should default to `md` or whether `json`
 (with timestamps) is preferred for downstream processing.
 
