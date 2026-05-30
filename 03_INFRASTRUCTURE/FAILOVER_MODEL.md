@@ -54,21 +54,14 @@ On error/timeout:
 
 A lightweight PowerShell watchdog script checks n8n health every 60 seconds:
 
-```
-loop every 60s:
-  → GET http://127.0.0.1:5678/healthz
-  → if response != 200 OK:
-    → wait 10s
-    → retry once
-    → if still down:
-      → Start-Process to relaunch n8n
-      → append to FAILOVER_LOG.md: timestamp, event, action
-      → (future) send alert via webhook
-```
-
-Script location: `C:\SFV_BLUEPRINT\99_INBOX\n8n_watchdog.ps1`
-Startup: add to Startup folder alongside `SFV_N8N.vbs`
-Log: `C:\SFV_BLUEPRINT\99_INBOX\FAILOVER_LOG.md`
+**Behavioral spec for watchdog:**
+- Runs every 60 seconds as a Windows Scheduled Task on Node A
+- Health check: HTTP GET to `http://127.0.0.1:5678/healthz` — expects 200 OK
+- On failure: wait 10 seconds, retry once
+- On second failure: relaunch n8n using the same startup command as `SFV_N8N.vbs`
+- On relaunch: append one row to `C:\SFV_BLUEPRINT\99_INBOX\FAILOVER_LOG.md`
+- Row format: `| [timestamp] | N8N_CRASH | Watchdog restarted n8n | — | [task count] tasks requeued |`
+- Script to build during dev phase: `C:\SFV_BLUEPRINT\99_INBOX\n8n_watchdog.ps1`
 
 **[INFERENCE]:** n8n exposes `/healthz` endpoint at the same port. Confirm this is accessible before implementing.
 

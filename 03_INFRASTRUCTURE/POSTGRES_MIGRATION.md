@@ -67,7 +67,7 @@ docker run -d \
   -p 5432:5432 \
   postgres:15
 ```
-[INFERENCE: Docker option is cleaner for future migration/backup. Confirm with Will before choosing.]
+[INFERENCE: Docker option is cleaner for future migration/backup, but AI_STACK_ARCHITECTURE_BLUEPRINT §2 assigns PostgreSQL to C:\ (SSD) for webhook performance — this aligns with Option A (native install). Use Option B only if Will explicitly decides to change the storage allocation. Confirm before choosing.]
 
 ---
 

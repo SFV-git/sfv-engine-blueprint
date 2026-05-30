@@ -73,7 +73,7 @@ Open WebUI has built-in user auth. For the SFV stack:
 | Direct Ollama (`/api/generate`) | Legacy paths, streaming responses, raw generate calls |
 | Direct Ollama (`/api/embeddings`) | Embedding generation (Open WebUI may not expose this) |
 
-**Recommendation:** Migrate n8n workflow1 Ollama calls to Open WebUI endpoint after confirming stability. Keeps a single OpenAI-compatible interface. Direct Ollama calls remain for embeddings and any raw generate needs.
+**[FOR HUMAN REVIEW]:** Migrate n8n workflow1 Ollama calls to Open WebUI endpoint after confirming stability? Keeps a single OpenAI-compatible interface. Direct Ollama calls remain for embeddings and any raw generate needs.
 
 ---
 
@@ -85,7 +85,7 @@ POST http://127.0.0.1:11434/api/generate
 Body: { model, prompt, stream: false, keep_alive: '10m' }
 ```
 
-After Open WebUI deployment, migrate to:
+**[FOR HUMAN REVIEW]:** If migration is approved, the new node call would be:
 ```
 POST http://127.0.0.1:3000/v1/chat/completions
 Headers: Authorization: Bearer [OPENWEBUI_API_KEY]

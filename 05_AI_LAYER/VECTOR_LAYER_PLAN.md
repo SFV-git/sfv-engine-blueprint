@@ -65,15 +65,12 @@ This is the same Ollama instance already running. No new service required.
 docker run -d \
   --name qdrant \
   -p 6333:6333 \
-  -v C:/SFV_ACTIVE/qdrant_storage:/qdrant/storage \
+  -v C:/qdrant_storage:/qdrant/storage \
   qdrant/qdrant
 ```
 
 **Port:** 6333 (localhost only — do not expose to LAN)
-**Storage:** `D:\SFV_ACTIVE\qdrant_storage\` — on Seagate, not SSD (see rationale below)
-
-**Storage rationale correction from AI_STACK_ARCHITECTURE_BLUEPRINT §2:**
-The blueprint says Qdrant should be on `C:\` (SSD) for vector search latency. This is correct for production query latency. However, for Phase 1 vault sizes (~500 documents), `D:\` is acceptable. Migrate to `C:\` if query latency exceeds 200ms.
+**Storage:** `C:\qdrant_storage\` — SSD, per AI_STACK_ARCHITECTURE_BLUEPRINT §2 (vector search latency demands SSD)
 
 ---
 

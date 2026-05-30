@@ -136,7 +136,7 @@ TIER: cloud_premium (High Cost)
 
 1. **Classification is always free:** Use Ollama for all routing decisions.
 2. **Flash free tier limits:** If Gemini Flash hits request limits, fall back to Ollama.
-3. **Escalation Trigger:** A task is only escalated to Claude if Ollama's confidence score evaluates to < 0.75, or if the job envelope flags it as "client-facing".
+3. **Escalation Trigger:** A task is only escalated to Claude if Ollama's response contains explicit doubt language, or if the job envelope includes `"client_facing": true`. The authoritative keyword list and escalation logic is in `05_AI_LAYER/CONFIDENCE_LOGIC.md`. Numeric threshold (< 0.75) is retired — keyword matching is the live implementation as of commit 8c7188f.
 4. **Code and Vision Routing:** Explicitly route code and vision tasks to the dedicated specialist models (Coder/minicpm-v) on Node A, not the general qwen model.
 
 ***
@@ -154,13 +154,16 @@ TIER: cloud_premium (High Cost)
 
 ### Standard Job Envelope Schema
 
+See `05_AI_LAYER/JOB_ENVELOPE_SPEC.md` for the full canonical schema including all optional fields and task_type extensions. Base fields:
+
 ```json
 {
   "task_id": "YYYYMMDD-###",
-  "task_type": "CLASSIFY | SUMMARIZE | COMPRESS | RESEARCH | BLUEPRINT | CODE | MEDIA | VISION",
+  "task_type": "CLASSIFY | SUMMARIZE | COMPRESS | RESEARCH | BLUEPRINT | CODE | MEDIA | VISION | GEMINI",
   "topic": "String",
+  "prompt": "String",
   "priority": "NORMAL | HIGH | CRITICAL",
-  "status": "PENDING | IN_PROGRESS | COMPLETE | ESCALATED | DEFERRED",
+  "status": "PENDING | IN_PROGRESS | COMPLETE | ESCALATED | DEFERRED | BLOCKED | DRAFT",
   "output_target": "%SFV_ROOT%\\99_INBOX\\OUTPUTS\\[filename]"
 }
 ```

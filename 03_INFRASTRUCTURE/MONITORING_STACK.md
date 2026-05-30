@@ -1,6 +1,6 @@
 ---
 STATUS: FOR HUMAN REVIEW
-VERSION: v0.1.0
+VERSION: v0.2.0
 OWNER: WILL
 LAST_UPDATED: 2026-05-29
 CREATED_BY: Claude Code
@@ -9,36 +9,40 @@ MERGE_INTO: STANDALONE
 
 # MONITORING STACK — PROMETHEUS + GRAFANA + WINDOWS_EXPORTER
 
-> Specifies the full Phase 3 monitoring deployment: windows_exporter on both nodes,
-> Prometheus and Grafana on Node B, alert thresholds, and alert routing.
+> Specifies the Phase 3 monitoring deployment.
+> Decision 2026-05-29 (D-B): Prometheus and Grafana deploy on Node A (Engine Body), not Node B.
 > Nothing in this document is deployed yet. This is the build spec.
 
 ---
 
 ## OVERVIEW
 
-The monitoring stack provides visibility into Engine Body health and n8n/Ollama performance
-without consuming Engine Body processing cycles. All collection, storage, and visualization
-runs on Node B (R&D Terminal), which is designated 24/7.
+Prometheus and Grafana run as Docker containers on Node A alongside n8n and Open WebUI.
+windows_exporter runs on both nodes, scraping is done by Prometheus on Node A.
 
-This spec is Phase 3. Prerequisites: Docker, PostgreSQL, and Open WebUI must be stable
-before this stack is deployed (per AI_STACK_ARCHITECTURE_BLUEPRINT §7 priority sequence).
+**Trade-off from original spec:** Monitoring shares Engine Body resources instead of running on the dedicated Sentinel. Load is lightweight (Prometheus scrapes every 15s, Grafana serves dashboards on demand) — acceptable for Phase 3.
+
+**Benefit:** No Docker approval needed for Node B. One fewer dependency to unblock.
 
 ---
 
 ## SECTION 1 — COMPONENT OVERVIEW
 
 ```
-Node A (Engine Body)                Node B (R&D Terminal)
-─────────────────────               ─────────────────────────────────────────
-windows_exporter :9182   ──────→   Prometheus (Docker) — scrapes both nodes
-                                         ↓
-Node B (R&D Terminal)               Grafana (Docker) — reads Prometheus
-windows_exporter :9182   ──────→     → Dashboard 14499 (Windows node overview)
-                                     → Custom dashboards (n8n, Ollama, alerts)
-                                         ↓
-                                   Alert script (lightweight PS1)
-                                     → Appends to 99_INBOX/FAILOVER_LOG.md
+Node A (Engine Body)                         Node B (R&D Terminal)
+──────────────────────────────────────────   ──────────────────────
+windows_exporter :9182 ─────────────────→   windows_exporter :9182
+                                                      │
+Prometheus (Docker) :9090 ←─────────────────────────┘
+  scrapes both nodes
+      │
+Grafana (Docker) :3001
+  reads Prometheus
+  Dashboard 14499 + custom dashboards
+      │
+Alert script (Windows Scheduled Task, Node A)
+  queries Prometheus API
+  → appends to 99_INBOX/FAILOVER_LOG.md
 ```
 
 ---
@@ -50,63 +54,43 @@ windows_exporter :9182   ──────→     → Dashboard 14499 (Windows 
 windows_exporter is already installed on both nodes (confirmed, per AI_STACK_ARCHITECTURE_BLUEPRINT).
 No install action required. Verify it is running before Prometheus deployment.
 
-### Verification Command (run on each node)
+### Verification (run on each node)
 
 ```powershell
-# Confirm service is running
 Get-Service -Name windows_exporter
-
-# Confirm metrics endpoint is accessible
 Invoke-WebRequest -Uri http://localhost:9182/metrics -UseBasicParsing | Select-Object StatusCode
 ```
 
 Expected: `StatusCode 200`
 
-### Port
+### Firewall
 
-Both nodes expose metrics on port **9182**.
+- Node A must allow inbound TCP 9182 from `192.168.137.0/24` so Prometheus on Node A can scrape itself via the subnet IP
+- Node B must allow inbound TCP 9182 from `192.168.137.1` (Node A Prometheus scraping Node B)
 
-Firewall rule required on both machines:
-- Allow inbound TCP 9182 from `192.168.137.0/24` (direct ethernet subnet only)
-- Node A firewall must allow Node B (192.168.137.239) to scrape 192.168.137.1:9182
-- Node B firewall must allow itself to scrape localhost:9182 (already open)
-
-[FOR HUMAN REVIEW]: Confirm windows_exporter firewall rule is in place on Node A.
-AI_STACK_ARCHITECTURE_BLUEPRINT §1 lists port 9182 as needing to be open on the subnet,
-but this has not been explicitly confirmed as done.
+[FOR HUMAN REVIEW]: Confirm windows_exporter firewall rule is in place on both nodes. Port 9182 is listed in AI_STACK_ARCHITECTURE_BLUEPRINT §1 as needing to be open on the subnet, but has not been explicitly verified.
 
 ### Metrics Exposed
 
-windows_exporter exposes the following metric categories by default:
-
 | Collector | Metrics | Relevant For |
-|-----------|---------|--------------|
-| `cpu` | CPU utilization per core, idle/user/system % | Engine Body load during renders |
+|---|---|---|
+| `cpu` | Utilization per core, idle/user/system % | Engine Body load during renders |
 | `memory` | Available bytes, committed bytes, page faults | OOM risk with multiple models loaded |
 | `logical_disk` | Read/write bytes/sec, % disk time, free space | D:\ throughput during ingest/export |
 | `net` | Bytes sent/received per adapter | Direct ethernet link utilization |
 | `service` | Service state (running/stopped) | n8n, Ollama, PostgreSQL health |
 | `os` | System uptime, process count | General node health |
-| `process` | Per-process CPU and memory | Ollama VRAM proxy (RAM-side) |
+| `process` | Per-process CPU and memory | Ollama process RAM proxy |
 
-[INFERENCE]: GPU VRAM is not exposed natively by windows_exporter. Ollama VRAM usage must be
-monitored via the Ollama API (`/api/ps`) or a separate GPU metrics exporter (e.g., DCGM or
-a custom exporter). This is out of scope for Phase 3 base deployment.
-[FOR HUMAN REVIEW]: Confirm whether GPU VRAM monitoring is required in Phase 3 or deferred.
+[INFERENCE]: GPU VRAM is not exposed by windows_exporter natively. Ollama VRAM must be monitored via the Ollama API (`/api/ps`) or a separate GPU exporter. Out of scope for Phase 3 base deployment.
+
+[FOR HUMAN REVIEW]: Is GPU VRAM monitoring required in Phase 3 or deferred?
 
 ---
 
-## SECTION 3 — PROMETHEUS DEPLOYMENT ON NODE B
+## SECTION 3 — PROMETHEUS ON NODE A
 
-### Deployment Method
-
-Docker container on Node B (R&D Terminal). Requires Docker installed on Node B.
-
-[FOR HUMAN REVIEW]: Docker install on Node B is not confirmed in existing docs. Docker on
-Node A is approved (2026-05-26, DOCKER_INSTALL_CHECKLIST.md). Node B Docker status is
-[INFERENCE: likely required but not explicitly approved]. Confirm before Phase 3.
-
-### Docker Run Command
+### Deployment
 
 ```bash
 docker run -d \
@@ -118,12 +102,11 @@ docker run -d \
   --config.file=/etc/prometheus/prometheus.yml
 ```
 
-[INFERENCE]: Config volume path `C:/sfv_monitoring/prometheus` is proposed. Confirm Node B
-storage location with Will before deploy.
+**Config volume:** `C:\sfv_monitoring\prometheus\` on Node A SSD.
 
-### Prometheus Scrape Config
+### Scrape Config
 
-Create `prometheus.yml` at the config volume path:
+Create `C:\sfv_monitoring\prometheus\prometheus.yml`:
 
 ```yaml
 global:
@@ -146,23 +129,16 @@ scrape_configs:
           role: 'sentinel'
 ```
 
-Scrape interval of 15 seconds provides adequate granularity for detecting OOM events and
-n8n queue backlog without excessive storage growth on Node B.
+### Access
 
-### Prometheus Access
-
-Prometheus UI: `http://192.168.137.239:9090`
-Available from Engine Body browser over direct ethernet.
+- From Node A: `http://localhost:9090`
+- From Node B or Tailscale: `http://192.168.137.1:9090`
 
 ---
 
-## SECTION 4 — GRAFANA DEPLOYMENT ON NODE B
+## SECTION 4 — GRAFANA ON NODE A
 
-### Deployment Method
-
-Docker container on Node B, same stack as Prometheus.
-
-### Docker Run Command
+### Deployment
 
 ```bash
 docker run -d \
@@ -173,143 +149,112 @@ docker run -d \
   grafana/grafana
 ```
 
-Port mapping: internal 3000 → external **3001**.
+**Port:** 3001 — port 3000 is reserved for Open WebUI on Node A.
 
-[INFERENCE]: Port 3001 is chosen because port 3000 on Node A is allocated to Open WebUI
-(per AI_STACK_ARCHITECTURE_BLUEPRINT Service Endpoint Registry). Node B does not run Open
-WebUI, so 3000 may be available on Node B — but 3001 is used here as a safe default to
-avoid future port conflicts if Open WebUI is ever deployed on Node B.
-[FOR HUMAN REVIEW]: Confirm Grafana port. 3001 is the recommendation. Change if there is a
-reason to use 3000 on Node B.
+### Access
 
-### Grafana Access
-
-`http://192.168.137.239:3001`
-Default credentials: admin / admin — change on first login.
+- From Node A: `http://localhost:3001`
+- From Node B or Tailscale: `http://192.168.137.1:3001`
+- Default credentials: admin / admin — change on first login
 
 ### Dashboard Setup
 
-**Base Dashboard:** Import Dashboard ID **14499** (Windows Node Overview for windows_exporter).
-This provides immediate visibility into CPU, memory, disk, and network for both nodes.
+**Base:** Import Dashboard ID **14499** (Windows Node Overview for windows_exporter) — immediate visibility into CPU, memory, disk, network for both nodes.
 
-**Custom Dashboards to Configure:**
+**Custom dashboards to configure:**
 
-| Dashboard | Key Panels | Data Source |
-|-----------|-----------|-------------|
-| n8n Queue Health | QUEUE folder file count over time, workflow execution rate | [INFERENCE: n8n does not natively expose Prometheus metrics — file count dashboard requires a custom exporter script or n8n API polling. Mark as Phase 3 stretch goal.] |
-| Ollama Model Load | RAM usage of ollama.exe process, response latency trend | windows_exporter `process` collector + Ollama `/api/ps` custom exporter |
-| Engine Body RAM | Available bytes, % committed, swap usage | windows_exporter `memory` collector |
-| Disk Throughput | D:\ read/write MB/s during ingest/export windows | windows_exporter `logical_disk` collector |
-| Node B Availability | Up/down status, last scrape time | Prometheus `up` metric |
+| Dashboard | Key panels | Source |
+|---|---|---|
+| Engine Body RAM | Available bytes, % committed, swap | windows_exporter `memory` |
+| Disk Throughput | D:\ read/write MB/s | windows_exporter `logical_disk` |
+| Node B Availability | Up/down, last scrape time | Prometheus `up` metric |
+| Ollama Model Load | RAM usage of ollama.exe, response latency | windows_exporter `process` + Ollama `/api/ps` |
+| n8n Queue Health | QUEUE folder file count over time | [INFERENCE: requires custom exporter or n8n API polling — Phase 3 stretch goal] |
 
-[FOR HUMAN REVIEW]: n8n queue depth from Prometheus requires either a custom exporter that
-counts files in QUEUE\ on a cron, or polling the n8n REST API. Confirm which approach is
-preferred before building this panel.
+[FOR HUMAN REVIEW]: n8n queue depth requires either a custom file-count exporter or n8n API polling. Confirm which approach is preferred before building this panel.
 
 ---
 
 ## SECTION 5 — ALERT THRESHOLDS
 
-All thresholds below are [INFERENCE] — they are reasonable defaults based on hardware specs.
-Will must confirm values before alert rules are written into Prometheus or the alert script.
+All values are [INFERENCE] — reasonable defaults based on hardware specs. Will confirms before alert rules are written.
 
-| Alert | Condition | Severity | Notes |
-|-------|-----------|----------|-------|
-| Engine Body GPU temp high | `gpu_temp_c > 85` | WARNING | [INFERENCE] Requires GPU exporter (not in windows_exporter default) |
-| Engine Body RAM critical | `windows_memory_available_bytes / total < 0.15` (>85% used) | CRITICAL | 64GB node: fires at ~9.6GB free |
-| n8n queue backlog | `queue_file_count > 10` for > 5 minutes | WARNING | [INFERENCE on count and duration] Requires custom file count exporter |
-| Ollama response slow | `ollama_response_time_s > 60` | WARNING | [INFERENCE] Requires custom Ollama metrics exporter |
-| Node B offline | Prometheus `up{job="rd_terminal"} == 0` for > 2 minutes | CRITICAL | Sentinel is down — monitoring blind |
-| Engine Body offline | Prometheus `up{job="engine_body"} == 0` for > 2 minutes | CRITICAL | Primary node unreachable |
-| Disk near full | `windows_logical_disk_free_bytes{volume="D:"} < 50GB` | WARNING | [INFERENCE on threshold] Adjust to actual D:\ capacity |
+| Alert | Condition | Severity |
+|---|---|---|
+| Engine Body RAM critical | >85% RAM used (~9.6GB free on 64GB) | CRITICAL |
+| Engine Body RAM warning | >75% RAM used | WARNING |
+| Disk near full (D:\) | <50GB free | WARNING [INFERENCE on threshold] |
+| n8n queue backlog | >10 PENDING files for >5 minutes | WARNING [INFERENCE — requires custom exporter] |
+| Node B offline | `up{job="rd_terminal"} == 0` for >2 min | CRITICAL |
+| Engine Body offline | `up{job="engine_body"} == 0` for >2 min | CRITICAL |
+| Ollama response slow | Response time >60s | WARNING [INFERENCE — requires custom exporter] |
 
-[FOR HUMAN REVIEW]: Confirm all threshold values. The RAM threshold of 85% and queue backlog
-count of 10 are estimates. GPU temp monitoring requires a separate GPU exporter — confirm
-whether this is in Phase 3 scope or deferred.
+[FOR HUMAN REVIEW]: Confirm all threshold values before alert rules are built.
+GPU temp monitoring is deferred pending a GPU exporter decision.
 
 ---
 
 ## SECTION 6 — ALERT ROUTING
 
-### Phase 3 Scope: File-Based Alerts Only
+Phase 3: file-based alerts only. No external notification (email, Slack, webhook).
 
-No external notification (email, SMS, webhook) in Phase 3. Alerts write to a local log file.
+A Windows Scheduled Task on Node A queries the Prometheus API every 60 seconds and appends firing alerts to `C:\SFV_BLUEPRINT\99_INBOX\FAILOVER_LOG.md`.
 
-A lightweight PowerShell script runs on Node B on a 60-second cron (or as a Windows
-scheduled task) and queries the Prometheus API for active alerts.
-
-### Alert Script Spec
-
-Script location: `C:\SFV_BLUEPRINT\99_INBOX\prometheus_alert_writer.ps1` [INFERENCE on path]
-
-Logic:
-
-```powershell
-# Query Prometheus alerts API
-$alerts = Invoke-RestMethod -Uri "http://localhost:9090/api/v1/alerts" -Method GET
-
-foreach ($alert in $alerts.data.alerts) {
-    if ($alert.state -eq "firing") {
-        $entry = "| $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') | $($alert.labels.alertname) | $($alert.labels.severity) | $($alert.annotations.summary) |"
-        Add-Content -Path "C:\SFV_BLUEPRINT\99_INBOX\FAILOVER_LOG.md" -Value $entry
-    }
-}
-```
-
-Output format matches the existing FAILOVER_LOG.md append-only table format
-(established in FAILOVER_MODEL.md):
+**Behavioral spec for alert writer script:**
+- Input: Prometheus `/api/v1/alerts` endpoint at `http://localhost:9090`
+- Trigger: every 60 seconds via Windows Task Scheduler
+- For each firing alert: append one row to FAILOVER_LOG.md
+- Row format matches FAILOVER_MODEL.md convention:
 
 ```
-| 2026-05-29 14:32:01 | ENGINE_BODY_RAM_CRITICAL | CRITICAL | RAM usage at 87% — 8.3GB free |
-| 2026-05-29 16:45:12 | N8N_QUEUE_BACKLOG | WARNING | 12 files in QUEUE for 7 minutes |
+| 2026-05-29 14:32:01 | ENGINE_BODY_RAM_CRITICAL | CRITICAL | RAM at 87% — 8.3GB free |
+| 2026-05-29 16:45:12 | N8N_QUEUE_BACKLOG | WARNING | 12 files in QUEUE for 7 min |
 ```
 
-### Future Alert Routing (Post Phase 3)
+Script location (to be built during dev phase): `C:\SFV_BLUEPRINT\99_INBOX\prometheus_alert_writer.ps1`
 
-[FOR HUMAN REVIEW]: The following options exist for external notifications when they are needed:
-- n8n webhook trigger reading FAILOVER_LOG.md changes → POST to a notification endpoint
-- Direct Grafana alerting via email SMTP (requires SMTP config)
-- Grafana → Telegram or Slack webhook (requires channel setup)
+**Future alert routing options (post Phase 3):**
+- n8n webhook triggered by FAILOVER_LOG.md changes → external notification
+- Grafana direct alerting via email SMTP
+- Grafana → Telegram or Slack webhook
 
-No external notification is implemented in Phase 3. This is a future decision for Will.
+[FOR HUMAN REVIEW]: Confirm preferred external alert channel when Phase 3 is ready.
 
 ---
 
 ## SECTION 7 — IMPLEMENTATION ORDER
 
-Phase 3 is explicitly after Docker, PostgreSQL, and Open WebUI are stable on Node A.
+Prerequisites: Docker on Node A installed, PostgreSQL stable, Open WebUI stable.
 
-| Step | Action | Node | Requires |
-|------|--------|------|----------|
-| 1 | Verify windows_exporter running on both nodes (`Get-Service`) | Both | windows_exporter already installed |
-| 2 | Confirm port 9182 firewall rule allows 192.168.137.0/24 on Node A | Node A | Admin access |
-| 3 | Install Docker on Node B | Node B | Will approval [FOR HUMAN REVIEW] |
-| 4 | Create config directory `C:\sfv_monitoring\prometheus\` on Node B | Node B | Docker installed |
-| 5 | Write `prometheus.yml` (Section 3 scrape config) | Node B | Config dir exists |
-| 6 | Deploy Prometheus container | Node B | prometheus.yml written |
-| 7 | Verify Prometheus scraping both nodes at `http://192.168.137.239:9090/targets` | Node B | Prometheus running |
-| 8 | Deploy Grafana container | Node B | Prometheus running |
-| 9 | Import Dashboard 14499 in Grafana | Node B | Grafana running |
-| 10 | Configure Prometheus alert rules file | Node B | Thresholds confirmed by Will |
-| 11 | Deploy alert writer PowerShell script as scheduled task on Node B | Node B | Alert rules confirmed |
-| 12 | Verify FAILOVER_LOG.md receives test alert | Both | Alert script deployed |
+| Step | Action | Node |
+|---|---|---|
+| 1 | Verify windows_exporter running on both nodes | Both |
+| 2 | Confirm port 9182 firewall rule on Node A (allow 192.168.137.0/24 inbound) | Node A |
+| 3 | Create config dir `C:\sfv_monitoring\prometheus\` on Node A | Node A |
+| 4 | Write `prometheus.yml` (Section 3) | Node A |
+| 5 | Deploy Prometheus container on Node A | Node A |
+| 6 | Verify Prometheus scraping both nodes at `http://localhost:9090/targets` | Node A |
+| 7 | Deploy Grafana container on Node A | Node A |
+| 8 | Import Dashboard 14499 in Grafana | Node A |
+| 9 | Confirm alert thresholds with Will | — |
+| 10 | Write alert rules file (`alerts.yml`) for Prometheus | Node A |
+| 11 | Deploy alert writer script as Windows Scheduled Task | Node A |
+| 12 | Verify FAILOVER_LOG.md receives test alert entry | Node A |
 
 ---
 
 ## OPEN QUESTIONS FOR WILL
 
-1. Is Docker approved for Node B? (It is confirmed for Node A but not explicitly for Node B.)
-2. Confirm GPU temp monitoring scope — windows_exporter does not expose GPU temp natively.
-3. Confirm all alert thresholds in Section 5 before alert rules are written.
-4. Confirm Grafana port — 3001 is recommended; change if 3000 is preferred on Node B.
-5. Confirm Whisper endpoint port on Node B (this doc references it in MEDIA_PIPELINE.md —
-   listed as [INFERENCE] there as well).
+1. Confirm GPU temp monitoring scope — windows_exporter does not expose GPU temp natively.
+2. Confirm all alert thresholds in Section 5 before rules are written.
+3. Confirm Grafana port — 3001 is the default here; change if needed.
+4. n8n queue depth panel approach — custom file-count exporter or n8n REST API polling?
 
 ---
 
 ## CONNECTED FILES
-- [[AI_STACK_ARCHITECTURE_BLUEPRINT]]
-- [[RD_TERMINAL_ARCHITECTURE]]
-- [[FAILOVER_MODEL]]
-- [[DOCKER_INSTALL_CHECKLIST]]
-- [[COST_CEILING_POLICY]]
+- [[AI_STACK_ARCHITECTURE_BLUEPRINT|AI Stack Architecture]]
+- [[RD_TERMINAL_ARCHITECTURE|R&D Terminal Architecture]]
+- [[FAILOVER_MODEL|Failover Model]]
+- [[DOCKER_INSTALL_CHECKLIST|Docker Install Checklist]]
+- [[COST_CEILING_POLICY|Cost Ceiling Policy]]

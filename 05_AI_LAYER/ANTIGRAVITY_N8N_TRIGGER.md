@@ -42,25 +42,15 @@ Antigravity writes a valid job envelope JSON to `C:\SFV_BLUEPRINT\99_INBOX\QUEUE
 
 ## JOB ENVELOPE FORMAT
 
-Antigravity must write files conforming to the standard job envelope schema:
+Antigravity must write files conforming to the canonical job envelope schema.
+See `05_AI_LAYER/JOB_ENVELOPE_SPEC.md` for the full schema, required vs optional fields, and examples.
 
-```json
-{
-  "task_id": "YYYYMMDD-###",
-  "task_type": "CLASSIFY | SUMMARIZE | COMPRESS | RESEARCH | BLUEPRINT | CODE | MEDIA | VISION",
-  "topic": "Short description of task",
-  "prompt": "Full prompt text for the model",
-  "priority": "NORMAL | HIGH | CRITICAL",
-  "status": "PENDING",
-  "output_target": "C:/SFV_BLUEPRINT/99_INBOX/OUTPUTS/[task_id]_RESULT.md"
-}
-```
-
-**Rules:**
+**Key rules for Antigravity dispatch:**
 - `status` must be `"PENDING"` — workflow1 skips non-PENDING files
-- `task_id` must be unique — use timestamp + sequential number
-- File must be valid JSON — n8n's Code node will silently drop malformed files
-- File extension must be `.json` — Local File Trigger only fires on `.json` files
+- `task_id` must be unique — use `YYYYMMDD-NNN` format
+- File must be valid JSON — malformed files are silently dropped
+- File extension must be `.json`
+- Set `"client_facing": true` on any task that will go directly to a client
 
 ---
 

@@ -68,11 +68,11 @@ This is the most critical unaddressed gap. No backup exists for n8n workflow def
 
 ```
 # Daily pg_dump — run via Windows Task Scheduler or n8n cron workflow
-pg_dump n8n > C:\SFV_ACTIVE\BACKUPS\n8n_[date].sql
+pg_dump n8n > D:\SFV_ACTIVE\BACKUPS\n8n_[date].sql
 
 # Retention: keep last 7 days, delete older files
 # Robocopy nightly job already runs D:\ → Node B
-# Point it at C:\SFV_ACTIVE\BACKUPS\ to copy n8n dumps to Node B as well
+# Point it at D:\SFV_ACTIVE\BACKUPS\ to copy n8n dumps to Node B as well
 ```
 
 [FOR HUMAN REVIEW]: Should the pg_dump be triggered by a Windows Task Scheduler job or by an n8n cron workflow? If n8n itself is what runs the backup, and n8n is the thing that crashed, the backup may not run. Recommend Windows Task Scheduler for independence.

@@ -69,7 +69,7 @@ Will is the only authority who can act on a cost alert. No automation may pause,
 
 ---
 
-### 2.4 Ollama (local — R&D Terminal)
+### 2.4 Ollama (local — Engine Body)
 
 No monitoring needed. Zero cost, no rate limits, no daily cap. See RATE_LIMITS.md for context window constraints.
 

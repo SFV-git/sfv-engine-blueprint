@@ -79,28 +79,32 @@ Will runs a Perplexity query manually. Output is saved as structured JSON to QUE
 }
 ```
 
+See JOB_ENVELOPE_SPEC.md for the full canonical schema. RESEARCH tasks may add optional fields: `auto_research`, `source`.
+
 workflow1 picks this up and routes it to Claude HANDOFF (unless `auto_research: true`).
 
 This is the canonical path for research findings entering the Engine from Perplexity.
 
 ---
 
-## WORKFLOW3 — OPEN QUESTION (Gap 9)
+## WORKFLOW3 — CONFIRMED: DEDICATED RESEARCH HANDLER
 
-**[FOR HUMAN REVIEW — D3 not answered]**
+**Decision confirmed 2026-05-29 (D3 = C2).**
 
-Workflows 1, 2, and 4 are imported and active. No workflow3 exists in the vault or in n8n.
+workflow3 is a dedicated RESEARCH handler. It is not yet built or imported into n8n.
 
-**Inference:** workflow3 was intended as a dedicated RESEARCH handler, possibly calling Tavily or Perplexity API directly. This would offload research routing from workflow1 and give research tasks their own dedicated pipeline with retry logic, result formatting, and direct OUTPUTS write.
+**Purpose:** Keep workflow1 Ollama-only (clean decision layer). workflow3 owns all RESEARCH task_type logic — Tavily automated search, Perplexity intake, result formatting, source tagging, and retry logic.
 
-**Question for Will:**
-- Was workflow3 intentionally skipped?
-- Should workflow3 be a dedicated RESEARCH handler (Tavily + Perplexity integration)?
-- Or should research routing stay inside workflow1 as a branch?
+**Trigger:** workflow3 fires when workflow1 routes a task with `task_type = "RESEARCH"` to the Non-Ollama Handler node. The Non-Ollama Handler writes a HANDOFF file and sets status = ESCALATED. workflow3 should watch HANDOFFS/ for RESEARCH-type handoffs and pick them up automatically (or workflow1 can be updated to call workflow3 directly via webhook).
 
-**Recommendation:** Build workflow3 as a dedicated RESEARCH handler. Keeps workflow1 clean (Ollama-only decisions) and allows research-specific logic (Tavily retry, result formatting, source tagging) without bloating workflow1.
+**workflow3 scope:**
+- Receive RESEARCH task from QUEUE/ or HANDOFFS/
+- If `auto_research: true` → call Tavily API → write structured result to OUTPUTS/
+- If `auto_research: false` or Tavily fails → write HANDOFF for Claude
+- Log all routing decisions to DECISION_LOG.md
+- Output format: standard RESEARCH output format (see below)
 
-**Do not build workflow3 until Will confirms direction.**
+**Build prerequisite:** Tavily API key active in n8n_env.ps1 (already confirmed). No Docker required.
 
 ---
 

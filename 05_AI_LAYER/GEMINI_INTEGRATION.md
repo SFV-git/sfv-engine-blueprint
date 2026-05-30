@@ -110,13 +110,8 @@ New branch in workflow1 Switch/IF node → Gemini HTTP Request node → Write+Lo
 
 ## RATE LIMITS AND FALLBACK
 
-| Limit | Gemini Flash (free tier) |
-|---|---|
-| RPM | 15 requests/min [INFERENCE] |
-| RPD | 1500 requests/day [INFERENCE] |
-| TPM | 1M tokens/min |
-
-**Fallback:** If Gemini rate limit hit (HTTP 429), fall back to Ollama for the task and log `GEMINI_FALLBACK` to DECISION_LOG.md.
+See `05_AI_LAYER/RATE_LIMITS.md` for current Gemini Flash rate limit values.
+Key constraint for SFV stack: if Gemini Flash returns HTTP 429, fall back to Ollama and log `GEMINI_FALLBACK` to DECISION_LOG.md.
 
 ---
 

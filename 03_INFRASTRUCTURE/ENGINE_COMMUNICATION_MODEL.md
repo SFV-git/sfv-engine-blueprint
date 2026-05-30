@@ -104,6 +104,8 @@ C:\SFV_BLUEPRINT\
 | PENDING | In queue, not started |
 | IN_PROGRESS | Being worked |
 | COMPLETE | Done, output written |
+| ESCALATED | Sent to HANDOFFS/ — requires Claude or Antigravity review |
+| DEFERRED | Intentionally postponed — do not process yet |
 | BLOCKED | Cannot proceed — question logged |
 | DRAFT | Output written, not reviewed |
 
