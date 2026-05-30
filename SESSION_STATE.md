@@ -23,6 +23,48 @@ v0.x — Blueprint Lock (AI stack design + full blueprint planning. Zero dev wor
 
 ---
 
+## SESSION — 2026-05-29 (ULTRAPLAN — AI STACK GAP ANALYSIS)
+
+### Completed this session:
+- Read all 14 vault files per ULTRAPLAN_BRIEF.md
+- Diagnosed confidence escalation bug (Gap 1): fix already in vault JSON (commit 8c7188f); n8n re-import pending
+- Wrote 19 new blueprint docs covering all 20 gaps (Gaps 1–20)
+- Gap 9 (workflow3): flagged FOR HUMAN REVIEW — D3 not answered, see RESEARCH_ROUTE_SPEC.md
+- All docs STATUS: FOR HUMAN REVIEW, all content labeled CANON/UNCONFIRMED/INFERENCE as appropriate
+
+### New files written this session:
+- 05_AI_LAYER/CONFIDENCE_LOGIC.md
+- 03_INFRASTRUCTURE/POSTGRES_MIGRATION.md
+- 03_INFRASTRUCTURE/DOCKER_INSTALL_CHECKLIST.md
+- 03_INFRASTRUCTURE/FAILOVER_MODEL.md
+- 03_INFRASTRUCTURE/SECRETS_POLICY.md
+- 05_AI_LAYER/ANTIGRAVITY_N8N_TRIGGER.md
+- 03_INFRASTRUCTURE/N8N_MCP_SPEC.md
+- 05_AI_LAYER/RESEARCH_ROUTE_SPEC.md
+- 05_AI_LAYER/GEMINI_INTEGRATION.md
+- 03_INFRASTRUCTURE/OPEN_WEBUI_SPEC.md
+- 05_AI_LAYER/VECTOR_LAYER_PLAN.md
+- 04_WORKFLOWS/MEDIA_PIPELINE.md
+- 03_INFRASTRUCTURE/MONITORING_STACK.md
+- 05_AI_LAYER/COST_CEILING_POLICY.md
+- 03_INFRASTRUCTURE/CONCURRENCY_QUEUE_SPEC.md
+- 05_AI_LAYER/OUTPUT_VALIDATION.md
+- 05_AI_LAYER/PROMPT_VERSIONING.md
+- 05_AI_LAYER/MODEL_LIFECYCLE_POLICY.md
+- 03_INFRASTRUCTURE/DISASTER_RECOVERY.md
+
+### WHAT NEEDS ATTENTION NEXT SESSION:
+1. **Will reviews all 19 new docs** — approve, reject, or mark CANON as ready
+2. **workflow3 decision (D3)** — confirm: dedicated RESEARCH handler or keep inside workflow1?
+3. **workflow1 re-import** — re-import workflow1_queue_processor.json into n8n to apply confidence fix
+4. **Test confidence fix** — drop TEST_CLASSIFY_002.json and TEST_CODE_004.json into QUEUE/, confirm both land in OUTPUTS/
+5. **MERGE_INTO docs** — after Will approves, merge flagged docs into their target files
+6. **CONCURRENCY_QUEUE_SPEC** → AI_STACK_ARCHITECTURE_BLUEPRINT §4
+7. **MODEL_LIFECYCLE_POLICY** → LOCAL_MODELS.md
+8. **Remaining Phase 0 actions** — Docker install, PostgreSQL migration (see those docs)
+
+---
+
 ## SESSION — 2026-05-29 (AI STACK PHASE 1 EXECUTION — ENGINE BODY)
 
 ### Completed this session:
