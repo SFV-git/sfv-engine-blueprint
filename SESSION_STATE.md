@@ -1,8 +1,8 @@
 ---
 STATUS: CANON
-VERSION: v0.4.0
+VERSION: v0.5.0
 OWNER: WILL
-LAST_UPDATED: 2026-05-29
+LAST_UPDATED: 2026-05-30
 ---
 
 # SESSION STATE
@@ -19,11 +19,41 @@ Read this first every session. Report in 3 lines. Wait for Will.
 5. Physical node scaling must be accounted for in every architectural decision
 
 ## CURRENT PHASE
-v0.x — Blueprint Lock (AI stack design + full blueprint planning. Zero dev work until complete.)
+v0.x — Blueprint Lock COMPLETE. All 20 AI stack gaps blueprinted. 6 docs CANON. 13 docs FOR HUMAN REVIEW.
+Next: Will reviews FHR docs → promotes to CANON as each area is executed. Build phase begins on Will's go.
 
 ---
 
-## SESSION — 2026-05-29 (ULTRAPLAN — AI STACK GAP ANALYSIS)
+## SESSION — 2026-05-30 (ULTRAPLAN COMPLETE + R&D TERMINAL SETUP)
+
+### Completed this session:
+- Claude Code finished all 20 AI stack gap docs (ultraplan execution complete)
+- 6 docs promoted to CANON by Antigravity review:
+  DOCKER_INSTALL_CHECKLIST · SECRETS_POLICY · CONCURRENCY_QUEUE_SPEC · OUTPUT_VALIDATION · PROMPT_VERSIONING · N8N_MCP_SPEC
+- 13 docs remain FOR HUMAN REVIEW — Will promotes as execution begins
+- ULTRAPLAN_BRIEF.md written to 00_DEV_LOG/ (Chat → Code handoff doc)
+- R&D Terminal post-Win11 state confirmed (DESKTOP-JGUJOGA):
+  - ✅ Git 2.54.0 | ✅ Tailscale 1.98.2 | ✅ Python
+  - ❌ Ollama — needs reinstall
+  - ❌ Syncthing — needs reinstall
+  - ❌ Claude Code — needs install
+  - ❓ windows_exporter — not checked
+- R&D Terminal IP CHANGED: 192.168.137.239 → 192.168.137.246 (DHCP after Win11)
+  - Firewall /24 scope still valid. AI_STACK_ARCHITECTURE_BLUEPRINT.md needs IP update.
+
+### WHAT NEEDS ATTENTION NEXT SESSION (PRIORITY ORDER):
+1. **workflow1 re-import** — drop updated JSON (commit 8c7188f) into n8n. Test with TEST_CLASSIFY_002.json + TEST_CODE_004.json in QUEUE/
+2. **PostgreSQL migration** — see POSTGRES_MIGRATION.md. Will supervises. Backup SQLite first.
+3. **Docker install on Engine Body** — requires restart. See DOCKER_INSTALL_CHECKLIST.md (CANON). Unlocks Open WebUI, n8n-MCP, Redis.
+4. **R&D Terminal installs** — in order: Ollama → Syncthing → Claude Code → windows_exporter
+5. **Review 13 FHR docs** — start with Phase 0: CONFIDENCE_LOGIC, POSTGRES_MIGRATION, FAILOVER_MODEL, SECRETS_POLICY
+6. **workflow3 build** — confirmed RESEARCH handler. See RESEARCH_ROUTE_SPEC.md. After PostgreSQL + Docker stable.
+7. **Update AI_STACK_ARCHITECTURE_BLUEPRINT.md** — R&D Terminal IP 192.168.137.239 → 192.168.137.246
+8. **Open question** — password manager for secrets (n8n_env.ps1 has no off-site backup, see DISASTER_RECOVERY.md §3)
+
+---
+
+## SESSION — 2026-05-29 (ULTRAPLAN — AI STACK GAP ANALYSIS — CLAUDE CODE)
 
 ### Completed this session:
 - Read all 14 vault files per ULTRAPLAN_BRIEF.md
