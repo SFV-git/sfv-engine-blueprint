@@ -1,9 +1,6 @@
 {
-  "task_id": "CLASSIFY-TEST-002",
+  "task_id": "TEST_CLASSIFY_002",
   "task_type": "CLASSIFY",
-  "status": "COMPLETE",
   "prompt": "Reply with one word: CONFIRMED",
-  "created": "2026-05-29",
-  "processed_at": "2026-05-29 07:53:14",
-  "output_written_to": "C:/SFV_BLUEPRINT/99_INBOX/OUTPUTS/CLASSIFY-TEST-002_RESULT.md"
+  "status": "PENDING"
 }
