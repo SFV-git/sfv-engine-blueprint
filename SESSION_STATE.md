@@ -1,8 +1,8 @@
 ---
 STATUS: CANON
-VERSION: v0.5.0
+VERSION: v0.6.0
 OWNER: WILL
-LAST_UPDATED: 2026-05-30
+LAST_UPDATED: 2026-06-03
 ---
 
 # SESSION STATE
@@ -19,8 +19,40 @@ Read this first every session. Report in 3 lines. Wait for Will.
 5. Physical node scaling must be accounted for in every architectural decision
 
 ## CURRENT PHASE
-v0.x — Blueprint Lock COMPLETE. All 20 AI stack gaps blueprinted. 6 docs CANON. 13 docs FOR HUMAN REVIEW.
-Next: Will reviews FHR docs → promotes to CANON as each area is executed. Build phase begins on Will's go.
+v0.x — Blueprint Lock COMPLETE. All 20 AI stack gaps blueprinted. 7 docs CANON. 12 docs FOR HUMAN REVIEW.
+Workflow1 confidence fix COMPLETE and validated. Queue processor live and triggering <5s.
+Next: Will reviews remaining FHR docs. Workflow 4 trigger fix needed before activation.
+
+---
+
+## SESSION — 2026-06-03 (CONFIDENCE FIX VALIDATED + N8N OPERATIONAL)
+
+### Completed this session:
+- n8n started clean — v2.22.5, healthy at http://127.0.0.1:5678 ✅
+- workflow1_queue_processor re-imported via API (ID: LJH60a1NrfM2TqKf) ✅
+- workflow1 activated — localFileTrigger live on QUEUE/ ✅
+- **Confidence fix CONFIRMED end-to-end:**
+  - TEST_CLASSIFY_002 → OLLAMA_CLASSIFY (HIGH CONFIDENCE) → OUTPUTS/ ✅
+  - TEST_CODE_004 → OLLAMA_CODE (HIGH CONFIDENCE) → OUTPUTS/ ✅
+  - Both processed in <5s of file drop. Write-back to QUEUE json confirmed. DECISION_LOG updated.
+- CONFIDENCE_LOGIC.md promoted to CANON (was FOR HUMAN REVIEW) ✅
+- Duplicate workflow1 (FwTeEPL7w5vlPwO7) deleted ✅
+- OVERNIGHT_DIRECTIVE.md written — ready for autonomous loop ✅
+
+### NOT completed this session:
+- ❌ Workflow 4 (Output Monitor, ID: oUw9qPMw6CpHEIv8) — activation FAILED
+  - Error: Node "Watch 99_INBOX" missing required parameter `triggerOn`
+  - Fix: open in n8n UI → edit trigger node → set triggerOn=folder → save → activate
+
+### WHAT NEEDS ATTENTION NEXT SESSION (PRIORITY ORDER):
+1. **Fix Workflow 4 trigger node** — open n8n UI, set triggerOn=folder on "Watch 99_INBOX", activate
+2. **PostgreSQL migration** — see POSTGRES_MIGRATION.md. Will supervises. Backup SQLite first.
+3. **Docker install on Engine Body** — requires restart. See DOCKER_INSTALL_CHECKLIST.md (CANON).
+4. **R&D Terminal installs** — in order: Ollama → Syncthing → Claude Code → windows_exporter
+5. **Review 12 remaining FHR docs** — start with: POSTGRES_MIGRATION, FAILOVER_MODEL, SECRETS_POLICY
+6. **workflow3 build** — RESEARCH handler. See RESEARCH_ROUTE_SPEC.md. After PostgreSQL + Docker stable.
+7. **Update AI_STACK_ARCHITECTURE_BLUEPRINT.md** — R&D Terminal IP 192.168.137.239 → 192.168.137.246
+8. **Secrets backup** — n8n_env.ps1 has no off-site backup (see DISASTER_RECOVERY.md §3)
 
 ---
 
