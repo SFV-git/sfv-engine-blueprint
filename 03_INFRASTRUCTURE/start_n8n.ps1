@@ -5,6 +5,7 @@
 # 127.0.0.1                  → avoids Node.js resolving localhost to ::1 (IPv6) on Windows
 
 $env:NODES_EXCLUDE                = "[]"
+$env:N8N_ENABLE_LOCAL_FILE_NODE   = "true"  # Belt-and-suspenders for future n8n upgrades
 $env:OLLAMA_URL                   = "http://127.0.0.1:11434"
 $env:OLLAMA_MODEL                 = "qwen3:14b"
 $env:NODE_FUNCTION_ALLOW_BUILTIN  = "fs,path,os"

@@ -1,0 +1,10 @@
+{
+  "task_id": "TEST_VALIDATION_001",
+  "task_type": "CLASSIFY",
+  "topic": "validation-smoke-test",
+  "prompt": "Classify this content into exactly one SFV branch. Reply with the branch name and one sentence reason.\n\nContent: A short video reel of a street football match filmed at a local park, intended for social media posting as user-generated content.\n\nBranches: MYTHOLOGY, SFV_LIVE, SFV_EVENTS, SFV_ATHLETICS, SFV_STUDIO, SFV_UGC, SFV_ARCHIVE, SFV_WORLD, SFV_404",
+  "status": "COMPLETE",
+  "priority": "NORMAL",
+  "processed_at": "2026-06-03 05:50:47",
+  "output_written_to": "C:/SFV_BLUEPRINT/99_INBOX/OUTPUTS/TEST_VALIDATION_001_RESULT.md"
+}

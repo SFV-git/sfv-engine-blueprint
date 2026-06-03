@@ -8,3 +8,7 @@
 
 # Smart Connections indexes — auto-generated, not vault content
 .smart-env/
+
+# Claude Code per-machine settings — not vault content
+.claude-rnd/
+.claude-engine/

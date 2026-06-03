@@ -16,11 +16,12 @@ Handle repetitive, low-complexity tasks 24/7.
 - Interface: Open WebUI (optional)
 - Machine: R&D Terminal (RTX 3060 / 16GB RAM)
 
-## MODELS [UNCONFIRMED — install and test before locking]
-- Qwen3: primary local model (strong reasoning, efficient)
-- DeepSeek: coding and analysis tasks
-- Llama 3.1: general purpose fallback
-- Whisper: transcription (separate from Ollama)
+## MODELS — R&D TERMINAL
+- qwen3:8b — primary: classify, summarize, route (~5.2GB VRAM)
+- qwen3:14b — secondary: code, complex reasoning (~10GB VRAM Q4_K_M)
+- NEVER load both simultaneously. RTX 3060 = 12GB VRAM.
+- OLLAMA_NUM_PARALLEL=1 required on R&D Terminal
+- OLLAMA_KEEP_ALIVE=2m on R&D Terminal (short — avoids stale model hogging VRAM)
 
 ## TASKS HANDLED LOCALLY
 - Blur detection

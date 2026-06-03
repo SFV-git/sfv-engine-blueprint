@@ -58,7 +58,8 @@ OLLAMA_URL=http://localhost:11434
 
 # R&D TERMINAL
 RND_OLLAMA_URL=http://localhost:11434
-RND_MODEL=qwen3:14b
+RND_MODEL_FAST=qwen3:8b
+RND_MODEL_HEAVY=qwen3:14b
 ```
 
 ## RULE
