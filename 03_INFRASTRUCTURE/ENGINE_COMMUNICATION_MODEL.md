@@ -32,7 +32,9 @@ No agent edits canon directly. No agent assumes approval. All handoffs are file-
 ```
 C:\SFV_BLUEPRINT\
   99_INBOX\
-    TASK_QUEUE.md         ← active task list (Ollama reads this)
+    QUEUE\                ← LIVE production queue — job envelope JSONs, n8n workflow1 trigger
+    QUEUE\DONE\           ← processed task files (archival)
+    TASK_QUEUE.md         ← LEGACY task list (standalone Ollama daemon only)
     OLLAMA_RESULTS.md     ← Ollama writes output here
     OUTPUTS\              ← all agent output files land here
     HANDOFFS\             ← structured handoff notes between agents
@@ -46,7 +48,9 @@ C:\SFV_BLUEPRINT\
 
 ## FILE DEFINITIONS
 
-### TASK_QUEUE.md
+### TASK_QUEUE.md (LEGACY — Ollama daemon path)
+- LEGACY as of 2026-05-29: the live production queue is `99_INBOX\QUEUE\*.json` processed by n8n workflow1. See JOB_ENVELOPE_SPEC.md.
+- TASK_QUEUE.md remains valid only for the standalone ollama_daemon.py loop (manual/ad-hoc use)
 - One task per section, separated by `---`
 - Required fields: ID, DATE, ASSIGNED_TO, PRIORITY, STATUS, PROMPT, OUTPUT_TARGET
 - Status values: PENDING | IN_PROGRESS | COMPLETE | BLOCKED | CANCELLED
@@ -119,10 +123,10 @@ Cheapest capable layer always gets the task first.
 Cost order (cheapest → most expensive):
   PowerShell / Python / n8n (free)
   → Ollama local (free)
+  → Antigravity on Gemini Flash (free during preview — default model MUST be Gemini Flash)
   → Perplexity (subscription, fixed cost)
   → Claude Sonnet (per token)
-  → Claude Opus (per token, higher)
-  → Antigravity (per token, reserve for system-level)
+  → Claude Opus (per token, highest — Will-request only)
 ```
 
 Rule: If a cheaper layer can produce a 70%+ quality result, use it.

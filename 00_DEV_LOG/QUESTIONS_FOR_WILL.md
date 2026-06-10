@@ -9,15 +9,52 @@ LAST_UPDATED: 2026-05-29
 
 ---
 
-## URGENT — REVIEW FIRST NEXT SESSION
+## URGENT — FROM 2026-06-09 VAULT AUDIT
 
-**workflow1 confidence escalation logic — 2/3 false escalations**
+**A1. Antigravity CANON promotions need your ratification.** Six docs were promoted to CANON by Antigravity review (2026-05-30): DOCKER_INSTALL_CHECKLIST, SECRETS_POLICY, CONCURRENCY_QUEUE_SPEC, OUTPUT_VALIDATION, PROMPT_VERSIONING, N8N_MCP_SPEC. Your standing rule: Antigravity output ≠ your approval. Ratify or demote.
+
+**A2. backup_n8n.ps1 — n8n database has ZERO backup.** Spec exists (DISASTER_RECOVERY §4), script never built. One SQLite corruption = all workflows lost. Approve build? (Blueprint Lock exception — protective script, ~15 lines.)
+
+**A3. Bitwarden entry — confirm done.** Decision is logged; confirm keys from n8n_env.ps1 are actually IN Bitwarden. If not, 5-minute task, highest-leverage protection available.
+
+**A4. Whisper port + endpoint on Node B.** Blocks the entire MEDIA pipeline build. Confirm port (9000? 8000?) and route when R&D Terminal is rebuilt.
+
+**A5. Watchdog promotion.** watchdog.ps1 works but dies if its window closes — promote to Windows Scheduled Task? (FAILOVER_MODEL updated with details.)
+
+**A6. workflow IDs in SESSION_STATE may be stale.** Verify current IDs in n8n UI (Settings → Workflows) so the vault record matches reality.
+
+---
+
+## OPEN DECISIONS (from audit — answer when ready)
+
+15. workflow5 validation: standalone workflow or appended node? (OUTPUT_VALIDATION)
+16. pg_dump trigger: Task Scheduler (recommended — independent of n8n) or n8n cron? (DISASTER_RECOVERY §4)
+17. Node B Ollama fallback: qwen3:14b only (recommended) or mirror specialists? (FAILOVER_MODEL)
+18. MONITORING_STACK §5 alert thresholds + GPU VRAM scope + queue-depth approach — confirm before rules are written
+19. Open WebUI: migrate workflow1 calls to it after Docker, or keep direct Ollama? (OPEN_WEBUI_SPEC)
+20. Gemini API key: get from aistudio.google.com or defer GEMINI route?
+21. MEDIA file types in scope: .mxf? .mkv? (MEDIA_PIPELINE §1)
+22. DEFERRED MEDIA tasks: auto-retry after 5 min (recommended) or manual resubmit?
+23. qwen3 think-mode policy: routing-config default with prompt override (recommended)? (PROMPT_VERSIONING)
+24. Syncthing version history on Node B — enabled? (determines DR rollback Option B availability)
+25. MYTHOS_PROTOCOL.md (new, FHR) — approve role + cadence?
+
+---
+
+## RESOLVED — 2026-06-03
+
+~~workflow1 confidence escalation logic — 2/3 false escalations~~ → RESOLVED: fix validated end-to-end 2026-06-03. TEST_CLASSIFY_002 + TEST_CODE_004 both HIGH confidence → OUTPUTS/. CONFIDENCE_LOGIC.md promoted to CANON.
+
+<details><summary>Original issue (archived)</summary>
+
 Route tests 2026-05-29 results:
 - VISION → minicpm-v:8b → COMPLETE ✅
 - CLASSIFY → qwen3:14b → ESCALATED (should not have)
 - CODE → qwen2.5-coder:7b → ESCALATED (should not have)
 
 Cost routing breaks if Ollama always escalates. Claude Code diagnosis prompt was sent — read its findings first, then decide fix direction. DO NOT auto-patch.
+
+</details>
 
 ---
 

@@ -149,3 +149,11 @@ This is a new file added to the SFV vault. Based on its content and purpose, sug
 ---
 READ: 00_dev_log/watchdog_log.md
 This is a new file added to the SFV vault. Based on its content and purpose, suggest up to 5 wikilinks to other vault files that belong in its CONNECTED FILES section. Format each suggestion as: [[filename]] — one-line reason. Nothing else.
+
+---
+READ: 05_ai_layer/ollama_prompts/prompt_changelog.md
+This is a new file added to the SFV vault. Based on its content and purpose, suggest up to 5 wikilinks to other vault files that belong in its CONNECTED FILES section. Format each suggestion as: [[filename]] — one-line reason. Nothing else.
+
+---
+READ: 05_ai_layer/mythos_protocol.md
+This is a new file added to the SFV vault. Based on its content and purpose, suggest up to 5 wikilinks to other vault files that belong in its CONNECTED FILES section. Format each suggestion as: [[filename]] — one-line reason. Nothing else.

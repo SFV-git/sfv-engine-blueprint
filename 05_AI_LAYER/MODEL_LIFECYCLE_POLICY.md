@@ -17,7 +17,7 @@ Policy for locking, evaluating, swapping, and recovering Ollama models on the SF
 
 A single file tracks the exact model versions in production:
 
-**Location:** `C:\SFV_BLUEPRINT\05_AI_LAYER\OLLAMA_PROMPTS\MODEL_LOCK.md`
+**Location:** `C:\SFV_BLUEPRINT\05_AI_LAYER\MODEL_LOCK.md`
 
 ### Current locked models
 

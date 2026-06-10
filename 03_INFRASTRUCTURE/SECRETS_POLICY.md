@@ -51,10 +51,9 @@ MERGE_INTO: STANDALONE
 ## ENCRYPTION AT REST
 
 **Current:** Plaintext on local disk, gitignored. Acceptable for a single-user local system.
+**Off-site backup of secrets: Bitwarden (DECIDED 2026-06).** All keys in n8n_env.ps1 get a Bitwarden entry — Windows Credential Manager rejected (machine-local, no off-site value). See DISASTER_RECOVERY.md §3.
 
-**[FOR HUMAN REVIEW]:** If Engine Body is ever internet-accessible (e.g., Tailscale remote access from outside LAN), consider:
-- Windows Credential Manager for secret storage instead of `.ps1` file
-- Or: use n8n's built-in credential store (encrypted with n8n's key) and remove API keys from `n8n_env.ps1` entirely
+**[FOR HUMAN REVIEW]:** If Engine Body is ever internet-accessible (e.g., Tailscale remote access from outside LAN), consider using n8n's built-in credential store (encrypted with n8n's key) and removing API keys from `n8n_env.ps1` entirely.
 
 **Recommend:** Defer encryption-at-rest hardening until remote access is enabled. Not blocking current stack.
 

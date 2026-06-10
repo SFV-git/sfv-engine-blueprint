@@ -14,7 +14,18 @@ Nothing here gets built until Will explicitly approves.
 
 ## OPEN PROPOSALS
 
-*None currently open.*
+### PROPOSAL 008 — Vault Audit Fixes Applied (2026-06-09, Claude Chat) — RATIFY OR REVERT
+Full-vault audit run (MYTHOS role, executed directly via Desktop Commander). Mechanical fixes applied — all factual corrections, no decisions made, no CANON status changed. Git diff shows every change. Ratify or revert per file:
+
+**Stale IPs fixed (.239 → .246):** AI_STACK_ARCHITECTURE_BLUEPRINT (+ 192.168.10.0/24 typo → 137.0/24), FAILOVER_MODEL, MONITORING_STACK (scrape config), MEDIA_PIPELINE (4 refs)
+**Stale claims corrected:** FAILOVER_MODEL (R&D qwen3:14b "confirmed" → needs re-pull; watchdog section rewritten to match the real watchdog.ps1), MONITORING_STACK (windows_exporter Node B → unverified post-Win11), LOCAL_MODELS (llama3.1 removed, env vars added, connection/electricity sections updated to approved state)
+**Label/path fixes:** RATE_LIMITS (Ollama header → Engine Body primary), MODEL_LIFECYCLE_POLICY (MODEL_LOCK.md path)
+**Refreshed:** COMPRESSED_CONTEXT v0.3.0 (32GB RAM, current tool/automation state, node IPs, Blueprint Lock + Antigravity≠approval rules), DASHBOARD (past deadlines closed, current work list), ENGINE_COMMUNICATION_MODEL (TASK_QUEUE.md marked LEGACY vs live n8n QUEUE\, Antigravity cost tier corrected to free Gemini Flash), UNCONFIRMED.md v0.2.0 (8 resolved items moved to resolved section)
+**PROMPT_VERSIONING implemented:** handoff_generator_v1.txt + _CURRENT.txt + PROMPT_CHANGELOG.md created (CANON doc required them; original .txt untouched)
+**Decision recorded:** Bitwarden as secrets manager → DISASTER_RECOVERY §3 + SECRETS_POLICY (action-pending flag kept until Will confirms entry)
+**New doc:** 05_AI_LAYER/MYTHOS_PROTOCOL.md (FHR) — full-vault audit role, routing rule, dump command, cadence proposal
+
+**NOT touched:** any CANON status, the 6 Antigravity-promoted docs (see QUESTIONS A1), backup_n8n.ps1 (dev work — see A2), OUTPUTS/ retention policy (needs a decision), workflow JSONs, SESSION_STATE history blocks.
 
 ---
 

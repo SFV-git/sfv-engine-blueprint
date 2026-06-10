@@ -47,10 +47,10 @@ Git push to GitHub provides off-site backup for the vault. Syncthing provides a 
 ### Gap: n8n_env.ps1
 `n8n_env.ps1` contains API keys and secrets. It is gitignored and is NOT pushed to GitHub. It is not synced by Syncthing (or if it is, it is on-LAN only). If Engine Body is destroyed, these secrets are lost.
 
-### Fix
-Store all contents of `n8n_env.ps1` in a password manager under a clearly named entry such as "SFV Engine — n8n secrets" or "SFV Engine — API keys".
+### Fix — DECIDED: Bitwarden
+Store all contents of `n8n_env.ps1` in Bitwarden under entry "SFV Engine — API keys / n8n secrets".
 
-[FOR HUMAN REVIEW]: Do you currently use a password manager (1Password, Bitwarden, or equivalent)? If yes, add all API keys there now. If no, this is a single point of failure — if Engine Body is lost without a prior export, every API key must be regenerated individually. Recommend setting this up before proceeding with any additional integrations.
+**Decision (Will, 2026-06):** Bitwarden is the secrets manager — chosen over Windows Credential Manager, which is machine-local and does not solve the off-site problem. **ACTION STILL PENDING: Will confirms the keys have actually been entered into Bitwarden.** Until then this gap is open.
 
 ### What to store in the password manager
 - All API keys referenced in n8n_env.ps1

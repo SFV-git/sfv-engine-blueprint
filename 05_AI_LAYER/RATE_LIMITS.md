@@ -15,7 +15,7 @@ LAST_UPDATED: 2026-05-25
 
 ## LIMITS PER TOOL
 
-### Ollama (local — R&D Terminal)
+### Ollama (local — Engine Body primary, R&D Terminal fallback)
 | Limit | Value |
 |-------|-------|
 | Rate limit | NONE |

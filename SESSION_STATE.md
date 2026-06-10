@@ -25,6 +25,26 @@ Next: Will reviews remaining FHR docs. Workflow 4 trigger fix needed before acti
 
 ---
 
+## SESSION — 2026-06-09 (FULL-VAULT AUDIT + MECHANICAL FIXES — CLAUDE CHAT)
+
+### Completed this session:
+- Full-vault audit (MYTHOS role) executed directly via Desktop Commander — 5-part findings delivered in chat
+- All mechanical fixes applied under Will's "full rein" grant — full list in PROPOSALS.md → PROPOSAL 008 (RATIFY OR REVERT)
+- Headlines: stale .239 IPs fixed in 4 docs | COMPRESSED_CONTEXT rewritten v0.3.0 | TASK_QUEUE.md marked LEGACY | FAILOVER_MODEL reconciled with real watchdog.ps1 | PROMPT_VERSIONING implemented (v1 + CURRENT + CHANGELOG) | Bitwarden decision recorded in DR + SECRETS_POLICY | UNCONFIRMED.md reconciled | DASHBOARD refreshed | MYTHOS_PROTOCOL.md created (FHR)
+- 6 urgent questions (A1–A6) + 11 open decisions (15–25) logged to QUESTIONS_FOR_WILL.md
+
+### [UNCONFIRMED — verify in n8n UI]:
+- Workflow IDs in this file's 2026-06-03 block may be superseded: later work reportedly re-imported workflow1 (Eb78T9FnnKm8UKrJ) and activated workflow4 (GBzP0Qamy3hl0utY). The 06-03 block says workflow4 activation FAILED. Verify actual IDs/states in n8n UI and update here. Vault write-back discipline gap — sessions after 06-03 did not update SESSION_STATE.
+
+### WHAT NEEDS ATTENTION NEXT SESSION (PRIORITY ORDER):
+1. **Will reviews PROPOSAL 008** — ratify or revert audit fixes (git diff shows everything)
+2. **Will answers A1–A6** in QUESTIONS_FOR_WILL.md — Antigravity CANON ratification, n8n backup approval, Bitwarden confirm, Whisper port, watchdog Scheduled Task, workflow ID verify
+3. **PostgreSQL migration** — unchanged, Will supervises, backup SQLite first
+4. **Docker install** — unchanged, needs restart
+5. **R&D Terminal reinstalls** — Ollama → Syncthing → Claude Code → windows_exporter
+
+---
+
 ## SESSION — 2026-06-03 (CONFIDENCE FIX VALIDATED + N8N OPERATIONAL)
 
 ### Completed this session:
