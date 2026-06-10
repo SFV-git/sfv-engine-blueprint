@@ -177,7 +177,7 @@ Node A (Engine Body)
     → FFmpeg audio extraction (Section 4)
     ↓
   HTTP Request node
-    → POST http://192.168.137.239:[PORT]/transcribe
+    → POST http://192.168.137.246:[PORT]/transcribe
     → Body: { "audio_path": "...", "task_id": "...", "prompt": "..." }
     ↓
   Node B (R&D Terminal)
@@ -188,7 +188,7 @@ Node A (Engine Body)
 
 ### Whisper Endpoint on Node B
 
-- Host: `http://192.168.137.239`
+- Host: `http://192.168.137.246`
 - Port: [INFERENCE — port not confirmed in existing docs. Common values: 9000, 8000, 8080.
   Will must confirm the actual port and update this doc.]
 - Endpoint: `/transcribe` [INFERENCE — confirm actual route]
@@ -308,7 +308,7 @@ Response:
 
 ### Scenario D — Node B Offline
 
-Cause: R&D Terminal is powered off or network path `192.168.137.239` is unreachable.
+Cause: R&D Terminal is powered off or network path `192.168.137.246` is unreachable.
 
 Response:
 1. HTTP Request node times out or returns connection refused
@@ -342,7 +342,7 @@ The migration is designed to be a drop-in replacement. The HTTP interface does n
 | Item | Current (standard Whisper) | After faster-whisper |
 |------|---------------------------|----------------------|
 | Service | Standard OpenAI Whisper HTTP | Python Flask/FastAPI wrapping faster-whisper |
-| Endpoint | `http://192.168.137.239:[PORT]/transcribe` | Same — endpoint unchanged |
+| Endpoint | `http://192.168.137.246:[PORT]/transcribe` | Same — endpoint unchanged |
 | Request schema | `{ audio_path, task_id, prompt }` | Same |
 | Response schema | `{ text }` | `{ text, segments }` — segments add timestamps |
 | VRAM usage | Higher (float16) | Lower (int8 quantization available) |

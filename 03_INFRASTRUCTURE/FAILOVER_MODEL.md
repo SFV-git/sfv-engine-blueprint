@@ -10,7 +10,8 @@ MERGE_INTO: STANDALONE
 # FAILOVER MODEL — OLLAMA + n8n RESILIENCE
 
 > Documents what happens when primary services go down and how recovery is triggered.
-> No automatic recovery is implemented yet — this is the spec for what to build.
+> Scenario 2 (n8n crash watchdog) is IMPLEMENTED — `03_INFRASTRUCTURE\watchdog.ps1`, running per OVERNIGHT_DIRECTIVE.
+> Scenario 1 (Ollama Node B fallback) is spec-only — not yet built into workflow1.
 
 ---
 
@@ -20,7 +21,7 @@ MERGE_INTO: STANDALONE
 
 **Current state:** No fallback. Tasks fail silently in n8n execution log.
 
-**Failover target:** R&D Terminal Ollama at `http://192.168.137.239:11434`
+**Failover target:** R&D Terminal Ollama at `http://192.168.137.246:11434`
 
 ### Spec: n8n fallback logic
 
@@ -29,16 +30,16 @@ In workflow1 "Call Ollama" node, add error handling:
 Primary: POST http://127.0.0.1:11434/api/generate
 On error/timeout:
   → retry once (2s delay)
-  → if still failing: POST http://192.168.137.239:11434/api/generate
+  → if still failing: POST http://192.168.137.246:11434/api/generate
   → log fallback event to DECISION_LOG.md with tag FAILOVER_NODE_B
   → continue processing
 ```
 
 **Conditions for this to work:**
 - R&D Terminal must be online and Ollama running (it's designated 24/7)
-- R&D Terminal has qwen3:14b pulled (confirmed)
+- R&D Terminal needs qwen3:14b re-pulled — Ollama was wiped in the Win11 rebuild (2026-05-30) and is not yet reinstalled. This failover path is DEAD until the R&D Terminal install sequence completes.
 - R&D Terminal does NOT need the same specialist models (qwen2.5-coder:7b, minicpm-v:8b) — fallback to qwen3:14b general model is acceptable for non-production tasks
-- Network path: `192.168.137.239:11434` reachable from Engine Body (confirmed — firewall rules set)
+- Network path: `192.168.137.246:11434` reachable from Engine Body (firewall /24 scope covers the new DHCP address)
 
 **[FOR HUMAN REVIEW]:** Should fallback to Node B use the same specialist models or always fall back to qwen3:14b general? Recommend: qwen3:14b general — lower quality but avoids requiring specialist models on Node B.
 
@@ -48,22 +49,18 @@ On error/timeout:
 
 **What breaks:** All workflow triggers stop. QUEUE files pile up unprocessed. No notification.
 
-**Current state:** n8n auto-starts on login via `SFV_N8N.vbs` launcher, but does not restart on crash mid-session.
+**Current state:** IMPLEMENTED — `C:\SFV_BLUEPRINT\03_INFRASTRUCTURE\watchdog.ps1` checks n8n (`/healthz`) and Ollama every 5 minutes, auto-restarts either if down, logs to `00_DEV_LOG\WATCHDOG_LOG.md`. Runs in a dedicated PowerShell window (not yet a Scheduled Task). n8n also auto-starts on login via `SFV_N8N.vbs`.
 
-### Spec: Watchdog process
+### Differences from original spec (actual implementation)
 
-A lightweight PowerShell watchdog script checks n8n health every 60 seconds:
+| Spec said | watchdog.ps1 does |
+|---|---|
+| 60-second interval | 300-second interval |
+| Windows Scheduled Task | Manual PowerShell window — dies if window closed or on reboot until relaunched |
+| Logs to 99_INBOX/FAILOVER_LOG.md | Logs to 00_DEV_LOG/WATCHDOG_LOG.md |
+| n8n only | n8n + Ollama both |
 
-**Behavioral spec for watchdog:**
-- Runs every 60 seconds as a Windows Scheduled Task on Node A
-- Health check: HTTP GET to `http://127.0.0.1:5678/healthz` — expects 200 OK
-- On failure: wait 10 seconds, retry once
-- On second failure: relaunch n8n using the same startup command as `SFV_N8N.vbs`
-- On relaunch: append one row to `C:\SFV_BLUEPRINT\99_INBOX\FAILOVER_LOG.md`
-- Row format: `| [timestamp] | N8N_CRASH | Watchdog restarted n8n | — | [task count] tasks requeued |`
-- Script to build during dev phase: `C:\SFV_BLUEPRINT\99_INBOX\n8n_watchdog.ps1`
-
-**[INFERENCE]:** n8n exposes `/healthz` endpoint at the same port. Confirm this is accessible before implementing.
+**[FOR HUMAN REVIEW]:** (a) Promote watchdog to a Scheduled Task so it survives reboot/window close? (b) Keep WATCHDOG_LOG.md as its log, or redirect to FAILOVER_LOG.md per original spec? Recommend: Scheduled Task yes; keep WATCHDOG_LOG.md and reserve FAILOVER_LOG.md for Ollama-fallback and Prometheus events.
 
 ---
 

@@ -51,8 +51,7 @@ Alert script (Windows Scheduled Task, Node A)
 
 ### Status
 
-windows_exporter is already installed on both nodes (confirmed, per AI_STACK_ARCHITECTURE_BLUEPRINT).
-No install action required. Verify it is running before Prometheus deployment.
+windows_exporter is installed on Node A (confirmed). Node B status is UNKNOWN post-Win11 rebuild (2026-05-30) — SESSION_STATE lists it as "not checked." Verify (and reinstall if missing) on Node B before Prometheus deployment.
 
 ### Verification (run on each node)
 
@@ -123,7 +122,7 @@ scrape_configs:
 
   - job_name: 'rd_terminal'
     static_configs:
-      - targets: ['192.168.137.239:9182']
+      - targets: ['192.168.137.246:9182']
         labels:
           node: 'rd_terminal'
           role: 'sentinel'
