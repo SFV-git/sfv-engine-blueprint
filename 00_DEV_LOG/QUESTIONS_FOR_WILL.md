@@ -11,9 +11,22 @@ LAST_UPDATED: 2026-05-29
 
 ## URGENT — FROM 2026-06-09 VAULT AUDIT
 
-**A1. Antigravity CANON promotions need your ratification.** Six docs were promoted to CANON by Antigravity review (2026-05-30): DOCKER_INSTALL_CHECKLIST, SECRETS_POLICY, CONCURRENCY_QUEUE_SPEC, OUTPUT_VALIDATION, PROMPT_VERSIONING, N8N_MCP_SPEC. Your standing rule: Antigravity output ≠ your approval. Ratify or demote.
+**A1. Antigravity CANON promotions — assessment complete, your call.**
 
-**A2. backup_n8n.ps1 — n8n database has ZERO backup.** Spec exists (DISASTER_RECOVERY §4), script never built. One SQLite corruption = all workflows lost. Approve build? (Blueprint Lock exception — protective script, ~15 lines.)
+Read all six. Per-doc verdict:
+
+| Doc | Safe to ratify? | Notes |
+|---|---|---|
+| DOCKER_INSTALL_CHECKLIST | ✅ Yes | Clean. Correct prereq chains. No issues. |
+| SECRETS_POLICY | ✅ Yes | Solid. Bitwarden decision now recorded. One open FHR (Tailscale port review) is correctly labeled. |
+| CONCURRENCY_QUEUE_SPEC | ✅ Yes | Correctly sequences Phase 1 (no Redis) vs Phase 2 (Redis). SQLite warning aligns with CANON. Values labeled [INFERENCE] where appropriate. |
+| OUTPUT_VALIDATION | ✅ Yes | Additive to QUALITY_CONTROL, not competing. Phase structure is sound. One open FHR (workflow5 standalone vs appended) is yours to decide. |
+| PROMPT_VERSIONING | ✅ Yes | Implementation files now exist (created this session). CANON doc is fully satisfied. |
+| N8N_MCP_SPEC | ⚠️ Conditional | Content is clean BUT has hard prereqs (Docker + PostgreSQL) that aren't CANON yet. Promoting it to CANON while its prereqs are FHR creates a dead spec. Recommend: ratify content, keep STATUS: FOR HUMAN REVIEW until Docker + PostgreSQL are confirmed live, then auto-promote. |
+
+**Recommended action:** Ratify 5 of 6. Hold N8N_MCP_SPEC at FHR until Docker/PostgreSQL are done.
+
+**A2. backup_n8n.ps1 — BUILT, needs scheduling.** Script at `99_INBOX\backup_n8n.ps1`. Copies SQLite DB to `D:\SFV_ACTIVE\BACKUPS\n8n\` daily, 7-day retention, logs to WATCHDOG_LOG. **Not yet scheduled — 5 min to activate:** Task Scheduler → New Task → daily 03:00 → `powershell.exe -NonInteractive -File "C:\SFV_BLUEPRINT\99_INBOX\backup_n8n.ps1"` → run when not logged in. That's it, gap closed.
 
 **A3. Bitwarden entry — confirm done.** Decision is logged; confirm keys from n8n_env.ps1 are actually IN Bitwarden. If not, 5-minute task, highest-leverage protection available.
 

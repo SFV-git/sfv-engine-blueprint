@@ -79,14 +79,21 @@ pg_dump n8n > D:\SFV_ACTIVE\BACKUPS\n8n_[date].sql
 
 ### Before PostgreSQL migration (SQLite — current state)
 
-```
-# Daily: copy SQLite database file to backup location
-# Source: %USERPROFILE%\.n8n\database.sqlite
-# Destination: D:\SFV_ACTIVE\BACKUPS\n8n_sqlite_[date].sqlite
-# Retention: 7 days
-```
+Script built: `C:\SFV_BLUEPRINT\99_INBOX\backup_n8n.ps1`
+- Source: `%USERPROFILE%\.n8n\database.sqlite`
+- Destination: `D:\SFV_ACTIVE\BACKUPS\n8n\n8n_sqlite_[timestamp].sqlite`
+- Retention: 7 days (auto-prunes older files)
+- Logs to: `00_DEV_LOG\WATCHDOG_LOG.md`
 
-[FOR HUMAN REVIEW]: The SQLite backup script has not been written yet. Script placeholder location: `C:\SFV_BLUEPRINT\99_INBOX\backup_n8n.ps1` — this needs to be built and scheduled before it provides any protection.
+**[FOR HUMAN REVIEW — ACTION REQUIRED]:** Script exists but is NOT yet scheduled. To activate:
+1. Open Task Scheduler → Create Basic Task
+2. Name: "SFV n8n Backup"
+3. Trigger: Daily, 03:00
+4. Action: `powershell.exe -NonInteractive -File "C:\SFV_BLUEPRINT\99_INBOX\backup_n8n.ps1"`
+5. Check "Run whether user is logged on or not"
+6. Save — backup gap is closed.
+
+Until scheduled, this gap remains open.
 
 ### Node B copy
 Robocopy nightly job (already configured, A→B) should include the BACKUPS folder so n8n dumps land on Node B automatically. Verify the Robocopy source path includes BACKUPS.
@@ -190,8 +197,8 @@ Navigate to Node B Syncthing interface → browse version history for the affect
 
 | Gap | Severity | Action needed |
 |---|---|---|
-| n8n database — no backup | CRITICAL | Build and schedule backup_n8n.ps1 |
-| n8n_env.ps1 — no off-site copy | CRITICAL | Store in password manager now |
+| n8n database — script built, not scheduled | HIGH (was CRITICAL) | Schedule backup_n8n.ps1 in Task Scheduler (5 min task — see §4) |
+| n8n_env.ps1 — Bitwarden decision logged | HIGH | Will confirms keys actually entered in Bitwarden |
 | Active media — no off-site | HIGH | Choose Option A or B from Section 6 |
 | Syncthing version history — status unknown | MEDIUM | Verify Node B config |
 
