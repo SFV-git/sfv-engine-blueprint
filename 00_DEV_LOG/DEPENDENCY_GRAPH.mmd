@@ -1,0 +1,109 @@
+%% SFV ENGINE — DEPENDENCY GRAPH (snapshot 2026-06-10)
+%% STATUS: FOR HUMAN REVIEW · CREATED_BY: Claude Fable 5 (Session Maple, Prompt B)
+%% Solid arrows = hard blocking edges. Critical path nodes styled red/orange.
+%% Render in Obsidian (Mermaid) or mermaid.live
+
+flowchart TD
+
+  subgraph GATE0["DECISION GATE — Will, minutes not hours"]
+    P008["Ratify PROPOSAL 008<br/>(06-09 audit fixes)"]
+    A16["Answer A1–A6<br/>(+ open Q15–25 as able)"]
+  end
+
+  subgraph FIVEMIN["FIVE-MINUTE FIXES"]
+    S1["S1: rotate Tavily key +<br/>exclude n8n_env.ps1 from snapshots"]
+    S2["S2/A3: confirm keys in Bitwarden"]
+    D1["D1/A2: schedule backup_n8n.ps1<br/>(Task Scheduler, 03:00)"]
+    A5["A5: watchdog → Scheduled Task"]
+    W6["Clear 4 stale LEGACY<br/>TASK_QUEUE entries"]
+  end
+
+  subgraph VERIFY["RUNTIME VERIFICATION — Engine Body"]
+    A6["A6/C4: verify live workflow IDs<br/>+ states in n8n UI"]
+    W2v["C3/W2: check live workflow1 has<br/>think-strip + Phase-1 validation"]
+    GITV["Verify git remote + last push<br/>(DR assumption)"]
+    SSWB["Write back SESSION_STATE<br/>to match runtime"]
+  end
+
+  subgraph CORE["CORE INFRASTRUCTURE SEQUENCE"]
+    PG["PostgreSQL migration<br/>(Will supervises, backup SQLite first)"]
+    PG7["7-day PostgreSQL stability window"]
+    DOCKER["Docker install<br/>(restart, end of session)"]
+    WF1FIX["workflow1/4 JSON hygiene:<br/>strip BOM, fix mojibake,<br/>add client_facing check (W1/W3)"]
+    LAUNCH["C14/W5: unify launchers,<br/>env-var paths in nodes"]
+  end
+
+  subgraph P1["PHASE 1 UNLOCKS"]
+    WF3["Build workflow3<br/>(RESEARCH handler, Tavily)"]
+    MCP["n8n-MCP deploy"]
+    OWUI["Open WebUI deploy (Q19)"]
+    GEM["Gemini n8n route (Q20)"]
+  end
+
+  subgraph RND["R&D TERMINAL TRACK (parallel after A-answers)"]
+    C8FIX["C8: lock roster = qwen3:8b + 14b<br/>(patch attack-plan B2)"]
+    RNDI["Reinstall: Ollama → Syncthing →<br/>Claude Code → windows_exporter"]
+    A4["A4: confirm Whisper port/endpoint"]
+    FAILW["Wire Node-B fallback into workflow1<br/>(FAILOVER Scenario 1)"]
+  end
+
+  subgraph DOCS["BLUEPRINT DEBT TRACK (Fable/Chat, no Engine Body needed)"]
+    ZEN["W4: write EVENTS_ZENFOLIO_DELIVERY.md<br/>(locked system, undocumented)"]
+    TRP["Theory Runs protocol doc (08_TESTS)"]
+    MECH["C-hot3 mechanical pass:<br/>C1, C6, C7, C9, C13, C15 + ledger D3"]
+    JES["Promote JOB_ENVELOPE_SPEC<br/>(single schema source)"]
+  end
+
+  subgraph MILE["NEXT MILESTONE"]
+    TRB["Theory Run B: Ollama dies mid-queue<br/>(validates watchdog + fallback)"]
+    TRC["Theory Run C: RESEARCH → workflow3<br/>(acceptance test)"]
+    M1(["MILESTONE: Postgres-backed n8n +<br/>workflow3 live + vault = runtime"])
+  end
+
+  subgraph P2["PHASE 2 (deferred, unblocked later)"]
+    REDIS["Redis queue mode"]
+    QDR["Qdrant + embeddings"]
+    MON["Prometheus/Grafana (Node A per D-B)"]
+    MEDIA["MEDIA pipeline (Whisper)"]
+    UGCAPP["UGC Pre-Production app build"]
+  end
+
+  P008 --> A16
+  A16 --> S1 & S2 & D1 & A5 & W6
+  A16 --> A6
+  A6 --> W2v --> SSWB
+  A6 --> GITV
+  S1 --> S2
+  SSWB --> PG
+  D1 --> PG
+  PG --> PG7
+  PG --> DOCKER
+  PG --> WF1FIX --> LAUNCH
+  PG7 --> REDIS
+  DOCKER --> MCP & OWUI & QDR & MON
+  PG --> WF3
+  WF1FIX --> WF3
+  A16 --> C8FIX --> RNDI --> A4 --> MEDIA
+  RNDI --> FAILW
+  WF3 --> TRC
+  FAILW --> TRB
+  A5 --> TRB
+  ZEN -.feeds.-> TRP
+  MECH -.cleans.-> SSWB
+  JES -.locks schema for.-> WF3
+  TRC --> M1
+  TRB --> M1
+  SSWB --> M1
+  M1 --> REDIS & UGCAPP
+  GEM -.optional P1.-> WF3
+
+  classDef crit fill:#7f1d1d,stroke:#ef4444,color:#fff
+  classDef hot fill:#7c2d12,stroke:#f97316,color:#fff
+  classDef ok fill:#14532d,stroke:#22c55e,color:#fff
+  classDef defer fill:#1e293b,stroke:#64748b,color:#cbd5e1
+
+  class P008,A16,PG,WF3,M1 crit
+  class S1,D1,A6,SSWB,DOCKER,WF1FIX,ZEN crit
+  class S2,A5,W2v,C8FIX,RNDI,FAILW,TRB,TRC,LAUNCH,MECH,JES hot
+  class W6,GITV,A4,OWUI,MCP,GEM,TRP ok
+  class REDIS,QDR,MON,MEDIA,UGCAPP,PG7 defer
