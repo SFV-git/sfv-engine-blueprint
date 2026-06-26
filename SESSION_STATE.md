@@ -1,8 +1,8 @@
 ---
 STATUS: CANON
-VERSION: v0.6.0
+VERSION: v0.6.1
 OWNER: WILL
-LAST_UPDATED: 2026-06-03
+LAST_UPDATED: 2026-06-25
 ---
 
 # SESSION STATE
@@ -19,9 +19,42 @@ Read this first every session. Report in 3 lines. Wait for Will.
 5. Physical node scaling must be accounted for in every architectural decision
 
 ## CURRENT PHASE
-v0.x — Blueprint Lock COMPLETE. All 20 AI stack gaps blueprinted. 7 docs CANON. 12 docs FOR HUMAN REVIEW.
-Workflow1 confidence fix COMPLETE and validated. Queue processor live and triggering <5s.
-Next: Will reviews remaining FHR docs. Workflow 4 trigger fix needed before activation.
+v0.x — Blueprint Lock COMPLETE. All 20 AI stack gaps blueprinted. Confidence fix validated.
+Queue processor + Output Monitor + Pre-Warm all LIVE and ACTIVE (verified 06-25, see below).
+Audit layer added (Maple package 06-22) + Quartz vault website (06-10). M1 is the next target
+state — see 00_DEV_LOG/CRITICAL_PATH.md. Gate: PROPOSAL 008 ratify/revert still OPEN.
+
+---
+
+## SESSION — 2026-06-25 (RUNTIME VERIFICATION + WRITE-BACK + EVENTS DOC — CLAUDE CHAT, WILL AWAY)
+
+Will granted "do whatever you can without me touching the system." Read-only verification +
+additive vault docs only. No services restarted, no key touched, no workflow re-imported, no
+decisions made. Local commit only (no push).
+
+### Verified against live runtime (resolves C4 / closes A6 read-side):
+- **workflow1 Queue Processor = `Eb78T9FnnKm8UKrJ` — ACTIVE.** (06-03 block's `LJH60a1NrfM2TqKf` is STALE — superseded by re-import.)
+- **workflow4 Output Monitor = `GBzP0Qamy3hl0utY` — ACTIVE.** (06-03 block said activation FAILED — it later succeeded. Now confirmed active in DB.)
+- **workflow2 Model Pre-Warm = `6OtCtcsw6FANtm8j` — ACTIVE.**
+- **workflow3 = NOT BUILT** — only an inactive `My workflow 3` (`l9ZOkREMN0utzwAd`) placeholder exists. RESEARCH still dead-ends to HANDOFFS as designed.
+- 4 inactive duplicate/test workflows present (`SsaQRDfF31dNK4m4`, `UyiHaTl8TZudv6IC`, `i1gFo6trABRwRBAL`, `asuuWNDWnHv61Lau`) — harmless, cleanup candidates.
+- n8n health 200, Ollama UP. Models present: qwen3:14b, qwen2.5-coder:7b, minicpm-v:8b (CANON roster) + extras qwen2.5:1.5b, llama3.1:latest, qwen3:latest [INFERENCE — leftover/experimental, not in roster].
+- **Security:** `n8n_env.ps1` is gitignored + UNTRACKED (not leaking via git). [Tavily key ROTATION still pending — Will-only, requires Tavily dashboard login. Not done.]
+- **DR off-site confirmed:** remote = `github.com/SFV-git/sfv-engine-blueprint.git`; `origin/main` == local HEAD (`81e2b03`). GitHub is current.
+
+### Written this session (all FOR HUMAN REVIEW / additive):
+- **04_WORKFLOWS/EVENTS_ZENFOLIO_DELIVERY.md (NEW)** — formalizes the locked SFV_EVENTS Zenfolio QR system (Golden Rule, Cam1_/2_/3_ prefixes, filename-sort, 3 laptops/1 account, multi-day fresh-stack, failure modes, rejected face-rec). Closes the top doc hole flagged in MISSING_REFERENCED_FILES §3. Verification block (Zenfolio caps/pricing, QR card stock + export format, per-day template) left FHR.
+- **04_WORKFLOWS/DELIVERY.md** — SFV_EVENTS platform line updated from `[UNCONFIRMED]` → points to the new doc.
+
+### NOT done (needs Will / out of safe-autonomous scope):
+- PROPOSAL 008 ratify/revert · A1–A6 · Tavily key rotation · n8n restart/re-import · PostgreSQL · Docker · workflow3 build · stale-PENDING + duplicate-workflow cleanup (all flagged).
+
+### WHAT NEEDS ATTENTION NEXT (priority):
+1. **PROPOSAL 008 ratify/revert** + **A1–A6** — still the decision gate (CRITICAL_PATH Step 0).
+2. **Rotate Tavily key** (CRITICAL_PATH Step 1, Will-only — Tavily dashboard) → update n8n_env.ps1 → restart n8n → log to DECISIONS.md.
+3. C4 now CLOSED — runtime IDs above are truth. Old 06-03 IDs are superseded.
+4. PostgreSQL migration → Docker → workflow3 build (CRITICAL_PATH Steps 4–6).
+5. Promote EVENTS_ZENFOLIO_DELIVERY.md to CANON once its verification block is cleared.
 
 ---
 
@@ -33,8 +66,9 @@ Next: Will reviews remaining FHR docs. Workflow 4 trigger fix needed before acti
 - Headlines: stale .239 IPs fixed in 4 docs | COMPRESSED_CONTEXT rewritten v0.3.0 | TASK_QUEUE.md marked LEGACY | FAILOVER_MODEL reconciled with real watchdog.ps1 | PROMPT_VERSIONING implemented (v1 + CURRENT + CHANGELOG) | Bitwarden decision recorded in DR + SECRETS_POLICY | UNCONFIRMED.md reconciled | DASHBOARD refreshed | MYTHOS_PROTOCOL.md created (FHR)
 - 6 urgent questions (A1–A6) + 11 open decisions (15–25) logged to QUESTIONS_FOR_WILL.md
 
-### [UNCONFIRMED — verify in n8n UI]:
+### [RESOLVED 2026-06-25 — verified against live n8n DB, see 06-25 block above]:
 - Workflow IDs in this file's 2026-06-03 block may be superseded: later work reportedly re-imported workflow1 (Eb78T9FnnKm8UKrJ) and activated workflow4 (GBzP0Qamy3hl0utY). The 06-03 block says workflow4 activation FAILED. Verify actual IDs/states in n8n UI and update here. Vault write-back discipline gap — sessions after 06-03 did not update SESSION_STATE.
+  - **RESOLUTION:** Confirmed — workflow1=`Eb78T9FnnKm8UKrJ` ACTIVE, workflow4=`GBzP0Qamy3hl0utY` ACTIVE. 06-03 IDs/FAILED-status are stale. C4 closed.
 
 ### WHAT NEEDS ATTENTION NEXT SESSION (PRIORITY ORDER):
 1. **Will reviews PROPOSAL 008** — ratify or revert audit fixes (git diff shows everything)

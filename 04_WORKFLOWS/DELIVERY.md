@@ -19,8 +19,8 @@ Get finished content to clients and platforms correctly and on time.
 - Notification: [UNCONFIRMED — auto or manual?]
 
 ### SFV_EVENTS
-- Platform: [UNCONFIRMED — Pixieset or different?]
-- Turnaround: same day
+- Platform: Zenfolio Sports & Events (Advanced) — QR Code Workflow. See [[EVENTS_ZENFOLIO_DELIVERY]] (locked system, FHR pending verification block).
+- Turnaround: same day, on-site
 
 ### SFV_UGC
 - Platform: [UNCONFIRMED — direct download, Drive link, or portal?]
