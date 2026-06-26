@@ -14,7 +14,7 @@ Nothing here gets built until Will explicitly approves.
 
 ## OPEN PROPOSALS
 
-### PROPOSAL 008 — Vault Audit Fixes Applied (2026-06-09, Claude Chat) — RATIFY OR REVERT
+### PROPOSAL 008 — Vault Audit Fixes Applied (2026-06-09, Claude Chat) — RATIFIED 2026-06-25
 Full-vault audit run (MYTHOS role, executed directly via Desktop Commander). Mechanical fixes applied — all factual corrections, no decisions made, no CANON status changed. Git diff shows every change. Ratify or revert per file:
 
 **Stale IPs fixed (.239 → .246):** AI_STACK_ARCHITECTURE_BLUEPRINT (+ 192.168.10.0/24 typo → 137.0/24), FAILOVER_MODEL, MONITORING_STACK (scrape config), MEDIA_PIPELINE (4 refs)
