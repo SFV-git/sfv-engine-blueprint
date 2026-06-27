@@ -1,10 +1,11 @@
 ---
 STATUS: FOR HUMAN REVIEW
-VERSION: v0.1.0
+VERSION: v0.2.0
 OWNER: WILL
 LAST_UPDATED: 2026-06-27
 CREATED_BY: Antigravity
-DECISION_REQUIRED: Ratify eval criteria → Claude Code runs eval → adopt or reject
+RATIFIED: 2026-06-27 — Will confirmed Option A (Hermes eval before adopt). Architecture ratified.
+DECISION_REQUIRED: Claude Code runs eval → Will reviews HERMES_EVAL.md → adopt or reject
 ---
 
 # HERMES AGENT — INTEGRATION SPEC
@@ -18,14 +19,41 @@ DECISION_REQUIRED: Ratify eval criteria → Claude Code runs eval → adopt or r
 
 ## DECISION STATUS
 
-**Pending Will ratification.** Architecture analysis completed 2026-06-27 (Antigravity).
-See: `00_DEV_LOG/HANDOFF_2026-06-27.md` and `AI_STACK_ANALYSIS.md` (Antigravity artifact).
+**RATIFIED 2026-06-27 by Will.** Option A locked. Option B is dead unless eval fails.
 
-Options:
-- **OPTION A (RECOMMENDED):** Adopt Hermes — run eval first, adopt if criteria pass
-- **OPTION B (FALLBACK):** Build custom ~150-line Node.js TaskRunner on existing stack
+- **OPTION A — LOCKED:** Evaluate Hermes. If eval passes, adopt. If eval fails, fall back to Option B.
+- **OPTION B — STANDBY ONLY:** Custom ~150-line Node.js TaskRunner. Only if Criterion 2 or 3 fails.
 
-If eval passes: promote this doc to CANON. If eval fails: mark REJECTED, build Option B.
+### RATIFIED ARCHITECTURE
+
+**Roles (CANON):**
+| Role | Tool | Notes |
+|------|------|-------|
+| DIRECTIVE WATCHER | Hermes (file watch, 0 tokens) | Watches CURRENT_DIRECTIVE.md for changes — fires first claude -p |
+| PLANNER + EXECUTOR | Claude Code headless (`claude -p`) | Reads directive, builds, commits, writes STEP_RESULTS/ |
+| STEP-TO-STEP TRIGGER | n8n + localFileTrigger | Sees STEP_RESULTS/ file → fires next claude -p |
+| GATEKEEPER | Ollama qwen3:14b (cheap, always-on) | Before each step: in-scope or human-gate? Routes HANDOFFS/ if needed |
+| INNER REVIEWER | Claude Code headless (read-only) | Every 3–5 steps. Writes REVIEW_NNN.md. No Antigravity rate limit consumed. |
+| FINAL REVIEWER | Antigravity | Once per completed directive phase. Rare. |
+| AUTHORITY | Will | Writes CURRENT_DIRECTIVE.md. Reviews HANDOFFS/. Approves phases. |
+
+**The loop:**
+```
+Will writes CURRENT_DIRECTIVE.md
+  → Hermes detects file change (0 tokens) → spawns first claude -p
+  → Claude Code plans + executes one step → writes to STEP_RESULTS/
+  → n8n localFileTrigger fires → Ollama gate: in-scope? 
+      → YES: n8n fires next claude -p
+      → NO (human-gate): write HANDOFFS/, Hermes pings Will via Telegram
+  → every 3-5 steps: claude -p review pass → REVIEW_NNN.md
+  → directive complete → Antigravity full review
+      → PASS: Hermes pings Will "phase complete"
+      → FAIL: new directive written, loop restarts
+```
+
+**Key principle:** Hermes never consumes tokens for orchestration. It is a file watcher and process spawner only. All intelligence sits in Claude Code and Ollama.
+
+Next step: Claude Code runs eval directive below → writes HERMES_EVAL.md → Will reviews.
 
 ---
 
