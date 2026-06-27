@@ -1,5 +1,5 @@
-﻿{
-    "name":  "Workflow 1 â€” Queue Processor",
+{
+    "name":  "Workflow 1 - Queue Processor",
     "nodes":  [
                   {
                       "parameters":  {

@@ -1,124 +1,154 @@
 {
-  "name": "Workflow 2 — Model Pre-Warm",
-  "nodes": [
-    {
-      "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "field": "minutes",
-              "minutesInterval": 5
-            }
-          ]
-        }
-      },
-      "id": "aa11bb22-cc33-4dd4-ee55-ff6677889900",
-      "name": "Every 5 Minutes",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.2,
-      "position": [240, 300],
-      "notes": "Fires every 5 minutes to keep all three Ollama models hot in VRAM."
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "http://127.0.0.1:11434/api/generate",
-        "sendHeaders": false,
-        "sendQuery": false,
-        "sendBody": true,
-        "contentType": "json",
-        "specifyBody": "json",
-        "jsonBody": "{\"model\":\"qwen3:14b\",\"prompt\":\"ping\",\"stream\":false,\"keep_alive\":\"10m\"}",
-        "options": {
-          "timeout": 300000
-        }
-      },
-      "id": "bb22cc33-dd44-4ee5-ff66-778899001122",
-      "name": "Ping qwen3:14b",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
-      "position": [460, 300],
-      "notes": "Keeps qwen3:14b warm. keep_alive=10m extends VRAM residency on each hit."
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "http://127.0.0.1:11434/api/generate",
-        "sendHeaders": false,
-        "sendQuery": false,
-        "sendBody": true,
-        "contentType": "json",
-        "specifyBody": "json",
-        "jsonBody": "{\"model\":\"qwen2.5-coder:7b\",\"prompt\":\"ping\",\"stream\":false,\"keep_alive\":\"10m\"}",
-        "options": {
-          "timeout": 300000
-        }
-      },
-      "id": "cc33dd44-ee55-4ff6-aa77-889900112233",
-      "name": "Ping qwen2.5-coder:7b",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
-      "position": [680, 300],
-      "notes": "Keeps qwen2.5-coder:7b warm. Handles CODE task_type routes."
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "http://127.0.0.1:11434/api/generate",
-        "sendHeaders": false,
-        "sendQuery": false,
-        "sendBody": true,
-        "contentType": "json",
-        "specifyBody": "json",
-        "jsonBody": "{\"model\":\"minicpm-v:8b\",\"prompt\":\"ping\",\"stream\":false,\"keep_alive\":\"10m\"}",
-        "options": {
-          "timeout": 300000
-        }
-      },
-      "id": "dd44ee55-ff66-4aa7-bb88-990011223344",
-      "name": "Ping minicpm-v:8b",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
-      "position": [900, 300],
-      "notes": "Keeps minicpm-v:8b warm. Handles VISION task_type routes."
-    }
-  ],
-  "pinData": {},
-  "connections": {
-    "Every 5 Minutes": {
-      "main": [
-        [
-          { "node": "Ping qwen3:14b", "type": "main", "index": 0 }
-        ]
-      ]
-    },
-    "Ping qwen3:14b": {
-      "main": [
-        [
-          { "node": "Ping qwen2.5-coder:7b", "type": "main", "index": 0 }
-        ]
-      ]
-    },
-    "Ping qwen2.5-coder:7b": {
-      "main": [
-        [
-          { "node": "Ping minicpm-v:8b", "type": "main", "index": 0 }
-        ]
-      ]
-    }
-  },
-  "active": false,
-  "settings": {
-    "executionOrder": "v1"
-  },
-  "versionId": "00000000-0000-0000-0000-000000000002",
-  "meta": {
-    "instanceId": "sfv-engine-local",
-    "_sfv_notes": [
-      "Fires every 5 min — keeps all three specialist models hot in VRAM.",
-      "No output processing — responses are discarded, only keep_alive matters.",
-      "If a model is not yet pulled, this will log a 404 error but will not crash."
-    ]
-  },
-  "tags": ["sfv-engine", "prewarm", "ollama"]
+    "name":  "Workflow 2 - Model Pre-Warm",
+    "nodes":  [
+                  {
+                      "parameters":  {
+                                         "rule":  {
+                                                      "interval":  [
+                                                                       {
+                                                                           "field":  "minutes",
+                                                                           "minutesInterval":  5
+                                                                       }
+                                                                   ]
+                                                  }
+                                     },
+                      "id":  "aa11bb22-cc33-4dd4-ee55-ff6677889900",
+                      "name":  "Every 5 Minutes",
+                      "type":  "n8n-nodes-base.scheduleTrigger",
+                      "typeVersion":  1.2,
+                      "position":  [
+                                       240,
+                                       300
+                                   ],
+                      "notes":  "Fires every 5 minutes to keep all three Ollama models hot in VRAM."
+                  },
+                  {
+                      "parameters":  {
+                                         "method":  "POST",
+                                         "url":  "http://127.0.0.1:11434/api/generate",
+                                         "sendHeaders":  false,
+                                         "sendQuery":  false,
+                                         "sendBody":  true,
+                                         "contentType":  "json",
+                                         "specifyBody":  "json",
+                                         "jsonBody":  "{\"model\":\"qwen3:14b\",\"prompt\":\"ping\",\"stream\":false,\"keep_alive\":\"10m\"}",
+                                         "options":  {
+                                                         "timeout":  300000
+                                                     }
+                                     },
+                      "id":  "bb22cc33-dd44-4ee5-ff66-778899001122",
+                      "name":  "Ping qwen3:14b",
+                      "type":  "n8n-nodes-base.httpRequest",
+                      "typeVersion":  4.1,
+                      "position":  [
+                                       460,
+                                       300
+                                   ],
+                      "notes":  "Keeps qwen3:14b warm. keep_alive=10m extends VRAM residency on each hit."
+                  },
+                  {
+                      "parameters":  {
+                                         "method":  "POST",
+                                         "url":  "http://127.0.0.1:11434/api/generate",
+                                         "sendHeaders":  false,
+                                         "sendQuery":  false,
+                                         "sendBody":  true,
+                                         "contentType":  "json",
+                                         "specifyBody":  "json",
+                                         "jsonBody":  "{\"model\":\"qwen2.5-coder:7b\",\"prompt\":\"ping\",\"stream\":false,\"keep_alive\":\"10m\"}",
+                                         "options":  {
+                                                         "timeout":  300000
+                                                     }
+                                     },
+                      "id":  "cc33dd44-ee55-4ff6-aa77-889900112233",
+                      "name":  "Ping qwen2.5-coder:7b",
+                      "type":  "n8n-nodes-base.httpRequest",
+                      "typeVersion":  4.1,
+                      "position":  [
+                                       680,
+                                       300
+                                   ],
+                      "notes":  "Keeps qwen2.5-coder:7b warm. Handles CODE task_type routes."
+                  },
+                  {
+                      "parameters":  {
+                                         "method":  "POST",
+                                         "url":  "http://127.0.0.1:11434/api/generate",
+                                         "sendHeaders":  false,
+                                         "sendQuery":  false,
+                                         "sendBody":  true,
+                                         "contentType":  "json",
+                                         "specifyBody":  "json",
+                                         "jsonBody":  "{\"model\":\"minicpm-v:8b\",\"prompt\":\"ping\",\"stream\":false,\"keep_alive\":\"10m\"}",
+                                         "options":  {
+                                                         "timeout":  300000
+                                                     }
+                                     },
+                      "id":  "dd44ee55-ff66-4aa7-bb88-990011223344",
+                      "name":  "Ping minicpm-v:8b",
+                      "type":  "n8n-nodes-base.httpRequest",
+                      "typeVersion":  4.1,
+                      "position":  [
+                                       900,
+                                       300
+                                   ],
+                      "notes":  "Keeps minicpm-v:8b warm. Handles VISION task_type routes."
+                  }
+              ],
+    "pinData":  {
+
+                },
+    "connections":  {
+                        "Every 5 Minutes":  {
+                                                "main":  [
+                                                             [
+                                                                 {
+                                                                     "node":  "Ping qwen3:14b",
+                                                                     "type":  "main",
+                                                                     "index":  0
+                                                                 }
+                                                             ]
+                                                         ]
+                                            },
+                        "Ping qwen3:14b":  {
+                                               "main":  [
+                                                            [
+                                                                {
+                                                                    "node":  "Ping qwen2.5-coder:7b",
+                                                                    "type":  "main",
+                                                                    "index":  0
+                                                                }
+                                                            ]
+                                                        ]
+                                           },
+                        "Ping qwen2.5-coder:7b":  {
+                                                      "main":  [
+                                                                   [
+                                                                       {
+                                                                           "node":  "Ping minicpm-v:8b",
+                                                                           "type":  "main",
+                                                                           "index":  0
+                                                                       }
+                                                                   ]
+                                                               ]
+                                                  }
+                    },
+    "active":  false,
+    "settings":  {
+                     "executionOrder":  "v1"
+                 },
+    "versionId":  "00000000-0000-0000-0000-000000000002",
+    "meta":  {
+                 "instanceId":  "sfv-engine-local",
+                 "_sfv_notes":  [
+                                    "Fires every 5 min — keeps all three specialist models hot in VRAM.",
+                                    "No output processing — responses are discarded, only keep_alive matters.",
+                                    "If a model is not yet pulled, this will log a 404 error but will not crash."
+                                ]
+             },
+    "tags":  [
+                 "sfv-engine",
+                 "prewarm",
+                 "ollama"
+             ]
 }
