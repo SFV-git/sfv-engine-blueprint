@@ -24,7 +24,7 @@
                   },
                   {
                       "parameters":  {
-                                         "jsCode":  "const fs = require(\u0027fs\u0027);\n\nconst raw = $input.first().json;\n\n// Normalise to forward slashes â€” n8n on Windows emits backslashes\nconst changedPath = (raw.path || raw.name || \u0027\u0027).replace(/\\\\/g, \u0027/\u0027);\n\nif (!changedPath.endsWith(\u0027DECISION_LOG.md\u0027)) {\n  return [];\n}\n\nconst vault = (process.env.VAULT_PATH || \u0027C:\\\\SFV_BLUEPRINT\u0027).replace(/\\\\/g, \u0027/\u0027);\nconst logPath = vault + \u0027/99_INBOX/DECISION_LOG.md\u0027;\nconst content = fs.readFileSync(logPath, \u0027utf8\u0027);\n\nreturn [{ json: { content, vault } }];"
+                                         "jsCode":  "const fs = require(\u0027fs\u0027);\n\nconst raw = $input.first().json;\n\n// Normalise to forward slashes â€” n8n on Windows emits backslashes\nconst changedPath = (raw.path || raw.name || \u0027\u0027).replace(/\\\\/g, \u0027/\u0027);\n\nif (!changedPath.endsWith(\u0027DECISION_LOG.md\u0027)) {\n  return [];\n}\n\nconst vault = (($env.VAULT_PATH) || \u0027C:\\\\SFV_BLUEPRINT\u0027).replace(/\\\\/g, \u0027/\u0027);\nconst logPath = vault + \u0027/99_INBOX/DECISION_LOG.md\u0027;\nconst content = fs.readFileSync(logPath, \u0027utf8\u0027);\n\nreturn [{ json: { content, vault } }];"
                                      },
                       "id":  "3c4d5e6f-7a8b-4901-a2cd-ef3456789012",
                       "name":  "Guard â€” DECISION_LOG only",
