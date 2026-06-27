@@ -11,9 +11,7 @@ LAST_UPDATED: 2026-05-29
 
 ## URGENT — FROM 2026-06-09 VAULT AUDIT
 
-**A1. Antigravity CANON promotions — assessment complete, your call.**
-
-Read all six. Per-doc verdict:
+**A1. Antigravity CANON promotions — RESOLVED 2026-06-25.** ✅ Will ratified 5 of 6. DOCKER_INSTALL_CHECKLIST, SECRETS_POLICY, CONCURRENCY_QUEUE_SPEC, OUTPUT_VALIDATION, PROMPT_VERSIONING all confirmed CANON (were already promoted in 06-09 audit). N8N_MCP_SPEC held FHR until Docker + PostgreSQL live.
 
 | Doc | Safe to ratify? | Notes |
 |---|---|---|
@@ -26,15 +24,15 @@ Read all six. Per-doc verdict:
 
 **Recommended action:** Ratify 5 of 6. Hold N8N_MCP_SPEC at FHR until Docker/PostgreSQL are done.
 
-**A2. backup_n8n.ps1 — BUILT, needs scheduling.** Script at `99_INBOX\backup_n8n.ps1`. Copies SQLite DB to `D:\SFV_ACTIVE\BACKUPS\n8n\` daily, 7-day retention, logs to WATCHDOG_LOG. **Not yet scheduled — 5 min to activate:** Task Scheduler → New Task → daily 03:00 → `powershell.exe -NonInteractive -File "C:\SFV_BLUEPRINT\99_INBOX\backup_n8n.ps1"` → run when not logged in. That's it, gap closed.
+**A2. backup_n8n.ps1 — RESOLVED 2026-06-25.** ✅ Scheduled Task `SFV_n8n_Backup` registered (daily 03:00, RunLevel Highest). Verified Ready in Task Scheduler.
 
-**A3. Bitwarden entry — confirm done.** Decision is logged; confirm keys from n8n_env.ps1 are actually IN Bitwarden. If not, 5-minute task, highest-leverage protection available.
+**A3. Bitwarden entry — PENDING (Will action required).** Keys not yet in Bitwarden. Will confirmed no. Do before going live with autonomous queue — without this, key rotation has no fallback.
 
 **A4. Whisper port + endpoint on Node B.** Blocks the entire MEDIA pipeline build. Confirm port (9000? 8000?) and route when R&D Terminal is rebuilt.
 
-**A5. Watchdog promotion.** watchdog.ps1 works but dies if its window closes — promote to Windows Scheduled Task? (FAILOVER_MODEL updated with details.)
+**A5. Watchdog promotion — RESOLVED 2026-06-25.** ✅ Scheduled Task `SFV_Watchdog` registered (AtStartup, RunLevel Highest, restart 3x on failure). Verified Ready in Task Scheduler.
 
-**A6. workflow IDs in SESSION_STATE may be stale.** Verify current IDs in n8n UI (Settings → Workflows) so the vault record matches reality.
+**A6. workflow IDs — RESOLVED 2026-06-25.** ✅ Verified via live n8n DB read. See SESSION_STATE 06-25 block. C4 closed.
 
 ---
 
