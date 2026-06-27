@@ -1,0 +1,9 @@
+﻿{
+  "task_id": "TEST-002",
+  "task_type": "SUMMARIZE",
+  "topic": "SFV Engine trigger re-verification",
+  "prompt": "Summarize what SFV Engine is in 2-3 sentences. SFV Engine is a local AI-powered media production and automation system for a photography brand called Silverfish Visuals, based in Halifax. It uses n8n workflows, local Ollama models, and a structured task queue to automate low-value decisions so the owner only makes creative approvals.",
+  "priority": "NORMAL",
+  "status": "PENDING",
+  "output_target": ""
+}
