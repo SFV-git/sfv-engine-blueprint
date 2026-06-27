@@ -93,3 +93,10 @@ n8n on PostgreSQL ✓ · workflow3 processes a real RESEARCH task end-to-end ✓
 B + C executed with findings logged ✓ · SESSION_STATE + DASHBOARD match runtime ✓ ·
 backups scheduled and Bitwarden confirmed ✓. Then P2 opens: Redis decision window
 (7-day Postgres stability rule), Qdrant, monitoring, MEDIA, UGC app build.
+
+## CONNECTED FILES
+- [[POSTGRES_MIGRATION|PostgreSQL Migration]]
+- [[SESSION_STATE|Session State]]
+- [[DECISIONS|Decisions]]
+- [[N8N_MCP_SPEC|n8n MCP Specification]]
+- [[N8N_BLUEPRINT|n8n Blueprint]]

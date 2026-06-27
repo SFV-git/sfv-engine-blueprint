@@ -102,11 +102,9 @@ New key should live in machine environment variable only.
 5. Next module: 04_WORKFLOWS/INGEST.md → Python ingest script (per CLAUDE.md build order)
 
 ## CONNECTED FILES
-- [[N8N_BLUEPRINT|n8n Blueprint]]
-- [[METADATA_SYSTEM|Metadata System]]
-- [[RATE_LIMITS|Rate Limits]]
-- [[UGC_PRE_PRODUCTION|UGC Pre-Production]]
-- [[SFV_404|SFV 404]]
-- [[PROPOSALS|Proposals]]
-- [[PENDING_REVIEW|Pending Review]]
-- [[UPGRADE_CHECKPOINTS|Upgrade Checkpoints]]
+- [[N8N_MCP_SPEC|n8n API Specification]]
+- [[N8N_BLUEPRINT|n8n Workflow Blueprint]]
+- [[PENDING_REVIEW|Vault Scan Output]]
+- [[PROPOSALS|Human Review Proposals]]
+- [[RATE_LIMITS|API Rate Limit Verification]]
+- [[CONCURRENCY_QUEUE_SPEC|Queue Management Specification]]

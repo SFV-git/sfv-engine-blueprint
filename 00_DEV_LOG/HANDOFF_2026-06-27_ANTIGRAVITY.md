@@ -139,3 +139,8 @@ DIRECTIVE_TEMPLATE.md should go in `01_CANON_RULES/` because it is a process rul
 - `DIRECTIVE_TEMPLATE.md` — the schema for CURRENT_DIRECTIVE.md
 - `HERMES_SKILLS_SEED.md` — 10 skills to import at adoption time
 - `HANDOFF_2026-06-27.md` — previous session handoff (architecture decision context)
+
+## CONNECTED FILES
+- [[DIRECTIVE_TEMPLATE|Directive Template]]
+- [[HERMES_INTEGRATION|Hermes Integration]]
+- [[HERMES_SKILLS_SEED|Hermes Skills Seed]]

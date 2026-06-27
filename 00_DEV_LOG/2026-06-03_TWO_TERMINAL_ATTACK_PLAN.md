@@ -213,3 +213,12 @@ These need Perplexity + Antigravity input before final lock:
 STATUS: DRAFT — awaiting Perplexity (step 2) then Antigravity (step 3) then Claude reconciliation (step 4)
 AUTHORED BY: Claude (step 1)
 DATE: 2026-06-03
+
+## CONNECTED FILES
+- [[HARDWARE_CONTEXT|Hardware Context]]
+- [[DATABANK_ARCHITECTURE|Databank Architecture]]
+- [[OLLAMA_SETUP|Ollama Setup]]
+- [[CLAUDE_CODE_PROMPTS|Claude Code Prompts]]
+- [[WATCHDOG_LOG|Watchdog Log]]
+- [[N8N_BLUEPRINT|N8N Blueprint]]
+- [[MULTI_AGENT_WORKFLOW|Multi-Agent Workflow]]

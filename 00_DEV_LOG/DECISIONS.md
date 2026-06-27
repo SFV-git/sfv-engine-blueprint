@@ -70,12 +70,9 @@ Local models 24/7. Research. Proposals only.
 Never touches production directly.
 
 ## CONNECTED FILES
+- [[BLUEPRINT_MANIFEST|Blueprint Manifest]]
 - [[NAMING_CONVENTIONS|Naming Conventions]]
 - [[STORAGE_ARCHITECTURE|Storage Architecture]]
-- [[ENVIRONMENT_CONFIG|Environment Config]]
-- [[ARCHIVE|Archive]]
 - [[LOCAL_MODELS|Local Models]]
-- [[CLAUDE_CODE_PROMPTS|Claude Code Prompts]]
 - [[PROPOSALS|Proposals]]
-- [[ROADMAP|Roadmap]]
-| 2026-06-26 22:15 | TAVILY_KEY_ROTATED | Will rotated Tavily API key via app.tavily.com dashboard. n8n_env.ps1 updated, n8n restarted, health 200 confirmed. Old key invalidated. Add new key to Bitwarden (A3 still pending). |
+- [[MASTER_CONTEXT|Master Context]]

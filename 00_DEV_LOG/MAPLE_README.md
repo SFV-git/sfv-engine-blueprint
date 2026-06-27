@@ -64,3 +64,11 @@ The runbook says MVP/v2/v3. Mapped onto SFV's actual phase reality:
 It traveled off the Engine Body onto the SSD, the MacBook, and an upload. Per SECRETS_POLICY
 this counts as suspected exposure. See ARCHITECTURE_AUDIT.md finding S1. Short version:
 rotate the Tavily key, and exclude `n8n_env.ps1` from every future snapshot/zip.
+
+## CONNECTED FILES
+- [[BLUEPRINT_MANIFEST|Blueprint Manifest]]
+- [[MISSING_REFERENCED_FILES|Missing Referenced Files]]
+- [[SOURCE_OF_TRUTH_RULES|Source of Truth Rules]]
+- [[ARCHITECTURE_AUDIT|Architecture Audit]]
+- [[CONTRADICTION_MATRIX|Contradiction Matrix]]
+- [[CRITICAL_PATH|Critical Path]]

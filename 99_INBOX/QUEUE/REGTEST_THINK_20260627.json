@@ -1,0 +1,9 @@
+{
+  "task_id": "REGTEST_THINK_20260627",
+  "task_type": "CLASSIFY",
+  "prompt": "A photographer shot an MMA tournament with three cameras and needs the footage delivered same-day via QR codes. Which single SFV branch does this belong to? Reply with exactly one branch name from: MYTHOLOGY, SFV_LIVE, SFV_EVENTS, SFV_ATHLETICS, SFV_STUDIO, SFV_UGC, SFV_ARCHIVE, SFV_WORLD, SFV_404.",
+  "status": "COMPLETE",
+  "priority": "NORMAL",
+  "processed_at": "2026-06-27 06:51:13",
+  "output_written_to": "C:/SFV_BLUEPRINT/99_INBOX/OUTPUTS/REGTEST_THINK_20260627_RESULT.md"
+}

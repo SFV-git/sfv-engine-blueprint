@@ -46,11 +46,8 @@ Build the Engine communication layer and fix the AI stack hierarchy before touch
 Will request → task queue → cheapest capable layer → output file → review if needed → canon only after approval
 
 ## CONNECTED FILES
-- [[ANTIGRAVITY_RULES|Antigravity Rules]]
-- [[MODEL_ROUTING|Model Routing]]
-- [[INGEST|Ingest]]
-- [[N8N_BLUEPRINT|N8N Blueprint]]
-- [[OLLAMA_SETUP|Ollama Setup]]
-- [[COST_ROUTING|Cost Routing]]
-- [[CLAUDE_API|Claude API]]
-- [[MULTI_AGENT_WORKFLOW|Multi-Agent Workflow]]
+- [[AI_USE_CASE_PROFILE|AI Use-Case Profile]]
+- [[ENGINE_COMMUNICATION_MODEL|Engine Communication Model]]
+- [[COST_CEILING_POLICY|Cost Ceiling Policy]]
+- [[DECISIONS|Decisions]]
+- [[MODEL_LIFECYCLE_POLICY|Model Lifecycle Policy]]

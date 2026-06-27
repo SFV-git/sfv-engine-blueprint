@@ -25,11 +25,6 @@ See DECISIONS.md for full list.
 See QUESTIONS_FOR_WILL.md and UNCONFIRMED.md.
 
 ## CONNECTED FILES
-- [[DECISIONS|Decisions Made]]
-- [[QUESTIONS_FOR_WILL|Questions for Will]]
-- [[UNCONFIRMED|Unconfirmed Items]]
-- [[BRANCH_OUTPUTS|Branch Outputs]]
-- [[STORAGE_ARCHITECTURE|Storage Architecture]]
-- [[NAMING_CONVENTIONS|Naming Conventions]]
-- [[HARDWARE_CONTEXT|Hardware Context]]
-- [[2026-05-27_SESSION_END|2026-05-27 Session End]]
+- [[BLUEPRINT_MANIFEST|Blueprint Manifest]]
+- [[MASTER_CONTEXT|Master Context]]
+- [[VERSION_LOG|Version Log]]

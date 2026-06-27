@@ -278,11 +278,11 @@ Do MYTHOLOGY and SFV_WORLD first. Show me the plan. Wait for approval.
 *Run dry-run first. Test with real files before May 28.*
 
 ## CONNECTED FILES
-- [[ORPHANS|Orphans Log]]
-- [[MODEL_ROUTING|Model Routing Rules]]
-- [[STORAGE_ARCHITECTURE|Storage Architecture]]
-- [[VERSION_LOG|Version History]]
-- [[AI_USE_CASE_PROFILE|AI Use Case Profile]]
-- [[INGEST|Ingest Workflow Spec]]
-- [[ANTIGRAVITY|Antigravity Context File]]
-- [[QUALITY_CONTROL|Quality Control Policies]]
+- [[INGEST.md|Ingest Workflow Specification]]
+- [[MEDIA_PIPELINE.md|Media Processing Pipeline]]
+- [[STORAGE_ARCHITECTURE.md|Data Storage Infrastructure]]
+- [[SEMANTIC_LINKS_WORKER.md|Semantic Link Automation]]
+- [[UGC_PRE_PRODUCTION.md|User-Generated Content Prep]]
+- [[EDGE_CASES.md|Ingestion Edge Case Testing]]
+- [[CRITICAL_PATH.md|Core Workflow Dependencies]]
+- [[METADATA_SYSTEM.md|Metadata Management]]
