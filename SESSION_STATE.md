@@ -1,8 +1,8 @@
 ---
 STATUS: CANON
-VERSION: v0.6.1
+VERSION: v0.6.2
 OWNER: WILL
-LAST_UPDATED: 2026-06-25
+LAST_UPDATED: 2026-06-27
 ---
 
 # SESSION STATE
@@ -23,6 +23,64 @@ v0.x — Blueprint Lock COMPLETE. All 20 AI stack gaps blueprinted. Confidence f
 Queue processor + Output Monitor + Pre-Warm all LIVE and ACTIVE (verified 06-25, see below).
 Audit layer added (Maple package 06-22) + Quartz vault website (06-10). M1 is the next target
 state — see 00_DEV_LOG/CRITICAL_PATH.md. Gate: PROPOSAL 008 ratify/revert still OPEN.
+
+---
+
+## SESSION — 2026-06-27 (BLOCK F — TRIGGERS FIXED END-TO-END — CLAUDE CODE, OPUS, WILL PRESENT)
+
+Goal: fix localFileTrigger so QUEUE/ tasks fire. Will approved the operational work + (mid-session)
+the workflow re-import repair. No git push (Will pushes). No Bitwarden/Postgres password entry or key
+rotation. workflow3/Docker untouched.
+
+### VERIFICATION (what Will asked to confirm)
+- **Env vars in LIVE process: YES.** Read directly from the running n8n process PEB (not the file):
+  `NODES_EXCLUDE=[]`, `N8N_ENABLE_LOCAL_FILE_NODE=true`, `DB_TYPE=postgresdb` all confirmed live.
+- **Health: 200** at http://127.0.0.1:5678/healthz after every restart.
+- **Trigger re-register: DONE** via n8n 2.x publish model (see root cause). All 3 workflows
+  active=true, published (activeVersionId set), triggerCount=1, and "Activated workflow" at boot.
+- **TEST-002: LANDED in OUTPUTS.** `99_INBOX/OUTPUTS/TEST-002_RESULT.md` (VALIDATED, qwen3:14b,
+  ~15s Ollama run). Task JSON written back to status=COMPLETE. Full chain works:
+  localFileTrigger → Read Task → Route? → Call Ollama → Write+Log → OUTPUTS.
+- **Duplicate deleted: YES.** `bf6LkL91FXDBF10F` removed (exported to backup first). 3 workflows remain.
+
+### ROOT CAUSE — was NOT env-vars-only (handoff diagnosis was incomplete)
+Three compounding problems, all now fixed:
+1. **Missing env vars** (real): NODES_EXCLUDE/N8N_ENABLE_LOCAL_FILE_NODE lived only in start_n8n.ps1,
+   not n8n_env.ps1. Merged into n8n_env.ps1 (single source of truth); start_n8n.ps1 reduced to
+   dot-source + `n8n start`.
+2. **n8n 2.22.5 publish model**: workflows were active=true but UNPUBLISHED (activeVersionId=NULL).
+   Boot log showed "0 published workflows" → no triggers registered. Fixed via `n8n publish:workflow`.
+3. **Corrupted workflow graphs** (the real blocker): WF1 + WF4 were imported while localFileTrigger
+   was disabled, so n8n silently STRIPPED the trigger node's outgoing connection. Trigger fired but
+   dead-ended. Repaired by re-importing the canonical vault JSONs (id retargeted to live DB ids,
+   tags stripped to dodge a tagId import bug), then re-activate + publish + restart. WF2 (schedule
+   trigger) was never corrupted — it always worked.
+
+### CHANGES MADE
+- `03_INFRASTRUCTURE/n8n_env.ps1` (gitignored): added NODES_EXCLUDE=[], N8N_ENABLE_LOCAL_FILE_NODE=true;
+  folded in NODE_FUNCTION_ALLOW_EXTERNAL=*, N8N_LOG_LEVEL=info (were only in start_n8n.ps1);
+  NODE_FUNCTION_ALLOW_BUILTIN upgraded fs,path → fs,path,os. OLLAMA_URL LEFT as localhost (see flags).
+- `03_INFRASTRUCTURE/start_n8n.ps1`: reduced to dot-source n8n_env.ps1 + `n8n start`.
+- WF1 (vOH1CsPYvD27sUxx) + WF4 (nRbwsa0K62y2Fnmo): re-imported with restored connections, published.
+- Backups in scratchpad: BACKUP_wf1_*.json, BACKUP_wf4_*.json, BACKUP_duplicate_bf6LkL91FXDBF10F.json.
+
+### FLAGGED FOR WILL [FOR HUMAN REVIEW]
+- **WF4 (Output Monitor) now FIRES but ERRORS**: `ReferenceError: process is not defined` in its
+  "Guard — DECISION_LOG only" Code node (n8n task-runner sandbox blocks `process`). Pre-existing bug,
+  never surfaced before because WF4's trigger never fired. Needs a code fix (replace process.env usage).
+  Does NOT affect WF1 (the queue processor). Out of Block F scope.
+- **n8n API key: NOT created.** Requires the UI/owner login (Settings → API); cannot be minted
+  headlessly. `N8N_API_KEY` not added to n8n_env.ps1. Re-register/publish/delete were all done via
+  n8n CLI + psql instead, so the key was not needed this block. Create it next time you're in the UI.
+- **localFileTrigger has no `awaitWriteFinish` + Read Task does not strip a UTF-8 BOM.** A task file
+  written with a BOM (e.g. PowerShell `Set-Content -Encoding utf8`) makes JSON.parse fail → task
+  silently dropped. Tasks must be dropped as UTF-8 **no-BOM** (and ideally atomically, write-then-move).
+  Consider hardening Read Task to strip a leading BOM. [INFERENCE: likely why ad-hoc drops fail.]
+- **OLLAMA_URL kept as `http://localhost:11434`** (current working value). start_n8n.ps1 historically
+  used 127.0.0.1 to dodge a Node IPv6-resolution bug. Left as-is to avoid changing working behavior —
+  switch to 127.0.0.1 if Ollama calls ever fail on IPv6.
+- backup_n8n.ps1 still backs up SQLite — needs pg_dump update (carried over from 06-26 handoff).
+- Git NOT pushed (Will pushes). n8n is running (launched via merged env, health 200).
 
 ---
 

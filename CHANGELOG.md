@@ -2,10 +2,19 @@
 STATUS: CANON
 VERSION: v0.1.0
 OWNER: WILL
-LAST_UPDATED: 2026-05-24
+LAST_UPDATED: 2026-06-27
 ---
 
 # CHANGELOG
+
+## 2026-06-27 — BLOCK F: localFileTrigger fixed end-to-end (Claude Code)
+- `03_INFRASTRUCTURE/n8n_env.ps1` (gitignored): added NODES_EXCLUDE=[], N8N_ENABLE_LOCAL_FILE_NODE=true; folded in NODE_FUNCTION_ALLOW_EXTERNAL=*, N8N_LOG_LEVEL=info; NODE_FUNCTION_ALLOW_BUILTIN → fs,path,os. Now single source of truth for n8n env.
+- `03_INFRASTRUCTURE/start_n8n.ps1`: reduced to dot-source n8n_env.ps1 + `n8n start` (removed duplicate env defs).
+- n8n workflows WF1 (vOH1CsPYvD27sUxx) + WF4 (nRbwsa0K62y2Fnmo): re-imported from canonical vault JSON to restore trigger→first-node connections stripped at original import; re-activated + published.
+- Published all 3 active workflows (n8n 2.x publish model) — required for trigger registration.
+- Deleted duplicate workflow `bf6LkL91FXDBF10F` (backed up first).
+- Verified end-to-end: TEST-002 → OUTPUTS/TEST-002_RESULT.md (VALIDATED). Live process env confirmed, health 200.
+- Flagged: WF4 Code node `process is not defined` bug; n8n API key not created (needs UI); Read Task BOM sensitivity. See SESSION_STATE 2026-06-27 block.
 
 ## 2026-05-29 — ULTRAPLAN — AI STACK GAP ANALYSIS COMPLETE
 
