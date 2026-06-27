@@ -26,6 +26,30 @@ state — see 00_DEV_LOG/CRITICAL_PATH.md. Gate: PROPOSAL 008 ratify/revert stil
 
 ---
 
+## SESSION — 2026-06-28 (OVERNIGHT BUG-FIX + VERIFICATION — CLAUDE CHAT, WILL ASLEEP)
+
+Autonomous overnight session. No new dependencies adopted, no CANON self-promoted, no architecture
+decisions made on Will's behalf (A1/A2/A3 still await Will). Safe operational work only.
+
+**Done:**
+- **WF4 process.env bug FIXED** (live Postgres row + vault JSON). Removed env dependency entirely —
+  node now uses literal locked path `C:\SFV_BLUEPRINT`, sandbox-proof. Applied via direct DB row patch
+  (NOT re-import — avoided the 06-27 corruption class). Backup: 99_INBOX/BACKUP_wf4_live_20260627_032802.json.
+  REMAINING: arms on next n8n restart OR run C:\Windows\Temp\sfv_wf4_reactivate.ps1. Did NOT reactivate
+  overnight (non-blocking error + no observer = not worth the risk).
+- **WF1 <think> strip confirmed already live** in DB — STEP 3 needed no re-import. Pure risk avoided.
+- **Regression PASSED**: REGTEST_THINK_20260627 (CLASSIFY w/ forced thinking block) → clean OUTPUTS landing,
+  STATUS VALIDATED, BRANCH SFV_EVENTS, no <think> bleed. Full chain verified end-to-end.
+
+**Verified live:** n8n health 200, 3 workflows active + no duplicates, Ollama up, psql/DB-patch pattern works.
+
+**For Will:** (1) ratify/reject A1/A2/A3, (2) restart n8n or run reactivate script to load WF4 fix,
+(3) rotate Tavily key (still plaintext in n8n_env.ps1 — standing CRITICAL_PATH item).
+
+Full detail: 00_DEV_LOG/HANDOFF_2026-06-28.md
+
+---
+
 ## SESSION — 2026-06-27 PART 2 (ARCHITECTURE REVIEW — CLAUDE CHAT, WILL PRESENT)
 
 Will raised core question: is the current AI stack capable of walk-away autonomous self-development?

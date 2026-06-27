@@ -225,3 +225,15 @@ This is a new file added to the SFV vault. Based on its content and purpose, sug
 ---
 READ: 00_dev_log/handoff_2026-06-27_antigravity.md
 This is a new file added to the SFV vault. Based on its content and purpose, suggest up to 5 wikilinks to other vault files that belong in its CONNECTED FILES section. Format each suggestion as: [[filename]] — one-line reason. Nothing else.
+
+---
+READ: 00_dev_log/handoff_2026-06-28.md
+This is a new file added to the SFV vault. Based on its content and purpose, suggest up to 5 wikilinks to other vault files that belong in its CONNECTED FILES section. Format each suggestion as: [[filename]] — one-line reason. Nothing else.
+
+---
+READ: 08_tests/paper_trial_sfv_events.md
+This is a new file added to the SFV vault. Based on its content and purpose, suggest up to 5 wikilinks to other vault files that belong in its CONNECTED FILES section. Format each suggestion as: [[filename]] — one-line reason. Nothing else.
+
+---
+READ: 08_tests/paper_trial_wf3_research.md
+This is a new file added to the SFV vault. Based on its content and purpose, suggest up to 5 wikilinks to other vault files that belong in its CONNECTED FILES section. Format each suggestion as: [[filename]] — one-line reason. Nothing else.
