@@ -160,4 +160,18 @@ These are inputs only — Claude Code does NOT render an adopt/reject decision. 
 
 ---
 
+## Setup Run 2026-06-28
+- Toolsets enabled: coding, file, terminal, search, memory, skills, vision
+  - NOTE: `file` and `terminal` were already enabled (not present in `disabled_toolsets`). Actual removals from the disabled list: coding, search, memory, skills, vision.
+- Local Ollama configured: http://localhost:11434/v1 (OLLAMA_API_KEY=ollama), added to `.env` after the header comment block.
+- Vault MCP added: sfv-vault → C:\SFV_BLUEPRINT (`@modelcontextprotocol/server-filesystem` via npx).
+- Smart model routing: enabled.
+- Memory: memory_enabled=true, user_profile_enabled=true.
+- Constraints honored: model.default unchanged (claude-sonnet-4-6); no ANTHROPIC_API_KEY or existing keys touched (none were present/active in `.env`); no n8n/Postgres configs modified.
+- Backups written: config.yaml.bak.20260628, .env.bak.20260628 (in hermes install dir).
+- config.yaml re-validated as parseable YAML after edits.
+- Status: RATIFIED BY WILL 2026-06-28 — CANON.
+
+---
+
 Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>
