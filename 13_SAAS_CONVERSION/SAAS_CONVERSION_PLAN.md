@@ -318,3 +318,147 @@ they keep. Validate with the §7 gate (interviews + LOI) before any build. Every
 - **S5.** Accept the redirect — internal enablement layer wrapping 3rd-party edit/schedule tools,
   proprietary = playbook + analytics loop, monetized via rev-share (recommend: **yes**)?
 - **S6.** If anything ships standalone, restrict scope to the **analytics→optimization loop** only?
+
+---
+
+## 11. CONSUMER / TIERED REFRAME — vendor economics vs the render-COGS firehose
+
+**Concept (Will, 2026-06-28):** go broader, not gatekept. Tiered subs incl. a cheap consumer tier:
+app gives you the content idea → built-in teleprompter → you shoot in-app → a finished reel pops
+out later → analytics feed next month. Sell across provinces; modest profit is enough. Buyer is no
+longer just operators — it's "anyone trying to do social media."
+
+### 11a. What Will is RIGHT about  [CONCEDED]
+- **Vendor pivot is a real strategy.** Becoming a tooling vendor genuinely offloads client-finding,
+  agency overhead, and per-client churn. That's a legitimate trade, not a cope.
+- **Modest-profit bar is legitimate.** Not every business must be VC-scale. A lifestyle software
+  business clearing a low bar across a few provinces is a valid goal. The earlier analysis implicitly
+  judged against a "big business" bar; against a "enough to be profitable" bar the question changes.
+
+These two points apply cleanly to a **pro/operator tier**. They do **not** rescue the consumer tier —
+for three structural reasons below.
+
+### 11b. The consumer flow Will described already ships FREE from the platform  [DECISIVE]
+**Instagram Edits** (Meta, free, mobile, **no paid tier, watermark-free**, 7M downloads first week,
+130+ features in year 1, weekly updates) already does the *entire* described loop:
+idea boards + trending sounds, **built-in teleprompter** (record AND voiceover), full in-app camera
+(to 10 min), auto-captions, AI restyle / cut-silences / object tracking, **direct Reels publishing**,
+and a built-in **analytics/insights tab** (skip rate, retention, watch time, share rate). CapCut covers
+the same ground. Competing on the consumer tier = competing against **the destination platform's own
+free first-party app**, for the same workflow. That is the hardest position in consumer software.
+
+### 11c. "A reel pops out later" is a COGS firehose on a free/cheap tier  [DECISIVE]
+"Shoot in app → reel pops out" means **Will renders every user's video** — on his GPU or via a paid
+API (Submagic ~$0.69/min; OpusClip credits). That cost **scales with usage, not revenue**. A free or
+cheap tier is exactly where usage is highest and revenue lowest. The business can **lose money fastest
+precisely when it 'succeeds.'** The only configs that survive at modest revenue are **BYO-render**
+(user shoots/exports in Edits/CapCut themselves) — which means Will is *not* building the render app.
+
+### 11d. "Shoot in app" = a real mobile app = NOT low-overhead  [INFERENCE]
+A cross-platform capture app (iOS+Android camera, teleprompter UI, upload, processing queue, billing,
+support, app-store review/compliance, ongoing updates vs Meta's weekly cadence) is a heavy, permanent
+solo-operator burden. The agency overhead Will wants to escape gets **replaced by software-company
+overhead that is heavier, not lighter.** Churn doesn't vanish either — agency client-churn becomes
+consumer-subscription churn, which in creator tools is notoriously high (try once, post twice, cancel).
+
+### 11e. The distribution edge only exists for the PRO tier  [KEY]
+Will's one real advantage — a warm channel to operators — reaches operators, **not** "anyone doing
+social media." For the consumer tier he has no channel and would compete with Meta's distribution.
+So the broad consumer move *gives up the single thing that made any software path viable.*
+
+### 11f. The version that actually gets Will what he wants  [RECOMMENDED]
+Goal restated from Will: low-overhead, recurring, modest-profit-is-fine, not gatekept, helps normal
+people. The shape that delivers that **without** the Edits collision, the render firehose, or a mobile
+build:
+
+**Don't build the capture/edit/render app — that's free from Meta and a cost firehose.** Build the
+**idea + optimization brain**, BYO-capture:
+- App/site hands the user a **content idea + script + shot plan + posting schedule**.
+- User shoots it **free in Instagram Edits / CapCut** (their teleprompter, their render — zero COGS to Will).
+- User connects or pastes their **per-reel analytics**; the **monthly optimization loop** (Will's one
+  medium-moat component) learns what works for *that* account and writes next month's ideas.
+- Proprietary = the **idea engine + the analytics→strategy loop + SFV playbook**. Ongoing, not one-time-copyable.
+- COGS ≈ LLM calls only (cheap, local Ollama possible). Overhead ≈ low. Tiers: cheap consumer (idea+loop),
+  pro/operator (adds the SFV network + rev-share). **Not gatekept**, fits the modest-profit bar, and
+  arms no one with the part that matters because the value is the compounding loop, not a feature.
+
+Even here, Meta's idea boards + insights are adjacent — so the wedge is **personalized monthly
+optimization across a roster**, which Edits' raw insights tab does not do. Validate that gap is real
+(§7 gate) before any build.
+
+### 11g. Decision update
+- **S7.** Split the tiers correctly: **pro/operator** = vendor model (Will's 11a points apply);
+  **consumer** = idea+optimization brain only, **BYO-capture**, no render on Will's infra (recommend: **yes**)?
+- **S8.** Kill "shoot-in-app + reel-pops-out" as a build target (free from Meta + COGS firehose +
+  mobile burden); deliver that step via Instagram Edits/CapCut instead (recommend: **yes**)?
+- **S9.** Confirm the standalone wedge to validate = **personalized monthly optimization loop**, not editing?
+
+---
+
+## 12. REFINED B2B CONCEPT — style-intake + production planning for reel shooters
+
+**Concept (Will, 2026-06-28):** specialized B2B service for people who already make reels *for others* —
+freelance/contracted shooters, in-house camera ops / media teams, marketing agencies (enterprise).
+Two style inputs: (a) **learn from the company's existing content**, or (b) **guided website intake
+form** detailing desired content styles, **with AI suggestions during signup/intake**. Niche-agnostic
+engine; **beachhead niche = contracted IG-reel shooters** who'd save real time. **Teams feature**
+(enterprise): agencies bring their own teams, in-site comms + per-member work overview.
+
+**This is the defensible shape.** It clears the three traps that killed the earlier framings:
+B2B not consumer (no Meta Edits collision — that's a *creation* tool for the poster; this is a
+*production-ops* layer for people producing for others), BYO-capture (no render firehose), and a
+time-is-money buyer with legible ROI. Credit also: intake-form-with-suggestions is good UX *and*
+solves the style engine's cold-start; the beachhead-niche instinct is correct.
+
+### 12a. Competitive map (web-grounded 2026-06-28) — where NOT to fight
+The **team / multi-client / approval / per-member-overview** layer is a **mature, saturated** category:
+Planable (collaboration/approval-first, workspace-per-client, unlimited users, in-context comments,
+multi-level approval, version history, AI post creation; $33–49/workspace + custom enterprise),
+plus Metricool, Sprout, Hootsuite, SocialPilot, Agorapulse, Sendible, Loomly, Later, Buffer, Vista
+Social, Statusbrew, Zoho. They have AI ideation bolted on now too.
+**[FINDING]** Do **not** rebuild the approval/seat/calendar machinery — you will not out-build Planable
+as a solo dev, and "manage your social team's posts" is DOA against it.
+
+### 12b. The actual wedge — UPSTREAM of those tools
+Every incumbent starts at *"you already have a post → route it for approval/scheduling."* They treat the
+**front of the pipeline thinly.** Will starts one step earlier: *"you have a client/brand → here's
+exactly what to shoot, in their style, as ideas + scripts + shot lists for the shooter."* That
+**style-intake → on-brand production planning for video shooters** is a real seam the scheduling/approval
+tools don't own. Position there. The team feature should be **lightweight + in service of the shoot
+workflow** (who's assigned which client's shoot, status of each shooter's deliverables) and ideally
+**export/integrate** into whatever scheduler the agency already runs — not a Planable clone.
+
+### 12c. Three honest guardrails (independent of competition)
+
+1. **Style-learning OUTPUT QUALITY is the make-or-break — not the team feature.** Pros pay for taste
+   and differentiation; their whole value is not-being-generic. If the ideas/scripts/shot lists read
+   like default LLM mush, they churn in week one. "Learn from existing content" + "guided intake" are
+   the right *inputs*, but the bar on the *output* is brutal and is the central product risk. Build and
+   **validate this first**, before a line of team-feature code. If it can't beat what a good shooter
+   produces in 20 min, nothing else matters.
+
+2. **"Reapplicable to all niches" is a positioning trap.** Horizontal = hard to sell, easy to be
+   out-focused. Build the engine niche-agnostic *under the hood*, but **sell ONE sharp niche**
+   (contracted IG-reel shooters). "Works for everyone" is a phase-2 expansion story, never the launch
+   pitch. (Will already senses this — reinforce it.)
+
+3. **Enterprise/teams vs. low-overhead-solo pull in opposite directions.** Enterprise = SSO, security,
+   SLAs, high-touch sales, support load — the opposite of "modest overhead." **Resolution:** launch
+   **self-serve SMB/prosumer** (individual shooters + small teams), add the enterprise/teams tier only
+   *after* the ideation engine is proven and a real buyer is pulling for it. Don't lead with enterprise.
+
+   Minor residual: a tool that makes contracted shooters more self-sufficient slightly loosens agency
+   lock-in. That's just the nature of being a vendor — acceptable, not a blocker.
+
+### 12d. Positioning one-liner (draft, FHR)
+"The production brain for reel shooters: tell us the brand (or drop their best reels), get a month of
+on-brand ideas, scripts, and shot lists — then track every shoot and shooter in one place."
+Sits **upstream** of Planable/Metricool, not against them.
+
+### 12e. Decision update
+- **S10.** Endorse the upstream positioning — own **style-intake + production planning**, keep team
+  feature lightweight, integrate with (not rebuild) schedulers/approval tools? (recommend: **yes**)
+- **S11.** Sequence: validate **ideation/style output quality** FIRST; build teams/enterprise LAST? (recommend: **yes**)
+- **S12.** Launch motion = **self-serve, contracted-IG-reel-shooter niche**; enterprise/teams = phase 2? (recommend: **yes**)
+- **S13.** Want me to draft `PRODUCTION_BRAIN_SPEC.md` (intake schema + style-ingestion approach +
+  validation test that pits engine output against a real shooter's manual output) once S10–S12 are set?
