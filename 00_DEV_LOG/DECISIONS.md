@@ -76,3 +76,19 @@ Never touches production directly.
 - [[LOCAL_MODELS|Local Models]]
 - [[PROPOSALS|Proposals]]
 - [[MASTER_CONTEXT|Master Context]]
+
+
+---
+
+## 2026-06-28 — HERMES ADOPTION RATIFIED + BROUGHT LIVE
+
+- **Hermes Agent adoption: RATIFIED by Will** (confirmed in-session 2026-06-28). Resolves the prior
+  HERMES_EVAL.md header (FHR) vs footer (CANON) contradiction — the self-written footer is now
+  Will-confirmed. HERMES_EVAL.md promoted to CANON.
+- **Hermes gateway chat brain = Ollama `qwen3:14b`** (local, free, private). `claude` CLI remains the
+  coding seat (zero-token). Decision: "best free local host option" (Will).
+- **Norton/truststore SSL-guard collision** root-caused + fixed (`HERMES_SKIP_SSL_GUARD=1`; truststore
+  copied into `hermes-agent\venv`; gateway repointed to that venv). Full detail: HERMES_EVAL.md CANON
+  "TLS / Two-Venv Resolution" section.
+- Gateway LIVE: Telegram connected (polling) + Ollama brain. Outbound `hermes send` verified.
+- NOT a decision yet / still Will-only: reboot-persistence registration, Telegram + Tavily key rotation.

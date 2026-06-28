@@ -23,6 +23,38 @@ v0.x — Blueprint Lock COMPLETE. All 20 AI stack gaps blueprinted. Confidence f
 Queue processor + Output Monitor + Pre-Warm all LIVE and ACTIVE (verified 06-25, see below).
 Audit layer added (Maple package 06-22) + Quartz vault website (06-10). M1 is the next target
 state — see 00_DEV_LOG/CRITICAL_PATH.md. Gate: PROPOSAL 008 ratify/revert still OPEN.
+**Hermes adoption RATIFIED (Will, 2026-06-28) — gateway LIVE: Ollama qwen3:14b brain + Telegram connected.**
+
+---
+
+## SESSION — 2026-06-28 (HERMES BROUGHT LIVE — CLAUDE CHAT, OPUS 4.8, WILL PRESENT)
+
+Will ratified Hermes adoption (confirmed in-session). Goal: finish getting Hermes fully working per
+HANDOFF_2026-06-28. Done within ratified scope (no new deps adopted beyond completing the already-
+ratified Norton/truststore fix; no CANON self-promoted without Will's confirmation).
+
+**RESOLVED — the real blocker was NOT TLS.** Norton's `truststore` injection collides with Hermes'
+SSL pre-flight guard (`ctx.get_ca_certs()` → empty `NotImplementedError` → swallowed as "Failed to
+initialize OpenAI client:"). Full root-cause + fix logged CANON in `00_DEV_LOG/HERMES_EVAL.md`
+(TLS / Two-Venv Resolution section).
+
+**Live now (verified 2026-06-28):**
+- Chat brain = **Ollama qwen3:14b** (local/free/private). `hermes -z "PING"` → PING. ✅
+- `HERMES_SKIP_SSL_GUARD=1` persisted (keepalive wrapper + User env var).
+- Gateway runs from **`hermes-agent\venv`** (only venv with Telegram); truststore copied there from
+  `app\.venv` (api.telegram.org IS Norton-intercepted). Keepalive repointed accordingly.
+- Telegram **connected (polling mode)**, no SSL errors. `hermes send` → delivered to home channel. ✅
+- `config.yaml` model block = Ollama dict form (provider:custom/base_url/api_key:ollama/qwen3:14b/64K).
+  Backup: `config.yaml.bak.20260628_184304`.
+
+**FLAGGED FOR WILL [FOR HUMAN REVIEW]:**
+- **Reboot persistence NOT set** — gateway running via keepalive launched this session only. Needs
+  `hermes_task.xml` registered from ELEVATED prompt (Will-only) OR a no-admin Startup-folder shortcut.
+- **Inbound→reply loop untested** — message the bot to confirm a qwen3:14b reply (outbound proven).
+- Telegram bot token rotation (cleartext-exposed) + Tavily key rotation — still pending, Will-only.
+- Desktop Electron app (PID from 2:58 AM) holds shared handles on config.yaml/.env — fine, just noted.
+
+**Objectives 2 (engine capability review) + 3 (sell-as-software) — NOT STARTED this session.**
 
 ---
 
