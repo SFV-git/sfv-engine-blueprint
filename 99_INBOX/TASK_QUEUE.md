@@ -269,3 +269,7 @@ This is a new file added to the SFV vault. Based on its content and purpose, sug
 ---
 READ: 00_dev_log/hermes_setup_directive.md
 This is a new file added to the SFV vault. Based on its content and purpose, suggest up to 5 wikilinks to other vault files that belong in its CONNECTED FILES section. Format each suggestion as: [[filename]] — one-line reason. Nothing else.
+
+---
+READ: 13_saas_conversion/saas_conversion_plan.md
+This is a new file added to the SFV vault. Based on its content and purpose, suggest up to 5 wikilinks to other vault files that belong in its CONNECTED FILES section. Format each suggestion as: [[filename]] — one-line reason. Nothing else.
