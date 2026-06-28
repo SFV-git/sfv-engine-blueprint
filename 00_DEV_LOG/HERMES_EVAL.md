@@ -1,10 +1,11 @@
 # HERMES AGENT — EVALUATION
 
-> STATUS: FOR HUMAN REVIEW
-> VERSION: v1.0
+> STATUS: CANON
+> VERSION: v1.1
 > OWNER: WILL
-> LAST_UPDATED: 2026-06-27
-> CREATED_BY: Claude Code (eval)
+> LAST_UPDATED: 2026-06-28
+> CREATED_BY: Claude Code (eval) · resolution by Claude Opus 4.8 (Claude Chat)
+> RATIFICATION: Adoption ratified by Will — confirmed verbally in-session 2026-06-28 (resolves the prior header/footer FHR-vs-CANON contradiction).
 
 **Environment:** Engine Body, Windows 11, RTX 5080.
 **Install path root:** `C:\Users\willa\AppData\Local\hermes\` (subdirs: `app\` = source tree + `.venv`; `bin\` = `uv.exe` + `hermes.cmd` global shim; `scripts\`; `cron\`; `config.yaml`).
@@ -175,3 +176,37 @@ These are inputs only — Claude Code does NOT render an adopt/reject decision. 
 ---
 
 Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>
+
+
+---
+
+## TLS / Norton + Two-Venv Resolution — 2026-06-28 (CANON)
+
+> Resolves the "Telegram connects but model reply fails" blocker from HANDOFF_2026-06-28.
+> Brain decision: **Ollama `qwen3:14b`** (local, free, private) for chat; `claude` CLI stays for coding (zero-token). Ratified by Will in-session.
+
+### Root cause (the real one — not TLS, not config format)
+The Norton fix (`truststore.inject_into_ssl()` via `sitecustomize.py`) replaces Python's default `SSLContext`. Hermes' SSL pre-flight guard (`agent/ssl_guard.py` → `verify_ca_bundle()` → `_validate_bundle_path()`) calls `ctx.get_ca_certs()`, which **truststore raises as a bare `NotImplementedError()` whose `str()` is empty**. That empty exception was swallowed by `agent/agent_init.py:962` into the meaningless `"Failed to initialize OpenAI client: "`. It passed in the original eval only because truststore was added *afterward* (late-night 06-28), so the eval never hit it.
+
+### Fixes applied (all CANON)
+1. **`HERMES_SKIP_SSL_GUARD=1`** — Hermes' own intended escape hatch; skips the broken pre-flight. SAFE: real cert validation still happens in httpx via truststore (verified: Anthropic 401, Telegram 302). Persisted in: keepalive wrapper (`set HERMES_SKIP_SSL_GUARD=1`) + **User-scope env var** + (NOT in `.env` — file was exclusively locked by the desktop app; User env var covers it).
+2. **Two-venv split fixed.** There are two non-shared venvs: `app\.venv` (truststore, NO Telegram) and `hermes-agent\venv` (Telegram via `python-telegram-bot`, was MISSING truststore). `api.telegram.org` IS Norton-intercepted, so the Telegram venv needs truststore too. Fixed by **copying the pure-Python `truststore` package** `app\.venv → hermes-agent\venv` site-packages (avoids a pip download Norton would break). The gateway must run from **`hermes-agent\venv`** (only venv with Telegram).
+3. **Keepalive wrapper repointed** to `hermes-agent\venv\Scripts\hermes.exe` (was `app\.venv`).
+4. **Model config** (`config.yaml` `model:` block) set to nested-dict Ollama form: `provider: custom`, `base_url: http://127.0.0.1:11434/v1`, `api_key: ollama`, `default: qwen3:14b`, `context_length: 65536`, `ollama_num_ctx: 65536`. (Hermes reads `model.api_key`; the OpenAI SDK requires a non-empty key even for Ollama. Backup: `config.yaml.bak.20260628_184304`.)
+
+### Verified live 2026-06-28
+- `hermes -z "PING"` → `PING` via Ollama qwen3:14b. ✅
+- Gateway from `hermes-agent\venv` → `[Telegram] Connected to Telegram (polling mode)` → `Gateway running with 1 platform(s)`, no SSL errors, 52 bot-commands registered. ✅
+- `hermes send --to telegram` → delivered to home channel 7888020584. ✅
+
+### KEY LEARNINGS (CANON)
+- **truststore + Hermes SSL guard are incompatible** — truststore's `SSLContext.get_ca_certs()` is `NotImplementedError` (empty). Always set `HERMES_SKIP_SSL_GUARD=1` on any Hermes install behind an AV TLS-interceptor.
+- **`api.telegram.org` IS Norton-intercepted** — the Telegram venv needs truststore, not just the model venv.
+- **Two venvs, no shared packages** — fixes (truststore, etc.) must be applied to BOTH `app\.venv` and `hermes-agent\venv`. The gateway runs from `hermes-agent\venv`.
+- **Local Ollama needs no truststore** (plain http, not intercepted) — but still needs a non-empty `model.api_key`.
+
+### OPEN [FOR HUMAN REVIEW] — not done this session
+- **Reboot persistence**: gateway is running via keepalive launched this session, but there is NO auto-start on boot/login. Register `hermes_task.xml` from an ELEVATED prompt (Will-only) OR re-create the no-admin Startup-folder shortcut → `hermes_keepalive.cmd`.
+- **Telegram bot token rotation** (still cleartext-exposed per HANDOFF_2026-06-28; `/revoke` via BotFather) + **Tavily key rotation** (standing CRITICAL_PATH).
+- **Inbound→reply loop** not yet user-tested — Will to message the bot and confirm a qwen3:14b reply.
+- `.env` append for `HERMES_SKIP_SSL_GUARD` skipped (file locked by desktop app); covered by User env var instead. Add to `.env` if desired when desktop app is closed.
