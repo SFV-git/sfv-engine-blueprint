@@ -104,17 +104,19 @@ guardrails) is enumerated in HERMES_LOOP.md §8.
 - New files: `sfv_loop\watcher_launch.vbs`, `sfv_loop\sfv_watcher_task.xml`,
   `sfv_loop\persistence_selftest.py`. `HERMES_LOOP.md` §5/§6/§7/§8 updated.
 
-**2. Codex — installed, NOT yet wired (waiting on Will's login).**
-- `codex-cli 0.142.4` is already installed (`AppData\Roaming\npm\codex`), but
-  there is NO `~/.codex/auth.json` — it is not logged in. Non-interactive mode is
-  `codex exec <prompt>`.
-- Per Will's choice ("login first, then wire"): the router still has the codex
-  STUB. NEXT: Will runs `codex login` (interactive ChatGPT auth — cannot be done
-  headlessly); then replace `_run_codex_stub` with a real `codex exec` call
-  (non-interactive, read-only sandbox by default) and test end-to-end.
+**2. Codex — WIRED + TESTED.** (Will logged in mid-session.)
+- `codex-cli 0.142.4` authed (`~/.codex/auth.json` present). Router now routes
+  `EXECUTOR: codex` to `_run_codex`: `cmd /c codex exec --skip-git-repo-check
+  --ephemeral -s read-only -o <tmp> -` with the body on STDIN (injection-safe;
+  codex is an npm .cmd shim so it goes through `cmd /c`). Final message captured
+  via `-o`. Read-only sandbox = answers but cannot write the vault.
+- Proven: `router.py --selftest` → `ROUTER_CODEX_OK`; live loop dispatched
+  `E2E-CODEX-001` → RESULT with `CODEX_LOOP_OK`. HERMES_LOOP.md updated (codex no
+  longer a stub).
 
 **Open for Will:** (a) optionally move the *gateway* onto keepalive+Task too (it
-has no auto-restart today); (b) run `codex login` to unblock the codex executor.
+has no auto-restart today); (b) decide whether codex should ever get write access
+(read-only by design today).
 
 ## CONNECTED FILES
 - [[HERMES_LOOP|Hermes Loop]]

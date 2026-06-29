@@ -104,7 +104,7 @@ ignored by the loop — they are for humans.
 | `ollama`      | Local `qwen3:14b` via `http://127.0.0.1:11434/api/generate` (stream:false). `<think>...</think>` stripped from the response (WF1 parity). | Free (local)  |
 | `claude`      | `claude -p --output-format json` with the body piped on STDIN; the `.result` field is captured. | Cloud, billed |
 | `claude_code` | `claude -p --dangerously-skip-permissions` with the body on STDIN (headless multi-file vault work); raw stdout captured. | Cloud, billed |
-| `codex`       | **STUB ONLY.** Writes a stub result and returns `status=stubbed`. Never contacts OpenAI. | None          |
+| `codex`       | `codex exec` non-interactive, **read-only sandbox**, body on STDIN; final message captured via `-o`. Subscription-authed `codex` CLI. | Cloud (ChatGPT sub) |
 
 Any unrecognised `EXECUTOR` value is normalised to `ollama` by
 `parse_directive()`. The directive body is passed to claude on STDIN (never as a
@@ -233,6 +233,7 @@ the next phase began.
 | VERIFY 3 | Kill watcher → keepalive auto-restart, single-instance                 | PASS — restarted in ~5s with a new lock PID; exactly one watcher (uv venv launcher→interpreter = one logical instance) |
 | VERIFY 4 | E2E: `claude` haiku directive + `ollama` branches directive            | PASS — both RESULT files landed via the live watcher; both DECISION_LOG rows correct; claude spend ≈ $0.20 total (well under the $2.00 cap) |
 | PERSIST  | Cold-start: kill watcher + clear lock → trigger logon Scheduled Task   | PASS — watcher auto-started via the task; `persistence_selftest.py` dispatched a directive end-to-end → `PERSISTENCE_SELFTEST_PASS` |
+| CODEX    | Wire real `codex exec` + E2E `EXECUTOR: codex` directive               | PASS — `--selftest` returned `ROUTER_CODEX_OK`; live loop dispatched `E2E-CODEX-001` → RESULT with `CODEX_LOOP_OK` |
 
 Artifacts from the proof runs:
 `99_INBOX\OUTPUTS\E2E-CLAUDE-HAIKU-001_RESULT.md` (clean 3-line haiku),
@@ -249,9 +250,10 @@ calls with the body passed on STDIN).
 
 ## 7. KNOWN LIMITS / NOT-YET-DONE
 
-- **codex is a stub.** `EXECUTOR: codex` never calls OpenAI; it writes a
-  "CODEX STUB -- not yet installed" result and returns `status=stubbed`. The
-  codex CLI is not installed. This is intentional for this build.
+- **codex is live, read-only.** `EXECUTOR: codex` runs `codex exec` via the
+  subscription-authed CLI in a **read-only sandbox** (`-s read-only --ephemeral`),
+  so it answers/analyses but cannot write to the vault. Widening the sandbox would
+  be a deliberate future change.
 - **No multi-directive queue.** The loop watches exactly one file
   (`CURRENT_DIRECTIVE.md`) and handles one active directive at a time. There is
   no queue, no priority, no parallel dispatch. A new directive overwrites the
@@ -279,10 +281,9 @@ calls with the body passed on STDIN).
    logon Scheduled Task (§5). Open question: do you also want the *gateway* moved
    onto a keepalive+Task (it currently autostarts via a Startup VBS with no
    auto-restart), or leave the gateway as-is?
-2. **Codex: installed, pending auth.** `codex-cli` is present but not logged in.
-   Run `codex login` (interactive, ChatGPT account); then the router stub is
-   replaced with a real `codex exec` executor and tested. Until then,
-   `EXECUTOR: codex` returns the stub.
+2. **Codex: WIRED + tested.** `EXECUTOR: codex` runs `codex exec` in a read-only
+   sandbox and was proven end-to-end (`E2E-CODEX-001`). Open question: should
+   codex ever get write access (it is read-only by design today)?
 3. **Decide on a queue / inbox model** if more than one directive at a time is
    ever needed (e.g. a `PENDING_DIRECTIVES/` folder the watcher drains), vs.
    keeping the deliberate one-at-a-time discipline.
