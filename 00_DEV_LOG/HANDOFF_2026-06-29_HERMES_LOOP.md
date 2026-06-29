@@ -118,6 +118,33 @@ guardrails) is enumerated in HERMES_LOOP.md §8.
 has no auto-restart today); (b) decide whether codex should ever get write access
 (read-only by design today).
 
+---
+
+## ADDENDUM 2 — codex write access + gateway persistence (Will directing live)
+
+**A. Codex WRITE-ENABLED.** Will wants codex to actually write (cross-reference
+guides, routine coding). On Windows codex has no OS sandbox, so `-s workspace-write`
+stays read-only; the only write path is `--dangerously-bypass-approvals-and-sandbox`.
+Router `_run_codex` now runs `codex exec --skip-git-repo-check --ephemeral
+--dangerously-bypass-approvals-and-sandbox --cd <SFV_CODEX_WORKDIR=vault> -o <tmp> -`
+(body on STDIN). Proven end-to-end: `E2E-CODEX-WRITE-001` created
+`99_INBOX/OUTPUTS/CODEX_XREF_TEST.md` then replied `CODEX_WROTE_OK` (test file
+removed after). **Security posture change:** codex now runs UNSANDBOXED with the
+vault as its working root — it can modify anything under the vault. Only Will/the
+brain author directives; git auto-commit tracks changes; narrow via
+`SFV_CODEX_WORKDIR`. Watcher recycled to load the new router.
+
+**B. Gateway moved onto keepalive + Task.** Registered `SFV_HermesGateway` logon
+task → `hermes_gateway_launch.vbs` (hidden) → `hermes_keepalive.cmd` (auto-restart
+loop). Disabled the old Startup `Hermes_Gateway.vbs` (renamed `.disabled`,
+reversible) so there is exactly ONE gateway launch path. NOT hot-tested — that
+would interrupt the live Telegram gateway; it activates next logon/reboot. The
+currently-running gateway (keepalive PID 51384) was left untouched. Revert =
+rename the Startup VBS back + `Unregister-ScheduledTask SFV_HermesGateway`.
+
+New files: `hermes\hermes_gateway_launch.vbs`, `hermes\sfv_gateway_task.xml`.
+Both SFV tasks now registered: `SFV_HermesLoopWatcher`, `SFV_HermesGateway`.
+
 ## CONNECTED FILES
 - [[HERMES_LOOP|Hermes Loop]]
 - [[HERMES_EVAL|Hermes Agent Evaluation]]

@@ -104,7 +104,7 @@ ignored by the loop — they are for humans.
 | `ollama`      | Local `qwen3:14b` via `http://127.0.0.1:11434/api/generate` (stream:false). `<think>...</think>` stripped from the response (WF1 parity). | Free (local)  |
 | `claude`      | `claude -p --output-format json` with the body piped on STDIN; the `.result` field is captured. | Cloud, billed |
 | `claude_code` | `claude -p --dangerously-skip-permissions` with the body on STDIN (headless multi-file vault work); raw stdout captured. | Cloud, billed |
-| `codex`       | `codex exec` non-interactive, **read-only sandbox**, body on STDIN; final message captured via `-o`. Subscription-authed `codex` CLI. | Cloud (ChatGPT sub) |
+| `codex`       | `codex exec` non-interactive, body on STDIN; final message via `-o`. **WRITE-ENABLED**: runs unsandboxed (Windows has no codex sandbox) with working root = the vault, so it reads across the vault and writes files (cross-ref guides, routine coding). **Trusted directives only.** Override root with `SFV_CODEX_WORKDIR`. | Cloud (ChatGPT sub) |
 
 Any unrecognised `EXECUTOR` value is normalised to `ollama` by
 `parse_directive()`. The directive body is passed to claude on STDIN (never as a
@@ -218,6 +218,15 @@ NOTE: this is a **logon** trigger (fires after Will logs in), which is the right
 scope because the loop needs the user session (PATH, Ollama, the claude CLI). It
 is not a pre-login SYSTEM boot task.
 
+**Gateway persistence (2026-06-29):** the Hermes gateway was also moved onto a
+logon Scheduled Task `SFV_HermesGateway` → `hermes_gateway_launch.vbs` (hidden) →
+`hermes_keepalive.cmd` (which loops `hermes gateway run` with auto-restart). The
+old Startup-folder `Hermes_Gateway.vbs` (which launched `gateway run` directly,
+no auto-restart) was renamed to `.disabled` so there is exactly ONE gateway
+launch path. This activates on the next logon/reboot; the currently-running
+gateway was left untouched. To revert: rename the Startup VBS back and
+`Unregister-ScheduledTask SFV_HermesGateway`.
+
 ---
 
 ## 6. END-TO-END VERIFICATION (2026-06-29)
@@ -250,10 +259,14 @@ calls with the body passed on STDIN).
 
 ## 7. KNOWN LIMITS / NOT-YET-DONE
 
-- **codex is live, read-only.** `EXECUTOR: codex` runs `codex exec` via the
-  subscription-authed CLI in a **read-only sandbox** (`-s read-only --ephemeral`),
-  so it answers/analyses but cannot write to the vault. Widening the sandbox would
-  be a deliberate future change.
+- **codex is WRITE-ENABLED and UNSANDBOXED (Will's call, 2026-06-29).**
+  `EXECUTOR: codex` runs `codex exec --dangerously-bypass-approvals-and-sandbox
+  --cd <vault>` — the only way codex can write on Windows (its seatbelt/landlock
+  sandbox is macOS/Linux-only). So codex has full local read/write while a
+  directive runs. **Risk:** a codex directive can modify anything reachable from
+  the vault root (incl. CANON, `.git`, the loop's own code). Mitigations: only
+  Will/the brain author directives; git tracks every change (auto-commit). Narrow
+  the blast radius any time by setting `SFV_CODEX_WORKDIR` to a subfolder.
 - **No multi-directive queue.** The loop watches exactly one file
   (`CURRENT_DIRECTIVE.md`) and handles one active directive at a time. There is
   no queue, no priority, no parallel dispatch. A new directive overwrites the
@@ -269,21 +282,21 @@ calls with the body passed on STDIN).
   gateway. This is a logon trigger (fires once Will logs in), not a pre-login
   SYSTEM boot task — which is correct, because the loop needs the user session
   (PATH, Ollama, the claude CLI).
-- **The gateway's own persistence is unchanged** — it still autostarts via the
-  Startup-folder VBS (`gateway run`, no auto-restart loop). Moving the gateway
-  onto a keepalive+Task is a separate decision (see §8).
+- **The gateway is now on its own logon Task** (`SFV_HermesGateway`) with
+  auto-restart via `hermes_keepalive.cmd`; the old Startup VBS was disabled.
+  Takes effect next logon/reboot (see §5).
 
 ---
 
 ## 8. NEXT STEPS FOR WILL TO RATIFY
 
-1. **Reboot-persistence: DONE for the watcher** via the `SFV_HermesLoopWatcher`
-   logon Scheduled Task (§5). Open question: do you also want the *gateway* moved
-   onto a keepalive+Task (it currently autostarts via a Startup VBS with no
-   auto-restart), or leave the gateway as-is?
-2. **Codex: WIRED + tested.** `EXECUTOR: codex` runs `codex exec` in a read-only
-   sandbox and was proven end-to-end (`E2E-CODEX-001`). Open question: should
-   codex ever get write access (it is read-only by design today)?
+1. **Reboot-persistence: DONE** for BOTH the watcher (`SFV_HermesLoopWatcher`) and
+   the gateway (`SFV_HermesGateway`) via logon Scheduled Tasks (§5). Verify after
+   your next reboot: confirm the gateway/Telegram comes up and
+   `python sfv_loop\persistence_selftest.py` → `PERSISTENCE_SELFTEST_PASS`.
+2. **Codex: WRITE-ENABLED + tested.** `EXECUTOR: codex` writes into the vault
+   (proven: `E2E-CODEX-WRITE-001` created a cross-reference file). It runs
+   UNSANDBOXED — keep codex directives trusted and review `git` after codex runs.
 3. **Decide on a queue / inbox model** if more than one directive at a time is
    ever needed (e.g. a `PENDING_DIRECTIVES/` folder the watcher drains), vs.
    keeping the deliberate one-at-a-time discipline.
