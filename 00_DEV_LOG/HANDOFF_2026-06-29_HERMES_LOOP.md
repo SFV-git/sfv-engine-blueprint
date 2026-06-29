@@ -83,6 +83,39 @@ promote `05_AI_LAYER/HERMES_LOOP.md` + the `sfv_loop/` machine out of FOR HUMAN
 REVIEW. Everything else (codex install, queue model, Telegram notify, cost
 guardrails) is enumerated in HERMES_LOOP.md §8.
 
+---
+
+## ADDENDUM — same session, follow-up (Will directing live)
+
+**1. Reboot persistence — BUILT + TESTED (watcher).**
+- The watcher now has its OWN logon persistence, decoupled from the gateway:
+  `SFV_HermesLoopWatcher` Scheduled Task (LogonTrigger) → `watcher_launch.vbs`
+  (hidden) → `watcher_keepalive.cmd` (5s relaunch) → `watcher.py`.
+- Why decoupled: the gateway's Startup VBS launches `gateway run` DIRECTLY (not
+  via `hermes_keepalive.cmd`), so registering `hermes_task.xml` would have made a
+  DOUBLE gateway. So I reverted the Phase-3 edit to `hermes_keepalive.cmd` (gateway
+  wrapper now byte-for-byte original) and gave the watcher a standalone task.
+- This session was ELEVATED (IsAdmin=True), so the task is REGISTERED now.
+- Verified by cold-start simulation (no reboot needed): killed the watcher +
+  cleared the lock, `Start-ScheduledTask SFV_HermesLoopWatcher`, watcher
+  auto-came-up, then `persistence_selftest.py` → `PERSISTENCE_SELFTEST_PASS`
+  (directive dispatched end-to-end). After a REAL reboot, run
+  `python sfv_loop\persistence_selftest.py` to re-confirm.
+- New files: `sfv_loop\watcher_launch.vbs`, `sfv_loop\sfv_watcher_task.xml`,
+  `sfv_loop\persistence_selftest.py`. `HERMES_LOOP.md` §5/§6/§7/§8 updated.
+
+**2. Codex — installed, NOT yet wired (waiting on Will's login).**
+- `codex-cli 0.142.4` is already installed (`AppData\Roaming\npm\codex`), but
+  there is NO `~/.codex/auth.json` — it is not logged in. Non-interactive mode is
+  `codex exec <prompt>`.
+- Per Will's choice ("login first, then wire"): the router still has the codex
+  STUB. NEXT: Will runs `codex login` (interactive ChatGPT auth — cannot be done
+  headlessly); then replace `_run_codex_stub` with a real `codex exec` call
+  (non-interactive, read-only sandbox by default) and test end-to-end.
+
+**Open for Will:** (a) optionally move the *gateway* onto keepalive+Task too (it
+has no auto-restart today); (b) run `codex login` to unblock the codex executor.
+
 ## CONNECTED FILES
 - [[HERMES_LOOP|Hermes Loop]]
 - [[HERMES_EVAL|Hermes Agent Evaluation]]

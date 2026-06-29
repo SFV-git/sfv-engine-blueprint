@@ -66,3 +66,13 @@ Scheduled Task vs accept Startup-folder/keepalive-only), then ratify promoting
 The watcher is running and idle (`CURRENT_DIRECTIVE.md` = STATUS: IDLE). To drive
 the loop, write an ACTIVE directive per `05_AI_LAYER/HERMES_LOOP.md` §4. To stand
 it down, stop `watcher_keepalive.cmd` + `watcher.py` (see HANDOFF).
+
+## ADDENDUM (same session — Will directing live)
+- **Reboot persistence now RESOLVED** (supersedes the "not yet registered" note
+  above): the watcher auto-starts via the `SFV_HermesLoopWatcher` logon Scheduled
+  Task (independent of the gateway). Proven by cold-start +
+  `persistence_selftest.py` → `PERSISTENCE_SELFTEST_PASS`. After a real reboot,
+  run `python sfv_loop\persistence_selftest.py`.
+- **Codex** is installed (`codex-cli 0.142.4`) but not logged in. Per Will: he
+  runs `codex login`, then the router stub is replaced with a real `codex exec`
+  executor and tested. See HERMES_LOOP.md §8.

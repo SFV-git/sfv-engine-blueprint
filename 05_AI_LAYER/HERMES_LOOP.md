@@ -131,7 +131,10 @@ All under `C:\Users\willa\AppData\Local\hermes\sfv_loop\`.
 |------------------------|------|
 | `router.py`            | The dispatch core. Pure, testable. `parse_directive()` extracts STATUS / DIRECTIVE_ID / EXECUTOR + body (BOM-safe via `utf-8-sig`). `dispatch()` routes the body to the chosen executor, writes `99_INBOX\OUTPUTS\{DIRECTIVE_ID}_RESULT.md` as UTF-8 no-BOM, appends a row to `DECISION_LOG.md`, and returns a status dict. Errors are caught and written into the RESULT (`status=error`) — dispatch never raises to its caller. CLI: `--selftest` (VERIFY 1 gate; prints `SELFTEST_PASS`/`SELFTEST_FAIL`) and `--dispatch <path>`. |
 | `watcher.py`           | The zero-token trigger. `watchfiles.watch()` on `CURRENT_DIRECTIVE.md`. On each change it parses the file and dispatches only when `STATUS == ACTIVE` and the `DIRECTIVE_ID` is unseen. Marks the id in-memory immediately (so duplicate FS events for one write don't double-fire), then persists it after dispatch. Dispatch is wrapped in try/except so a bad directive logs and the watcher survives. Holds a single-instance lock (atomic `O_CREAT\|O_EXCL`, with stale-PID reclaim) and writes lifecycle lines to `watcher.log`. |
-| `watcher_keepalive.cmd`| A 5-second relaunch loop that runs `watcher.py` with the `hermes-agent\venv` python (the watchfiles-capable interpreter). If the watcher dies it is relaunched within ~5s. Started by the gateway keepalive (see §5). |
+| `watcher_keepalive.cmd`| A 5-second relaunch loop that runs `watcher.py` with the `hermes-agent\venv` python (the watchfiles-capable interpreter). If the watcher dies it is relaunched within ~5s. Launched at logon by the Scheduled Task (see §5). |
+| `watcher_launch.vbs`   | Hidden launcher: starts `watcher_keepalive.cmd` with no visible console window. The Scheduled Task runs this. |
+| `sfv_watcher_task.xml` | Task Scheduler definition for `SFV_HermesLoopWatcher` (logon trigger → `watcher_launch.vbs`, RestartOnFailure). Register it elevated (see §5). |
+| `persistence_selftest.py` | The reboot self-test: confirms a watcher is alive (live lock PID) and the loop still dispatches (writes an ACTIVE directive, waits for the RESULT). Prints `PERSISTENCE_SELFTEST_PASS`. Run after a reboot. |
 | `processed_ids.txt`    | Append-only ledger of `DIRECTIVE_ID`s already dispatched, one per line. Loaded on startup into a set; this is the re-fire guard that survives restarts and crashes. |
 | `watcher.log`          | Plain-text lifecycle log (`[timestamp] message`): started, change detected, dispatched, ignored-draft, errors. Logging failures are swallowed so logging can never crash the watcher. |
 | `watcher.lock`         | Single-instance lockfile containing the owning watcher's PID. On startup the watcher atomically creates it; if a live process owns it, the new instance exits quietly; a stale lock (dead PID) is reclaimed. Removed on clean exit via `atexit`. |
@@ -186,21 +189,34 @@ executor/status/timestamp block, a `---` fence, then the executor's output.
 
 ## 5. PERSISTENCE
 
-The watcher is started and kept alive by `watcher_keepalive.cmd`, which is in
-turn launched by the existing Hermes gateway keep-alive wrapper
-`C:\Users\willa\AppData\Local\hermes\hermes_keepalive.cmd`. One line was ADDED to
-that wrapper (the gateway launch line was NOT touched):
+The watcher has its own dedicated logon persistence, fully **independent of the
+Hermes gateway** (the gateway's own autostart VBS is untouched — this avoids any
+double-gateway conflict):
 
-```bat
-start "sfv_loop_watcher" /min cmd /c "C:\Users\willa\AppData\Local\hermes\sfv_loop\watcher_keepalive.cmd"
+```
+logon  ->  Scheduled Task "SFV_HermesLoopWatcher"  (LogonTrigger, RestartOnFailure)
+       ->  watcher_launch.vbs       (hidden, no console window)
+       ->  watcher_keepalive.cmd    (5s relaunch loop)
+       ->  watcher.py               (single-instance via watcher.lock)
 ```
 
-So when the gateway keepalive starts, the directive watcher starts alongside it;
-if the watcher process dies it is relaunched within ~5s; and the single-instance
-lockfile guarantees a second copy can never run. NOTE: because `watcher_keepalive`
-is launched from the gateway keepalive, full reboot-survival is only as reliable
-as the gateway keepalive's own startup (Startup-folder shortcut or a registered
-Scheduled Task) — see Known Limits.
+- If the watcher process dies, `watcher_keepalive.cmd` relaunches it within ~5s.
+- The single-instance lockfile guarantees a second copy can never run.
+
+Register / refresh the task from an **elevated** PowerShell:
+
+```powershell
+Register-ScheduledTask -Xml (Get-Content 'C:\Users\willa\AppData\Local\hermes\sfv_loop\sfv_watcher_task.xml' -Raw) -TaskName 'SFV_HermesLoopWatcher' -Force
+```
+
+Verified 2026-06-29 by cold-start: the watcher was killed and the lock cleared,
+the task was triggered, the watcher auto-started, and `persistence_selftest.py`
+dispatched a directive through the loop end-to-end (`PERSISTENCE_SELFTEST_PASS`).
+After a real reboot, run `python sfv_loop\persistence_selftest.py` to re-confirm.
+
+NOTE: this is a **logon** trigger (fires after Will logs in), which is the right
+scope because the loop needs the user session (PATH, Ollama, the claude CLI). It
+is not a pre-login SYSTEM boot task.
 
 ---
 
@@ -216,6 +232,7 @@ the next phase began.
 | VERIFY 2 | Watcher detects directive change + re-fire guard                       | PASS — detected sub-second; identical re-write logged "already processed", no re-dispatch |
 | VERIFY 3 | Kill watcher → keepalive auto-restart, single-instance                 | PASS — restarted in ~5s with a new lock PID; exactly one watcher (uv venv launcher→interpreter = one logical instance) |
 | VERIFY 4 | E2E: `claude` haiku directive + `ollama` branches directive            | PASS — both RESULT files landed via the live watcher; both DECISION_LOG rows correct; claude spend ≈ $0.20 total (well under the $2.00 cap) |
+| PERSIST  | Cold-start: kill watcher + clear lock → trigger logon Scheduled Task   | PASS — watcher auto-started via the task; `persistence_selftest.py` dispatched a directive end-to-end → `PERSISTENCE_SELFTEST_PASS` |
 
 Artifacts from the proof runs:
 `99_INBOX\OUTPUTS\E2E-CLAUDE-HAIKU-001_RESULT.md` (clean 3-line haiku),
@@ -245,25 +262,27 @@ calls with the body passed on STDIN).
   the RESULT file, `DECISION_LOG.md`, and `watcher.log`. There is no push
   notification when a dispatch finishes, even though Hermes itself can send
   Telegram.
-- **Reboot-persistence depends on the keepalive wrapper, not a Scheduled Task.**
-  The watcher is launched by `watcher_keepalive.cmd` from `hermes_keepalive.cmd`.
-  It is not independently registered as a Windows Scheduled Task, so survival
-  across a full reboot is only as reliable as the gateway keepalive's own
-  startup. (Same caveat HERMES_EVAL flagged for the gateway.)
-- **Editing `hermes_keepalive.cmd` does not affect an already-running keepalive.**
-  The new watcher-launch line only takes effect the next time the gateway
-  keepalive is started. During this build the watcher was started directly for
-  testing; on the next keepalive (re)launch it will start automatically.
+- **Reboot-persistence: RESOLVED (logon) for the watcher.** It auto-starts via
+  the `SFV_HermesLoopWatcher` logon Scheduled Task (§5), independent of the
+  gateway. This is a logon trigger (fires once Will logs in), not a pre-login
+  SYSTEM boot task — which is correct, because the loop needs the user session
+  (PATH, Ollama, the claude CLI).
+- **The gateway's own persistence is unchanged** — it still autostarts via the
+  Startup-folder VBS (`gateway run`, no auto-restart loop). Moving the gateway
+  onto a keepalive+Task is a separate decision (see §8).
 
 ---
 
 ## 8. NEXT STEPS FOR WILL TO RATIFY
 
-1. **Decide reboot-persistence**: register a real Scheduled Task (elevated, one
-   time) for the gateway keepalive so both the gateway and the watcher survive a
-   reboot — or accept Startup-folder/keepalive-only persistence.
-2. **Approve installing the codex CLI** (or formally keep `codex` a permanent
-   stub). Until then, no directive should set `EXECUTOR: codex` expecting work.
+1. **Reboot-persistence: DONE for the watcher** via the `SFV_HermesLoopWatcher`
+   logon Scheduled Task (§5). Open question: do you also want the *gateway* moved
+   onto a keepalive+Task (it currently autostarts via a Startup VBS with no
+   auto-restart), or leave the gateway as-is?
+2. **Codex: installed, pending auth.** `codex-cli` is present but not logged in.
+   Run `codex login` (interactive, ChatGPT account); then the router stub is
+   replaced with a real `codex exec` executor and tested. Until then,
+   `EXECUTOR: codex` returns the stub.
 3. **Decide on a queue / inbox model** if more than one directive at a time is
    ever needed (e.g. a `PENDING_DIRECTIVES/` folder the watcher drains), vs.
    keeping the deliberate one-at-a-time discipline.
