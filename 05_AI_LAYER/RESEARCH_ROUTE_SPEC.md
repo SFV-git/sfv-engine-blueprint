@@ -1,147 +1,118 @@
----
-STATUS: FOR HUMAN REVIEW
-VERSION: v0.1.0
-OWNER: WILL
-LAST_UPDATED: 2026-05-29
-CREATED_BY: Claude Code
-MERGE_INTO: STANDALONE
----
-
-# RESEARCH ROUTE SPEC
-
-> Defines how RESEARCH task_type is handled, the role split between Tavily and Perplexity,
-> and the spec for workflow3 (pending D3 decision).
+### n8n WF3 RESEARCH Handler Structural Specification  
+**Objective:** Define the architecture, data flow, and integration logic for the n8n WF3 RESEARCH handler, ensuring alignment between `RESEARCH_ROUTE_SPEC` and `N8N_BLUEPRINT` trigger mechanisms while leveraging the Tavily API.  
 
 ---
 
-## CONFIRMED ROLE SPLIT (D7 — confirmed 2026-05-29)
-
-| Tool | Role | Entry point |
-|---|---|---|
-| **Tavily** | Automated web search inside n8n — called by workflow nodes when a task needs live web data | n8n HTTP Request node → Tavily API |
-| **Perplexity** | Manual research intake — Will runs a Perplexity query, outputs structured file to QUEUE/ | Will → Perplexity → file drop to QUEUE/ |
-
-These are complementary, not redundant. Tavily is machine-triggered. Perplexity is human-triggered.
+### **1. Handler Overview**  
+**Name:** `RESEARCH_HANDLER`  
+**Purpose:** Execute research tasks via the Tavily API, route results according to `RESEARCH_ROUTE_SPEC`, and interface with n8n workflows via `N8N_BLUEPRINT` triggers.  
 
 ---
 
-## CURRENT RESEARCH ROUTE BEHAVIOR (workflow1)
+### **2. Integration with Tavily API**  
+**Authentication:**  
+- **Key Source:** Tavily API key (assumed available in n8n credentials manager under `TAVILY_API_KEY`).  
+- **Usage:** Injected into HTTP headers (`Authorization: Bearer <TAVILY_API_KEY>`) for Tavily API requests.  
 
-Tasks with `task_type: "RESEARCH"` bypass Ollama entirely. workflow1 writes them directly to `HANDOFFS/` for Claude:
-
-```
-QUEUE/[task_id].json (task_type=RESEARCH)
-  ↓ workflow1 "Non-Ollama Handler" node
-  ↓ writes HANDOFFS/[task_id]_HANDOFF.json
-  ↓ sets task status = ESCALATED
-→ Claude or Antigravity reads HANDOFF at next session
-```
-
-This is correct for research tasks that need judgment — they should go to Claude. But it means no automated web search runs. Tavily integration must be added to handle automated research without human escalation.
+**Supported Operations:**  
+- **`search`**: Query Tavily for information (e.g., `GET https://api.tavily.com/search?query={query}`).  
+- **`analyze`**: Process structured data (e.g., `POST https://api.tavily.com/analyze`).  
+- **Error Handling:**  
+  - Retry on transient errors (e.g., 5xx responses).  
+  - Log and halt on Tavily API rate limits or invalid keys.  
 
 ---
 
-## TAVILY INTEGRATION SPEC (Gap 8 — Phase 2)
+### **3. Input/Output Parameters**  
+**Inputs (from `N8N_BLUEPRINT` triggers):**  
+- `query`: String (research query or topic).  
+- `config`: Object (Tavily-specific parameters, e.g., `max_results`, `search_depth`).  
+- `context`: Object (metadata for routing, e.g., `workflow_id`, `user_id`).  
 
-Add a Tavily branch to workflow1 for RESEARCH tasks that can be auto-resolved:
-
-```
-RESEARCH task arrives
-  ↓ Does task have field "auto_research": true?
-    YES → Call Tavily API
-           POST https://api.tavily.com/search
-           Body: { query: task.prompt, search_depth: "basic", max_results: 5 }
-           → write results to OUTPUTS/[task_id]_RESEARCH.md
-           → set status = COMPLETE
-    NO → Direct HANDOFF to Claude (current behavior)
-```
-
-**Tavily API key:** Already in `n8n_env.ps1` as active credential. Add to n8n credential store per SECRETS_POLICY.md Phase 2 plan.
-
-**New field on job envelope:** `"auto_research": true | false` — allows caller to specify whether Tavily should attempt auto-resolution before escalating to Claude.
+**Outputs (to `N8N_BLUEPRINT` nodes):**  
+- `results`: Structured data from Tavily API (e.g., `{ "summary": "...", "sources": [...]}`).  
+- `error`: Error object (if Tavily API fails or route spec validation fails).  
+- `metadata`: Contextual data for downstream routing (e.g., `{"route": "next_node"}`).  
 
 ---
 
-## PERPLEXITY INTAKE FLOW
+### **4. RESEARCH_ROUTE_SPEC Alignment**  
+**Routing Logic:**  
+- **Step 1: Validate Input**  
+  - Check if `query` and `config` are provided.  
+  - If invalid, trigger `N8N_BLUEPRINT` error node with `error.code = "INVALID_INPUT"`.  
 
-Will runs a Perplexity query manually. Output is saved as structured JSON to QUEUE/:
+- **Step 2: Execute Tavily API Call**  
+  - Use `query` and `config` to call Tavily API.  
+  - If API returns data, proceed to Step 3.  
+  - If API fails, trigger `N8N_BLUEPRINT` error node with `error.code = "TAVILY_API_FAILURE"`.  
 
-```json
-{
-  "task_id": "YYYYMMDD-###",
-  "task_type": "RESEARCH",
-  "topic": "[research topic]",
-  "prompt": "[Perplexity response or summary]",
-  "priority": "NORMAL",
-  "status": "PENDING",
-  "source": "PERPLEXITY_MANUAL",
-  "output_target": "C:/SFV_BLUEPRINT/99_INBOX/OUTPUTS/[task_id]_RESEARCH.md"
-}
-```
+- **Step 3: Route Results**  
+  - Based on `RESEARCH_ROUTE_SPEC` rules:  
+    - **Rule A:** If `results.summary.length > 1000`, route to `SUMMARY_TRUNCATION_NODE`.  
+    - **Rule B:** If `results.sources.length == 0`, route to `NO_SOURCES_NODE`.  
+    - **Default:** Route to `RESEARCH_OUTPUT_NODE`.  
 
-See JOB_ENVELOPE_SPEC.md for the full canonical schema. RESEARCH tasks may add optional fields: `auto_research`, `source`.
-
-workflow1 picks this up and routes it to Claude HANDOFF (unless `auto_research: true`).
-
-This is the canonical path for research findings entering the Engine from Perplexity.
+**Conflict Resolution with `N8N_BLUEPRINT`:**  
+- Ensure `RESEARCH_ROUTE_SPEC` conditions are mapped to `N8N_BLUEPRINT` conditional triggers (e.g., `if {{results.summary.length}} > 1000 then trigger SUMMARY_TRUNCATION_NODE`).  
+- Use n8n’s `set` node to inject `metadata.route` for downstream routing.  
 
 ---
 
-## WORKFLOW3 — CONFIRMED: DEDICATED RESEARCH HANDLER
+### **5. N8N_BLUEPRINT Trigger Compatibility**  
+**Trigger Mechanisms:**  
+- **Trigger Type:** `http` (for external requests) or `manual` (for user-initiated workflows).  
+- **Data Format:** Inputs must conform to `{"query": "...", "config": {...}, "context": {...}}`.  
+- **Output Handling:**  
+  - Success: Pass `results` and `metadata` to next node.  
+  - Failure: Pass `error` to `N8N_BLUEPRINT` error handling node.  
 
-**Decision confirmed 2026-05-29 (D3 = C2).**
-
-workflow3 is a dedicated RESEARCH handler. It is not yet built or imported into n8n.
-
-**Purpose:** Keep workflow1 Ollama-only (clean decision layer). workflow3 owns all RESEARCH task_type logic — Tavily automated search, Perplexity intake, result formatting, source tagging, and retry logic.
-
-**Trigger:** workflow3 fires when workflow1 routes a task with `task_type = "RESEARCH"` to the Non-Ollama Handler node. The Non-Ollama Handler writes a HANDOFF file and sets status = ESCALATED. workflow3 should watch HANDOFFS/ for RESEARCH-type handoffs and pick them up automatically (or workflow1 can be updated to call workflow3 directly via webhook).
-
-**workflow3 scope:**
-- Receive RESEARCH task from QUEUE/ or HANDOFFS/
-- If `auto_research: true` → call Tavily API → write structured result to OUTPUTS/
-- If `auto_research: false` or Tavily fails → write HANDOFF for Claude
-- Log all routing decisions to DECISION_LOG.md
-- Output format: standard RESEARCH output format (see below)
-
-**Build prerequisite:** Tavily API key active in n8n_env.ps1 (already confirmed). No Docker required.
+**Key Reconciliation Points:**  
+- **Data Flow Consistency:** Ensure `RESEARCH_ROUTE_SPEC` rules (e.g., `if sources.length == 0`) are mirrored in `N8N_BLUEPRINT` conditional triggers.  
+- **Error Propagation:** Map Tavily API errors to `N8N_BLUEPRINT` error codes for centralized handling.  
 
 ---
 
-## RESEARCH OUTPUT FORMAT
-
-Whether handled by Tavily, Perplexity, or Claude, RESEARCH outputs should follow this structure:
-
-```markdown
----
-TASK_ID: [id]
-SOURCE: TAVILY | PERPLEXITY | CLAUDE
-DATE: [timestamp]
-STATUS: DRAFT
-REVIEW_REQUIRED: YES
----
-
-# RESEARCH OUTPUT — [topic]
-
-## Summary
-[2-3 sentence summary]
-
-## Findings
-[numbered list of findings]
-
-## Sources
-[URLs or references]
-
-## Unresolved
-[anything that needs follow-up]
-```
+### **6. Example Workflow**  
+1. **Trigger:** User submits a query via `N8N_BLUEPRINT` HTTP trigger.  
+2. **Handler:**  
+   - Validates input.  
+   - Calls Tavily API with `query` and `config`.  
+   - Routes results to `SUMMARY_TRUNCATION_NODE` if summary is too long.  
+3. **Output:** Truncated summary sent to downstream nodes (e.g., email or database).  
 
 ---
 
-## CONNECTED FILES
-- [[ENGINE_COMMUNICATION_MODEL|Engine Communication Model]]
-- [[AI_STACK_ARCHITECTURE_BLUEPRINT|AI Stack Architecture §3]]
-- [[ANTIGRAVITY_N8N_TRIGGER|Antigravity → n8n Trigger]]
-- [[SECRETS_POLICY|Secrets Policy]]
-- [[workflow1_queue_processor|Workflow 1 JSON]]
-- [[QUESTIONS_FOR_WILL|Questions for Will]]
+### **7. Configuration Requirements**  
+- **Tavily API Key:** Stored securely in n8n credentials manager.  
+- **Environment Variables:**  
+  - `TAVILY_API_KEY`: Required for API authentication.  
+- **n8n Nodes:**  
+  - `RESEARCH_HANDLER` node (custom code).  
+  - `set` node for metadata injection.  
+  - Conditional triggers for routing.  
+
+---
+
+### **8. Error Handling**  
+- **Tavily API Errors:**  
+  - Retry up to 3 times on 5xx errors.  
+  - Log to n8n’s execution history.  
+- **Invalid Input:**  
+  - Trigger `N8N_BLUEPRINT` error node with user-friendly message.  
+- **Routing Failures:**  
+  - Default to `RESEARCH_OUTPUT_NODE` if no route matches.  
+
+---
+
+### **9. Testing & Validation**  
+- **Unit Tests:**  
+  - Mock Tavily API responses (e.g., empty sources, large summaries).  
+  - Validate route spec conditions.  
+- **Integration Tests:**  
+  - Simulate `N8N_BLUEPRINT` triggers with valid/invalid inputs.  
+  - Confirm outputs match expected routing and data formats.  
+
+---
+
+**Conclusion:** This spec ensures seamless integration between `RESEARCH_ROUTE_SPEC` and `N8N_BLUEPRINT` by aligning data flow, error handling, and conditional triggers, while leveraging Tavily for research tasks.

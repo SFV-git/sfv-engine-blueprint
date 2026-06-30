@@ -1,0 +1,202 @@
+[
+  {
+    "id": "usr_001",
+    "name": "Mara Voss",
+    "email": "mara.voss@example.test",
+    "preferences": {
+      "theme": "midnight",
+      "language": "en-CA",
+      "timezone": "America/Halifax",
+      "notifications": {
+        "email": true,
+        "push": false,
+        "digestFrequency": "weekly"
+      },
+      "privacy": {
+        "profileVisibility": "contacts",
+        "shareUsageData": false
+      },
+      "interests": ["urban gardening", "jazz", "data visualization"]
+    }
+  },
+  {
+    "id": "usr_002",
+    "name": "Elias North",
+    "email": "elias.north@example.test",
+    "preferences": {
+      "theme": "light",
+      "language": "en-US",
+      "timezone": "America/Chicago",
+      "notifications": {
+        "email": false,
+        "push": true,
+        "digestFrequency": "daily"
+      },
+      "privacy": {
+        "profileVisibility": "private",
+        "shareUsageData": true
+      },
+      "interests": ["robotics", "trail running", "documentaries"]
+    }
+  },
+  {
+    "id": "usr_003",
+    "name": "Sofia Calder",
+    "email": "sofia.calder@example.test",
+    "preferences": {
+      "theme": "system",
+      "language": "es-MX",
+      "timezone": "America/Mexico_City",
+      "notifications": {
+        "email": true,
+        "push": true,
+        "digestFrequency": "monthly"
+      },
+      "privacy": {
+        "profileVisibility": "public",
+        "shareUsageData": false
+      },
+      "interests": ["architecture", "ceramics", "astronomy"]
+    }
+  },
+  {
+    "id": "usr_004",
+    "name": "Kenji Morita",
+    "email": "kenji.morita@example.test",
+    "preferences": {
+      "theme": "high-contrast",
+      "language": "ja-JP",
+      "timezone": "Asia/Tokyo",
+      "notifications": {
+        "email": true,
+        "push": false,
+        "digestFrequency": "never"
+      },
+      "privacy": {
+        "profileVisibility": "contacts",
+        "shareUsageData": true
+      },
+      "interests": ["woodworking", "indie games", "photography"]
+    }
+  },
+  {
+    "id": "usr_005",
+    "name": "Amara Okafor",
+    "email": "amara.okafor@example.test",
+    "preferences": {
+      "theme": "forest",
+      "language": "en-NG",
+      "timezone": "Africa/Lagos",
+      "notifications": {
+        "email": false,
+        "push": true,
+        "digestFrequency": "weekly"
+      },
+      "privacy": {
+        "profileVisibility": "public",
+        "shareUsageData": false
+      },
+      "interests": ["fashion design", "fintech", "spoken word"]
+    }
+  },
+  {
+    "id": "usr_006",
+    "name": "Luc Moreau",
+    "email": "luc.moreau@example.test",
+    "preferences": {
+      "theme": "sepia",
+      "language": "fr-FR",
+      "timezone": "Europe/Paris",
+      "notifications": {
+        "email": true,
+        "push": true,
+        "digestFrequency": "daily"
+      },
+      "privacy": {
+        "profileVisibility": "private",
+        "shareUsageData": false
+      },
+      "interests": ["bread baking", "cycling", "history"]
+    }
+  },
+  {
+    "id": "usr_007",
+    "name": "Priya Sen",
+    "email": "priya.sen@example.test",
+    "preferences": {
+      "theme": "system",
+      "language": "en-IN",
+      "timezone": "Asia/Kolkata",
+      "notifications": {
+        "email": true,
+        "push": true,
+        "digestFrequency": "weekly"
+      },
+      "privacy": {
+        "profileVisibility": "contacts",
+        "shareUsageData": true
+      },
+      "interests": ["machine learning", "classical dance", "travel"]
+    }
+  },
+  {
+    "id": "usr_008",
+    "name": "Noah Feld",
+    "email": "noah.feld@example.test",
+    "preferences": {
+      "theme": "dark",
+      "language": "de-DE",
+      "timezone": "Europe/Berlin",
+      "notifications": {
+        "email": false,
+        "push": false,
+        "digestFrequency": "monthly"
+      },
+      "privacy": {
+        "profileVisibility": "private",
+        "shareUsageData": false
+      },
+      "interests": ["electronic music", "chess", "sustainable design"]
+    }
+  },
+  {
+    "id": "usr_009",
+    "name": "Talia Brooks",
+    "email": "talia.brooks@example.test",
+    "preferences": {
+      "theme": "ocean",
+      "language": "en-AU",
+      "timezone": "Australia/Sydney",
+      "notifications": {
+        "email": true,
+        "push": false,
+        "digestFrequency": "daily"
+      },
+      "privacy": {
+        "profileVisibility": "public",
+        "shareUsageData": true
+      },
+      "interests": ["marine biology", "surfing", "podcasting"]
+    }
+  },
+  {
+    "id": "usr_010",
+    "name": "Mateo Silva",
+    "email": "mateo.silva@example.test",
+    "preferences": {
+      "theme": "light",
+      "language": "pt-BR",
+      "timezone": "America/Sao_Paulo",
+      "notifications": {
+        "email": true,
+        "push": true,
+        "digestFrequency": "never"
+      },
+      "privacy": {
+        "profileVisibility": "contacts",
+        "shareUsageData": false
+      },
+      "interests": ["football analytics", "cooking", "street art"]
+    }
+  }
+]
