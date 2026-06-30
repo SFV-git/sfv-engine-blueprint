@@ -2,10 +2,16 @@
 STATUS: CANON
 VERSION: v0.1.0
 OWNER: WILL
-LAST_UPDATED: 2026-06-27
+LAST_UPDATED: 2026-06-30
 ---
 
 # CHANGELOG
+
+## 2026-06-30 — P6-UGC-DELIVERY: UGC client-delivery sub-system blueprinted (Claude Code)
+- New doc `04_WORKFLOWS/UGC_DELIVERY.md` (STATUS: FOR HUMAN REVIEW) — focused expansion of the delivery half of the UGC money pipeline; covers coverage-map steps 15 (delivery), 16 (notification), 17 (client-memory write-back) and wires explicitly into `UGC_BUSINESS_PIPELINE.md` §5/§6/§9.
+- Delivery platform presented as a FOR HUMAN REVIEW decision — **client portal vs Google Drive vs Pixieset** (Frame.io carried from the pipeline doc), with a revenue-branch trade-off table; no platform picked, no prices invented.
+- Defines the end-to-end delivery path (approved master → stage → client-facing rename → upload → notify → revision → accept → memory write-back) and flags the MISSING notification step (channel/manual-vs-auto/template).
+- CANON vs CANON-in-practice vs UNCONFIRMED vs MISSING labelled throughout; ends with an 8-row consolidated open-decisions table. Directive BLUEPRINT-LOOP-20260630-184410-P6-UGC-DELIVERY-001.
 
 ## 2026-06-30 — P4-IG-SCHEDULING: Instagram scheduling workflow blueprinted (Claude Code)
 - New doc `04_WORKFLOWS/SCHEDULING_WORKFLOW.md` (STATUS: FOR HUMAN REVIEW) — closes MASTER GAP LIST P4 (IG scheduling, MISSING) for all 8 non-MYTHOLOGY branches.
