@@ -7,6 +7,13 @@ LAST_UPDATED: 2026-06-30
 
 # CHANGELOG
 
+## 2026-06-30 — P7-ZENFOLIO-CANON: EVENTS_ZENFOLIO_DELIVERY open items resolved → CANON-ready (Claude Code)
+- `04_WORKFLOWS/EVENTS_ZENFOLIO_DELIVERY.md` v0.1.0 → v0.2.0 (STATUS unchanged: FOR HUMAN REVIEW — **not** self-promoted per canon-control rule).
+- Resolved the 5 open verification items to honest dispositions instead of invented values: items 1/3/5 (Zenfolio Advanced caps/pricing, QR export format, 3-laptop/1-account concurrency) = **UNCONFIRMED (external vendor facts)**; item 2 (QR card stock/source) = **UNCONFIRMED/MISSING**; item 4 (per-day event template) = **MISSING (build artifact)**. Grep + MISSING_REFERENCED_FILES.md confirm the vault records no value for any of them.
+- Added a READY-TO-PROMOTE NOTE: operational core is CANON-ready; none of the open items block the workflow logic (only capacity/cost/setup planning).
+- **Flagged (not fixed)** the `02_BRANCHES/SFV_EVENTS.md` (CANON) contradiction — its DELIVERY section still reads "Pixieset or different? UNCONFIRMED" while Zenfolio is locked — with a [FOR HUMAN REVIEW] proposed one-line correction for Will to ratify before a follow-up session edits the CANON doc.
+- Ends with an 8-row consolidated open-decisions / UNCONFIRMED table; CONNECTED FILES extended to the paper-trial + missing-files docs. Directive BLUEPRINT-LOOP-20260630-184711-P7-ZENFOLIO-CANON-001.
+
 ## 2026-06-30 — P6-UGC-DELIVERY: UGC client-delivery sub-system blueprinted (Claude Code)
 - New doc `04_WORKFLOWS/UGC_DELIVERY.md` (STATUS: FOR HUMAN REVIEW) — focused expansion of the delivery half of the UGC money pipeline; covers coverage-map steps 15 (delivery), 16 (notification), 17 (client-memory write-back) and wires explicitly into `UGC_BUSINESS_PIPELINE.md` §5/§6/§9.
 - Delivery platform presented as a FOR HUMAN REVIEW decision — **client portal vs Google Drive vs Pixieset** (Frame.io carried from the pipeline doc), with a revenue-branch trade-off table; no platform picked, no prices invented.
