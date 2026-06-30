@@ -7,6 +7,12 @@ LAST_UPDATED: 2026-06-27
 
 # CHANGELOG
 
+## 2026-06-30 — P4-IG-SCHEDULING: Instagram scheduling workflow blueprinted (Claude Code)
+- New doc `04_WORKFLOWS/SCHEDULING_WORKFLOW.md` (STATUS: FOR HUMAN REVIEW) — closes MASTER GAP LIST P4 (IG scheduling, MISSING) for all 8 non-MYTHOLOGY branches.
+- Covers: per-branch cadence/timing (all values UNCONFIRMED — none recorded in vault), caption insertion citing NAMING_CONVENTIONS caption system (CANON), carousel vs standalone handling, DELIVERY→scheduler hand-off, and a doc-only n8n integration point (live n8n untouched).
+- Later vs Buffer left as a FOR HUMAN REVIEW decision with an unfilled criteria checklist — tool NOT picked; no prices/features invented.
+- Ends with an 18-row consolidated open-decisions / UNCONFIRMED table. Directive BLUEPRINT-LOOP-20260630-184129-P4-IG-SCHEDULING-001.
+
 ## 2026-06-27 — BLOCK F: localFileTrigger fixed end-to-end (Claude Code)
 - `03_INFRASTRUCTURE/n8n_env.ps1` (gitignored): added NODES_EXCLUDE=[], N8N_ENABLE_LOCAL_FILE_NODE=true; folded in NODE_FUNCTION_ALLOW_EXTERNAL=*, N8N_LOG_LEVEL=info; NODE_FUNCTION_ALLOW_BUILTIN → fs,path,os. Now single source of truth for n8n env.
 - `03_INFRASTRUCTURE/start_n8n.ps1`: reduced to dot-source n8n_env.ps1 + `n8n start` (removed duplicate env defs).
