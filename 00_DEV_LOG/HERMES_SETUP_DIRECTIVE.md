@@ -71,3 +71,7 @@ Append a section:
 - Do not change model.default (stays claude-sonnet-4-6)
 - Do not modify any n8n or Postgres configs
 - Blueprint Lock: log all changes, do not self-ratify
+
+## CONNECTED FILES
+- [[SESSION_STATE|Session State]]
+- [[DASHBOARD|Dashboard]]

@@ -1,0 +1,262 @@
+[
+  {
+    "id": "USR-1001",
+    "name": "Mara Voss",
+    "email": "mara.voss@example.test",
+    "preferences": {
+      "locale": "en-CA",
+      "timezone": "America/Halifax",
+      "theme": { "mode": "dark", "accent": "teal", "highContrast": false },
+      "notifications": { "email": true, "sms": false, "push": true, "digest": "weekly" },
+      "privacy": { "profileVisibility": "friends", "analyticsOptIn": false },
+      "interests": ["urban gardening", "jazz", "kayaking"]
+    }
+  },
+  {
+    "id": "USR-1002",
+    "name": "Elias North",
+    "email": "elias.north@example.test",
+    "preferences": {
+      "locale": "en-US",
+      "timezone": "America/Chicago",
+      "theme": { "mode": "light", "accent": "indigo", "highContrast": false },
+      "notifications": { "email": true, "sms": true, "push": false, "digest": "daily" },
+      "privacy": { "profileVisibility": "public", "analyticsOptIn": true },
+      "interests": ["robotics", "bread making", "astronomy"]
+    }
+  },
+  {
+    "id": "USR-1003",
+    "name": "Juniper Hale",
+    "email": "juniper.hale@example.test",
+    "preferences": {
+      "locale": "en-GB",
+      "timezone": "Europe/London",
+      "theme": { "mode": "system", "accent": "rose", "highContrast": true },
+      "notifications": { "email": false, "sms": false, "push": true, "digest": "monthly" },
+      "privacy": { "profileVisibility": "private", "analyticsOptIn": false },
+      "interests": ["ceramics", "poetry", "cycling"]
+    }
+  },
+  {
+    "id": "USR-1004",
+    "name": "Soren Bell",
+    "email": "soren.bell@example.test",
+    "preferences": {
+      "locale": "da-DK",
+      "timezone": "Europe/Copenhagen",
+      "theme": { "mode": "dark", "accent": "amber", "highContrast": false },
+      "notifications": { "email": true, "sms": false, "push": true, "digest": "daily" },
+      "privacy": { "profileVisibility": "friends", "analyticsOptIn": true },
+      "interests": ["architecture", "sailing", "photography"]
+    }
+  },
+  {
+    "id": "USR-1005",
+    "name": "Priya Arden",
+    "email": "priya.arden@example.test",
+    "preferences": {
+      "locale": "en-IN",
+      "timezone": "Asia/Kolkata",
+      "theme": { "mode": "light", "accent": "violet", "highContrast": false },
+      "notifications": { "email": true, "sms": true, "push": true, "digest": "weekly" },
+      "privacy": { "profileVisibility": "public", "analyticsOptIn": false },
+      "interests": ["classical dance", "data visualization", "travel"]
+    }
+  },
+  {
+    "id": "USR-1006",
+    "name": "Mateo Rios",
+    "email": "mateo.rios@example.test",
+    "preferences": {
+      "locale": "es-MX",
+      "timezone": "America/Mexico_City",
+      "theme": { "mode": "system", "accent": "emerald", "highContrast": false },
+      "notifications": { "email": false, "sms": true, "push": true, "digest": "never" },
+      "privacy": { "profileVisibility": "friends", "analyticsOptIn": true },
+      "interests": ["street food", "football", "woodworking"]
+    }
+  },
+  {
+    "id": "USR-1007",
+    "name": "Noemi Laurent",
+    "email": "noemi.laurent@example.test",
+    "preferences": {
+      "locale": "fr-FR",
+      "timezone": "Europe/Paris",
+      "theme": { "mode": "light", "accent": "sky", "highContrast": false },
+      "notifications": { "email": true, "sms": false, "push": false, "digest": "monthly" },
+      "privacy": { "profileVisibility": "private", "analyticsOptIn": false },
+      "interests": ["fashion history", "cinema", "botany"]
+    }
+  },
+  {
+    "id": "USR-1008",
+    "name": "Tobias Wren",
+    "email": "tobias.wren@example.test",
+    "preferences": {
+      "locale": "de-DE",
+      "timezone": "Europe/Berlin",
+      "theme": { "mode": "dark", "accent": "orange", "highContrast": true },
+      "notifications": { "email": true, "sms": false, "push": true, "digest": "weekly" },
+      "privacy": { "profileVisibility": "public", "analyticsOptIn": true },
+      "interests": ["synthesizers", "hiking", "game design"]
+    }
+  },
+  {
+    "id": "USR-1009",
+    "name": "Aiko Mercer",
+    "email": "aiko.mercer@example.test",
+    "preferences": {
+      "locale": "ja-JP",
+      "timezone": "Asia/Tokyo",
+      "theme": { "mode": "system", "accent": "pink", "highContrast": false },
+      "notifications": { "email": false, "sms": false, "push": true, "digest": "daily" },
+      "privacy": { "profileVisibility": "friends", "analyticsOptIn": false },
+      "interests": ["calligraphy", "indie games", "tea"]
+    }
+  },
+  {
+    "id": "USR-1010",
+    "name": "Caleb Finch",
+    "email": "caleb.finch@example.test",
+    "preferences": {
+      "locale": "en-AU",
+      "timezone": "Australia/Sydney",
+      "theme": { "mode": "dark", "accent": "cyan", "highContrast": false },
+      "notifications": { "email": true, "sms": true, "push": true, "digest": "weekly" },
+      "privacy": { "profileVisibility": "private", "analyticsOptIn": true },
+      "interests": ["surfing", "marine biology", "podcasts"]
+    }
+  },
+  {
+    "id": "USR-1011",
+    "name": "Leila Okafor",
+    "email": "leila.okafor@example.test",
+    "preferences": {
+      "locale": "en-NG",
+      "timezone": "Africa/Lagos",
+      "theme": { "mode": "light", "accent": "lime", "highContrast": true },
+      "notifications": { "email": true, "sms": true, "push": false, "digest": "daily" },
+      "privacy": { "profileVisibility": "public", "analyticsOptIn": false },
+      "interests": ["textiles", "fintech", "running"]
+    }
+  },
+  {
+    "id": "USR-1012",
+    "name": "Anton Sable",
+    "email": "anton.sable@example.test",
+    "preferences": {
+      "locale": "sv-SE",
+      "timezone": "Europe/Stockholm",
+      "theme": { "mode": "system", "accent": "slate", "highContrast": false },
+      "notifications": { "email": false, "sms": false, "push": false, "digest": "never" },
+      "privacy": { "profileVisibility": "private", "analyticsOptIn": false },
+      "interests": ["minimalism", "cross-country skiing", "chess"]
+    }
+  },
+  {
+    "id": "USR-1013",
+    "name": "Valentina Cruz",
+    "email": "valentina.cruz@example.test",
+    "preferences": {
+      "locale": "es-AR",
+      "timezone": "America/Argentina/Buenos_Aires",
+      "theme": { "mode": "dark", "accent": "red", "highContrast": false },
+      "notifications": { "email": true, "sms": false, "push": true, "digest": "monthly" },
+      "privacy": { "profileVisibility": "friends", "analyticsOptIn": true },
+      "interests": ["tango", "illustration", "mountaineering"]
+    }
+  },
+  {
+    "id": "USR-1014",
+    "name": "Hana Petrov",
+    "email": "hana.petrov@example.test",
+    "preferences": {
+      "locale": "hr-HR",
+      "timezone": "Europe/Zagreb",
+      "theme": { "mode": "light", "accent": "blue", "highContrast": false },
+      "notifications": { "email": true, "sms": true, "push": false, "digest": "weekly" },
+      "privacy": { "profileVisibility": "public", "analyticsOptIn": true },
+      "interests": ["linguistics", "rock climbing", "cooking"]
+    }
+  },
+  {
+    "id": "USR-1015",
+    "name": "Owen Kestrel",
+    "email": "owen.kestrel@example.test",
+    "preferences": {
+      "locale": "en-NZ",
+      "timezone": "Pacific/Auckland",
+      "theme": { "mode": "system", "accent": "green", "highContrast": true },
+      "notifications": { "email": false, "sms": true, "push": true, "digest": "daily" },
+      "privacy": { "profileVisibility": "friends", "analyticsOptIn": false },
+      "interests": ["birdwatching", "trail running", "documentaries"]
+    }
+  },
+  {
+    "id": "USR-1016",
+    "name": "Ines Duarte",
+    "email": "ines.duarte@example.test",
+    "preferences": {
+      "locale": "pt-PT",
+      "timezone": "Europe/Lisbon",
+      "theme": { "mode": "dark", "accent": "purple", "highContrast": false },
+      "notifications": { "email": true, "sms": false, "push": true, "digest": "weekly" },
+      "privacy": { "profileVisibility": "private", "analyticsOptIn": true },
+      "interests": ["fado", "oceanography", "printmaking"]
+    }
+  },
+  {
+    "id": "USR-1017",
+    "name": "Ravi Sen",
+    "email": "ravi.sen@example.test",
+    "preferences": {
+      "locale": "bn-IN",
+      "timezone": "Asia/Kolkata",
+      "theme": { "mode": "light", "accent": "amber", "highContrast": false },
+      "notifications": { "email": true, "sms": true, "push": true, "digest": "monthly" },
+      "privacy": { "profileVisibility": "public", "analyticsOptIn": false },
+      "interests": ["economics", "cricket", "graphic novels"]
+    }
+  },
+  {
+    "id": "USR-1018",
+    "name": "Zara Quinn",
+    "email": "zara.quinn@example.test",
+    "preferences": {
+      "locale": "en-IE",
+      "timezone": "Europe/Dublin",
+      "theme": { "mode": "system", "accent": "emerald", "highContrast": false },
+      "notifications": { "email": false, "sms": false, "push": true, "digest": "daily" },
+      "privacy": { "profileVisibility": "friends", "analyticsOptIn": true },
+      "interests": ["folklore", "web development", "rowing"]
+    }
+  },
+  {
+    "id": "USR-1019",
+    "name": "Dimitri Vale",
+    "email": "dimitri.vale@example.test",
+    "preferences": {
+      "locale": "el-GR",
+      "timezone": "Europe/Athens",
+      "theme": { "mode": "dark", "accent": "sky", "highContrast": true },
+      "notifications": { "email": true, "sms": false, "push": false, "digest": "never" },
+      "privacy": { "profileVisibility": "private", "analyticsOptIn": false },
+      "interests": ["archaeology", "freediving", "electronic music"]
+    }
+  },
+  {
+    "id": "USR-1020",
+    "name": "Nadia Frost",
+    "email": "nadia.frost@example.test",
+    "preferences": {
+      "locale": "fr-CA",
+      "timezone": "America/Toronto",
+      "theme": { "mode": "light", "accent": "rose", "highContrast": false },
+      "notifications": { "email": true, "sms": true, "push": true, "digest": "weekly" },
+      "privacy": { "profileVisibility": "public", "analyticsOptIn": true },
+      "interests": ["ice skating", "user research", "mystery novels"]
+    }
+  }
+]

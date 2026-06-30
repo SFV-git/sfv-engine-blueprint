@@ -29,7 +29,8 @@ with open(out_path, 'w', encoding='utf-8') as out:
 print(f"Found {c} items")
 
 # CONNECTED FILES
-# - [[PENDING_REVIEW|Pending Review]]
 # - [[UNCONFIRMED|Unconfirmed Items]]
+# - [[FOR_HUMAN_REVIEW|For Human Review]]
+# - [[TO_REVIEW|To Review]]
+# - [[PENDING_REVIEW|Pending Review]]
 # - [[FOR_HUMAN_REVIEW/PROPOSALS|Proposals for Human Review]]
-# - [[human-approval|Human Approval Rules]]

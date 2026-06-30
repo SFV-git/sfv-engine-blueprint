@@ -89,3 +89,7 @@ The original `INTEGRATIONS.md` document may have conflicting statements, such as
 - **Syncthing** provides robust file sync with version history and conflict resolution.
 - **Tailscale** ensures secure, isolated networking with remote policy management.
 - **Integration**: When used together, Tailscale's isolation rules must be configured to permit Syncthing's traffic, ensuring seamless operation without security compromises.
+
+## CONNECTED FILES
+- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
+- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]

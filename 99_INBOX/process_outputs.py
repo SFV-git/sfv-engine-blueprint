@@ -60,3 +60,10 @@ def process():
 
 if __name__ == "__main__":
     process()
+
+# CONNECTED FILES
+# - [[FILE_MAPPING_SPEC|File Mapping Specification]]
+# - [[OUTPUT_PROCESSING_PROTOCOL|Output Processing Protocol]]
+# - [[DIRECTORY_LAYOUT|Directory Layout]]
+# - [[RESULT_HANDLING_PROCEDURE|Result Handling Procedure]]
+# - [[CONTENT_PROCESSING_GUIDELINES|Content Processing Guidelines]]

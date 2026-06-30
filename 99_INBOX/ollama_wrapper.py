@@ -42,7 +42,9 @@ if __name__ == "__main__":
     print(result)
 
 # CONNECTED FILES
-# - [[OLLAMA_SETUP|Ollama Setup]]
-# - [[OLLAMA_PROMPTS|Ollama Prompts]]
-# - [[MODEL_ROUTING|Model Routing]]
-# - [[AI_USE_CASE_PROFILE|AI Use Case Profile]]
+# - [[Ollama Setup|Ollama Setup]]
+# - [[Ollama Prompts|Ollama Prompts]]
+# - [[Model Routing|Model Routing]]
+# - [[AI Use Case Profile|AI Use Case Profile]]
+# - [[Error Handling|Error Handling]]
+# - [[API Integration|API Integration]]

@@ -115,3 +115,8 @@ The UGC delivery platform should prioritize a **custom portal or Pixieset** for 
 
 ---  
 **End of Document**
+
+## CONNECTED FILES
+- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
+- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]

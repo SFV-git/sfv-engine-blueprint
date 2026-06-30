@@ -161,3 +161,8 @@ This specification outlines an automation system that moves training data files 
 --- 
 
 This specification ensures seamless automation, traceability, and feedback for training data quality control.
+
+## CONNECTED FILES
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
+- [[COMPRESSED_CONTEXT|Compressed Context]]

@@ -18,3 +18,7 @@ Model: qwen3:14b  |  Files: 11
 **Total links written:** 62
 **Errors:** 0
 **Completed:** 2026-05-29 03:47:31
+
+## CONNECTED FILES
+- [[SESSION_STATE|Session State]]
+- [[DASHBOARD|Dashboard]]

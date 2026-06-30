@@ -152,3 +152,7 @@ structure, vector layer wiring). One FOR HUMAN REVIEW doc per gap, same INPUT/PR
 - [ ] One FOR HUMAN REVIEW doc per remaining ranked gap (STEP 2 P2+)
 - [ ] `RD_TERMINAL_ARCHITECTURE.md` — proposed Role 5 addition noted (as FHR edit, NOT a CANON rewrite)
 - [ ] SESSION_STATE block + next-session handoff written
+
+## CONNECTED FILES
+- [[SESSION_STATE|Session State]]
+- [[DASHBOARD|Dashboard]]

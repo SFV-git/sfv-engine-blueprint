@@ -96,3 +96,8 @@ This phase introduces a chain of prerequisites to enable secure, scalable, and A
 
 ### **5. Summary**  
 This plan ensures a robust Vector layer system with a clear path to **Role 5 storage** compliance. Phase 2 introduces a prerequisite chain that builds on Docker, Qdrant, and secure embedding models, enabling advanced AI workflows while maintaining data integrity and security.
+
+## CONNECTED FILES
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
+- [[COMPRESSED_CONTEXT|Compressed Context]]

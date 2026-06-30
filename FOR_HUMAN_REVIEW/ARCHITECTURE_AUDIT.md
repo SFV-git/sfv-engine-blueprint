@@ -235,3 +235,7 @@ SESSION_STATE matching runtime."** Blockers, in order: P008 ratification → A1�
 S1/D1/S2 five-minute fixes → PostgreSQL migration (Will-supervised) → Docker restart →
 workflow3 build → Theory Run Scenario C as the acceptance test. Full ordering with edges:
 **CRITICAL_PATH.md** and **DEPENDENCY_GRAPH.mmd**.
+
+## CONNECTED FILES
+- [[DASHBOARD|Dashboard]]
+- [[SESSION_STATE|Session State]]

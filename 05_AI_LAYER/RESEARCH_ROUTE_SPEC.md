@@ -116,3 +116,8 @@
 ---
 
 **Conclusion:** This spec ensures seamless integration between `RESEARCH_ROUTE_SPEC` and `N8N_BLUEPRINT` by aligning data flow, error handling, and conditional triggers, while leveraging Tavily for research tasks.
+
+## CONNECTED FILES
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
+- [[COMPRESSED_CONTEXT|Compressed Context]]

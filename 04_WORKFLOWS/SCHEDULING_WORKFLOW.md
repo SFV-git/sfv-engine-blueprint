@@ -101,3 +101,8 @@ n8n automates content routing, scheduling, and notifications across branches.
 
 ---  
 **Document Version:** 1.0 | **Last Updated:** [Insert Date]
+
+## CONNECTED FILES
+- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
+- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]

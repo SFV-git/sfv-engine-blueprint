@@ -23,3 +23,9 @@ if __name__ == "__main__":
     samples = (2, 17, 18, 97)
     for sample in samples:
         print(f"{sample} is prime: {is_prime(sample)}")
+
+# CONNECTED FILES
+# - [[USAGE_OPTIMIZATION|Usage Optimization]]
+# - [[SOURCE_OF_TRUTH_RULES|Source of Truth Rules]]
+# - [[TEMPLATE_DEFAULT|Template Default]]
+# - [[PROPOSALS|Proposals]]

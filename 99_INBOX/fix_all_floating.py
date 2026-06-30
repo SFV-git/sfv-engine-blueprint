@@ -138,3 +138,9 @@ def fix():
 
 if __name__ == "__main__":
     fix()
+
+# CONNECTED FILES
+# - [[SEMANTIC_LINKS_RUN|SEMANTIC LINKS RUN.md]]
+# - [[CLAUE|CLAUE.md]]
+# - [[DEV_LOG|DEV_LOG.md]]
+# - [[2026-05-27_SESSION_END|2026-05-27 Session End]]

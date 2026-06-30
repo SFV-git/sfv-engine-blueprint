@@ -65,3 +65,7 @@ never override — 01_CANON_RULES/RULES.md and the .claude/rules set.
 - Live secrets file rode along in the zip (audit S1). Future snapshot command must add:
   `--exclude 'n8n_env.ps1' --exclude '.claude*/settings.local.json'` (the latter is
   machine-local allow-lists, not secrets, but has no business traveling).
+
+## CONNECTED FILES
+- [[DASHBOARD|Dashboard]]
+- [[SESSION_STATE|Session State]]

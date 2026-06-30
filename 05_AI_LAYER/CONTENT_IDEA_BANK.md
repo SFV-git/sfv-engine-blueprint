@@ -132,3 +132,8 @@ The *Content Idea Bank (Role 5)* is a cornerstone of the R&D Terminal, leveragin
 **Last Updated:** [Insert Date]  
 **Author:** [Insert Name/Team]  
 **Contact:** [Insert Contact Information]
+
+## CONNECTED FILES
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
+- [[COMPRESSED_CONTEXT|Compressed Context]]

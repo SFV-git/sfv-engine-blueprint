@@ -171,3 +171,7 @@ Attempt 5: If failed, trigger graceful degradation.
 --- 
 
 This protocol ensures minimal disruption during outages while maintaining safety and operational continuity in ICS environments.
+
+## CONNECTED FILES
+- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
+- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]

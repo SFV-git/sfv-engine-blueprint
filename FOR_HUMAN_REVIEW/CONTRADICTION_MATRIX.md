@@ -26,3 +26,7 @@ RULE: Nothing here is silently resolved. Every row ends in a Will decision or a 
 | C13 | 🟢 LOW | MASTER_CONTEXT.md vs current reality | "SFV_UGC (name pending)"; KEY NEAR-TERM TARGETS = Morning Walk May 28 / Shamar June 6 / Brandon "this week"; R&D models "Qwen/Llama/DeepSeek" | UGC name resolved (stays SFV_UGC, 05-26); events completed; roster = qwen-only | Mechanical refresh in the batch pass. MASTER_CONTEXT is a SHARED context file — staleness here leaks into every cheap-model call that doesn't use COMPRESSED_CONTEXT. |
 | C14 | 🟡 MED | start_n8n.ps1 vs n8n_env.ps1 (+ workflow1 hardcode) | Launcher A sets OLLAMA_URL/MODEL, ALLOW_BUILTIN=`fs,path,os`, does NOT load secrets/paths | Launcher B (env file) sets VAULT_PATH/QUEUE_PATH/keys, ALLOW_BUILTIN=`fs,path`; workflow1 Code hardcodes C:/SFV_BLUEPRINT because VAULT_PATH may be absent | Unify: start_n8n.ps1 dot-sources n8n_env.ps1 first, single ALLOW_BUILTIN value (`fs,path,os`), workflow nodes read `$env.VAULT_PATH` with hardcode demoted to fallback. Small FIX-NOW (audit W5). |
 | C15 | 🟢 LOW | PAPER_TRIAL_RUNS.md (CANON) vs event outcomes | Trials 01/02 "NOT YET RUN" | Morning Walk + Shamar completed (DASHBOARD ✅) | Record-keeping only. Close the trials with outcome notes when Theory Runs protocol doc is written, so 08_TESTS has one living methodology. |
+
+## CONNECTED FILES
+- [[DASHBOARD|Dashboard]]
+- [[SESSION_STATE|Session State]]

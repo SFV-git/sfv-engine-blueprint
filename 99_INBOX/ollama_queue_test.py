@@ -259,5 +259,7 @@ if __name__ == "__main__":
 
 # CONNECTED FILES
 # - [[DECISION_LOG|Decision Log]]
-# - [[OLLAMA|Ollama]]
-# - [[CLAUDE|Claude]]
+# - [[TASK_QUEUE|Task Queue Structure]]
+# - [[SOURCE_OF_TRUTH_RULES|Source of Truth Rules]]
+# - [[ARCHITECTURE_AUDIT|System Architecture Audit]]
+# - [[MASTER_CONTEXT|Master System Context]]

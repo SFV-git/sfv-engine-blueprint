@@ -234,6 +234,7 @@ if __name__ == "__main__":
     run()
 
 # CONNECTED FILES
-# - [[OLLAMA|Ollama Integration]]
-# - [[OLLAMA_SETUP|Ollama Setup]]
-# - [[NAMING_CONVENTIONS|Naming Conventions]]
+# - [[TASK_QUEUE|Task Queue]]
+# - [[RESULTS|Ollama Results]]
+# - [[COMPRESSED_CONTEXT|Compressed Context]]
+# - [[SESSION_STATE|Session State]]

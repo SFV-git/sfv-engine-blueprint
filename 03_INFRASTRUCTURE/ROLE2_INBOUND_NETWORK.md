@@ -121,3 +121,7 @@ External Client → [Tailscale Mesh Network] → [R&D Terminal (Review Gateway)]
 - Use **Tailscale** for secure, scalable, and modern access to the R&D Terminal's Review Gateway.  
 - Use **ICS port-forwarding** only as a temporary or legacy workaround.  
 - Ensure all configurations are validated with network and security teams.
+
+## CONNECTED FILES
+- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
+- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]

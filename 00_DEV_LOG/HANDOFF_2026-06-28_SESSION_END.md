@@ -62,3 +62,7 @@ After loop confirmed working — engine capability review, then sell-as-software
 - C:\Windows\Temp\hermes_cfgtest — delete manually (.env removed, rest is junk)
 - WF3 Research handler not built
 - Docker not installed (needs scheduled restart)
+
+## CONNECTED FILES
+- [[SESSION_STATE|Session State]]
+- [[DASHBOARD|Dashboard]]

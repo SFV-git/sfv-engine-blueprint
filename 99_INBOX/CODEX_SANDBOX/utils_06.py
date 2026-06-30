@@ -95,3 +95,10 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+# CONNECTED FILES
+# - [[UTILITY_SCRIPTS|Utility Scripts]]
+# - [[MATH_OPERATIONS|Math Operations]]
+# - [[STRING_MANIPULATION|String Manipulation]]
+# - [[DATA_PROCESSING|Data Processing]]
+# - [[TYPE_VALIDATION|Type Validation]]

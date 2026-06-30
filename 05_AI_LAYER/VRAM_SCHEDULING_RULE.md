@@ -58,3 +58,8 @@ scheduling:
 - **Monitoring:** Log co-load attempts and enforce penalties (e.g., retries, alerts) for violations.  
 
 This rule ensures optimal VRAM utilization, prevents resource contention, and aligns with Ollama’s design for single-model inference.
+
+## CONNECTED FILES
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
+- [[COMPRESSED_CONTEXT|Compressed Context]]

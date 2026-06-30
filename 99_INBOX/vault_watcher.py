@@ -217,7 +217,6 @@ if __name__ == "__main__":
 
 # CONNECTED FILES
 # - [[TASK_QUEUE|Task Queue]]
+# - [[OLLAMA_RESULTS|Ollama Results]]
+# - [[NAMING_CONVENTIONS|Naming Conventions]]
 # - [[COMPRESSED_CONTEXT|Compressed Context]]
-# - [[DASHBOARD|Dashboard]]
-# - [[SESSION_STATE|Session State]]
-# - [[05_AI_LAYER/COST_ROUTING|Cost Routing]]

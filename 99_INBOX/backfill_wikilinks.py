@@ -143,9 +143,8 @@ if __name__ == "__main__":
     backfill()
 
 # CONNECTED FILES
-# - [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
+# - [[COMPRESSED_CONTEXT|Compressed Context]]
 # - [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
 # - [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
-# - [[COMPRESSED_CONTEXT|Compressed Context]]
-# - [[SESSION_STATE|Session State]]
 # - [[DASHBOARD|Dashboard]]
+# - [[SESSION_STATE|Session State]]

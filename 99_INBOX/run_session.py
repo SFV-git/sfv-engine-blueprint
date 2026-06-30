@@ -151,8 +151,7 @@ except Exception as e:
     log(f"Failed to write report: {e}")
 
 # CONNECTED FILES
-# - [[VERSION_LOG|Version Log]]
-# - [[N8N_BLUEPRINT|N8N Workflows Blueprint]]
-# - [[TASK_QUEUE|Task Queue Management]]
-# - [[BUILD_READINESS_CHECKLIST|Build Readiness Checklist]]
-# - [[ENGINE_COMMUNICATION_MODEL|Engine Communication Model]]
+# - [[03_INFRASTRUCTURE|Infrastructure Workflows]]
+# - [[99_INBOX|Inbox and Test Files]]
+# - [[CLAUDE|Claude Code Integration]]
+# - [[HARDWARE_CONTEXT|Hardware and Sync Setup]]

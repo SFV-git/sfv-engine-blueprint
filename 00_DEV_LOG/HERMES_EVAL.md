@@ -210,3 +210,7 @@ The Norton fix (`truststore.inject_into_ssl()` via `sitecustomize.py`) replaces 
 - **Telegram bot token rotation** (still cleartext-exposed per HANDOFF_2026-06-28; `/revoke` via BotFather) + **Tavily key rotation** (standing CRITICAL_PATH).
 - **Inbound→reply loop** not yet user-tested — Will to message the bot and confirm a qwen3:14b reply.
 - `.env` append for `HERMES_SKIP_SSL_GUARD` skipped (file locked by desktop app); covered by User env var instead. Add to `.env` if desired when desktop app is closed.
+
+## CONNECTED FILES
+- [[SESSION_STATE|Session State]]
+- [[DASHBOARD|Dashboard]]

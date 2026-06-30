@@ -165,8 +165,8 @@ if __name__ == "__main__":
     fix_floating()
 
 # CONNECTED FILES
-# - [[SEMANTIC_LINKS_RUN|SEMANTIC LINKS RUN]]
-# - [[COMPRESSED_CONTEXT|Compressed Context]]
-# - [[MASTER_CONTEXT|Master Context]]
-# - [[SESSION_STATE|Session State]]
-# - [[USAGE_OPTIMIZATION|Usage Optimization]]
+# - [[SFV_ENGINE|SFV Engine]]
+# - [[CONNECTED_FILES|Connected Files]]
+# - [[FLOATING_NODES|Floating Nodes]]
+# - [[LINK_INTEGRITY|Link Integrity]]
+# - [[WORKER_LOGS|Worker Logs]]

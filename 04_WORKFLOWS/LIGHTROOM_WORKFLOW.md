@@ -130,3 +130,8 @@ Export Preset Name: "sRGB_2560px"
 
 **End of Document**  
 This blueprint ensures consistency, scalability, and efficiency in Lightroom workflows while leveraging modern AI tools.
+
+## CONNECTED FILES
+- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
+- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]

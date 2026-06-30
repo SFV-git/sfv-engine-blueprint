@@ -151,3 +151,8 @@ Automate workflows, enforce business rules, or dynamically update form behavior 
 --- 
 
 This blueprint ensures seamless integration of **CONTENT_BANKS** and **CLIENT_BANKS** into the **intake app**, with clear data mapping and extensible hooks/scripts for dynamic form behavior.
+
+## CONNECTED FILES
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[05_AI_LAYER/RATE_LIMITS|Rate Limits]]
+- [[COMPRESSED_CONTEXT|Compressed Context]]

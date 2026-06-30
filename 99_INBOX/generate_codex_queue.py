@@ -59,3 +59,10 @@ CRITICAL: Do NOT modify any files outside of C:\\SFV_BLUEPRINT\\99_INBOX\\CODEX_
         f.write(content)
 
 print(f"Generated {len(tasks)} codex queue files in {QUEUE_DIR}")
+
+# CONNECTED FILES
+# - [[TASK_QUEUE_SPEC|Task Queue Specification]]
+# - [[CODEX_TASK_FORMAT|Codex Task File Format]]
+# - [[QUEUE_DIR_STRUCTURE|Queue Directory Structure]]
+# - [[EXECUTOR_DIRECTIVES|Executor Directives Reference]]
+# - [[MASTER_CONTEXT|System Master Context]]

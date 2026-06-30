@@ -60,3 +60,7 @@ Four categories per the runbook quality bar.
 | "Sentinel" monitoring home | RD_TERMINAL_ARCHITECTURE (CANON): dashboards/Prometheus concept on Node B. MONITORING_STACK (FHR, decision D-B): Prometheus+Grafana on Node A. → C5. |
 | R&D Terminal model roster | LOCAL_MODELS (CANON, post-Perplexity): qwen3:8b + qwen3:14b, drop coder. TWO_TERMINAL plan B2 (DRAFT): qwen3:8b + qwen2.5-coder:7b. FAILOVER_MODEL: 14b-only fallback. → C8 / open Q17. |
 | "SFV Studio" vs "SFV_STUDIO" | Locked: underscore caps. Snapshot is clean on this — no violations found. (Recorded so it stays checked.) |
+
+## CONNECTED FILES
+- [[SESSION_STATE|Session State]]
+- [[DASHBOARD|Dashboard]]

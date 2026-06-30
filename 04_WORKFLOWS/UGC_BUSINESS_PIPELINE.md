@@ -111,3 +111,8 @@ A structured, multi-part blueprint for managing a User-Generated Content (UGC) b
 ---
 
 This blueprint ensures a seamless, data-driven UGC pipeline, from lead generation to performance tracking, while maintaining client satisfaction and operational efficiency.
+
+## CONNECTED FILES
+- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
+- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]

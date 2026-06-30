@@ -104,3 +104,8 @@ The archive index is a metadata repository for tracking data across storage tier
 --- 
 
 This document provides a technical roadmap for resolving storage issues, managing data lifecycle, and ensuring archival integrity.
+
+## CONNECTED FILES
+- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
+- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
+- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
