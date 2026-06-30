@@ -141,6 +141,5 @@ if __name__ == "__main__":
 
 # CONNECTED FILES
 # - [[SEMANTIC_LINKS_RUN|SEMANTIC LINKS RUN.md]]
-# - [[CLAUE|CLAUE.md]]
+# - [[CLAUD|CLAUD.md]]
 # - [[DEV_LOG|DEV_LOG.md]]
-# - [[2026-05-27_SESSION_END|2026-05-27 Session End]]

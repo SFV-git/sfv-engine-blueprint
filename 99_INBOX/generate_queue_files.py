@@ -42,9 +42,7 @@ EXECUTOR: ollama
 print(f"Generated {len(gaps)} queue files in {QUEUE_DIR}")
 
 # CONNECTED FILES
-# - [[CONTENT_IDEA_BANK|Content Idea Bank (Role 5) Blueprint]]
-# - [[VIDEO_EDIT_WORKFLOW|Premiere Pro Video Edit Workflow]]
-# - [[UGC_PIPELINE_BLUEPRINT|UGC Business Pipeline Multi-Part Blueprint]]
-# - [[SCHEDULING_WORKFLOW|Instagram Scheduling Workflow]]
-# - [[LIGHTROOM_WORKFLOW|Lightroom Workflow Specifications]]
-# - [[QC_CHECKLIST|UGC Quality Control Checklist]]
+# - [[TEMPLATE_DEFAULT|Template Default]]
+# - [[TASK_QUEUE|Task Queue]]
+# - [[QC_CHECKLIST|QC Checklist]]
+# - [[SOURCE_OF_TRUTH_RULES|Source of Truth Rules]]

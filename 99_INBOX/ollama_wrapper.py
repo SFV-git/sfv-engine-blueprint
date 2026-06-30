@@ -45,6 +45,6 @@ if __name__ == "__main__":
 # - [[Ollama Setup|Ollama Setup]]
 # - [[Ollama Prompts|Ollama Prompts]]
 # - [[Model Routing|Model Routing]]
-# - [[AI Use Case Profile|AI Use Case Profile]]
 # - [[Error Handling|Error Handling]]
 # - [[API Integration|API Integration]]
+# - [[AI Use Case Profile|AI Use Case Profile]]

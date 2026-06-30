@@ -151,7 +151,8 @@ except Exception as e:
     log(f"Failed to write report: {e}")
 
 # CONNECTED FILES
-# - [[03_INFRASTRUCTURE|Infrastructure Workflows]]
-# - [[99_INBOX|Inbox and Test Files]]
-# - [[CLAUDE|Claude Code Integration]]
-# - [[HARDWARE_CONTEXT|Hardware and Sync Setup]]
+# - [[CURRENT_DIRECTIVE|Current Operational Directive]]
+# - [[MASTER_CONTEXT|Master Context]]
+# - [[ARCHITECTURE_AUDIT|Architecture Audit]]
+# - [[99_INBOX|Task Queue Management]]
+# - [[HARDWARE_CONTEXT|Hardware Context]]

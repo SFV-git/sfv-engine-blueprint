@@ -1,9 +1,9 @@
 ---
 STATUS: ACTIVE
-DIRECTIVE_ID: CODEX-TEST-20260630-200912-JSONMOCK-10-001
+DIRECTIVE_ID: CODEX-TEST-20260630-200912-MARKDOWN-03-001
 EXECUTOR: codex
 ---
 
-You are inside C:\SFV_BLUEPRINT\99_INBOX\CODEX_SANDBOX. Generate a complex mock JSON file named mock_data_10.json containing 100 records of fictional users, including their ID, name, email, and a nested object of preferences.
+You are inside C:\SFV_BLUEPRINT\99_INBOX\CODEX_SANDBOX. Write an extensive, beautifully formatted markdown file named tutorial_03.md explaining a randomly chosen programming concept. It must include code blocks, a table of contents, bold headers, and at least 3 sections.
 
 CRITICAL: Do NOT modify any files outside of C:\SFV_BLUEPRINT\99_INBOX\CODEX_SANDBOX.

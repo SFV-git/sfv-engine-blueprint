@@ -163,8 +163,7 @@ if __name__ == "__main__":
     main()
 
 # CONNECTED FILES
-# - [[ARCHITECTURE_AUDIT|Architecture Audit]]
 # - [[SOURCE_OF_TRUTH_RULES|Source of Truth Rules]]
+# - [[ARCHITECTURE_AUDIT|Architecture Audit]]
+# - [[FOLDER_STRUCTURE_REFERENCE|Folder Structure Reference]]
 # - [[PROPOSALS|Proposals]]
-# - [[CURRENT_DIRECTIVE|Current Directive]]
-# - [[MASTER_CONTEXT|Master Context]]

@@ -29,8 +29,8 @@ with open(out_path, 'w', encoding='utf-8') as out:
 print(f"Found {c} items")
 
 # CONNECTED FILES
-# - [[UNCONFIRMED|Unconfirmed Items]]
-# - [[FOR_HUMAN_REVIEW|For Human Review]]
-# - [[TO_REVIEW|To Review]]
 # - [[PENDING_REVIEW|Pending Review]]
+# - [[TO_REVIEW|To Review]]
+# - [[FOR_HUMAN_REVIEW|For Human Review]]
+# - [[UNCONFIRMED|Unconfirmed Items]]
 # - [[FOR_HUMAN_REVIEW/PROPOSALS|Proposals for Human Review]]

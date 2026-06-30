@@ -413,8 +413,5 @@ if __name__ == "__main__":
 
 # CONNECTED FILES
 # - [[ENVIRONMENT_CONFIG|Environment Configuration]]
-# - [[MEDIA_TYPES|Media Types Specification]]
-# - [[BRANCH_DEFINITIONS|Branch Definitions]]
 # - [[INGEST|Ingest Workflow Specification]]
-# - [[NAMING_CONVENTIONS|File Naming Conventions]]
-# - [[README|Project Overview]]
+# - [[MASTER_CONTEXT|System Master Context]]

@@ -235,6 +235,7 @@ if __name__ == "__main__":
 
 # CONNECTED FILES
 # - [[TASK_QUEUE|Task Queue]]
-# - [[RESULTS|Ollama Results]]
+# - [[OLLAMA_RESULTS|Ollama Results]]
 # - [[COMPRESSED_CONTEXT|Compressed Context]]
 # - [[SESSION_STATE|Session State]]
+# - [[CURRENT_DIRECTIVE|Current Directive]]
