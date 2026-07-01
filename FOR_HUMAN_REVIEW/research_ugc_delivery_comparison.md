@@ -80,3 +80,7 @@
 - Accessing public Google Drive files via API without login (Latenode community): https://community.latenode.com/t/accessing-public-google-drive-files-via-api-without-login/32858
 
 _Compiled from web search on 2026-07-01. Verify live pricing/feature details on vendor pages before deciding._
+
+## CONNECTED FILES
+- [[DASHBOARD|Dashboard]]
+- [[SESSION_STATE|Session State]]

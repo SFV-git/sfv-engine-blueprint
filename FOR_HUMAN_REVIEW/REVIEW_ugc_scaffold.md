@@ -90,3 +90,7 @@ load/populate round-trip, per-line talking-point parsing, and the
 Reviewed only the prototype file and the workflow spec, both read-only. No
 changes were made anywhere. n8n, Docker, git, and live services were not
 touched.
+
+## CONNECTED FILES
+- [[DASHBOARD|Dashboard]]
+- [[SESSION_STATE|Session State]]

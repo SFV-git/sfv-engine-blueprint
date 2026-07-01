@@ -77,3 +77,7 @@ is no naive/aware `datetime` comparison hazard.
 Safe to run as-is. It cannot write, delete, or reach outside `C:\SFV_BLUEPRINT`, and it
 has no path to n8n, Docker, git, the network, or a shell. The advisory items are quality/
 accuracy refinements a human may optionally address; none are required for safe execution.
+
+## CONNECTED FILES
+- [[DASHBOARD|Dashboard]]
+- [[SESSION_STATE|Session State]]

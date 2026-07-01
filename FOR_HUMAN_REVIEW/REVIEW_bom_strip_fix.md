@@ -69,3 +69,7 @@ This does not change the correctness of the `Read Task` fix itself, which was th
 ## Bottom line
 
 The `Read Task` BOM-strip fix is correct, safe, and non-destructive. JSON file is uncorrupted. **Accept the fix.** Optionally schedule the two downstream reads for the same treatment.
+
+## CONNECTED FILES
+- [[DASHBOARD|Dashboard]]
+- [[SESSION_STATE|Session State]]

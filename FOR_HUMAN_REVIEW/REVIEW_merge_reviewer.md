@@ -71,3 +71,7 @@ No bugs that risk data, no unsafe writes, no traversal, no accidental modificati
 scanned files, and zero contact with n8n / Docker / git / live services. Safe to run.
 The only real-world failure mode is that a locked/unreadable `.md` file (note 1) would
 abort the run without producing output — a resilience nit, not a hazard.
+
+## CONNECTED FILES
+- [[DASHBOARD|Dashboard]]
+- [[SESSION_STATE|Session State]]

@@ -114,3 +114,7 @@ Perplexity:
 - (secondary/aggregator, flagged) https://www.getaiperks.com/en/ai/perplexity-api-free-credits-2026
 
 > Vendor pricing changes frequently. Where secondary aggregators disagreed with vendor docs, vendor docs were preferred and discrepancies flagged inline. Re-verify against the official pages before implementation.
+
+## CONNECTED FILES
+- [[DASHBOARD|Dashboard]]
+- [[SESSION_STATE|Session State]]

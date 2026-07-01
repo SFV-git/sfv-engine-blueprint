@@ -84,3 +84,7 @@
 ---
 
 *Note: Prices reflect annually-billed rates where noted; monthly billing is higher. Figures captured on 2026-07-01 and should be re-checked against the official pricing pages before purchase, as SaaS pricing changes frequently.*
+
+## CONNECTED FILES
+- [[DASHBOARD|Dashboard]]
+- [[SESSION_STATE|Session State]]

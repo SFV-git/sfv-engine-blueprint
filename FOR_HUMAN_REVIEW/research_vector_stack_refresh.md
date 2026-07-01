@@ -150,3 +150,7 @@ Source: [QWE AI guide](https://www.qwe.edu.pl/ai-tools/best-vector-db-qdrant-dep
 - Artifact Hub — Qdrant Helm 1.18.2: https://artifacthub.io/packages/helm/qdrant/qdrant
 </content>
 </invoke>
+
+## CONNECTED FILES
+- [[DASHBOARD|Dashboard]]
+- [[SESSION_STATE|Session State]]
