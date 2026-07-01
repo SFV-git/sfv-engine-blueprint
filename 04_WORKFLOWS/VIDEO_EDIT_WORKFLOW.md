@@ -1,306 +1,96 @@
-# VIDEO_EDIT_WORKFLOW.md  
-*A Blueprint for Premiere Pro Workflow Standards*  
-
+---
+STATUS: FOR HUMAN REVIEW
+VERSION: v2.0.0
+OWNER: WILL
+LAST_UPDATED: 2026-07-01
+REWRITTEN_BY: Claude Chat (autonomous, web-researched)
+SUPERSEDES: v1 (scored 1.5/5 by Perplexity — hallucinated Premiere features: Content-Aware Fill,
+  Keylight, "Audio Sync Tool", Preferences>Export path — all removed and corrected)
 ---
 
-## **1. Overview**  
-This document outlines a standardized workflow for editing video content in Adobe Premiere Pro, tailored to different content types (branches) and deliverables. Key stages include per-branch editing, reel assembly, audio sync, color grading, caption hand-off, and export presets.  
+# VIDEO EDIT WORKFLOW
 
----
+Pipeline picks up AFTER footage is ingested to the branch folder (see [[INGEST|Ingest Workflow]]).
+Covers reel assembly for short-form vertical delivery (Instagram Reels, TikTok, Shorts).
+All tool references verified against Adobe Premiere Pro 2026 documentation 2026-07-01.
 
-## **2. Per-Branch Edit Approach**  
-Each branch has unique requirements. Below are guidelines for handling content by type:  
+## 0. SCOPE + SEQUENCE SETTINGS
+- Delivery target: 9:16 vertical, 1080x1920, H.264 for social. Confirm per-branch.
+- Frame rate: match source (typically 24 or 30fps for UGC; 60fps if shot for slow-mo). [FOR HUMAN REVIEW — confirm Will's capture fps per branch]
+- Color space: Rec.709 for standard delivery. Log footage (S-Log3, C-Log) requires a LUT or Lumetri color-managed workflow before grading.
+- Import via **Media Browser panel**, NOT drag-and-drop from Explorer — Media Browser preserves timecode, camera metadata, and reel names needed for multicam relink.
 
-### **2.1 UGC (User-Generated Content)**  
-- **Focus**: Streamline raw, unstructured footage.  
-- **Steps**:  
-  - Import and organize clips into labeled bins (e.g., "Raw Footage," "B-roll").  
-  - Trim excess footage, remove duplicates, and prioritize high-quality clips.  
-  - Use proxy media for smoother editing.  
-- **Tools**: Use **Media Encoder** for proxy generation; **Auto-Sync** for audio-video alignment if needed.  
+## 1. PROJECT + BIN STRUCTURE
+- One .prproj per shoot/client, stored in the branch folder tree (maps to D:\ branch structure).
+- Bins: `01_RAW`, `02_SELECTS`, `03_AUDIO`, `04_GRAPHICS`, `05_EXPORTS`.
+- Proxies: generate via Premiere ingest proxy option (1/2 or 1/4 res) if source is 4K+ or high-bitrate (BRAW/HEVC). Store proxies in a sibling `PROXY` folder.
 
-### **2.2 LIVE (Live Events)**  
-- **Focus**: Real-time editing with multi-camera angles.  
-- **Steps**:  
-  - Use **Multi-Camera Sequences** to sync camera angles.  
-  - Apply real-time effects (e.g., lower thirds, graphics).  
-  - Export **proxy files** for live streaming.  
-- **Tools**: **Multi-Camera Editor**, **Lumetri** for quick color correction.  
+## 2. MULTICAM SYNC (live events, multi-angle UGC)
+- Select camera clips → right-click → **Create Multi-Camera Source Sequence**.
+- Sync method: **audio waveform** (default for run-and-gun, no shared timecode) or **timecode** (if jam-synced).
+- Cam filename prefixes (Cam1_, Cam2_, Cam3_) prevent stream collision — matches the locked EVENTS convention.
+- Fake multicam from single 4K talking head: drop clip on 3 tracks, crop wide/medium/close, nest, enable multicam.
 
-### **2.3 ARCHIVE (Archival Footage)**  
-- **Focus**: Restore and stabilize degraded content.  
-- **Steps**:  
-  - Use **Content-Aware Fill** to remove scratches or dust.  
-  - Apply **Deinterlacing** and **Noise Reduction**.  
-  - Maintain original aspect ratios and frame rates.  
-- **Tools**: **Lumetri** for color restoration; **Warp Stabilizer** for shaky footage.  
+## 3. ASSEMBLY — PANCAKE TIMELINE METHOD
+This is the core reel-assembly technique. Verified fastest workflow for large footage volume:
+1. Top sequence = selects/stringout (all usable takes in order).
+2. Bottom sequence = master edit (the reel being built).
+3. Drag the stringout tab upward to split the panel — both visible at once.
+4. Set In/Out on the stringout, use Insert (,) or Overwrite (.) to drop selections into the master below.
+5. Eliminates Source Monitor round-trips — significantly faster assembly.
 
-### **2.4 ATHLETICS (Sports Highlights)**  
-- **Focus**: Dynamic pacing with slow-motion and highlight reels.  
-- **Steps**:  
-  - Use **Speed/Duration** for slow-motion effects.  
-  - Apply **Motion Tracking** for graphics overlay (e.g., player stats).  
-  - Prioritize action sequences with quick cuts.  
-- **Tools**: **Mocha Pro** for advanced tracking; **Keylight** for green-screen composites.  
+Pacing targets per deliverable (proposed defaults — [FOR HUMAN REVIEW]):
+- Reel/TikTok hook: cut within first 1.5s, clip lengths 0.8–2.5s for retention.
+- Total duration: 15–30s for max reach, up to 60s for tutorial/story content.
 
-### **2.5 EVENTS (Conferences, Weddings, etc.)**  
-- **Focus**: Multi-camera storytelling with event-specific elements.  
-- **Steps**:  
-  - Use **Multi-Camera Sequences** for seamless transitions.  
-  - Add **lower thirds**, **timelines**, and **event branding**.  
-  - Export **chapter markers** for easy navigation.  
-- **Tools**: **Graphics Panel**, **Text Templates**.  
+## 4. VERTICAL REFRAME (horizontal source → 9:16)
+- Select master sequence → **Sequence > Auto Reframe Sequence** → target 9:16.
+- Premiere AI-tracks the primary subject and repositions frame.
+- REVIEW manually: multi-subject shots and fast motion often need keyframe correction. Auto Reframe is a starting point, not final.
 
-### **2.6 STUDIO (Studio Shoots, Commercials)**  
-- **Focus**: Precision editing with green-screen and controlled environments.  
-- **Steps**:  
-  - Use **Keylight** for chroma-key composites.  
-  - Apply **LUTs** for consistent color grading.  
-  - Sync audio with **clapperboard timestamps**.  
-- **Tools**: **Lumetri**, **Keylight**, **Audio Sync Tool**.  
+## 5. GREEN SCREEN (if used — ATHLETICS stat overlays, etc.)
+- Chroma key tool is **Ultra Key** (Effects > Keying > Ultra Key). This is Premiere's native keyer.
+- NOTE: Keylight is an After Effects plugin, NOT available in Premiere. For heavy compositing, round-trip to AE via Dynamic Link (Replace With After Effects Composition).
+- Sports stat overlays: use Motion Graphics Templates (.mogrt) from Essential Graphics panel, or Dynamic Link to AE — NOT green screen.
 
----
+## 6. AUDIO
+- Treat as a distinct stage, not an afterthought.
+- Sync method depends on capture: dual-system (separate recorder) → Merge Clips with audio waveform sync; on-camera audio only → no sync step.
+- Music: pull from licensed library (see §9 licensing). Duck music under VO using the Essential Sound panel (assign clip as Dialogue vs Music, enable Auto-Ducking).
+- Loudness: social platforms normalize to roughly -14 LUFS integrated. True peak ceiling -1 dBTP to avoid clipping on playback. Apply Loudness Radar (Audio Effects > Special) to master track to verify.
 
-## **3. Reel Assembly**  
-### **3.1 Objectives**  
-- Compile the best clips from each branch into a cohesive, brand-aligned reel.  
-- Ensure consistency in pacing, color, and audio.  
+## 7. COLOR
+- Lumetri Color panel. Apply branch LUT first, then adjust exposure/white balance/saturation.
+- Brand LUT: [FOR HUMAN REVIEW — Will's actual per-branch LUT files are the missing deliverable here. Placeholder "Brand_LUT_v1" is not a real file yet.]
+- If Log source: set input LUT in Lumetri > Basic Correction before creative grade.
 
-### **3.2 Steps**  
-1. **Source Content**: Pull curated clips from each branch’s edit.  
-2. **Timeline Structure**:  
-   - Use a **master timeline** with labeled sequences (e.g., "UGC Highlights," "Live Moments").  
-   - Apply **transitions** (e.g., crossfades, match cuts).  
-3. **Branding**: Add **logos**, **watermarks**, and **social media handles**.  
-4. **Preview**: Export a **proxy reel** for client feedback.  
+## 8. CAPTIONS
+- Auto-transcribe: Text panel > Transcribe Sequence (Premiere's built-in speech-to-text, free with subscription).
+- Style captions via Essential Graphics. Keep high-contrast, safe-zone aware (not under IG/TikTok UI overlays — bottom ~15% and top ~10% are unsafe).
+- Export burned-in for social (platforms don't reliably read sidecar .srt on reels).
 
----
+## 9. LICENSING (critical for SaaS resale — see note)
+- Music must be cleared for commercial + client use. Epidemic Sound / Artlist / Musicbed offer creator+client licensing. Free/YouTube Audio Library often does NOT cover paid-ad usage.
+- Fonts: confirm commercial license for any non-system font baked into deliverables.
+- LUTs/plugins: verify redistribution rights before bundling into any resold product.
+- **If this workflow is ever packaged as sellable software: DO NOT bundle Adobe-dependent steps as a product feature.** The defensible layer is the decision layer (shot list → timeline markers, caption/music selection). Final render hands off to the shooter's own Premiere/CapCut. See [[SAAS_CONVERSION_PLAN|SaaS Conversion Plan]].
 
-## **4. Audio Sync**  
-### **4.1 Objectives**  
-- Ensure perfect synchronization between audio and video.  
-- Maintain consistent audio levels and clarity.  
+## 10. EXPORT
+Verified specs by destination:
 
-### **4.2 Steps**  
-1. **Import Audio**: Use **clapperboard timestamps** or **timecode** for alignment.  
-2. **Sync Tools**:  
-   - Use **Audio Sync Tool** for automatic alignment.  
-   - Manually adjust clips if needed.  
-3. **Audio Mixing**:  
-   - Use **Essential Sound Panel** to balance levels.  
-   - Apply **noise reduction** and **EQ** for clarity.  
-4. **Export**: Save audio as a **stereo WAV** for captioning teams.  
+| Destination | Resolution | Aspect | Codec | Notes |
+|---|---|---|---|---|
+| IG Reel / TikTok / Shorts | 1080x1920 | 9:16 | H.264, ~10–15 Mbps | Burned-in captions |
+| IG Feed | 1080x1350 | 4:5 | H.264 | |
+| Client full-res delivery | source res | source | H.264 high bitrate or ProResHQ (.MOV) | ProRes stays in MOV container, NOT MP4 |
+| Archive master | source res | source | ProRes 422 HQ or 4444 (.MOV) | See [[ARCHIVE|Archive Workflow]] |
 
----
-
-## **5. Color Grading**  
-### **5.1 Objectives**  
-- Achieve visual consistency across branches.  
-- Enhance mood and brand identity.  
-
-### **5.2 Steps**  
-1. **Initial Correction**: Use **Lumetri** for exposure, contrast, and white balance.  
-2. **Grading**: Apply **LUTs** (e.g., "Brand LUT_v1") for color harmony.  
-3. **Delivery**: Export **color profiles** (e.g., .cube files) for downstream use.  
-4. **Collaboration**: Share **XML** files with colorists for further refinement.  
-
----
-
-## **6. Caption Hand-Off**  
-### **6.1 Objectives**  
-- Deliver captions in a format compatible with downstream teams.  
-
-### **6.2 Steps**  
-1. **Export Format**: Use **SRT** (SubRip Subtitle) or **SCC** (Spruce Closed Caption) files.  
-2. **Timing**: Ensure captions align with audio (use **Essential Sound Panel** for timing).  
-3. **Delivery**:  
-   - Embed captions in **XML** for captioning teams.  
-   - Provide **transcripts** for reference.  
-4. **Language**: Include captions in required languages (e.g., English, Spanish).  
-
----
-
-## **7. Export Preset to FFmpeg/Premiere Encoder**  
-### **7.1 Export Preset Configuration**  
-| **Branch** | **Resolution** | **Bitrate** | **Codec** | **Container** | **FFmpeg Command** |  
-|------------|----------------|-------------|-----------|----------------|---------------------|  
-| UGC        | 1080p          | 10 Mbps     | H.264     | MP4            | `ffmpeg -i input.mp4 -c:v h264 -b:v 10M output.mp4` |  
-| LIVE       | 4K             | 50 Mbps     | H.265     | MOV            | `ffmpeg -i input.mov -c:v hevc -b:v 50M output.mov` |  
-| ARCHIVE    | 1080p          | 8 Mbps      | ProRes    | MP4            | `ffmpeg -i input.mp4 -c:v prores -profile:v 3 output.mp4` |  
-| ATHLETICS  | 4K             | 25 Mbps     | H.265     | MP4            | `ffmpeg -i input.mp4 -c:v hevc -b:v 25M output.mp4` |  
-| EVENTS     | 1080p          | 12 Mbps     | H.264     | MP4            | `ffmpeg -i input.mp4 -c:v h264 -b:v 12M output.mp4` |  
-| STUDIO     | 4K             | 60 Mbps     | ProRes    | MOV            | `ffmpeg -i input.mov -c:v prores -profile:v 3 output.mov` |  
-
-### **7.2 Premiere Encoder Settings**  
-- **Export Settings**:  
-  - **Format**: Match container (MP4/MOV).  
-  - **Bitrate**: Use "Variable Bitrate" (VBR) for quality.  
-  - **Codec**: Select H.264/HEVC/ProRes based on branch.  
-- **Presets**: Save custom presets in **Premiere > Preferences > Export**.  
-
----
-
-## **8. Notes**  
-- **Version Control**: Use **Adobe Team Projects** for collaboration.  
-- **Backups**: Save project files in cloud storage (e.g., Creative Cloud).  
-- **Compliance**: Ensure exports meet platform requirements (e.g., YouTube, TikTok).  
-
----  
-*End of Document*
+- Export presets are saved in the **Export dialog / Media Encoder preset browser** — NOT in Preferences (v1 stated a path that doesn't exist).
+- Version control: Git + Syncthing on the vault (NOT Adobe Team Projects — that's a cloud team-collab product, irrelevant for solo).
 
 ## CONNECTED FILES
-- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
-- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
-- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
-
-## OVERNIGHT DRAFT — UNREVIEWED (codex merge 2026-07-01, directive MERGE-20260701-P2-VIDEO-EDIT-001)
-
-# VIDEO_EDIT_WORKFLOW.md  
-*A Blueprint for Premiere Pro Workflow Standards*  
-
----
-
-## **1. Overview**  
-This document outlines a standardized workflow for editing video content in Adobe Premiere Pro, tailored to different content types (branches) and deliverables. Key stages include per-branch editing, reel assembly, audio sync, color grading, caption hand-off, and export presets.  
-
----
-
-## **2. Per-Branch Edit Approach**  
-Each branch has unique requirements. Below are guidelines for handling content by type:  
-
-### **2.1 UGC (User-Generated Content)**  
-- **Focus**: Streamline raw, unstructured footage.  
-- **Steps**:  
-  - Import and organize clips into labeled bins (e.g., "Raw Footage," "B-roll").  
-  - Trim excess footage, remove duplicates, and prioritize high-quality clips.  
-  - Use proxy media for smoother editing.  
-- **Tools**: Use **Media Encoder** for proxy generation; **Auto-Sync** for audio-video alignment if needed.  
-
-### **2.2 LIVE (Live Events)**  
-- **Focus**: Real-time editing with multi-camera angles.  
-- **Steps**:  
-  - Use **Multi-Camera Sequences** to sync camera angles.  
-  - Apply real-time effects (e.g., lower thirds, graphics).  
-  - Export **proxy files** for live streaming.  
-- **Tools**: **Multi-Camera Editor**, **Lumetri** for quick color correction.  
-
-### **2.3 ARCHIVE (Archival Footage)**  
-- **Focus**: Restore and stabilize degraded content.  
-- **Steps**:  
-  - Use **Content-Aware Fill** to remove scratches or dust.  
-  - Apply **Deinterlacing** and **Noise Reduction**.  
-  - Maintain original aspect ratios and frame rates.  
-- **Tools**: **Lumetri** for color restoration; **Warp Stabilizer** for shaky footage.  
-
-### **2.4 ATHLETICS (Sports Highlights)**  
-- **Focus**: Dynamic pacing with slow-motion and highlight reels.  
-- **Steps**:  
-  - Use **Speed/Duration** for slow-motion effects.  
-  - Apply **Motion Tracking** for graphics overlay (e.g., player stats).  
-  - Prioritize action sequences with quick cuts.  
-- **Tools**: **Mocha Pro** for advanced tracking; **Keylight** for green-screen composites.  
-
-### **2.5 EVENTS (Conferences, Weddings, etc.)**  
-- **Focus**: Multi-camera storytelling with event-specific elements.  
-- **Steps**:  
-  - Use **Multi-Camera Sequences** for seamless transitions.  
-  - Add **lower thirds**, **timelines**, and **event branding**.  
-  - Export **chapter markers** for easy navigation.  
-- **Tools**: **Graphics Panel**, **Text Templates**.  
-
-### **2.6 STUDIO (Studio Shoots, Commercials)**  
-- **Focus**: Precision editing with green-screen and controlled environments.  
-- **Steps**:  
-  - Use **Keylight** for chroma-key composites.  
-  - Apply **LUTs** for consistent color grading.  
-  - Sync audio with **clapperboard timestamps**.  
-- **Tools**: **Lumetri**, **Keylight**, **Audio Sync Tool**.  
-
----
-
-## **3. Reel Assembly**  
-### **3.1 Objectives**  
-- Compile the best clips from each branch into a cohesive, brand-aligned reel.  
-- Ensure consistency in pacing, color, and audio.  
-
-### **3.2 Steps**  
-1. **Source Content**: Pull curated clips from each branch’s edit.  
-2. **Timeline Structure**:  
-   - Use a **master timeline** with labeled sequences (e.g., "UGC Highlights," "Live Moments").  
-   - Apply **transitions** (e.g., crossfades, match cuts).  
-3. **Branding**: Add **logos**, **watermarks**, and **social media handles**.  
-4. **Preview**: Export a **proxy reel** for client feedback.  
-
----
-
-## **4. Audio Sync**  
-### **4.1 Objectives**  
-- Ensure perfect synchronization between audio and video.  
-- Maintain consistent audio levels and clarity.  
-
-### **4.2 Steps**  
-1. **Import Audio**: Use **clapperboard timestamps** or **timecode** for alignment.  
-2. **Sync Tools**:  
-   - Use **Audio Sync Tool** for automatic alignment.  
-   - Manually adjust clips if needed.  
-3. **Audio Mixing**:  
-   - Use **Essential Sound Panel** to balance levels.  
-   - Apply **noise reduction** and **EQ** for clarity.  
-4. **Export**: Save audio as a **stereo WAV** for captioning teams.  
-
----
-
-## **5. Color Grading**  
-### **5.1 Objectives**  
-- Achieve visual consistency across branches.  
-- Enhance mood and brand identity.  
-
-### **5.2 Steps**  
-1. **Initial Correction**: Use **Lumetri** for exposure, contrast, and white balance.  
-2. **Grading**: Apply **LUTs** (e.g., "Brand LUT_v1") for color harmony.  
-3. **Delivery**: Export **color profiles** (e.g., .cube files) for downstream use.  
-4. **Collaboration**: Share **XML** files with colorists for further refinement.  
-
----
-
-## **6. Caption Hand-Off**  
-### **6.1 Objectives**  
-- Deliver captions in a format compatible with downstream teams.  
-
-### **6.2 Steps**  
-1. **Export Format**: Use **SRT** (SubRip Subtitle) or **SCC** (Spruce Closed Caption) files.  
-2. **Timing**: Ensure captions align with audio (use **Essential Sound Panel** for timing).  
-3. **Delivery**:  
-   - Embed captions in **XML** for captioning teams.  
-   - Provide **transcripts** for reference.  
-4. **Language**: Include captions in required languages (e.g., English, Spanish).  
-
----
-
-## **7. Export Preset to FFmpeg/Premiere Encoder**  
-### **7.1 Export Preset Configuration**  
-| **Branch** | **Resolution** | **Bitrate** | **Codec** | **Container** | **FFmpeg Command** |  
-|------------|----------------|-------------|-----------|----------------|---------------------|  
-| UGC        | 1080p          | 10 Mbps     | H.264     | MP4            | `ffmpeg -i input.mp4 -c:v h264 -b:v 10M output.mp4` |  
-| LIVE       | 4K             | 50 Mbps     | H.265     | MOV            | `ffmpeg -i input.mov -c:v hevc -b:v 50M output.mov` |  
-| ARCHIVE    | 1080p          | 8 Mbps      | ProRes    | MP4            | `ffmpeg -i input.mp4 -c:v prores -profile:v 3 output.mp4` |  
-| ATHLETICS  | 4K             | 25 Mbps     | H.265     | MP4            | `ffmpeg -i input.mp4 -c:v hevc -b:v 25M output.mp4` |  
-| EVENTS     | 1080p          | 12 Mbps     | H.264     | MP4            | `ffmpeg -i input.mp4 -c:v h264 -b:v 12M output.mp4` |  
-| STUDIO     | 4K             | 60 Mbps     | ProRes    | MOV            | `ffmpeg -i input.mov -c:v prores -profile:v 3 output.mov` |  
-
-### **7.2 Premiere Encoder Settings**  
-- **Export Settings**:  
-  - **Format**: Match container (MP4/MOV).  
-  - **Bitrate**: Use "Variable Bitrate" (VBR) for quality.  
-  - **Codec**: Select H.264/HEVC/ProRes based on branch.  
-- **Presets**: Save custom presets in **Premiere > Preferences > Export**.  
-
----
-
-## **8. Notes**  
-- **Version Control**: Use **Adobe Team Projects** for collaboration.  
-- **Backups**: Save project files in cloud storage (e.g., Creative Cloud).  
-- **Compliance**: Ensure exports meet platform requirements (e.g., YouTube, TikTok).  
-
----  
-*End of Document*
+- [[INGEST|Ingest Workflow]]
+- [[ARCHIVE|Archive Workflow]]
+- [[UGC_DELIVERY|UGC Delivery]]
+- [[EXPORT|Export Workflow]]
+- [[SAAS_CONVERSION_PLAN|SaaS Conversion Plan]]

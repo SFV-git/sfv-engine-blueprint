@@ -1,236 +1,123 @@
-### **UGC Business Pipeline Blueprint**  
-A structured, multi-part blueprint for managing a User-Generated Content (UGC) business pipeline, ensuring seamless client onboarding, execution, and performance tracking. Each stage is paired with recommended tools for efficiency and integration.
-
+---
+STATUS: FOR HUMAN REVIEW
+VERSION: v2.0.0
+OWNER: WILL
+LAST_UPDATED: 2026-07-01
+REWRITTEN_BY: Claude Chat (autonomous, web-researched against 2026 UGC market data)
+SUPERSEDES: v1 (scored 1/5 by Perplexity — described a B2B martech agency campaign pipeline
+  using Salesforce/Tableau/TINT/Hootsuite/Upland, entirely wrong business model. All removed.)
+GROUND_TRUTH: [[SFV_UGC_SEED|SFV UGC Seed]]
 ---
 
-## **1. Lead Intake (CRM)**  
-**Objective**: Capture and qualify potential clients through targeted outreach and lead management.  
+# UGC BUSINESS PIPELINE
 
-### **Key Steps**:  
-- **Lead Capture**: Use landing pages, social media, and email campaigns to collect contact details and UGC needs.  
-- **Qualification**: Score leads based on engagement (e.g., interest in UGC campaigns, budget, industry).  
-- **Centralized Management**: Store all lead data in a CRM for follow-ups and pipeline tracking.  
+SFV_UGC is a solo creator/shooter selling short-form video content directly to brands on retainer.
+SFV IS the content producer — not an agency aggregating consumer content. Pipeline:
+outreach → pitch → brief → shoot → edit → deliver → invoice → repeat.
 
-### **Recommended Tools**:  
-- **CRM Platform**:  
-  - **HubSpot CRM** (free tier for small teams; advanced lead scoring and automation).  
-  - **Salesforce** (enterprise-level with robust customization).  
-  - **Zoho CRM** (cost-effective with AI-driven lead scoring).  
-- **Integration**: Use **Zapier** or **Make (formerly Integromat)** to automate lead capture from forms, social media, or email campaigns into the CRM.  
+Market benchmarks below verified against 2026 UGC industry data (Fueler, Influee, InfluenceFlow,
+DesignRevision, Billo). All specific SFV numbers remain [FOR HUMAN REVIEW] until Will locks them —
+these are industry-standard defaults to price against, not SFV's confirmed rates.
 
----
+## 1. LEAD INTAKE / CLIENT ACQUISITION
+Channels (from SFV_UGC_SEED — Will-confirmed):
+1. Direct outreach to known contacts already doing UGC for brands (warm, first channel)
+2. Scraper bot → find local UGC service providers → get in same rooms → pitch in person
+3. Sales team → US + other-province brand outreach
+4. Website → brands book a digital rebrand (full AIO pipeline) + web-dev partner bundle
 
-## **2. Brief/Proposal/Contract**  
-**Objective**: Define campaign goals, deliverables, and terms with the client.  
+Intake tracking: lightweight CRM. HubSpot free tier is sufficient for solo/retainer volume.
+DO NOT use Salesforce (enterprise, wrong scale). Log: brand, contact, source channel, stage,
+budget signal, follow-up date.
 
-### **Key Steps**:  
-- **Custom Briefing**: Use templates to gather details (e.g., campaign goals, target audience, UGC themes).  
-- **Proposal Creation**: Generate tailored proposals with pricing, timelines, and UGC strategy.  
-- **Contract Signing**: Finalize terms (e.g., rights to UGC, payment schedules) and send for e-signature.  
+Outreach cadence benchmark: pitch 5-10 brands/week, 10-20% response rate is normal early on.
+Before pitching: 15 min researching the brand's existing TikTok/IG, reference a specific recent
+post, explain how SFV's style complements their current marketing.
 
-### **Recommended Tools**:  
-- **Proposal Tool**:  
-  - **Proposify** (drag-and-drop templates, client feedback features).  
-  - **PandaDoc** (proposal, contract, and e-signature in one platform).  
-  - **Canva** (for visually appealing proposals with UGC examples).  
-- **E-Signature Tool**:  
-  - **DocuSign** (industry-leading with API integrations).  
-  - **Adobe Sign** (user-friendly for small businesses).  
-- **Integration**: Link CRM (e.g., HubSpot) to proposal tools for automated lead-to-proposal workflows.  
+## 2. BRIEF INTAKE
+Required from brand BEFORE any shoot (build as a form — Tally/Typeform, feeds the n8n intake):
+- Product + key talking points
+- Hook direction / angle (testimonial, unboxing, demo, lifestyle)
+- Visual references
+- Aspect ratios required (9:16, 1:1, 4:5, 16:9)
+- Posting date / deadline
+- Edited deliverable vs raw footage?
+- Usage scope: organic only, or paid ads / whitelisting? (determines pricing — see §4)
 
----
+n8n hook: brief form submitted → task dropped to Hermes queue → Telegram notification to Will.
 
-## **3. Invoicing/Payment**  
-**Objective**: Automate invoicing, track payments, and ensure timely revenue collection.  
+## 3. RATE CARD STRUCTURE (industry defaults — [FOR HUMAN REVIEW, Will sets final])
+Keep it simple: one base rate + clear add-ons. Complex rate cards kill deals.
 
-### **Key Steps**:  
-- **Invoice Generation**: Create invoices based on contract terms (e.g., retainer, milestone payments).  
-- **Payment Collection**: Enable online payment options and track outstanding balances.  
-- **Automated Reminders**: Send reminders for overdue payments.  
+Base rate tiers (2026 US market, single 15-60s video):
+- Beginner (0-1yr): $150-300
+- Mid-tier (1-3yr, proven portfolio): $400-800
+- Top-tier (proven ROAS data): $1,000-3,000+
+- 2026 market average: ~$212/deliverable
 
-### **Recommended Tools**:  
-- **Invoicing & Payment Platform**:  
-  - **QuickBooks Online** (integrates with CRM and e-signature tools; automated invoicing).  
-  - **FreshBooks** (simple interface for small businesses).  
-  - **PayPal Commerce Platform** (for direct payments and subscription models).  
-- **Integration**: Connect invoicing tools to CRM (e.g., Salesforce) for real-time payment status updates.  
+Add-ons (separate creation fee from usage fee — always):
+- Extra 15s hook variation: +$50-100 each
+- Raw footage access: +30-50% of base
+- 48hr rush delivery: +25-50%
+- Additional revision round (beyond included): +$25-200
+- Product return/handling: +$25-50 + shipping
 
----
+Usage rights (the biggest money lever — base rate covers organic only, 30-90 days):
+- Paid ad usage: +30-50% of base per 30-day period
+- Whitelisting (brand runs ads through creator's own handle): +20-50%/month
+- 90-day exclusivity: +25-35% | 6-month: +40-60% | perpetual: 2x+
+- Full-year digital ad usage: +50-100% of base
 
-## **4. Client Notification**  
-**Objective**: Keep clients informed about campaign progress, UGC submissions, and key updates.  
+Bundle discount: 10-20% off for packages of 5+ videos (standard, builds recurring).
 
-### **Key Steps**:  
-- **Real-Time Updates**: Share campaign milestones, UGC submissions, or feedback.  
-- **Scheduled Communication**: Send weekly/monthly summaries of campaign activity.  
-- **Collaboration Portal**: Provide a dashboard for clients to view UGC, approve content, or request changes.  
+## 4. SFV RETAINER MODEL (from SFV_UGC_SEED — Will-confirmed direction)
+- Monthly recurring fee for ongoing content production
+- One-time fee for full media revamp (website build by web-dev partner)
+- Increased monthly rate for maintenance on top of shoot fees
+- Retainer = monthly content package (8-12 pieces) at per-piece discount, guaranteed recurring income
+- Exact SFV numbers: [FOR HUMAN REVIEW — NOT YET SET]
 
-### **Recommended Tools**:  
-- **Communication Tool**:  
-  - **Slack** (for real-time updates and team collaboration).  
-  - **Microsoft Teams** (integrates with CRM and project management tools).  
-- **Client Portal**:  
-  - **Notion** (customizable dashboard for UGC tracking and approvals).  
-  - **Trello** (visual boards for campaign progress and client feedback).  
-- **Integration**: Use **Zapier** to sync client portals with CRM and invoicing tools.  
+## 5. CONTRACT / SCOPE PROTECTION
+Every project needs written scope BEFORE work starts (prevents scope creep — the #1 profit killer):
+- Deliverables itemized (count, length, aspect ratios)
+- Revisions: "Includes up to 2 rounds of minor edits addressing creative direction. Additional
+  rounds $X each. Technical fixes (audio sync, color) unlimited within 5 days of delivery."
+- Revision requests must come within 5 days of delivery
+- Usage rights explicitly stated: "Rate includes 90-day organic usage license for brand's owned
+  TikTok/IG channels. Paid ad usage billed separately." (Silence = brand assumes perpetual/unlimited = lost income.)
+- Scope changes ("redo the thumbnail", "film an alternate version") = new deliverable, billed separately, in writing first.
 
----
+Tools: contract templates (DocuSign/PandaDoc for e-sign — NOT Canva, Canva can't collect signatures).
 
-## **5. Performance Reporting**  
-**Objective**: Measure campaign success, provide insights, and demonstrate ROI to clients.  
+## 6. PAYMENT TERMS
+- Standard: 50% upfront, 50% on delivery. NOT Net-30 (that's agency terms, wrong for solo).
+- Invoicing: [FOR HUMAN REVIEW — Will's locked invoicing tool goes here. v1 recommended 3 tools as if undecided.]
+- Client-ghost-after-delivery protection: upfront 50% covers the shoot; final files released only on final payment.
 
-### **Key Steps**:  
-- **Data Collection**: Track metrics (e.g., UGC volume, engagement rates, social media reach).  
-- **Custom Reporting**: Generate visual dashboards with KPIs (e.g., ROI, brand sentiment, follower growth).  
-- **Client Review**: Share reports and discuss optimization opportunities.  
+## 7. DELIVERY
+- Method: [FOR HUMAN REVIEW — Google Drive / WeTransfer / Frame.io / Dropbox — Will to lock]
+- See [[UGC_DELIVERY|UGC Delivery]] for the delivery workflow spec.
+- Deliverable specs: burned-in captions per §8 of [[VIDEO_EDIT_WORKFLOW|Video Edit Workflow]], correct aspect ratios per brief.
+- Deliver 24h early when possible — "reliable creator" = repeat bookings.
 
-### **Recommended Tools**:  
-- **Analytics & Reporting**:  
-  - **Google Analytics 4** (track website traffic and UGC campaign performance).  
-  - **Tableau** (custom dashboards for advanced analytics).  
-  - **Hootsuite Insights** (monitor social media engagement and UGC virality).  
-- **UGC-Specific Tools**:  
-  - **TINT** (tracks UGC across social media and provides analytics).  
-  - **Upland** (monitors brand mentions and UGC usage).  
-- **Integration**: Use **APIs** to pull UGC data into reporting tools (e.g., TINT to Tableau).  
+## 8. PERFORMANCE / REPORTING
+Reality check: a UGC creator usually does NOT have access to the brand's ad analytics.
+SFV delivers the asset; the brand runs it and owns performance data.
+SFV's "reporting" = delivery confirmation + usage-rights summary, NOT a campaign analytics dashboard.
+(v1 assumed access to brand social metrics — incorrect for this model.)
+Exception: if whitelisting through SFV's own handle, SFV sees that ad's metrics — can report those.
 
----
-
-## **Integration & Workflow Automation**  
-- **Unified Platform**: Use **HubSpot** or **Salesforce** as the central hub, connected to all tools via APIs or Zapier.  
-- **Automation Examples**:  
-  - Lead intake → Proposal generation → Contract signing → Invoice creation → Client portal access → Performance reporting.  
-  - Real-time UGC submissions trigger notifications in the client portal and update performance dashboards.  
-
----
-
-## **Scalability & Customization**  
-- **Small Businesses**: Use free tiers of HubSpot, Canva, and Trello for basic workflows.  
-- **Enterprises**: Invest in Salesforce, Tableau, and custom API integrations for advanced analytics and automation.  
-
----
-
-This blueprint ensures a seamless, data-driven UGC pipeline, from lead generation to performance tracking, while maintaining client satisfaction and operational efficiency.
+## 9. n8n AUTOMATION HOOKS (the actual stack value)
+- Brief form submitted → task to Hermes queue + Telegram ping
+- Invoice sent → Telegram notification
+- Delivery confirmed → archive trigger ([[ARCHIVE|Archive Workflow]])
+- Retainer client → monthly recurring task auto-created on billing date
+Client comms channel: Telegram (locked) — NOT Slack/Teams (v1 recommended those, wrong).
 
 ## CONNECTED FILES
-- [[CLIENT_BANKS|Client Banks]]
-- [[INTEGRATIONS|Integrations]]
-- [[TOOLBOX|Toolbox]]
-- [[DATABANK_ARCHITECTURE|Databank Architecture]]
-
-## OVERNIGHT DRAFT — UNREVIEWED (codex merge 2026-07-01, directive MERGE-20260701-P3-UGC-PIPELINE-001)
-
-
-### **UGC Business Pipeline Blueprint**  
-A structured, multi-part blueprint for managing a User-Generated Content (UGC) business pipeline, ensuring seamless client onboarding, execution, and performance tracking. Each stage is paired with recommended tools for efficiency and integration.
-
----
-
-## **1. Lead Intake (CRM)**  
-**Objective**: Capture and qualify potential clients through targeted outreach and lead management.  
-
-### **Key Steps**:  
-- **Lead Capture**: Use landing pages, social media, and email campaigns to collect contact details and UGC needs.  
-- **Qualification**: Score leads based on engagement (e.g., interest in UGC campaigns, budget, industry).  
-- **Centralized Management**: Store all lead data in a CRM for follow-ups and pipeline tracking.  
-
-### **Recommended Tools**:  
-- **CRM Platform**:  
-  - **HubSpot CRM** (free tier for small teams; advanced lead scoring and automation).  
-  - **Salesforce** (enterprise-level with robust customization).  
-  - **Zoho CRM** (cost-effective with AI-driven lead scoring).  
-- **Integration**: Use **Zapier** or **Make (formerly Integromat)** to automate lead capture from forms, social media, or email campaigns into the CRM.  
-
----
-
-## **2. Brief/Proposal/Contract**  
-**Objective**: Define campaign goals, deliverables, and terms with the client.  
-
-### **Key Steps**:  
-- **Custom Briefing**: Use templates to gather details (e.g., campaign goals, target audience, UGC themes).  
-- **Proposal Creation**: Generate tailored proposals with pricing, timelines, and UGC strategy.  
-- **Contract Signing**: Finalize terms (e.g., rights to UGC, payment schedules) and send for e-signature.  
-
-### **Recommended Tools**:  
-- **Proposal Tool**:  
-  - **Proposify** (drag-and-drop templates, client feedback features).  
-  - **PandaDoc** (proposal, contract, and e-signature in one platform).  
-  - **Canva** (for visually appealing proposals with UGC examples).  
-- **E-Signature Tool**:  
-  - **DocuSign** (industry-leading with API integrations).  
-  - **Adobe Sign** (user-friendly for small businesses).  
-- **Integration**: Link CRM (e.g., HubSpot) to proposal tools for automated lead-to-proposal workflows.  
-
----
-
-## **3. Invoicing/Payment**  
-**Objective**: Automate invoicing, track payments, and ensure timely revenue collection.  
-
-### **Key Steps**:  
-- **Invoice Generation**: Create invoices based on contract terms (e.g., retainer, milestone payments).  
-- **Payment Collection**: Enable online payment options and track outstanding balances.  
-- **Automated Reminders**: Send reminders for overdue payments.  
-
-### **Recommended Tools**:  
-- **Invoicing & Payment Platform**:  
-  - **QuickBooks Online** (integrates with CRM and e-signature tools; automated invoicing).  
-  - **FreshBooks** (simple interface for small businesses).  
-  - **PayPal Commerce Platform** (for direct payments and subscription models).  
-- **Integration**: Connect invoicing tools to CRM (e.g., Salesforce) for real-time payment status updates.  
-
----
-
-## **4. Client Notification**  
-**Objective**: Keep clients informed about campaign progress, UGC submissions, and key updates.  
-
-### **Key Steps**:  
-- **Real-Time Updates**: Share campaign milestones, UGC submissions, or feedback.  
-- **Scheduled Communication**: Send weekly/monthly summaries of campaign activity.  
-- **Collaboration Portal**: Provide a dashboard for clients to view UGC, approve content, or request changes.  
-
-### **Recommended Tools**:  
-- **Communication Tool**:  
-  - **Slack** (for real-time updates and team collaboration).  
-  - **Microsoft Teams** (integrates with CRM and project management tools).  
-- **Client Portal**:  
-  - **Notion** (customizable dashboard for UGC tracking and approvals).  
-  - **Trello** (visual boards for campaign progress and client feedback).  
-- **Integration**: Use **Zapier** to sync client portals with CRM and invoicing tools.  
-
----
-
-## **5. Performance Reporting**  
-**Objective**: Measure campaign success, provide insights, and demonstrate ROI to clients.  
-
-### **Key Steps**:  
-- **Data Collection**: Track metrics (e.g., UGC volume, engagement rates, social media reach).  
-- **Custom Reporting**: Generate visual dashboards with KPIs (e.g., ROI, brand sentiment, follower growth).  
-- **Client Review**: Share reports and discuss optimization opportunities.  
-
-### **Recommended Tools**:  
-- **Analytics & Reporting**:  
-  - **Google Analytics 4** (track website traffic and UGC campaign performance).  
-  - **Tableau** (custom dashboards for advanced analytics).  
-  - **Hootsuite Insights** (monitor social media engagement and UGC virality).  
-- **UGC-Specific Tools**:  
-  - **TINT** (tracks UGC across social media and provides analytics).  
-  - **Upland** (monitors brand mentions and UGC usage).  
-- **Integration**: Use **APIs** to pull UGC data into reporting tools (e.g., TINT to Tableau).  
-
----
-
-## **Integration & Workflow Automation**  
-- **Unified Platform**: Use **HubSpot** or **Salesforce** as the central hub, connected to all tools via APIs or Zapier.  
-- **Automation Examples**:  
-  - Lead intake → Proposal generation → Contract signing → Invoice creation → Client portal access → Performance reporting.  
-  - Real-time UGC submissions trigger notifications in the client portal and update performance dashboards.  
-
----
-
-## **Scalability & Customization**  
-- **Small Businesses**: Use free tiers of HubSpot, Canva, and Trello for basic workflows.  
-- **Enterprises**: Invest in Salesforce, Tableau, and custom API integrations for advanced analytics and automation.  
-
----
-
-This blueprint ensures a seamless, data-driven UGC pipeline, from lead generation to performance tracking, while maintaining client satisfaction and operational efficiency.
+- [[SFV_UGC_SEED|SFV UGC Seed]]
+- [[SFV_UGC|SFV UGC Branch]]
+- [[UGC_PRE_PRODUCTION|UGC Pre-Production]]
+- [[UGC_DELIVERY|UGC Delivery]]
+- [[VIDEO_EDIT_WORKFLOW|Video Edit Workflow]]
+- [[SAAS_CONVERSION_PLAN|SaaS Conversion Plan]]

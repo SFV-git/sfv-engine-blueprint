@@ -42,6 +42,11 @@ YES — primary growth account. Most important for revenue.
 - Add-ons: hard posts, generated ads, lifestyle shoots
 - Varies by client type
 
+Full rate structure, usage-rights pricing, revision policy, and retainer model now speced
+against 2026 market data in [[UGC_BUSINESS_PIPELINE|UGC Business Pipeline]] §3–4.
+Retainer benchmark: monthly package of 8–12 pieces at per-piece discount for guaranteed
+recurring income. SFV's actual dollar figures still [FOR HUMAN REVIEW].
+
 ## FIRST CLIENT TARGETS
 - Fitness/athletic trainers (primary niche first)
 - Athletes in general (second)

@@ -7,6 +7,25 @@ LAST_UPDATED: 2026-06-30
 
 # CHANGELOG
 
+## 2026-07-01 — Autonomous doc revamp (Claude Chat, web-researched)
+Fixed the two Perplexity-confirmed worst docs using verified 2026 web research (not local-model guesses):
+- **VIDEO_EDIT_WORKFLOW.md v2.0** — was 1.5/5. Removed all hallucinated Premiere features
+  (Content-Aware Fill, Keylight, "Audio Sync Tool", fake Preferences>Export path). Rewrote grounded
+  in verified Premiere 2026 workflow: Pancake timeline assembly, Auto Reframe 9:16, Ultra Key (not
+  Keylight), Media Browser import, audio waveform multicam sync, -1dBTP/-14LUFS, correct export
+  presets location, ProRes-in-MOV. Added licensing section for SaaS resale.
+- **UGC_BUSINESS_PIPELINE.md v2.0** — was 1/5 (wrong business model entirely: Salesforce/TINT/
+  Hootsuite martech-agency slop). Rewrote as actual solo-creator pipeline grounded in 2026 UGC
+  market data (Fueler/Influee/InfluenceFlow): rate tiers, usage-rights premiums, revision policy,
+  50/50 payment terms, brief intake, n8n hooks, scope protection. All SFV-specific $ left [FHR].
+- **SFV_UGC.md** — was 3/5. Cross-linked to new pipeline spec, flagged UNCONFIRMED items (name,
+  IG handle, pricing) as Will-only decisions rather than inventing them.
+- Also created **SFV_UGC_SEED.md** (Will's actual business ground truth) earlier this session.
+- Audit note: FULL_SYSTEM_AUDIT.md "0/5" scores are PARSE_ERRORs from qwen3/Aider VRAM contention,
+  NOT real scores. Only ~26 files got clean scores (9x 3/5, 7x 4/5). Full re-audit still needed.
+**STATUS: All rewrites FOR HUMAN REVIEW. Re-run Perplexity audit to confirm they now score 4-5.**
+
+
 ## 2026-07-01 — Claude Code executor alternative researched (Perplexity, manual)
 Task 20260701-001: Perplexity researched free/local replacement for the `claude_code` executor
 tier. Result saved `99_INBOX/OUTPUTS/20260701-001_PERPLEXITY_CODE_EXECUTOR_ALTERNATIVE.md`.

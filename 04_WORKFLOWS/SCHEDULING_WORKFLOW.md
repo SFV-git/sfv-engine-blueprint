@@ -1,111 +1,84 @@
-# SCHEDULING_WORKFLOW.md  
-**Instagram Scheduling Workflow for 8 Non-MYTHOLOGY Branches**  
-
+---
+STATUS: FOR HUMAN REVIEW
+VERSION: v2.0.0
+OWNER: WILL
+LAST_UPDATED: 2026-07-01
+REWRITTEN_BY: Claude Chat (autonomous, web-researched against Later 2026 docs)
+SUPERSEDES: v1 (scored 3/5 — invented fake geographic "Branch A-H" in foreign time zones
+  UTC+8/Middle East/Europe, referenced nonexistent "branch content managers" and "social teams".
+  SFV branches are Halifax-based content categories, not global regions. SFV is a solo operator.)
 ---
 
-## **1. Overview**  
-This document outlines a standardized Instagram scheduling workflow for 8 non-MYTHOLOGY branches. The goal is to ensure consistent content delivery, adherence to timing rules, and seamless integration with automation tools (e.g., n8n) and scheduling platforms (e.g., Later, Buffer).  
+# INSTAGRAM SCHEDULING WORKFLOW
 
----
+Covers the 8 non-MYTHOLOGY branches (SFV_LIVE, SFV_EVENTS, SFV_ATHLETICS, SFV_STUDIO, SFV_UGC,
+SFV_ARCHIVE, SFV_WORLD, SFV_404). All are Halifax-operated content categories on ONE operator's
+schedule — NOT separate geographic regions. Locked tool: **Later** (decision recorded 2026-05-26).
 
-## **2. Per-Branch Timing Rules**  
-Each branch operates in a unique time zone and audience context. Below are timing rules tailored to optimize engagement:  
+## 1. TIMING — SINGLE OPERATOR, ATLANTIC TIME
+All accounts post on Atlantic Time (America/Halifax). There are no foreign time zones.
+Optimal windows should come from each account's OWN Later "Best Time to Post" data (Growth tier+),
+NOT generic guesses. Until each account has ~30 days of engagement data, use these starting
+defaults for an Atlantic-audience, then let Later's per-account recommendations override:
+- Weekday morning: 7:00–9:00 AM AT (commute/wake scroll)
+- Weekday midday: 11:30 AM–1:00 PM AT (lunch)
+- Weekday evening: 6:00–9:00 PM AT (primary — highest short-form engagement)
+Audience per branch differs (athletes vs event clients vs studio) — refine quarterly from real data.
 
-| **Branch Name** | **Time Zone** | **Optimal Posting Times** | **Rationale** |  
-|------------------|----------------|----------------------------|----------------|  
-| Branch A         | UTC+2          | 8:00–10:00 AM, 6:00–8:00 PM | Peak lunch and evening hours |  
-| Branch B         | UTC-5          | 10:00 AM–12:00 PM, 5:00–7:00 PM | High engagement during work breaks |  
-| Branch C         | UTC+8          | 1:00–3:00 PM, 7:00–9:00 PM | Evening peak after work hours |  
-| Branch D         | UTC+1          | 9:00–11:00 AM, 7:00–9:00 PM | Aligns with European social trends |  
-| Branch E         | UTC-3          | 11:00 AM–1:00 PM, 6:00–8:00 PM | Local midday and evening engagement |  
-| Branch F         | UTC+4          | 10:00 AM–12:00 PM, 5:00–7:00 PM | Aligns with Middle Eastern daylight hours |  
-| Branch G         | UTC-7          | 10:00 AM–12:00 PM, 4:00–6:00 PM | Peak during workday and post-lunch |  
-| Branch H         | UTC+3          | 1:00–3:00 PM, 8:00–10:00 PM | Evening hours after local work hours |  
+## 2. LATER PRICING / ACCOUNT ARCHITECTURE — [FOR HUMAN REVIEW, real cost decision]
+Later prices by "social set" (one profile per platform per set). 2026 tiers:
+- Free: 5 posts/profile/mo (trial only)
+- Starter $25/mo: 30 posts/profile, 1 social set, 1 user
+- Growth $45/mo: unlimited scheduling, full analytics, best-time-to-post, up to 3 social sets
+- Advanced $80/mo: team collab, 6 social sets, competitive benchmarking
 
-**Notes:**  
-- Timing rules are based on Instagram Insights data and regional audience behavior.  
-- Adjustments should be made quarterly based on performance analytics.  
+**Problem: 8 IG accounts exceeds even Advanced's 6 sets.** Options to decide:
+(a) Advanced tier + buy 2 add-on sets, or (b) consolidate low-volume branches (SFV_404, SFV_WORLD,
+SFV_ARCHIVE) onto a shared cadence, or (c) evaluate a cheaper multi-account tool (Timed Post cited
+at ~$19/mo for 10 accounts — UNVERIFIED, would need testing before switching off the locked Later
+decision). Requires Will's call — this is a real recurring-cost fork.
 
----
+Prerequisite: every SFV account must be an Instagram **Business or Creator** account — Meta's Graph
+API requires it for auto-publish. Personal accounts only get push-notification reminders (defeats automation).
 
-## **3. Caption Insertion Guidelines**  
-Captions must align with brand voice while allowing branch-specific customization.  
+## 3. CAPTION INSERTION
+Captions pulled from CONTENT_BANKS per branch, voice per branch (see caption-voice decision,
+still open in QUESTIONS_FOR_WILL #12). Structure:
+```
+[Hook — scroll-stopper, first line, no wasted words]
+[Branch-specific body — value or context]
+[CTA — save/share/comment/DM]
+[3–5 branch hashtags — Later hashtag suggestions, saved as reusable groups per branch]
+```
+Approval: Will reviews before scheduling (solo operator — no "content manager" layer exists).
+Hashtags: 3–5 targeted, NOT stuffed. Save per-branch hashtag groups in Later for reuse.
 
-### **Template Structure**  
-```plaintext  
-[Hook/Attention-grabbing statement]  
-[Branch-specific detail, e.g., "Join us in [City] for our upcoming event!"]  
-[Call-to-action, e.g., "Tag a friend who loves [product]!"]  
-[Hashtags: #BrandName #BranchName #Hashtag1 #Hashtag2]  
-```  
+## 4. n8n INTEGRATION
+1. Trigger: content approved in vault/queue (batch marked ready for delivery).
+2. Fetch: media + caption from branch EXPORT path + CONTENT_BANKS.
+3. Route: push to Later via Later API with branch tag + scheduled slot.
+4. Notify: confirmation to Will via **Telegram** (locked channel — NOT Slack/email).
+Error handling: failed-schedule alert to Telegram. Most failures = expired IG account permission;
+fix is reconnecting the account in Later (Graph API token refresh).
 
-### **Branch-Specific Customization Rules**  
-- **Tone:** Formal (Branches A, B) vs. Casual (Branches C, D).  
-- **Hashtags:** Use 3–5 branch-specific hashtags (e.g., `#BranchEEvent`).  
-- **Approval Process:** Captions must be reviewed by the branch’s content manager before scheduling.  
+## 5. WORKFLOW STEPS
+1. Batch content produced + edited (see [[VIDEO_EDIT_WORKFLOW|Video Edit Workflow]]).
+2. QC self-audit before delivery (brand alignment, no typos/overlay errors, technical check).
+3. Will reviews batch.
+4. n8n routes approved batch to Later with per-branch timing.
+5. Later auto-publishes at scheduled slot via Graph API.
+6. Monitor via Later analytics; refine timing/captions quarterly from real per-account data.
 
----
-
-## **4. n8n Integration Workflow**  
-n8n automates content routing, scheduling, and notifications across branches.  
-
-### **Integration Setup**  
-1. **Trigger:** Content approval in the CMS (e.g., WordPress or Airtable).  
-2. **Action:** Fetch caption and media from the CMS.  
-3. **Action:** Route content to the appropriate scheduling tool (Later/Buffer) based on branch rules.  
-4. **Action:** Send confirmation to the branch’s social media team via Slack or email.  
-
-### **Key n8n Configurations**  
-- **API Keys:** Integrated with Instagram, Later, and Buffer APIs.  
-- **Branch Tags:** Use dynamic tags (e.g., `{{branch_name}}`) to differentiate content.  
-- **Error Handling:** Alerts for failed schedules or caption conflicts.  
-
----
-
-## **5. Scheduling Tool Comparison & Recommendation**  
-| **Feature**                | **Later**                          | **Buffer**                          |  
-|---------------------------|------------------------------------|-------------------------------------|  
-| **Scheduling Capabilities** | Advanced (supports Instagram, Stories, Reels) | Basic (Instagram, Facebook, Twitter) |  
-| **Analytics**              | Detailed engagement reports        | Limited analytics                   |  
-| **Team Collaboration**     | Real-time editing by team members  | Comment-based feedback              |  
-| **Automation**             | n8n integration (via API)          | Limited automation options          |  
-| **Cost**                   | $25/month (per account)            | $15/month (per account)             |  
-
-### **Recommendation**  
-- **Later** is preferred for branches requiring advanced analytics and real-time collaboration.  
-- **Buffer** is suitable for smaller teams with simpler workflows.  
-
----
-
-## **6. Workflow Steps**  
-1. **Content Creation:** Design media + draft captions using branch-specific templates.  
-2. **Approval:** Submit to branch content manager for caption review.  
-3. **Automation:** n8n routes approved content to the scheduling tool (Later/Buffer) with timing rules.  
-4. **Scheduling:** Content is published at optimal times per branch.  
-5. **Monitoring:** Track performance via Later/Buffer analytics; adjust timing/captions as needed.  
-
----
-
-## **7. Key Considerations**  
-- **Legal Compliance:** Ensure captions and media adhere to regional advertising laws.  
-- **Content Library:** Maintain a centralized repository of approved assets and captions.  
-- **Scalability:** Use n8n to automate repetitive tasks (e.g., rescheduling during holidays).  
-
----
-
-## **8. Next Steps**  
-- Finalize branch-specific timing rules with social media managers.  
-- Set up n8n workflows with API keys for Later/Buffer.  
-- Train teams on caption templates and tool usage.  
-- Monitor initial performance and refine workflows quarterly.  
-
----  
-**Document Version:** 1.0 | **Last Updated:** [Insert Date]
+## 6. KEY CONSIDERATIONS
+- Visual grid planning: use Later's drag-and-drop grid preview to keep each branch feed cohesive
+  before anything goes live (Later's core strength for visual brands).
+- Content library: centralized approved-asset repository = CONTENT_BANKS + branch EXPORT folders.
+- Scalability: n8n handles repetitive rescheduling. As operator count grows (NATIONWIDE plan),
+  revisit whether Later's per-set model still fits vs an agency-grade multi-account tool.
 
 ## CONNECTED FILES
-- [[INTEGRATIONS|Integrations]]
-- [[TOOLBOX|Toolbox]]
-- [[BRAND_BANKS|Brand Banks]]
 - [[CONTENT_BANKS|Content Banks]]
-- [[TOOL_STATUS|Tool Status]]
-- [[CURRENT_DIRECTIVE|Current Directive]]
+- [[BRAND_BANKS|Brand Banks]]
+- [[VIDEO_EDIT_WORKFLOW|Video Edit Workflow]]
+- [[INTEGRATIONS|Integrations]]
+- [[TOOL_STACK|Tool Stack]]
