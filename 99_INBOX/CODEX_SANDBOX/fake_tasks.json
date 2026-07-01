@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "task_type": "IMPORT",
+    "status": "PENDING"
+  },
+  {
+    "id": 2,
+    "task_type": "EXPORT",
+    "status": "COMPLETE"
+  },
+  {
+    "id": 3,
+    "task_type": "REVIEW",
+    "status": "PENDING"
+  },
+  {
+    "id": 4,
+    "task_type": "ARCHIVE",
+    "status": "FAILED"
+  },
+  {
+    "id": 5,
+    "task_type": "SYNC",
+    "status": "PENDING"
+  }
+]

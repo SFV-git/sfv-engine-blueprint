@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "task": "collect input",
+    "status": "COMPLETE"
+  },
+  {
+    "id": 2,
+    "task": "process data",
+    "status": "COMPLETE"
+  },
+  {
+    "id": 3,
+    "task": "save result",
+    "status": "COMPLETE"
+  }
+]
