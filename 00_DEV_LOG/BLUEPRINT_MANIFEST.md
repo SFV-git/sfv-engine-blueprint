@@ -199,11 +199,10 @@ STALE (canon, confirmed drift — see audit), LOW (FHR/UNCONFIRMED/RESEARCH).
 | SFV_BLUEPRINT/SFV_BLUEPRINT/Welcome.md | Accidental Obsidian vault-in-vault (a stray "open folder as vault" created it 22:41 during zip prep). Safe to delete on Engine Body. |
 
 ## CONNECTED FILES
-- [[SESSION_STATE|Session Continuity & Standing Orders]]
-- [[COMPRESSED_CONTEXT|Cheap-Call Context]]
-- [[MASTER_CONTEXT|SFV Overview & Claude Role]]
-- [[RULES|Core Build Rules 01–12]]
-- [[HARDWARE_CONTEXT|Node Specs & Electricity Constraints]]
-- [[STORAGE_ARCHITECTURE|Storage System Design]]
-- [[UPGRADE_CHECKPOINTS|Version Upgrade Milestones]]
-- [[COST_ROUTING|Token/Usage Strategy Dependencies]]
+- [[SESSION_STATE|Session State]]
+- [[COMPRESSED_CONTEXT|Compressed Context]]
+- [[MASTER_CONTEXT|Master Context]]
+- [[DASHBOARD|Dashboard]]
+- [[RULES|Rules]]
+- [[BRANCH_OUTPUTS|Branch Outputs]]
+- [[HARDWARE_CONTEXT|Hardware Context]]

@@ -25,7 +25,8 @@ Will's directive: get the full stack running together. Hands-off operation.
 Target: Will steps back. Stack runs itself.
 
 ## CONNECTED FILES
-- [[OLLAMA_SETUP|Ollama Setup]]
-- [[INTEGRATIONS|Integrations]]
-- [[MODEL_ROUTING|Model Routing]]
-- [[VIDEO_EDIT_WORKFLOW|Video Edit Workflow]]
+- [[DATABASE_ARCHITECTURE|Databank Architecture]]
+- [[ANTIGRAVITY_N8N_TRIGGER|Antigravity N8N Trigger]]
+- [[VAULT_DASHBOARD_DRAFT|Vault Dashboard Draft]]
+- [[UGC_DELIVERY|UGC Delivery]]
+- [[SOURCE_OF_TRUTH_RULES|Source of Truth Rules]]

@@ -278,11 +278,11 @@ Do MYTHOLOGY and SFV_WORLD first. Show me the plan. Wait for approval.
 *Run dry-run first. Test with real files before May 28.*
 
 ## CONNECTED FILES
-- [[00_DEV_LOG/ORPHANS|Orphan File Detection]]
-- [[05_AI_LAYER/MODEL_ROUTING|Model Routing Rules]]
-- [[04_WORKFLOWS/INGEST|Ingest Workflow Spec]]
-- [[12_DATABANKS/DATABANK_ARCHITECTURE|Data Bank Structure]]
-- [[08_TESTS/BUILD_READINESS_CHECKLIST|Pre-Deployment Validation]]
-- [[09_PROMPTS/EXTRACTION_PROMPTS|Data Extraction Templates]]
-- [[06_TOOLS/INTEGRATIONS|Third-Party Tool Links]]
-- [[11_VERSIONS/UPGRADE_CHECKPOINTS|Compatibility Milestones]]
+- [[INGEST.md|Ingest Specification]]
+- [[EDGE_CASES.md|Edge Cases for Ingestion]]
+- [[FAILURE_TESTS.md|Ingestion Failure Testing]]
+- [[VECTOR_LAYER_PLAN.md|Vector Data Integration]]
+- [[TRAINING_DATA_AUTOMATION.md|Training Data Pipeline]]
+- [[DATABANK_ARCHITECTURE.md|Data Storage Architecture]]
+- [[BUILD_READINESS_CHECKLIST.md|Pre-Deployment Validation]]
+- [[PAPER_TRIAL_RUNS.md|Ingestion Trial Results]]

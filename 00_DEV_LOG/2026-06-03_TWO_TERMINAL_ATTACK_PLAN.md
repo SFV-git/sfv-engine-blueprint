@@ -215,10 +215,10 @@ AUTHORED BY: Claude (step 1)
 DATE: 2026-06-03
 
 ## CONNECTED FILES
+- [[OLLAMA_SETUP|Ollama Setup]]
+- [[VAULT_DASHBOARD_DRAFT|Vault Dashboard Draft]]
 - [[HARDWARE_CONTEXT|Hardware Context]]
-- [[WATCHDOG|Watchdog]]
-- [[OLLAMA_PROMPTS|Ollama Prompts]]
+- [[CURRENT_DIRECTIVE|Current Directive]]
 - [[CLAUDE_CODE_PROMPTS|Claude Code Prompts]]
-- [[BUILD_READINESS_CHECKLIST|Build Readiness Checklist]]
-- [[DATABANK_ARCHITECTURE|Databank Architecture]]
-- [[ANTIGRAVITY|Antigravity]]
+- [[INFRASTRUCTURE|Infrastructure]]
+- [[DASHBOARD|Dashboard]]

@@ -46,9 +46,9 @@ Build the Engine communication layer and fix the AI stack hierarchy before touch
 Will request → task queue → cheapest capable layer → output file → review if needed → canon only after approval
 
 ## CONNECTED FILES
-- [[RESEARCH_ROUTE_SPEC|Research Route Spec]]
-- [[OLLAMA_SETUP|Ollama Setup]]
-- [[COST_ROUTING|Cost Routing]]
-- [[MODEL_ROUTING|Model Routing]]
-- [[TRAINING_DATA_AUTOMATION|Training Data Automation]]
-- [[PROMPT_VERSIONING|Prompt Versioning]]
+- [[AI_USE_CASE_PROFILE|AI Use-Case Profile]]
+- [[ENGINE_COMMUNICATION_MODEL|Engine Communication Model]]
+- [[INGEST|Ingest]]
+- [[VECTOR_LAYER_PLAN|Vector Layer Plan]]
+- [[COST_CEILING_POLICY|Cost Ceiling Policy]]
+- [[ollama_task_loop_test|Ollama Task Loop Test]]
