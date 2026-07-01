@@ -4,41 +4,54 @@ GENERATED: 2026-07-01 14:22
 ---
 
 # VAULT ORPHANS
-> 23 files with no incoming wikilinks.
+> 28 files with no incoming wikilinks.
 > Review each — add links or flag as intentionally standalone.
 
 ## .
-- [[.aider.chat.history]]
-- [[FULL_SYSTEM_AUDIT]]
-- [[NEEDS_APPROVAL]]
-- [[NEEDS_REVAMP]]
+- [[index]]
 
 ## 00_DEV_LOG
-- [[HANDOFF_2026-06-27]]
-- [[HANDOFF_2026-06-27_BLUEPRINT_AUDIT]]
-- [[HANDOFF_2026-07-01_OVERNIGHT_ROUND2]]
-- [[ORPHANS_V2]]
-- [[SEMANTIC_LINKS_PYTHON_G]]
-- [[SEMANTIC_LINKS_PYTHON_H]]
-- [[SEMANTIC_LINKS_PYTHON_retry]]
-- [[SEMANTIC_LINKS_WORKER_A]]
-- [[SEMANTIC_LINKS_WORKER_B]]
-- [[SEMANTIC_LINKS_WORKER_C]]
-- [[SEMANTIC_LINKS_WORKER_E]]
-- [[SEMANTIC_LINKS_WORKER_F]]
+- [[2026-05-25_TODAY_CONTROL]]
+- [[2026-05-27_SESSION_END]]
+- [[2026-06-03_TWO_TERMINAL_ATTACK_PLAN]]
+- [[HANDOFF_2026-06-26]]
+- [[HANDOFF_2026-06-27_ANTIGRAVITY]]
+- [[HANDOFF_2026-06-27_CHAT]]
+- [[HANDOFF_2026-06-27_HERMES_EVAL]]
+- [[HANDOFF_2026-06-28]]
+- [[HANDOFF_2026-06-28_SESSION_END]]
+- [[HANDOFF_2026-06-29_CLAUDE_CHAT]]
+- [[HERMES_SETUP_DIRECTIVE]]
+- [[MAPLE_README]]
+- [[ULTRAPLAN_BRIEF]]
 
-## 02_BRANCHES
-- [[SFV_404]]
-- [[SFV_UGC_SEED]]
+## 03_INFRASTRUCTURE
+- [[ICS_FAILOVER_PROTOCOL]]
+- [[ROLE2_INBOUND_NETWORK]]
+- [[SYNCTHING_AND_TAILSCALE_SPEC]]
+
+## 04_WORKFLOWS
+- [[LIGHTROOM_WORKFLOW]]
+- [[QC_CHECKLIST]]
+- [[SHOOT_CHECKLIST]]
+
+## 05_AI_LAYER
+- [[GEMINI_INTEGRATION]]
+- [[MYTHOS_FORWARD_PROMPT]]
+
+## 08_TESTS
+- [[PAPER_TRIAL_SFV_EVENTS]]
+- [[PAPER_TRIAL_WF3_RESEARCH]]
+
+## 09_PROMPTS
+- [[CHATGPT_PROMPTS]]
+
+## Excalidraw
+- [[Drawing 2026-05-24 07.07.57.excalidraw]]
+- [[Drawing 2026-05-24 07.07.59.excalidraw]]
 
 ## FOR_HUMAN_REVIEW
-- [[REVIEW_bom_strip_fix]]
-- [[REVIEW_ugc_scaffold]]
-- [[research_tavily_perplexity_refresh]]
-- [[research_vector_stack_refresh]]
-
-## path\to
-- [[file]]
+- [[ULTRAPLAN_REVIEW]]
 
 ## CONNECTED FILES
 - [[SESSION_STATE|Session State]]
