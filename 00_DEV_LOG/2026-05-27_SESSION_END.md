@@ -25,8 +25,7 @@ Will's directive: get the full stack running together. Hands-off operation.
 Target: Will steps back. Stack runs itself.
 
 ## CONNECTED FILES
-- [[POSTGRES_MIGRATION|PostgreSQL Migration]]
-- [[N8N_MCP_SPEC|n8n Message Queue Processor Specification]]
-- [[DOCKER_INSTALL_CHECKLIST|Docker Install Checklist]]
-- [[RD_TERMINAL_ARCHITECTURE|R&D Terminal Architecture]]
-- [[STACK_INTEGRATION_PLAN|Stack Integration Plan]]
+- [[OLLAMA_SETUP|Ollama Setup]]
+- [[INTEGRATIONS|Integrations]]
+- [[MODEL_ROUTING|Model Routing]]
+- [[VIDEO_EDIT_WORKFLOW|Video Edit Workflow]]

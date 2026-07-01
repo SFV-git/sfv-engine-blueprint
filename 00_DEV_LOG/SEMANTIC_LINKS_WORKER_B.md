@@ -20,5 +20,6 @@ Model: qwen3:14b  |  Files: 11
 **Completed:** 2026-05-29 03:47:31
 
 ## CONNECTED FILES
-- [[SESSION_STATE|Session State]]
-- [[DASHBOARD|Dashboard]]
+- [[CASE_STUDIES|Case Studies]]
+- [[EXTERNAL_LINKS|External Links]]
+- [[TRAINING_DATA|Training Data]]

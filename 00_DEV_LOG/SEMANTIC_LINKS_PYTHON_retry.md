@@ -10,5 +10,9 @@ Model: qwen3:14b  |  Files: 2
 **Completed:** 2026-05-29 04:15:04
 
 ## CONNECTED FILES
-- [[SESSION_STATE|Session State]]
-- [[DASHBOARD|Dashboard]]
+- [[SEMANTIC_LINKS_PYTHON|Semantic Links — Python Files]]
+- [[setup_stack.py|Setup Stack]]
+- [[MODEL_ROUTING|Model Routing]]
+- [[VECTOR_LAYER_PLAN|Vector Layer Plan]]
+- [[OLLAMA_SETUP|Ollama Setup]]
+- [[HERMES_INTEGRATION|Hermes Integration]]

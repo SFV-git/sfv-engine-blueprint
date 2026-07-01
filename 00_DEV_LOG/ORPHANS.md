@@ -68,5 +68,11 @@ GENERATED: 2026-06-30 20:38
 - [[ULTRAPLAN_REVIEW]]
 
 ## CONNECTED FILES
-- [[SESSION_STATE|Session State]]
-- [[DASHBOARD|Dashboard]]
+- [[HERMES_INTEGRATION|Hermes Integration]]
+- [[ULTRAPLAN_REVIEW|Ultraplan Review]]
+- [[MYTHOS_PROTOCOL|Mythos Protocol]]
+- [[TRAINING_DATA|Training Data]]
+- [[SCHEDULING_WORKFLOW|Scheduling Workflow]]
+- [[PROMPT_VERSIONING|Prompt Versioning]]
+- [[ROADMAP|Roadmap]]
+- [[NATIONWIDE|Nationwide]]

@@ -141,6 +141,11 @@ DIRECTIVE_TEMPLATE.md should go in `01_CANON_RULES/` because it is a process rul
 - `HANDOFF_2026-06-27.md` — previous session handoff (architecture decision context)
 
 ## CONNECTED FILES
-- [[DIRECTIVE_TEMPLATE|Directive Template]]
-- [[HERMES_INTEGRATION|Hermes Integration]]
+- [[DIRECTIVE_TEMPLATE|Directive Template (CANON-candidate)]]
+- [[HERMES_INTEGRATION|Hermes Integration Spec]]
 - [[HERMES_SKILLS_SEED|Hermes Skills Seed]]
+- [[CURRENT_DIRECTIVE|Current Directive (Loop Entry Point)]]
+- [[ARCHITECTURE_AUDIT|Architecture Audit (FOR HUMAN REVIEW)]]
+- [[CANON_RULES|Canon Rules (Rule 13 Addition)]]
+- [[SESSION_STATE|Session State (Context Management)]]
+- [[MODEL_LIFECYCLE_POLICY|Model Lifecycle Policy (Hermes Adoption)]]

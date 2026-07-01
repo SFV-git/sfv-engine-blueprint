@@ -6,5 +6,6 @@
 | 2026-06-30 17:47:18 | N8N_BACKUP OK -- D:\SFV_ACTIVE\BACKUPS\n8n\n8n_sqlite_20260630_174718.sqlite (21.22 MB) |
 
 ## CONNECTED FILES
-- [[SESSION_STATE|Session State]]
-- [[DASHBOARD|Dashboard]]
+- [[N8N_BLUEPRINT|N8N Blueprint]]
+- [[N8N_MCP_SPEC|N8N MCP Specification]]
+- [[DATABASE_ARCHITECTURE|Database Architecture]]

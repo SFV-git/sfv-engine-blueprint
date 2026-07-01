@@ -16,5 +16,11 @@ Model: qwen3:14b  |  Files: 7
 **Completed:** 2026-05-29 03:57:22
 
 ## CONNECTED FILES
-- [[SESSION_STATE|Session State]]
-- [[DASHBOARD|Dashboard]]
+- [[CLAUDE_CODE_SESSION_2026-05-29|Claude Code Session]]
+- [[DECISIONS|Decisions]]
+- [[OLLAMA_SETUP|Ollama Setup]]
+- [[CONTENT_IDEA_BANK|Content Idea Bank]]
+- [[BUILD_DIRECTIVE_HERMES_LOOP|Build Directive Hermes Loop]]
+- [[SEMANTIC_LINKS_PYTHON|Semantic Links Python]]
+- [[MASTER_CONTEXT|Master Context]]
+- [[CURRENT_DIRECTIVE|Current Directive]]

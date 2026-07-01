@@ -69,6 +69,6 @@ rotate the Tavily key, and exclude `n8n_env.ps1` from every future snapshot/zip.
 - [[BLUEPRINT_MANIFEST|Blueprint Manifest]]
 - [[MISSING_REFERENCED_FILES|Missing Referenced Files]]
 - [[SOURCE_OF_TRUTH_RULES|Source of Truth Rules]]
-- [[ARCHITECTURE_AUDIT|Architecture Audit]]
 - [[CONTRADICTION_MATRIX|Contradiction Matrix]]
+- [[ARCHITECTURE_AUDIT|Architecture Audit]]
 - [[CRITICAL_PATH|Critical Path]]

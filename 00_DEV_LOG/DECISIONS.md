@@ -70,15 +70,12 @@ Local models 24/7. Research. Proposals only.
 Never touches production directly.
 
 ## CONNECTED FILES
-- [[BLUEPRINT_MANIFEST|Blueprint Manifest]]
-- [[NAMING_CONVENTIONS|Naming Conventions]]
+- [[HERMES_EVAL|Hermes Evaluation]]
+- [[DATABANK_ARCHITECTURE|Databank Architecture]]
+- [[OLLAMA_SETUP|Ollama Setup]]
+- [[ARCHITECTURE_AUDIT|Architecture Audit]]
 - [[STORAGE_ARCHITECTURE|Storage Architecture]]
-- [[LOCAL_MODELS|Local Models]]
-- [[PROPOSALS|Proposals]]
-- [[MASTER_CONTEXT|Master Context]]
-
-
----
+- [[NAMING_CONVENTIONS|Naming Conventions]]
 
 ## 2026-06-28 — HERMES ADOPTION RATIFIED + BROUGHT LIVE
 

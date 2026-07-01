@@ -216,9 +216,9 @@ DATE: 2026-06-03
 
 ## CONNECTED FILES
 - [[HARDWARE_CONTEXT|Hardware Context]]
-- [[DATABANK_ARCHITECTURE|Databank Architecture]]
-- [[OLLAMA_SETUP|Ollama Setup]]
+- [[WATCHDOG|Watchdog]]
+- [[OLLAMA_PROMPTS|Ollama Prompts]]
 - [[CLAUDE_CODE_PROMPTS|Claude Code Prompts]]
-- [[WATCHDOG_LOG|Watchdog Log]]
-- [[N8N_BLUEPRINT|N8N Blueprint]]
-- [[MULTI_AGENT_WORKFLOW|Multi-Agent Workflow]]
+- [[BUILD_READINESS_CHECKLIST|Build Readiness Checklist]]
+- [[DATABANK_ARCHITECTURE|Databank Architecture]]
+- [[ANTIGRAVITY|Antigravity]]

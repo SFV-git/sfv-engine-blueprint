@@ -257,8 +257,8 @@ Existing files to extend:
 ---
 
 ## CONNECTED FILES
-- [[SESSION_STATE|Session State]]
-- [[AI_STACK_ARCHITECTURE_BLUEPRINT|AI Stack Architecture]]
-- [[QUESTIONS_FOR_WILL|Questions for Will]]
-- [[ENGINE_COMMUNICATION_MODEL|Engine Communication Model]]
+- [[PROMPT_VERSIONING|Prompt Versioning]]
+- [[OUTPUT_VALIDATION|Output Validation]]
+- [[DATABANK_ARCHITECTURE|Databank Architecture]]
+- [[BUILD_READINESS_CHECKLIST|Build Readiness Checklist]]
 - [[STACK_INTEGRATION_PLAN|Stack Integration Plan]]

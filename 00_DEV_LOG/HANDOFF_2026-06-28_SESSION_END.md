@@ -64,5 +64,8 @@ After loop confirmed working — engine capability review, then sell-as-software
 - Docker not installed (needs scheduled restart)
 
 ## CONNECTED FILES
-- [[SESSION_STATE|Session State]]
-- [[DASHBOARD|Dashboard]]
+- [[HERMES_SKILLS_SEED|Hermes Skills Seed]]
+- [[HERMES_INTEGRATION|Hermes Integration]]
+- [[HERMES_LOOP|Hermes Loop]]
+- [[CRITICAL_PATH|Critical Path]]
+- [[TOOL_STACK|Tool Stack]]

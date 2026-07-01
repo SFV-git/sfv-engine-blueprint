@@ -37,3 +37,10 @@ Model: qwen3:14b  |  Files: 31
 
 **Total:** 140 links
 **Completed:** 2026-06-30 20:47:15
+
+## CONNECTED FILES
+- [[OUTPUT_VALIDATION|Output Validation]]
+- [[OLLAMA_SETUP|Ollama Setup]]
+- [[INTEGRATIONS|Integrations]]
+- [[JOB_ENVELOPE_SPEC|Job Envelope Spec]]
+- [[MODEL_ROUTING|Model Routing]]

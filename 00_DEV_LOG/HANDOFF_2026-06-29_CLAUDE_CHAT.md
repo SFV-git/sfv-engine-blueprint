@@ -110,8 +110,9 @@ into the vault, and cold-start persistence (`PERSISTENCE_SELFTEST_PASS`).
 - Live dispatch log: `99_INBOX/DECISION_LOG.md`
 
 ## CONNECTED FILES
-- [[HERMES_LOOP|Hermes Loop]]
-- [[HANDOFF_2026-06-29_HERMES_LOOP|Hermes Loop Build Handoff]]
-- [[HERMES_EVAL|Hermes Agent Evaluation]]
-- [[SESSION_STATE|Session State]]
+- [[HERMES_LOOP|Full Spec]]
+- [[CURRENT_DIRECTIVE|Current Directive File]]
 - [[DECISION_LOG|Decision Log]]
+- [[HANDOFF_2026-06-29_HERMES_LOOP|Build/Decision Trail]]
+- [[OLLAMA_SETUP|Ollama Executor Setup]]
+- [[CLAUDE|Claude Executor Info]]

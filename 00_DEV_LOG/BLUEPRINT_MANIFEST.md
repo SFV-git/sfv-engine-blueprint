@@ -200,10 +200,10 @@ STALE (canon, confirmed drift — see audit), LOW (FHR/UNCONFIRMED/RESEARCH).
 
 ## CONNECTED FILES
 - [[SESSION_STATE|Session Continuity & Standing Orders]]
-- [[DASHBOARD|At-a-Glance Attention List]]
-- [[RULES|Rules Governing the Build]]
 - [[COMPRESSED_CONTEXT|Cheap-Call Context]]
-- [[USAGE_OPTIMIZATION|Token/Usage Strategy]]
-- [[HARDWARE_CONTEXT|Node Specs & Constraints]]
-- [[BRANCH_OUTPUTS|Engine-Level Branch Summary]]
-- [[COST_ROUTING|Cost Routing Strategy]]
+- [[MASTER_CONTEXT|SFV Overview & Claude Role]]
+- [[RULES|Core Build Rules 01–12]]
+- [[HARDWARE_CONTEXT|Node Specs & Electricity Constraints]]
+- [[STORAGE_ARCHITECTURE|Storage System Design]]
+- [[UPGRADE_CHECKPOINTS|Version Upgrade Milestones]]
+- [[COST_ROUTING|Token/Usage Strategy Dependencies]]

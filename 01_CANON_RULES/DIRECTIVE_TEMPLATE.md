@@ -233,8 +233,10 @@ These rules apply whenever a `CURRENT_DIRECTIVE.md` is ACTIVE and Hermes is runn
 ---
 
 ## CONNECTED FILES
-- [[05_AI_LAYER/HERMES_INTEGRATION|Hermes Integration]]
-- [[01_CANON_RULES/RULES|Canon Rules]]
-- [[05_AI_LAYER/COST_CEILING_POLICY|Cost Ceiling Policy]]
-- [[05_AI_LAYER/CONFIDENCE_LOGIC|Confidence Logic]]
-- [[00_DEV_LOG/HANDOFF_2026-06-27|Handoff 2026-06-27]]
+- [[CURRENT_DIRECTIVE|Current Directive]]
+- [[HERMES_INTEGRATION|Hermes Integration]]
+- [[SESSION_STATE|Session State]]
+- [[CHANGELOG|Changelog]]
+- [[CRITICAL_PATH|Critical Path]]
+- [[COST_ALERTS|Cost Alerts]]
+- [[COMPRESSED_CONTEXT|Compressed Context]]

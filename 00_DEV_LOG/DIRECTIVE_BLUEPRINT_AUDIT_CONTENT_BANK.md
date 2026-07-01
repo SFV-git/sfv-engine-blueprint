@@ -154,5 +154,9 @@ structure, vector layer wiring). One FOR HUMAN REVIEW doc per gap, same INPUT/PR
 - [ ] SESSION_STATE block + next-session handoff written
 
 ## CONNECTED FILES
-- [[SESSION_STATE|Session State]]
-- [[DASHBOARD|Dashboard]]
+- [[RD_TERMINAL_ARCHITECTURE|RD Terminal Architecture]]
+- [[BLUEPRINT_COVERAGE_MAP|Blueprint Coverage Map]]
+- [[CONTENT_BANKS|Content Banks]]
+- [[DATABANK_ARCHITECTURE|Databank Architecture]]
+- [[RESEARCH_ROUTE_SPEC|Research Route Specification]]
+- [[TOOL_RESEARCH|Tool Research]]

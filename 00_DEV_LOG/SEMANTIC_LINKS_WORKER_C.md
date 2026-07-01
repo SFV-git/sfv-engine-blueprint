@@ -20,5 +20,8 @@ Model: qwen3:14b  |  Files: 11
 **Completed:** 2026-05-29 03:47:56
 
 ## CONNECTED FILES
-- [[SESSION_STATE|Session State]]
-- [[DASHBOARD|Dashboard]]
+- [[MASTER_CONTEXT|Master Context]]
+- [[COMPRESSED_CONTEXT|Compressed Context]]
+- [[USAGE_OPTIMIZATION|Usage Optimization]]
+- [[HARDWARE_CONTEXT|Hardware Context]]
+- [[PROPOSALS|Proposals]]

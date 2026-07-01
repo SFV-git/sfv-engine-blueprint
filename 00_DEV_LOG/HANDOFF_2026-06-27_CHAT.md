@@ -56,7 +56,8 @@ changes. You ratify everything.
 
 ## CONNECTED FILES
 - [[BLUEPRINT_COVERAGE_MAP|Blueprint Coverage Map]]
-- [[HANDOFF_2026-06-27_BLUEPRINT_AUDIT|Detailed Code Handoff]]
-- [[DIRECTIVE_BLUEPRINT_AUDIT_CONTENT_BANK|Directive]]
-- [[RD_TERMINAL_ARCHITECTURE|R&D Terminal Architecture]]
-- [[SESSION_STATE|Session State]]
+- [[CONTENT_IDEA_BANK|Content Idea Bank]]
+- [[TOOL_RESEARCH|Tool Research]]
+- [[CLIENT_BANKS|Client Banks]]
+- [[INTEGRATIONS|Integrations]]
+- [[TOOLBOX|Toolbox]]

@@ -20,5 +20,10 @@ Model: qwen3:14b  |  Files: 11
 **Completed:** 2026-05-29 03:47:16
 
 ## CONNECTED FILES
-- [[SESSION_STATE|Session State]]
-- [[DASHBOARD|Dashboard]]
+- [[FAILURE_TESTS|Failure Tests]]
+- [[PAPER_TRIAL_RUNS|Paper Trial Runs]]
+- [[CHATGPT_PROMPTS|ChatGPT Prompts]]
+- [[CLAUDE_PROMPTS|Claude Prompts]]
+- [[CASE_STUDIES|Case Studies]]
+- [[DEEP_RESEARCH_FINDINGS|Deep Research Findings]]
+- [[EXTERNAL_LINKS|External Links]]

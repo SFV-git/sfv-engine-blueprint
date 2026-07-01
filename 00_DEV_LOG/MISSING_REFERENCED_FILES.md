@@ -62,5 +62,11 @@ Four categories per the runbook quality bar.
 | "SFV Studio" vs "SFV_STUDIO" | Locked: underscore caps. Snapshot is clean on this — no violations found. (Recorded so it stays checked.) |
 
 ## CONNECTED FILES
+- [[MONITORING_STACK|Monitoring Stack]]
+- [[DISASTER_RECOVERY|Disaster Recovery]]
+- [[UGC_PRE_PRODUCTION|UGC Pre-Production]]
+- [[RESEARCH_ROUTE_SPEC|Research Route Spec]]
 - [[SESSION_STATE|Session State]]
-- [[DASHBOARD|Dashboard]]
+- [[UNCONFIRMED|Unconfirmed Items]]
+- [[RD_TERMINAL_ARCHITECTURE|RD Terminal Architecture]]
+- [[MODEL_LIFECYCLE_POLICY|Model Lifecycle Policy]]

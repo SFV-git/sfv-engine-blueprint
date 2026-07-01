@@ -16,5 +16,8 @@ Model: qwen3:14b  |  Files: 7
 **Completed:** 2026-05-29 03:57:29
 
 ## CONNECTED FILES
-- [[SESSION_STATE|Session State]]
-- [[DASHBOARD|Dashboard]]
+- [[BLUEPRINT_MANIFEST|Blueprint Manifest]]
+- [[DIRECTIVE_TEMPLATE|Directive Template]]
+- [[VIDEO_EDIT_WORKFLOW|Video Edit Workflow]]
+- [[CURRENT_DIRECTIVE|Current Directive]]
+- [[USAGE_OPTIMIZATION|Usage Optimization]]

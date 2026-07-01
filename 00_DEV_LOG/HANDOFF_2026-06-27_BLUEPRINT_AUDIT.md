@@ -72,10 +72,6 @@ does not exist in any form yet.
   for WF4 fix. (Carried from prior handoffs — not touched this session.)
 
 ## CONNECTED FILES
-- [[DIRECTIVE_BLUEPRINT_AUDIT_CONTENT_BANK|Directive]]
 - [[BLUEPRINT_COVERAGE_MAP|Blueprint Coverage Map]]
-- [[RD_TERMINAL_ARCHITECTURE|R&D Terminal Architecture]]
-- [[CONTENT_BANKS|Content Banks]]
-- [[RESEARCH_BANKS|Research Banks]]
-- [[TOOL_RESEARCH|Tool Research]]
-- [[SESSION_STATE|Session State]]
+- [[TOOL_RESEARCH|Tool Research Findings]]
+- [[DIRECTIVE_BLUEPRINT_AUDIT_CONTENT_BANK|Blueprint Audit Content Bank Directive]]

@@ -62,11 +62,8 @@ Reconciled 2026-06-09 — resolved items moved to bottom with their resolution.
 - ~~SFV_EVENTS delivery method~~ → Pixieset standard; Zenfolio Sports & Events (QR workflow) for multi-day events
 
 ## CONNECTED FILES
-- [[SFV_404|SFV_404 Platform]]
-- [[BRAND_BANKS|Brand Banks]]
 - [[HARDWARE_CONTEXT|Hardware Context]]
-- [[N8N_BLUEPRINT|n8n Implementation Phase]]
-- [[SFV_EVENTS|SFV_EVENTS Delivery Method]]
-- [[DATABANK_ARCHITECTURE|Databank Architecture]]
 - [[STORAGE_ARCHITECTURE|Storage Architecture Audit]]
+- [[DATABANK_ARCHITECTURE|Databank Architecture]]
 - [[NATIONWIDE|Nationwide Expansion Timeline]]
+- [[BRAND_BANKS|Brand Banks]]

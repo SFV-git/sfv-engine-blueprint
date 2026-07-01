@@ -25,6 +25,5 @@ See DECISIONS.md for full list.
 See QUESTIONS_FOR_WILL.md and UNCONFIRMED.md.
 
 ## CONNECTED FILES
-- [[BLUEPRINT_MANIFEST|Blueprint Manifest]]
-- [[MASTER_CONTEXT|Master Context]]
-- [[VERSION_LOG|Version Log]]
+- [[BRANCH_OUTPUTS|Branch Outputs]]
+- [[HARDWARE_CONTEXT|Hardware Context]]

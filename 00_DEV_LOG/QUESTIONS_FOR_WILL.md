@@ -125,8 +125,10 @@ Cost routing breaks if Ollama always escalates. Claude Code diagnosis prompt was
 Last updated: 2026-05-27
 
 ## CONNECTED FILES
-- [[STORAGE_ARCHITECTURE|Storage Architecture]]
-- [[BRANCH_OUTPUTS|Branch Outputs]]
-- [[DELIVERY|Delivery]]
-- [[OLLAMA_SETUP|Ollama Setup]]
-- [[ANTIGRAVITY_SETUP_GUIDE|Antigravity Setup Guide]]
+- [[DOCKER_INSTALL_CHECKLIST|Docker Install Checklist]]
+- [[OUTPUT_VALIDATION|Output Validation]]
+- [[DISASTER_RECOVERY|Disaster Recovery]]
+- [[MONITORING_STACK|Monitoring Stack]]
+- [[OPEN_WEBUI_SPEC|Open WebUI Specification]]
+- [[SECRETS_POLICY|Secrets Policy]]
+- [[CLAUDE|Claude]]

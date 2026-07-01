@@ -151,5 +151,10 @@ what was built, every VERIFY result (pass/fail), files created, claude spend tot
 of where the loop is solid vs fragile, and the single most important next step. Do not promote to CANON.
 
 ## CONNECTED FILES
+- [[CURRENT_DIRECTIVE|Current Directive]]
 - [[SESSION_STATE|Session State]]
-- [[DASHBOARD|Dashboard]]
+- [[HERMES_EVAL|Hermes Evaluation]]
+- [[OLLAMA_SETUP|Ollama Setup]]
+- [[CLAUDE|Claude]]
+- [[MODEL_ROUTING|Model Routing]]
+- [[PROMPT_VERSIONING|Prompt Versioning]]
