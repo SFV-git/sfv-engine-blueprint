@@ -1,0 +1,13 @@
+{
+  "task_id": "20260701-001",
+  "date": "2026-07-01",
+  "assigned_to": "PERPLEXITY",
+  "priority": "HIGH",
+  "status": "DONE",
+  "topic": "Free/local alternative to Claude Code for the claude_code executor role",
+  "output_target": "C:\\SFV_BLUEPRINT\\99_INBOX\\OUTPUTS\\20260701-001_PERPLEXITY_CODE_EXECUTOR_ALTERNATIVE.md",
+  "prompt": "See OUTPUTS file for full prompt and result. Topic: local/free replacement for the claude_code executor tier (Devstral Small 2 + OpenHands vs DeepSeek API fallback).",
+  "review_required_by": "CLAUDE",
+  "canon_approval_required_by": "WILL",
+  "result_summary": "Devstral Small 2 (24B, Apache 2.0) via OpenHands headless recommended as Tier 1 local replacement for claude_code. Core model claim spot-verified by Claude 2026-07-01. Harness-adjusted benchmark figure and DeepSeek V4 Flash pricing NOT verified. Nothing adopted yet -- FOR HUMAN REVIEW."
+}

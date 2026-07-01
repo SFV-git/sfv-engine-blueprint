@@ -7,6 +7,15 @@ LAST_UPDATED: 2026-06-30
 
 # CHANGELOG
 
+## 2026-07-01 — Claude Code executor alternative researched (Perplexity, manual)
+Task 20260701-001: Perplexity researched free/local replacement for the `claude_code` executor
+tier. Result saved `99_INBOX/OUTPUTS/20260701-001_PERPLEXITY_CODE_EXECUTOR_ALTERNATIVE.md`.
+Recommendation: **Devstral Small 2 (24B, Apache 2.0) via OpenHands headless** as Tier 1 local
+replacement, DeepSeek V4 Flash API as cheap Tier 2 fallback. Devstral Small 2's core spec/benchmark
+claim (68.0% SWE-bench Verified) spot-verified by Claude via web search — real model, real number.
+Harness-adjusted score, DeepSeek V4 pricing, and exact Ollama tag names NOT independently verified.
+**STATUS: FOR HUMAN REVIEW — nothing adopted, no executor routing changed, no software installed.**
+
 ## 2026-07-01 — Overnight merge batch
 Fixed UTF-8 BOM handling in the vault copy of Workflow 1 Queue Processor's `Read Task` node; NOT yet live.
 Changed `04_WORKFLOWS/SHOOT_CHECKLIST.md` — directive MERGE-20260701-P16-SHOOT-CHECKLISTS-001.
