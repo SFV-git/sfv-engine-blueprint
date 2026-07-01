@@ -8,6 +8,7 @@ LAST_UPDATED: 2026-06-30
 # CHANGELOG
 
 ## 2026-07-01 — Overnight merge batch
+Fixed UTF-8 BOM handling in the vault copy of Workflow 1 Queue Processor's `Read Task` node; NOT yet live.
 Changed `04_WORKFLOWS/SHOOT_CHECKLIST.md` — directive MERGE-20260701-P16-SHOOT-CHECKLISTS-001.
 Changed `05_AI_LAYER/VRAM_SCHEDULING_RULE.md` — directive MERGE-20260701-P14-VRAM-SCHEDULING-001.
 Changed `03_INFRASTRUCTURE/SYNCTHING_AND_TAILSCALE_SPEC.md` — directive MERGE-20260701-P12-SYNC-TAILSCALE-001.

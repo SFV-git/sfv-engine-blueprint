@@ -1,7 +1,7 @@
 ---
 STATUS: ACTIVE
-DIRECTIVE_ID: RESEARCH-20260701-VECTOR-STACK-001
-EXECUTOR: claude_code
+DIRECTIVE_ID: PLAN-20260701-LIGHTROOM-EXPORT-SPEC-001
+EXECUTOR: ollama
 ---
 
-Use web search to check current (2026) best-practice deployment notes for a local RAG/vector search stack: Qdrant (self-hosted via Docker) paired with the nomic-embed-text embedding model run through Ollama. Focus on: current recommended Qdrant Docker image/version, typical resource requirements for a small single-node deployment, how nomic-embed-text is invoked via the Ollama API for embeddings, and any known gotchas. This is for a solo creative studio's local vault search feature (small scale, not enterprise). Write findings — source URLs cited — to a NEW file C:\SFV_BLUEPRINT\FOR_HUMAN_REVIEW\research_vector_stack_refresh.md. Do not edit any other file. Do not install or run anything. Do not touch n8n, Docker, git push, or any live service.
+Draft a "Confirmed Export Specs" reference table for a photography studio's Lightroom export step, covering typical settings for three delivery contexts: Instagram feed post, Instagram story/reel, and full-resolution client delivery. For each: recommended file format, resolution/long-edge pixel target, color space, and JPEG quality setting. State these are proposed industry-standard defaults to confirm against Will's actual battle-tested recipe, not verified facts. Output only the finished markdown table, no preamble.
