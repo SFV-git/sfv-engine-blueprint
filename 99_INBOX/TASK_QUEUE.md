@@ -397,3 +397,7 @@ This is a new file added to the SFV vault. Based on its content and purpose, sug
 ---
 READ: for_human_review/review_ugc_scaffold.md
 This is a new file added to the SFV vault. Based on its content and purpose, suggest up to 5 wikilinks to other vault files that belong in its CONNECTED FILES section. Format each suggestion as: [[filename]] — one-line reason. Nothing else.
+
+---
+READ: 02_branches/sfv_ugc_seed.md
+This is a new file added to the SFV vault. Based on its content and purpose, suggest up to 5 wikilinks to other vault files that belong in its CONNECTED FILES section. Format each suggestion as: [[filename]] — one-line reason. Nothing else.
