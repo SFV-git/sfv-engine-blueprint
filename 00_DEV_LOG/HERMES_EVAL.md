@@ -212,9 +212,11 @@ The Norton fix (`truststore.inject_into_ssl()` via `sitecustomize.py`) replaces 
 - `.env` append for `HERMES_SKIP_SSL_GUARD` skipped (file locked by desktop app); covered by User env var instead. Add to `.env` if desired when desktop app is closed.
 
 ## CONNECTED FILES
-- [[VERSION_LOG|VERSION LOG]]
-- [[INTEGRATIONS|INTEGRATIONS]]
-- [[CURRENT_DIRECTIVE|CURRENT DIRECTIVE]]
-- [[HARDWARE_CONTEXT|HARDWARE CONTEXT]]
-- [[TOOL_STATUS|TOOL STATUS]]
-- [[CLAUDE|CLAUDE]]
+- [[INSTALL|Installation Guide]]
+- [[HARDWARE_CONTEXT|Hardware Context]]
+- [[MASTER_CONTEXT|Master Context]]
+- [[SESSION_STATE|Session State]]
+- [[TOOLBOX|Toolbox]]
+- [[CURRENT_DIRECTIVE|Current Directive]]
+- [[VERSION_LOG|Version Log]]
+- [[USAGE_OPTIMIZATION|Usage Optimization]]

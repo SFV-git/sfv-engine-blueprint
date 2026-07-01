@@ -205,9 +205,9 @@ Navigate to Node B Syncthing interface → browse version history for the affect
 ---
 
 ## CONNECTED FILES
-- [[BLUEPRINT_COVERAGE_MAP|Blueprint Coverage Map]]
-- [[TOOLBOX|Toolbox]]
-- [[DATABASE_ARCHITECTURE|Database Architecture]]
+- [[TOOLBOX|Tool Stack]]
+- [[DATABANK_ARCHITECTURE|Databank Architecture]]
 - [[BUILD_READINESS_CHECKLIST|Build Readiness Checklist]]
-- [[INTEGRATIONS|Integrations]]
-- [[EDGE_CASES|Edge Cases]]
+- [[FAILURE_TESTS|Failure Tests]]
+- [[VAULT_DASHBOARD_DRAFT|Vault Dashboard Draft]]
+- [[CURRENT_DIRECTIVE|Current Directive]]

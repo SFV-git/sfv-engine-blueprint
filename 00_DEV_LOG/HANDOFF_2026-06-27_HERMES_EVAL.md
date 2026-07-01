@@ -98,8 +98,7 @@ written file content is accurate to the verified findings. No data was lost.
 - [[00_DEV_LOG/HERMES_EVAL|Hermes Eval Results]]
 
 ## CONNECTED FILES
-- [[HERMES_EVAL|Hermes Agent Eval Results]]
-- [[CURRENT_DIRECTIVE|Current Directive Status]]
-- [[SESSION_STATE|Session State Information]]
-- [[CLAUDE|Claude Integration Details]]
-- [[CLIENT_BANKS|Client Information Banks]]
+- [[HERMES_EVAL|Hermes Eval Results]]
+- [[CURRENT_DIRECTIVE|Current Directive]]
+- [[HARDWARE_CONTEXT|Hardware Context]]
+- [[TOOL_STATUS|Tool Status]]

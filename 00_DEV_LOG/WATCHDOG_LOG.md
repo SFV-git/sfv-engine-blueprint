@@ -9,4 +9,3 @@
 - [[N8N_BLUEPRINT|N8N Blueprint]]
 - [[N8N_MCP_SPEC|N8N MCP Specification]]
 - [[DATABASE_ARCHITECTURE|Database Architecture]]
-| 2026-07-01 03:00:02 | N8N_BACKUP OK -- D:\SFV_ACTIVE\BACKUPS\n8n\n8n_sqlite_20260701_030001.sqlite (21.22 MB) |

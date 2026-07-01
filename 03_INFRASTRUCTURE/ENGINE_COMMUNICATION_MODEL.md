@@ -172,8 +172,8 @@ Will's role is direction and approval — not agent-jumping.
 
 ## CONNECTED FILES
 - [[JOB_ENVELOPE_SPEC|Job Envelope Specification]]
-- [[ANTIGRAVITY|Antigravity System]]
-- [[OUTPUT_VALIDATION|Output Validation Protocol]]
-- [[TOOL_STACK|Tool Stack Configuration]]
-- [[OLLAMA_SETUP|Ollama Setup Guide]]
-- [[QUESTIONS_FOR_WILL|Questions for Will Log]]
+- [[OLLAMA_RESULTS|Ollama Results]]
+- [[DECISION_LOG|Decision Log]]
+- [[QUESTIONS_FOR_WILL|Questions for Will]]
+- [[PROPOSALS|Proposals for Human Review]]
+- [[TASK_QUEUE|Legacy Task Queue]]

@@ -56,8 +56,5 @@ changes. You ratify everything.
 
 ## CONNECTED FILES
 - [[BLUEPRINT_COVERAGE_MAP|Blueprint Coverage Map]]
-- [[CONTENT_IDEA_BANK|Content Idea Bank]]
 - [[TOOL_RESEARCH|Tool Research]]
-- [[CLIENT_BANKS|Client Banks]]
-- [[INTEGRATIONS|Integrations]]
-- [[TOOLBOX|Toolbox]]
+- [[CONTENT_IDEA_BANK|Content Idea Bank]]

@@ -16,8 +16,8 @@ Model: qwen3:14b  |  Files: 7
 **Completed:** 2026-05-29 03:57:29
 
 ## CONNECTED FILES
-- [[BLUEPRINT_MANIFEST|Blueprint Manifest]]
-- [[DIRECTIVE_TEMPLATE|Directive Template]]
-- [[VIDEO_EDIT_WORKFLOW|Video Edit Workflow]]
-- [[CURRENT_DIRECTIVE|Current Directive]]
-- [[USAGE_OPTIMIZATION|Usage Optimization]]
+- [[CONTENT_BANKS|Content Banks]]
+- [[MODEL_ROUTING|Model Routing]]
+- [[COST_CEILING_POLICY|Cost Ceiling Policy]]
+- [[HERMES_INTEGRATION|Hermes Integration]]
+- [[SOURCE_OF_TRUTH_RULES|Source of Truth Rules]]

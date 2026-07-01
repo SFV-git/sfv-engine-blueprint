@@ -189,8 +189,7 @@ PostgreSQL migration must be completed before Phase 1 concurrency changes are de
 
 ## CONNECTED FILES
 - [[AI_STACK_ARCHITECTURE_BLUEPRINT|AI Stack Architecture Blueprint]]
-- [[JOB_ENVELOPE_SPEC|Job Envelope Specification]]
-- [[HERMES_INTEGRATION|Hermes Integration]]
-- [[MODEL_ROUTING|Model Routing Policy]]
-- [[COST_CEILING_POLICY|Cost Ceiling Policy]]
-- [[COST_ROUTING|Cost Routing Strategy]]
+- [[RATE_LIMITS|Rate Limits]]
+- [[VRAM_SCHEDULING_RULE|VRAM Scheduling Rule]]
+- [[NATIONWIDE|Nationwide Scaling]]
+- [[CURRENT_DIRECTIVE|Current Directive]]

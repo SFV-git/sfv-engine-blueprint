@@ -68,11 +68,11 @@ GENERATED: 2026-06-30 20:38
 - [[ULTRAPLAN_REVIEW]]
 
 ## CONNECTED FILES
-- [[HERMES_INTEGRATION|Hermes Integration]]
+- [[ANTIGRAVITY|Antigravity]]
 - [[ULTRAPLAN_REVIEW|Ultraplan Review]]
-- [[MYTHOS_PROTOCOL|Mythos Protocol]]
+- [[QUALITY_CONTROL|Quality Control]]
 - [[TRAINING_DATA|Training Data]]
-- [[SCHEDULING_WORKFLOW|Scheduling Workflow]]
 - [[PROMPT_VERSIONING|Prompt Versioning]]
+- [[INTEGRATIONS|Integrations]]
 - [[ROADMAP|Roadmap]]
-- [[NATIONWIDE|Nationwide]]
+- [[MYTHOS_PROTOCOL|Mythos Protocol]]

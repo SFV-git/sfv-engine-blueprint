@@ -59,7 +59,7 @@ their DIRECTIVE_IDs are already in processed_ids.txt).
 4. Resume CRITICAL_PATH.md / SESSION_STATE.md priority order.
 
 ## CONNECTED FILES
-- [[CURRENT_DIRECTIVE|Current Directive]]
-- [[HERMES_LOOP|Hermes Loop Architecture]]
-- [[BLUEPRINT_COVERAGE_MAP|Blueprint Coverage Map]]
-- [[CHANGELOG|Changelog]]
+- [[CHANGELOG|CHANGELOG.md]]
+- [[CURRENT_DIRECTIVE|CURRENT_DIRECTIVE.md]]
+- [[DATABANK_ARCHITECTURE|DATABANK_ARCHITECTURE.md]]
+- [[SFV_EVENTS|SFV_EVENTS.md]]

@@ -96,8 +96,9 @@ backups scheduled and Bitwarden confirmed ✓. Then P2 opens: Redis decision win
 
 ## CONNECTED FILES
 - [[POSTGRES_MIGRATION|PostgreSQL Migration]]
-- [[SESSION_STATE|SESSION_STATE]]
-- [[RESEARCH_ROUTE_SPEC|Research Route Specification]]
+- [[COMPRESSED_CONTEXT|Compressed Context]]
 - [[PROPOSALS|Proposals]]
+- [[DECISIONS|Decisions]]
+- [[SESSION_STATE|Session State]]
+- [[JOB_ENVELOPE_SPEC|Job Envelope Specification]]
 - [[N8N_MCP|n8n MCP]]
-- [[TOOL_STATUS|Tool Status]]

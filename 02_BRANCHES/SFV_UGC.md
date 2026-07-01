@@ -76,13 +76,9 @@ Modular — new client types added as Will expands:
 %BRANCHES_ROOT%\SFV_UGC\DELIVERY\
 
 ## CONNECTED FILES
-- [[05_AI_LAYER/OUTPUT_VALIDATION|Output Validation]]
-- [[05_AI_LAYER/COST_CEILING_POLICY|Cost Ceiling Policy]]
-- [[07_SCALING/NATIONWIDE|Nationwide]]
-- [[05_AI_LAYER/HERMES_LOOP|Hermes Loop]]
-- [[12_DATABANKS/RESEARCH_BANKS|Research Banks]]
-- [[05_AI_LAYER/OUTPUT_VALIDATION|Output Validation]]
-- [[05_AI_LAYER/COST_CEILING_POLICY|Cost Ceiling Policy]]
-- [[07_SCALING/NATIONWIDE|Nationwide]]
-- [[05_AI_LAYER/HERMES_LOOP|Hermes Loop]]
-- [[12_DATABANKS/RESEARCH_BANKS|Research Banks]]
+- [[CLIENT_BANKS|Client Banks]]
+- [[PROMPT_VERSIONING|Prompt Versioning]]
+- [[BRAND_BANKS|Brand Banks]]
+- [[TOOL_STACK|Tool Stack]]
+- [[ROADMAP|Roadmap]]
+- [[CURRENT_DIRECTIVE|Current Directive]]

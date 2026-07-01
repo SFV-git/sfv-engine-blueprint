@@ -48,9 +48,7 @@ abbass is the hub. All other branches can repost to it.
 Hub account bio links entire SFV ecosystem.
 
 ## CONNECTED FILES
-- [[MYTHOS_PROTOCOL|Mythos Protocol]]
-- [[CONTENT_IDEA_BANK|Content Idea Bank]]
-- [[VIDEO_EDIT_WORKFLOW|Video Edit Workflow]]
-- [[BRAND_BANKS|Brand Banks]]
-- [[ROADMAP|Roadmap]]
-- [[DASHBOARD|Dashboard]]
+- [[CONFIDENCE_LOGIC|Confidence Logic]]
+- [[DATABANK_ARCHITECTURE|Databank Architecture]]
+- [[BRANCH_INDEPENDENCE|Branch Independence]]
+- [[VECTOR_LAYER_PLAN|Vector Layer Plan]]

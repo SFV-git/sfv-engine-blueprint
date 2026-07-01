@@ -48,9 +48,9 @@ No. Service clarity and proof of work.
 %BRANCHES_ROOT%\SFV_EVENTS\EXPORT\
 
 ## CONNECTED FILES
-- [[UNCONFIRMED|Unconfirmed]]
-- [[AI_USE_CASE_PROFILE|AI Use Case Profile]]
+- [[MODEL_ROUTING|Model Routing]]
+- [[QUALITY_CONTROL|Quality Control]]
+- [[OUTPUT_VALIDATION|Output Validation]]
 - [[SFV_STUDIO|SFV_STUDIO]]
-- [[PAPER_TRIAL_RUNS|Paper Trial Runs]]
 - [[COST_ROUTING|Cost Routing]]
-- [[MYTHOLOGY|MYTHOLOGY]]
+- [[PAPER_TRIAL_RUNS|Paper Trial Runs]]

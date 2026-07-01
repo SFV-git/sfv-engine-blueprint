@@ -39,8 +39,7 @@ Model: qwen3:14b  |  Files: 31
 **Completed:** 2026-06-30 20:47:15
 
 ## CONNECTED FILES
-- [[OUTPUT_VALIDATION|Output Validation]]
-- [[OLLAMA_SETUP|Ollama Setup]]
-- [[INTEGRATIONS|Integrations]]
-- [[JOB_ENVELOPE_SPEC|Job Envelope Spec]]
-- [[MODEL_ROUTING|Model Routing]]
+- [[REVIEW_queue_dashboard|Review Queue Dashboard]]
+- [[USAGE_OPTIMIZATION|Usage Optimization]]
+- [[VAULT_DASHBOARD_DRAFT|Vault Dashboard Draft]]
+- [[TOOLBOX|Toolbox]]

@@ -237,8 +237,7 @@ The following critical Single Points of Failure (SPOFs) and gaps exist and are a
 
 ## CONNECTED FILES
 - [[ANTIGRAVITY|Antigravity 2.0]]
-- [[OLLAMA_SETUP|Ollama Setup]]
-- [[CLAUDE|Claude API]]
-- [[INTEGRATIONS|Integrations]]
-- [[TOOL_RESEARCH|Tool Research]]
+- [[TOOL_STACK|Tool Stack]]
 - [[DATABANK_ARCHITECTURE|Databank Architecture]]
+- [[RESEARCH_PROMPTS|Research Prompts]]
+- [[TOOLBOX|Toolbox]]

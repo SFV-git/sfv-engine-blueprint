@@ -25,5 +25,8 @@ See DECISIONS.md for full list.
 See QUESTIONS_FOR_WILL.md and UNCONFIRMED.md.
 
 ## CONNECTED FILES
-- [[BRANCH_OUTPUTS|Branch Outputs]]
+- [[DATABANK_ARCHITECTURE|Data Bank Architecture]]
+- [[VAULT_DASHBOARD_DRAFT|Vault Dashboard Draft]]
+- [[MASTER_CONTEXT|Master Context]]
+- [[BRANCH_INDEPENDENCE|Branch Independence]]
 - [[HARDWARE_CONTEXT|Hardware Context]]

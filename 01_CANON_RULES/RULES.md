@@ -66,10 +66,8 @@ Hardware is replaceable.
 Engine intelligence lives in config and scripts, not the machine.
 
 ## CONNECTED FILES
-- [[ENVIRONMENT_CONFIG|Environment Configuration]]
-- [[METADATA_SYSTEM|Metadata System]]
-- [[VERSION_LOG|Version Log]]
-- [[DATABANK_ARCHITECTURE|Databank Architecture]]
-- [[BUILD_READINESS_CHECKLIST|Build Readiness Checklist]]
-- [[QUALITY_CONTROL|Quality Control]]
-- [[MULTI_AGENT_WORKFLOW|Multi-Agent Workflow]]
+- [[BLUEPRINT_COVERAGE_MAP|Blueprint Coverage Map]]
+- [[SOURCE_OF_TRUTH_RULES|Source of Truth Rules]]
+- [[TASTE_BANKS|Taste Banks]]
+- [[UPGRADE_CHECKPOINTS|Upgrade Checkpoints]]
+- [[MASTER_CONTEXT|Master Context]]

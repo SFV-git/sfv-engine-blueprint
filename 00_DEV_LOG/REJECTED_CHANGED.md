@@ -43,9 +43,9 @@ Rejected in favor of centralized Engine body + separate R&D terminal.
 Rejected. NAS only after real storage bottlenecks exist.
 
 ## CONNECTED FILES
-- [[HARDWARE_CONTEXT|Hardware Context]]
+- [[RD_TERMINAL_ARCHITECTURE|RD Terminal Architecture]]
+- [[BRANCH_INDEPENDENCE|Branch Independence]]
 - [[NAMING_CONVENTIONS|Naming Conventions]]
-- [[SFV_WORLD|SFV_WORLD]]
 - [[STORAGE_ARCHITECTURE|Storage Architecture]]
 - [[MYTHOLOGY|Mythology]]
-- [[BRANCH_INDEPENDENCE|Branch Independence]]
+- [[SFV_WORLD|SFV_WORLD]]

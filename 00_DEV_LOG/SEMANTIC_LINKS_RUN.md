@@ -91,10 +91,10 @@ Model: qwen3:14b  |  Files: 11
 ---
 
 ## CONNECTED FILES
-- [[FAILURE_TESTS|Failure Tests]]
-- [[ROADMAP|Roadmap]]
-- [[DATABANK_ARCHITECTURE|Databank Architecture]]
-- [[ANTIGRAVITY|Antigravity]]
-- [[CHANGELOG|Changelog]]
-- [[DASHBOARD|Dashboard]]
-- [[MASTER_CONTEXT|Master Context]]
+- [[PAPER_TRIAL_RUNS|Paper Trial Runs]]
+- [[UPGRADE_CHECKPOINTS|Upgrade Checkpoints]]
+- [[VERSION_LOG|Version Log]]
+- [[TRAINING_DATA|Training Data]]
+- [[VAULT_DASHBOARD_DRAFT|Vault Dashboard Draft]]
+- [[HARDWARE_CONTEXT|Hardware Context]]
+- [[COMPRESSED_CONTEXT|Compressed Context]]

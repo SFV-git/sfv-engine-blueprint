@@ -173,11 +173,13 @@ Attempt 5: If failed, trigger graceful degradation.
 This protocol ensures minimal disruption during outages while maintaining safety and operational continuity in ICS environments.
 
 ## CONNECTED FILES
-- [[FAILURE_TESTS|Failure Tests]]
-- [[DATABANK_ARCHITECTURE|Databank Architecture]]
+- [[HARDWARE_CONTEXT|Hardware Context]]
+- [[MASTER_CONTEXT|Master Context]]
+- [[SESSION_STATE|Session State]]
+- [[USAGE_OPTIMIZATION|Usage Optimization]]
+- [[CURRENT_DIRECTIVE|Current Directive]]
+- [[DASHBOARD|Dashboard]]
 - [[RATE_LIMITS|Rate Limits]]
-- [[RESEARCH_ROUTE_SPEC|Research Route Specification]]
-- [[OPERATOR_MODEL|Operator Model]]
 
 ## OVERNIGHT DRAFT — UNREVIEWED (codex merge 2026-07-01, directive MERGE-20260701-P15-ICS-FAILOVER-001)
 

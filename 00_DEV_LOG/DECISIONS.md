@@ -70,12 +70,11 @@ Local models 24/7. Research. Proposals only.
 Never touches production directly.
 
 ## CONNECTED FILES
-- [[HERMES_EVAL|Hermes Evaluation]]
-- [[DATABANK_ARCHITECTURE|Databank Architecture]]
-- [[OLLAMA_SETUP|Ollama Setup]]
-- [[ARCHITECTURE_AUDIT|Architecture Audit]]
-- [[STORAGE_ARCHITECTURE|Storage Architecture]]
-- [[NAMING_CONVENTIONS|Naming Conventions]]
+- [[BRANCH_INDEPENDENCE|Branch Independence]]
+- [[CLAUDE_CODE_PROMPTS|Claude Code Prompts]]
+- [[HARDWARE_CONTEXT|Hardware Context]]
+- [[RESEARCH_PROMPTS|Research Prompts]]
+- [[TOOLBOX|Toolbox]]
 
 ## 2026-06-28 — HERMES ADOPTION RATIFIED + BROUGHT LIVE
 

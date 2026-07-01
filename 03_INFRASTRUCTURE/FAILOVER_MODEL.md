@@ -111,7 +111,6 @@ On error/timeout:
 
 ## CONNECTED FILES
 - [[WATCHDOG_LOG|Watchdog Log]]
-- [[DECISION_LOG|Decision Log]]
 - [[HARDWARE_CONTEXT|Hardware Context]]
-- [[OLLAMA_SETUP|Ollama Setup]]
-- [[CURRENT_DIRECTIVE|Current Directive]]
+- [[OVERNIGHT_DIRECTIVE|Overnight Directive]]
+- [[DECISION_LOG|Decision Log]]

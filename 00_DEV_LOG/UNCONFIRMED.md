@@ -66,4 +66,5 @@ Reconciled 2026-06-09 — resolved items moved to bottom with their resolution.
 - [[STORAGE_ARCHITECTURE|Storage Architecture Audit]]
 - [[DATABANK_ARCHITECTURE|Databank Architecture]]
 - [[NATIONWIDE|Nationwide Expansion Timeline]]
-- [[BRAND_BANKS|Brand Banks]]
+- [[BRANCH_INDEPENDENCE|Branch Independence Rules]]
+- [[DISASTER_RECOVERY|Disaster Recovery Plan]]

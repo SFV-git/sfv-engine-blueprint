@@ -164,3 +164,10 @@ GENERATED: 2026-07-01 02:05
 - `DASHBOARD.md` -> `[[TO_REVIEW]]`
 - `FOR_HUMAN_REVIEW/research_vector_stack_refresh.md` -> `[[... 768 floats ...]]`
 - `README.md` -> `[[SFV Engine]]`
+
+## CONNECTED FILES
+- [[ANTIGRAVITY|Antigravity]]
+- [[CLAUDE|Claude]]
+- [[research_ig_scheduler_comparison|Research: IG Scheduler Comparison]]
+- [[SEMANTIC_LINKS_PYTHON|Semantic Links Python]]
+- [[VAULT_DASHBOARD_DRAFT|Vault Dashboard Draft]]

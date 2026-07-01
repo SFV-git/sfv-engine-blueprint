@@ -72,8 +72,9 @@ Every path references a variable from this file.
 - E:\ = SanDisk Extreme = field ingest
 
 ## CONNECTED FILES
-- [[STORAGE_ARCHITECTURE|Storage Architecture]]
-- [[SOURCE_OF_TRUTH_RULES|Source of Truth Rules]]
-- [[MODEL_ROUTING|Model Routing]]
-- [[BRANCH_INDEPENDENCE|Branch Independence]]
-- [[OLLAMA_SETUP|Ollama Setup]]
+- [[MYTHOLOGY|Mythology]]
+- [[SFV_LIVE|SFV Live]]
+- [[DATABANK_ARCHITECTURE|Databank Architecture]]
+- [[LOGS|Logs]]
+- [[HARDWARE_CONTEXT|Hardware Context]]
+- [[TOOL_STACK|Tool Stack]]

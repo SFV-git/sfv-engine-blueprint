@@ -47,7 +47,8 @@ Sparse, sequential, consistent.
 %BRANCHES_ROOT%\SFV_ARCHIVE\EXPORT\
 
 ## CONNECTED FILES
+- [[BRANCH_INDEPENDENCE|Branch Independence]]
+- [[REVIEW_merge_reviewer|Merge Reviewer]]
+- [[SOURCE_OF_TRUTH_RULES|Source of Truth Rules]]
 - [[VIDEO_EDIT_WORKFLOW|Video Edit Workflow]]
-- [[PROMPT_VERSIONING|Prompt Versioning]]
-- [[QUALITY_CONTROL|Quality Control]]
 - [[MODEL_ROUTING|Model Routing]]

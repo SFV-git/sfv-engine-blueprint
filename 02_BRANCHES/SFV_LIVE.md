@@ -53,9 +53,8 @@ No. Network and affiliation building only.
 %BRANCHES_ROOT%\SFV_LIVE\EXPORT\
 
 ## CONNECTED FILES
-- [[04_WORKFLOWS/DELIVERY|Delivery Workflow]]
-- [[04_WORKFLOWS/EXPORT|Export Workflow]]
-- [[04_WORKFLOWS/UGC_PRE_PRODUCTION|UGC Pre-Production]]
-- [[02_BRANCHES/SFV_ARCHIVE|SFV_ARCHIVE]]
-- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
-- [[08_TESTS/PAPER_TRIAL_RUNS|Paper Trial Runs]]
+- [[BRAND_BANKS|Brand Banks]]
+- [[EXTERNAL_LINKS|External Links]]
+- [[HARDWARE_CONTEXT|Hardware Context]]
+- [[PROMPT_VERSIONING|Prompt Versioning]]
+- [[TOOLBOX|Toolbox]]

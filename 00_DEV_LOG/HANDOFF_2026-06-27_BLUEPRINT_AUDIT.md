@@ -73,5 +73,8 @@ does not exist in any form yet.
 
 ## CONNECTED FILES
 - [[BLUEPRINT_COVERAGE_MAP|Blueprint Coverage Map]]
-- [[TOOL_RESEARCH|Tool Research Findings]]
-- [[DIRECTIVE_BLUEPRINT_AUDIT_CONTENT_BANK|Blueprint Audit Content Bank Directive]]
+- [[TOOL_RESEARCH|Tool Research]]
+- [[CONTENT_IDEA_BANK|Content Idea Bank]]
+- [[research_ugc_delivery_comparison|UGC Delivery Comparison]]
+- [[research_ig_scheduler_comparison|IG Scheduler Comparison]]
+- [[DATABANK_ARCHITECTURE|Databank Architecture]]

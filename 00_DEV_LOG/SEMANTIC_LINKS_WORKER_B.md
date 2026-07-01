@@ -20,6 +20,7 @@ Model: qwen3:14b  |  Files: 11
 **Completed:** 2026-05-29 03:47:31
 
 ## CONNECTED FILES
-- [[CASE_STUDIES|Case Studies]]
-- [[EXTERNAL_LINKS|External Links]]
-- [[TRAINING_DATA|Training Data]]
+- [[DATABANK_ARCHITECTURE|Databank Architecture]]
+- [[UPGRADE_CHECKPOINTS|Upgrade Checkpoints]]
+- [[VERSION_LOG|Version Log]]
+- [[TOOL_RESEARCH|Tool Research]]

@@ -146,7 +146,9 @@ New files: `hermes\hermes_gateway_launch.vbs`, `hermes\sfv_gateway_task.xml`.
 Both SFV tasks now registered: `SFV_HermesLoopWatcher`, `SFV_HermesGateway`.
 
 ## CONNECTED FILES
-- [[05_AI_LAYER/HERMES_LOOP|HERMES Loop Architecture]]
-- [[CURRENT_DIRECTIVE|Current Directive Status]]
-- [[99_INBOX/DECISION_LOG|Decision Log Entries]]
-- [[BUILD_DIRECTIVE_HERMES_LOOP|Build Directive for HERMES Loop]]
+- [[CURRENT_DIRECTIVE|Current Directive]]
+- [[05_AI_LAYER/HERMES_LOOP|Hermes Loop Architecture]]
+- [[DECISION_LOG|Decision Log]]
+- [[BUILD_DIRECTIVE_HERMES_LOOP|Build Directive for Hermes Loop]]
+- [[CLAUDE|Claude Executor]]
+- [[OLLAMA_PROMPTS|Ollama Prompts]]

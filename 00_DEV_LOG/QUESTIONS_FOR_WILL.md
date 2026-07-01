@@ -125,10 +125,11 @@ Cost routing breaks if Ollama always escalates. Claude Code diagnosis prompt was
 Last updated: 2026-05-27
 
 ## CONNECTED FILES
-- [[DOCKER_INSTALL_CHECKLIST|Docker Install Checklist]]
-- [[OUTPUT_VALIDATION|Output Validation]]
-- [[DISASTER_RECOVERY|Disaster Recovery]]
-- [[MONITORING_STACK|Monitoring Stack]]
-- [[OPEN_WEBUI_SPEC|Open WebUI Specification]]
-- [[SECRETS_POLICY|Secrets Policy]]
-- [[CLAUDE|Claude]]
+- [[DOCKER_INSTALL_CHECKLIST|DOCKER_INSTALL_CHECKLIST.md]]
+- [[SECRETS_POLICY|SECRETS_POLICY.md]]
+- [[CONCURRENCY_QUEUE_SPEC|CONCURRENCY_QUEUE_SPEC.md]]
+- [[OUTPUT_VALIDATION|OUTPUT_VALIDATION.md]]
+- [[PROMPT_VERSIONING|PROMPT_VERSIONING.md]]
+- [[N8N_MCP_SPEC|N8N_MCP_SPEC.md]]
+- [[OPEN_WEBUI_SPEC|OPEN_WEBUI_SPEC.md]]
+- [[FAILOVER_MODEL|FAILOVER_MODEL.md]]

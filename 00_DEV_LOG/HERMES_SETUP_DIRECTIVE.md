@@ -73,10 +73,9 @@ Append a section:
 - Blueprint Lock: log all changes, do not self-ratify
 
 ## CONNECTED FILES
-- [[CURRENT_DIRECTIVE|Current Directive]]
-- [[MASTER_CONTEXT|Master Context]]
+- [[DATABANK_ARCHITECTURE|Databank Architecture]]
+- [[VAULT_DASHBOARD_DRAFT|Vault Dashboard Draft]]
+- [[BUILD_READINESS_CHECKLIST|Build Readiness Checklist]]
+- [[PROMPT_VERSIONING|Prompt Versioning]]
 - [[MODEL_ROUTING|Model Routing]]
 - [[OLLAMA_SETUP|Ollama Setup]]
-- [[SESSION_STATE|Session State]]
-- [[DASHBOARD|Dashboard]]
-- [[MODEL_LOCK|Model Lock]]

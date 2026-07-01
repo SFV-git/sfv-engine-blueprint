@@ -15,8 +15,7 @@ Model: qwen3:14b  |  Files: 7
 **Completed:** 2026-05-29 04:13:27
 
 ## CONNECTED FILES
-- [[INGEST|Ingest]]
-- [[OLLAMA_SETUP|OLLAMA Setup]]
-- [[ANTIGRAVITY_N8N_TRIGGER|Antigravity N8N Trigger]]
-- [[JOB_ENVELOPE_SPEC|Job Envelope Spec]]
-- [[OUTPUT_VALIDATION|Output Validation]]
+- [[EDGE_CASES|Edge Cases]]
+- [[MODEL_ROUTING|Model Routing]]
+- [[ANTIGRAVITY_RULES|Antigravity Rules]]
+- [[FAILURE_TESTS|Failure Tests]]

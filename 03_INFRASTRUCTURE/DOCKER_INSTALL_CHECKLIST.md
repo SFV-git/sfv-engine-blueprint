@@ -61,3 +61,4 @@ After Docker is confirmed running, update the following to remove [FUTURE] / DEF
 - [[N8N_MCP_SPEC|n8n-MCP Spec]]
 - [[RD_TERMINAL_ARCHITECTURE|R&D Terminal Architecture]]
 - [[CONCURRENCY_QUEUE_SPEC|Concurrency and Queue Mode]]
+- [[TOOLBOX|Toolbox]]

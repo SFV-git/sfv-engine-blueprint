@@ -64,8 +64,9 @@ After loop confirmed working — engine capability review, then sell-as-software
 - Docker not installed (needs scheduled restart)
 
 ## CONNECTED FILES
-- [[HERMES_SKILLS_SEED|Hermes Skills Seed]]
+- [[CURRENT_DIRECTIVE|Current Directive]]
+- [[OLLAMA_SETUP|Ollama Setup]]
+- [[CLAUDE_CODE_PROMPTS|Claude Code Prompts]]
+- [[OUTPUT_VALIDATION|Output Validation]]
 - [[HERMES_INTEGRATION|Hermes Integration]]
-- [[HERMES_LOOP|Hermes Loop]]
-- [[CRITICAL_PATH|Critical Path]]
 - [[TOOL_STACK|Tool Stack]]

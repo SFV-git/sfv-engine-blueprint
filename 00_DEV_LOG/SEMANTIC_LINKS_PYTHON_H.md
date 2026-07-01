@@ -15,8 +15,7 @@ Model: qwen3:14b  |  Files: 7
 **Completed:** 2026-05-29 04:13:47
 
 ## CONNECTED FILES
-- [[CURRENT_DIRECTIVE|Current Directive]]
-- [[OLLAMA_SETUP|Ollama Setup]]
-- [[MODEL_ROUTING|Model Routing]]
-- [[USAGE_OPTIMIZATION|Usage Optimization]]
-- [[TOOL_STATUS|Tool Status]]
+- [[TOOL_STACK|Tool Stack]]
+- [[OPERATOR_MODEL|Operator Model]]
+- [[MODEL_LIFECYCLE_POLICY|Model Lifecycle Policy]]
+- [[PROMPT_VERSIONING|Prompt Versioning]]

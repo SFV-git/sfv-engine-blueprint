@@ -257,8 +257,9 @@ Existing files to extend:
 ---
 
 ## CONNECTED FILES
-- [[PROMPT_VERSIONING|Prompt Versioning]]
-- [[OUTPUT_VALIDATION|Output Validation]]
-- [[DATABANK_ARCHITECTURE|Databank Architecture]]
-- [[BUILD_READINESS_CHECKLIST|Build Readiness Checklist]]
+- [[AI_STACK_ARCHITECTURE_BLUEPRINT|AI Stack Architecture Blueprint]]
+- [[DATABASE_ARCHITECTURE|Database Architecture]]
+- [[QUESTIONS_FOR_WILL|Questions for Will]]
 - [[STACK_INTEGRATION_PLAN|Stack Integration Plan]]
+- [[RATE_LIMITS|Rate Limits]]
+- [[MODEL_ROUTING|Model Routing]]

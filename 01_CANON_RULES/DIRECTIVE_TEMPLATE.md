@@ -233,10 +233,10 @@ These rules apply whenever a `CURRENT_DIRECTIVE.md` is ACTIVE and Hermes is runn
 ---
 
 ## CONNECTED FILES
-- [[CURRENT_DIRECTIVE|Current Directive]]
 - [[HERMES_INTEGRATION|Hermes Integration]]
 - [[SESSION_STATE|Session State]]
-- [[CHANGELOG|Changelog]]
-- [[CRITICAL_PATH|Critical Path]]
-- [[COST_ALERTS|Cost Alerts]]
 - [[COMPRESSED_CONTEXT|Compressed Context]]
+- [[COST_ALERTS|Cost Alerts]]
+- [[CHANGELOG|Change Log]]
+- [[CURRENT_DIRECTIVE|Current Directive]]
+- [[CRITICAL_PATH|Critical Path]]

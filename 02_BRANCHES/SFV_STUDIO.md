@@ -56,9 +56,7 @@ YES — one of two primary growth accounts.
 %BRANCHES_ROOT%\SFV_STUDIO\DELIVERY\
 
 ## CONNECTED FILES
+- [[06_TOOLS/INTEGRATIONS|Integrations]]
+- [[08_TESTS/FAILURE_TESTS|Failure Tests]]
 - [[05_AI_LAYER/OUTPUT_VALIDATION|Output Validation]]
 - [[05_AI_LAYER/QUALITY_CONTROL|Quality Control]]
-- [[08_TESTS/EDGE_CASES|Edge Cases]]
-- [[06_TOOLS/TOOLBOX|Toolbox]]
-- [[06_TOOLS/TOOL_STATUS|Tool Status]]
-- [[05_AI_LAYER/CONFIDENCE_LOGIC|Confidence Logic]]
