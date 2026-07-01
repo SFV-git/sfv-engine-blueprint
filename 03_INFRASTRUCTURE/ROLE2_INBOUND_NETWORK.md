@@ -123,5 +123,7 @@ External Client → [Tailscale Mesh Network] → [R&D Terminal (Review Gateway)]
 - Ensure all configurations are validated with network and security teams.
 
 ## CONNECTED FILES
-- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
-- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
+- [[TOOL_STACK|Tool Stack]]
+- [[TOOLBOX|Toolbox]]
+- [[INTEGRATIONS|Integrations]]
+- [[ARCHITECTURE_AUDIT|Architecture Audit]]

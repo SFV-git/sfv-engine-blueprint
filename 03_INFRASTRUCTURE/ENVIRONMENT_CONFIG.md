@@ -73,6 +73,7 @@ Every path references a variable from this file.
 
 ## CONNECTED FILES
 - [[STORAGE_ARCHITECTURE|Storage Architecture]]
-- [[OLLAMA_SETUP|Ollama Setup]]
+- [[SOURCE_OF_TRUTH_RULES|Source of Truth Rules]]
+- [[MODEL_ROUTING|Model Routing]]
 - [[BRANCH_INDEPENDENCE|Branch Independence]]
-- [[PROPOSALS|Proposals]]
+- [[OLLAMA_SETUP|Ollama Setup]]

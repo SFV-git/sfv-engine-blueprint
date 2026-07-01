@@ -205,9 +205,9 @@ Navigate to Node B Syncthing interface → browse version history for the affect
 ---
 
 ## CONNECTED FILES
-- [[AI_STACK_ARCHITECTURE_BLUEPRINT]]
-- [[POSTGRES_MIGRATION]]
-- [[SECRETS_POLICY]]
-- [[FAILOVER_MODEL]]
-- [[MODEL_LIFECYCLE_POLICY]]
-- [[MONITORING_STACK]]
+- [[BLUEPRINT_COVERAGE_MAP|Blueprint Coverage Map]]
+- [[TOOLBOX|Toolbox]]
+- [[DATABASE_ARCHITECTURE|Database Architecture]]
+- [[BUILD_READINESS_CHECKLIST|Build Readiness Checklist]]
+- [[INTEGRATIONS|Integrations]]
+- [[EDGE_CASES|Edge Cases]]

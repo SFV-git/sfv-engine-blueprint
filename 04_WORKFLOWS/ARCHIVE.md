@@ -106,6 +106,9 @@ The archive index is a metadata repository for tracking data across storage tier
 This document provides a technical roadmap for resolving storage issues, managing data lifecycle, and ensuring archival integrity.
 
 ## CONNECTED FILES
-- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
-- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
-- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[VECTOR_LAYER_PLAN|Vector Layer Plan]]
+- [[DATABANK_ARCHITECTURE|Databank Architecture]]
+- [[MODEL_LIFECYCLE_POLICY|Model Lifecycle Policy]]
+- [[BLUEPRINT_COVERAGE_MAP|Blueprint Coverage Map]]
+- [[EDGE_CASES|Edge Cases]]
+- [[FAILURE_TESTS|Failure Tests]]

@@ -173,5 +173,8 @@ Attempt 5: If failed, trigger graceful degradation.
 This protocol ensures minimal disruption during outages while maintaining safety and operational continuity in ICS environments.
 
 ## CONNECTED FILES
-- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
-- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
+- [[FAILURE_TESTS|Failure Tests]]
+- [[DATABANK_ARCHITECTURE|Databank Architecture]]
+- [[RATE_LIMITS|Rate Limits]]
+- [[RESEARCH_ROUTE_SPEC|Research Route Specification]]
+- [[OPERATOR_MODEL|Operator Model]]

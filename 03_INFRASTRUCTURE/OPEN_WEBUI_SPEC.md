@@ -113,9 +113,8 @@ Use for:
 ---
 
 ## CONNECTED FILES
-- [[AI_STACK_ARCHITECTURE_BLUEPRINT|AI Stack Architecture §1]]
 - [[DOCKER_INSTALL_CHECKLIST|Docker Install Checklist]]
-- [[LOCAL_MODELS|Local Models]]
-- [[SECRETS_POLICY|Secrets Policy]]
-- [[N8N_MCP_SPEC|n8n-MCP Spec]]
-- [[workflow1_queue_processor|Workflow 1 JSON]]
+- [[OLLAMA_SETUP|Ollama Setup]]
+- [[INTEGRATIONS|Integrations]]
+- [[ANTIGRAVITY|Antigravity]]
+- [[CURRENT_DIRECTIVE|Current Directive]]

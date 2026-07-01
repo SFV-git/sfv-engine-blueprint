@@ -310,8 +310,10 @@ calls with the body passed on STDIN).
    beyond FOR HUMAN REVIEW.
 
 ## CONNECTED FILES
-- [[HERMES_EVAL|Hermes Agent Evaluation]]
-- [[SESSION_STATE|Session State]]
-- [[DECISION_LOG|Decision Log]]
-- [[MODEL_ROUTING|Model Routing]]
-- [[COMPRESSED_CONTEXT|Compressed Context]]
+- [[CURRENT_DIRECTIVE|Current Directive File]]
+- [[MODEL_ROUTING|Model Routing Policy]]
+- [[OLLAMA_SETUP|Ollama Setup Configuration]]
+- [[CLAUDE_API|Claude API Integration]]
+- [[CLAUDE_CODE_PROMPTS|Claude Code Prompts]]
+- [[JOB_ENVELOPE_SPEC|Job Envelope Specification]]
+- [[PROMPT_VERSIONING|Prompt Versioning System]]

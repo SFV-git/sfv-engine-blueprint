@@ -91,7 +91,7 @@ Before running POSTGRES_MIGRATION.md:
 ---
 
 ## CONNECTED FILES
-- [[POSTGRES_MIGRATION|PostgreSQL Migration]]
-- [[ENGINE_COMMUNICATION_MODEL|Engine Communication Model]]
-- [[AI_STACK_ARCHITECTURE_BLUEPRINT|AI Stack Architecture]]
-- [[FAILOVER_MODEL|Failover Model]]
+- [[DISASTER_RECOVERY|Disaster Recovery]]
+- [[DECISIONS|Rotation Log]]
+- [[DECISION_LOG|Decision Log]]
+- [[n8n_env.template.ps1|n8n Env Template]]

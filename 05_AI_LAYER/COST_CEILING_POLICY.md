@@ -164,7 +164,8 @@ Pre-requisite: MONITORING_STACK.md must reach STATUS: CANON and be deployed befo
 ---
 
 ## CONNECTED FILES
-- [[COST_ROUTING|Cost Routing Policy]]
-- [[RATE_LIMITS|Rate Limits and Usage Strategy]]
-- [[MONITORING_STACK|Monitoring Stack]]
-- [[ENGINE_COMMUNICATION_MODEL|Engine Communication Model]]
+- [[COST_ALERTS|Cost Alerts]]
+- [[CLAUDE|Claude Integration]]
+- [[RATE_LIMITS|Rate Limits Policy]]
+- [[INTEGRATIONS|Tool Integrations]]
+- [[CURRENT_DIRECTIVE|Current Directive Rules]]

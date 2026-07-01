@@ -143,6 +143,10 @@ All QC results must follow this JSON schema:
 **End of Document**
 
 ## CONNECTED FILES
-- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
-- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
-- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[OLLAMA_SETUP|Ollama Setup]]
+- [[PROMPT_VERSIONING|Prompt Versioning]]
+- [[LOCAL_MODELS|Local Models]]
+- [[QUALITY_CONTROL|Quality Control]]
+- [[JOB_ENVELOPE_SPEC|Job Envelope Specification]]
+- [[CLAUDE|Claude API]]
+- [[CLAUDE_PROMPTS|Claude Prompts]]

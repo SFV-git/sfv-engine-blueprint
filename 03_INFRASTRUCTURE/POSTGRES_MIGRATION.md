@@ -158,8 +158,8 @@ If migration fails or n8n fails to start:
 ---
 
 ## CONNECTED FILES
-- [[AI_STACK_ARCHITECTURE_BLUEPRINT|AI Stack Architecture §6]]
-- [[SECRETS_POLICY|Secrets Policy]]
-- [[ENGINE_COMMUNICATION_MODEL|Engine Communication Model]]
-- [[CONCURRENCY_QUEUE_SPEC|Concurrency and Queue Mode]]
-- [[FAILOVER_MODEL|Failover Model]]
+- [[AI_STACK_ARCHITECTURE_BLUEPRINT|AI Stack Architecture Blueprint]]
+- [[DATABANK_ARCHITECTURE|Databank Architecture]]
+- [[SESSION_STATE|Session State]]
+- [[RATE_LIMITS|Rate Limits]]
+- [[TOOLBOX|Toolbox]]

@@ -133,9 +133,9 @@ Antigravity continues to use Gemini Flash directly via its own model selection. 
 ---
 
 ## CONNECTED FILES
-- [[AI_STACK_ARCHITECTURE_BLUEPRINT|AI Stack Architecture §3]]
-- [[ANTIGRAVITY_RULES|Antigravity Rules]]
-- [[COST_ROUTING|Cost Routing]]
-- [[RATE_LIMITS|Rate Limits]]
+- [[INTEGRATIONS|Integrations]]
 - [[SECRETS_POLICY|Secrets Policy]]
-- [[workflow1_queue_processor|Workflow 1 JSON]]
+- [[MODEL_ROUTING|Model Routing]]
+- [[AI_STACK_ARCHITECTURE_BLUEPRINT|AI Stack Architecture Blueprint]]
+- [[ANTIGRAVITY|Antigravity]]
+- [[RATE_LIMITS|Rate Limits]]

@@ -105,8 +105,9 @@ This could be implemented as a per-model `LOW_WORDS` whitelist modifier. Do not 
 ---
 
 ## CONNECTED FILES
-- [[AI_STACK_ARCHITECTURE_BLUEPRINT|AI Stack Architecture §3]]
-- [[workflow1_queue_processor|Workflow 1 JSON]]
+- [[INTEGRATIONS|Integrations]]
+- [[JOB_ENVELOPE_SPEC|Job Envelope Specification]]
+- [[PROMPT_VERSIONING|Prompt Versioning]]
+- [[OLLAMA_SETUP|Ollama Setup]]
 - [[MODEL_ROUTING|Model Routing]]
-- [[ENGINE_COMMUNICATION_MODEL|Engine Communication Model]]
-- [[QUESTIONS_FOR_WILL|Questions for Will]]
+- [[EDGE_CASES|Edge Cases]]

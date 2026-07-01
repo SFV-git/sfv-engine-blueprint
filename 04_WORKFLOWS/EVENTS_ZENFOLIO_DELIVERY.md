@@ -73,6 +73,8 @@
 **END OF SPECIFICATIONS**
 
 ## CONNECTED FILES
-- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
-- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
-- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[INTEGRATIONS|Integrations]]
+- [[HARDWARE_CONTEXT|Hardware Context]]
+- [[CURRENT_DIRECTIVE|Current Directive]]
+- [[TOOLBOX|Toolbox]]
+- [[BRAND_BANKS|Brand Banks]]

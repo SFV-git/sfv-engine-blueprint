@@ -153,9 +153,7 @@ Values: `"md"` (default markdown) | `"json"` (structured with timestamps) | `"tx
 ---
 
 ## CONNECTED FILES
-- [[AI_STACK_ARCHITECTURE_BLUEPRINT|AI Stack Architecture §4]]
-- [[ANTIGRAVITY_N8N_TRIGGER|Antigravity → n8n Trigger]]
-- [[RESEARCH_ROUTE_SPEC|Research Route Spec]]
-- [[MEDIA_PIPELINE|Media Pipeline]]
 - [[CONFIDENCE_LOGIC|Confidence Logic]]
-- [[ENGINE_COMMUNICATION_MODEL|Engine Communication Model]]
+- [[RESEARCH_ROUTE_SPEC|Research Route Spec]]
+- [[AI_STACK_ARCHITECTURE_BLUEPRINT|AI Stack Architecture Blueprint]]
+- [[DATABANK_ARCHITECTURE|Databank Architecture]]

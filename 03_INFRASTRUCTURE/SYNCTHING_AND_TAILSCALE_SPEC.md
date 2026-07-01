@@ -91,5 +91,6 @@ The original `INTEGRATIONS.md` document may have conflicting statements, such as
 - **Integration**: When used together, Tailscale's isolation rules must be configured to permit Syncthing's traffic, ensuring seamless operation without security compromises.
 
 ## CONNECTED FILES
-- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
-- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
+- [[INTEGRATIONS|INTEGRATIONS.md]]
+- [[TOOLBOX|TOOLBOX.md]]
+- [[TOOL_STACK|TOOL_STACK.md]]

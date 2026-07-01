@@ -114,8 +114,8 @@ If n8n-MCP container is down, agents fall back to file-drop method (ANTIGRAVITY_
 ---
 
 ## CONNECTED FILES
-- [[AI_STACK_ARCHITECTURE_BLUEPRINT|AI Stack Architecture §1]]
 - [[DOCKER_INSTALL_CHECKLIST|Docker Install Checklist]]
-- [[ANTIGRAVITY_N8N_TRIGGER|Antigravity → n8n Trigger]]
-- [[SECRETS_POLICY|Secrets Policy]]
 - [[POSTGRES_MIGRATION|PostgreSQL Migration]]
+- [[SECRETS_POLICY|Secrets Policy]]
+- [[HARDWARE_CONTEXT|Hardware Context]]
+- [[INTEGRATIONS|Integrations]]

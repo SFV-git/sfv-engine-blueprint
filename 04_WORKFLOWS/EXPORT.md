@@ -41,7 +41,8 @@ SFV_ARCHIVE: Full res + social specs
 - n8n: orchestrate export triggers [FUTURE]
 
 ## CONNECTED FILES
-- [[N8N_BLUEPRINT|N8N Blueprint]]
+- [[SFV_ARCHIVE|SFV_ARCHIVE]]
+- [[SFV_LIVE|SFV_LIVE]]
+- [[SFV_STUDIO|SFV_STUDIO]]
+- [[VIDEO_EDIT_WORKFLOW|Video Edit Workflow]]
 - [[BRANCH_OUTPUTS|Branch Outputs]]
-- [[SFV_EVENTS|SFV_EVENTS]]
-- [[TOOLBOX|Toolbox]]

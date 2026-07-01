@@ -171,11 +171,9 @@ Now: Will puts a request in the queue. The system routes it, processes it, and s
 Will's role is direction and approval — not agent-jumping.
 
 ## CONNECTED FILES
-- [[QUESTIONS_FOR_WILL|Questions for Will]]
-- [[DECISIONS|Decisions Log]]
-- [[PENDING_REVIEW|Pending Review Items]]
-- [[PROPOSALS|Proposals for Human Review]]
-- [[CLAUDE_CODE_SESSION_2026-05-29|Claude Code Session Notes]]
-- [[ANTIGRAVITY_SETUP_GUIDE|Antigravity Setup Guide]]
-- [[MODEL_ROUTING|Model Routing Rules]]
-- [[ROADMAP|Project Roadmap]]
+- [[JOB_ENVELOPE_SPEC|Job Envelope Specification]]
+- [[ANTIGRAVITY|Antigravity System]]
+- [[OUTPUT_VALIDATION|Output Validation Protocol]]
+- [[TOOL_STACK|Tool Stack Configuration]]
+- [[OLLAMA_SETUP|Ollama Setup Guide]]
+- [[QUESTIONS_FOR_WILL|Questions for Will Log]]

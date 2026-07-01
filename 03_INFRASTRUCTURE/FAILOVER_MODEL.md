@@ -110,8 +110,8 @@ On error/timeout:
 ---
 
 ## CONNECTED FILES
-- [[AI_STACK_ARCHITECTURE_BLUEPRINT|AI Stack Architecture §6]]
-- [[POSTGRES_MIGRATION|PostgreSQL Migration]]
-- [[MONITORING_STACK|Monitoring Stack]]
-- [[ENGINE_COMMUNICATION_MODEL|Engine Communication Model]]
-- [[RD_TERMINAL_ARCHITECTURE|R&D Terminal Architecture]]
+- [[WATCHDOG_LOG|Watchdog Log]]
+- [[DECISION_LOG|Decision Log]]
+- [[HARDWARE_CONTEXT|Hardware Context]]
+- [[OLLAMA_SETUP|Ollama Setup]]
+- [[CURRENT_DIRECTIVE|Current Directive]]

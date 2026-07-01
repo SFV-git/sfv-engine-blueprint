@@ -141,11 +141,8 @@ Intake can be:
 ---
 
 ## CONNECTED FILES
-- [[CLIENT_BANKS|Client Banks]]
-- [[SFV_WORLD|SFV World]]
-- [[EXPORT|Export Workflow]]
-- [[QUESTIONS_FOR_WILL|Questions for Will]]
-- [[STORAGE_ARCHITECTURE|Storage Architecture]]
-- [[NAMING_CONVENTIONS|Naming Conventions]]
-- [[STACK_INTEGRATION_PLAN|Stack Integration Plan]]
-- [[DEV_LOG|Development Log]]
+- [[CLIENT_BANKS|Client Database]]
+- [[BRAND_BANKS|Brand Database]]
+- [[DATABANK_ARCHITECTURE|Data Bank Structure]]
+- [[OUTPUT_VALIDATION|Output Validation]]
+- [[PROMPT_VERSIONING|Script Prompt Management]]

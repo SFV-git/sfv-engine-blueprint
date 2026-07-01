@@ -49,8 +49,9 @@ Accounts that need scheduling:
 WeTransfer — used currently, will be replaced by proper delivery system.
 
 ## CONNECTED FILES
-- [[QUALITY_CONTROL|Quality Control]]
-- [[TOOLBOX|Toolbox]]
-- [[EXPORT|Export]]
-- [[UGC_PRE_PRODUCTION|UGC Pre-Production]]
-- [[AI_USE_CASE_PROFILE|AI Use Case Profile]]
+- [[INTEGRATIONS|Integrations]]
+- [[OUTPUT_VALIDATION|Output Validation]]
+- [[EVENTS_ZENFOLIO_DELIVERY|Events Zenfolio Delivery]]
+- [[INTEGRATIONS|Integrations]]
+- [[OUTPUT_VALIDATION|Output Validation]]
+- [[EVENTS_ZENFOLIO_DELIVERY|Events Zenfolio Delivery]]

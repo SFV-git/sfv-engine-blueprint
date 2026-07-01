@@ -128,8 +128,7 @@ Sequential per branch. Consistent across all posts. Never skip numbers.
 - Spaces in filenames
 
 ## CONNECTED FILES
-- [[03_INFRASTRUCTURE/STORAGE_ARCHITECTURE|Storage Architecture]]
-- [[02_BRANCHES/SFV_STUDIO|SFV Studio]]
-- [[04_WORKFLOWS/INGEST|Ingest]]
-- [[03_INFRASTRUCTURE/METADATA_SYSTEM|Metadata System]]
-- [[02_BRANCHES/SFV_UGC|SFV UGC]]
+- [[04_WORKFLOWS/EXPORT|Export]]
+- [[12_DATABANKS/CLIENT_BANKS|Client Banks]]
+- [[02_BRANCHES/SFV_ARCHIVE|SFV Archive]]
+- [[06_TOOLS/TOOL_STACK|Tool Stack]]

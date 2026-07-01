@@ -57,8 +57,7 @@ Will reviews proposals before Engine acts on them.
 ```
 
 ## CONNECTED FILES
+- [[VRAM_SCHEDULING_RULE|VRAM Scheduling Rule]]
+- [[MODEL_ROUTING|Model Routing]]
 - [[ENGINE_COMMUNICATION_MODEL|Engine Communication Model]]
-- [[METADATA_SYSTEM|Metadata System]]
-- [[OLLAMA_SETUP|Ollama Setup]]
-- [[STORAGE_ARCHITECTURE|Storage Architecture]]
 - [[USAGE_OPTIMIZATION|Usage Optimization]]

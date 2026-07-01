@@ -321,14 +321,11 @@ n8n JSON schema changes between versions. Import failures are opaque. Build manu
 - **CONFIRMED:** `ollama_queue_test.py` already exists and tested. Extend it — do not rebuild.
 
 ## CONNECTED FILES
-- [[ANTIGRAVITY_SETUP_GUIDE|Antigravity Setup Guide]]
-- [[ENVIRONMENT_CONFIG|Environment Configuration]]
-- [[NAMING_CONVENTIONS|Naming Conventions]]
-- [[MODEL_ROUTING|Model Routing]]
-- [[CLAUDE_API|Claude API Integration]]
-- [[UGC_PRE_PRODUCTION|UGC Pre-Production Workflow]]
-- [[STACK_INTEGRATION_PLAN|Stack Integration Plan]]
-- [[MULTI_AGENT_WORKFLOW|Multi-Agent Workflow Design]]
-- [[INTEGRATIONS|Integrations]]
-- [[EXTERNAL_LINKS|External Links]]
-- [[AI_BRIDGE_BUILD_PLAN|AI Bridge Build Plan]]
+- [[CHANGELOG|Project Changelog]]
+- [[CLAUDE|Claude Integration Guide]]
+- [[OLLAMA_SETUP|Ollama Configuration]]
+- [[DATABANK_ARCHITECTURE|Data Bank Structure]]
+- [[MODEL_ROUTING|Model Routing Policies]]
+- [[TOOLBOX|Toolbox Reference]]
+- [[CURRENT_DIRECTIVE|Active Project Directive]]
+- [[JOB_ENVELOPE_SPEC|Task Envelope Specification]]

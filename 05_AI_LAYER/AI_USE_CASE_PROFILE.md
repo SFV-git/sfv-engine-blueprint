@@ -139,8 +139,9 @@ Will request arrives
 
 ## CONNECTED FILES
 - [[ANTIGRAVITY_RULES|Antigravity Rules]]
-- [[N8N_BLUEPRINT|n8n Blueprint]]
+- [[CLAUDE|Claude]]
+- [[RESEARCH_ROUTE_SPEC|Research Route Spec]]
+- [[TOOL_STACK|Tool Stack]]
 - [[OLLAMA_SETUP|Ollama Setup]]
-- [[CLAUDE_API|Claude API]]
-- [[ANTIGRAVITY_SETUP_GUIDE|Antigravity Setup Guide]]
-- [[RESEARCH_BANKS|Research Banks]]
+- [[JOB_ENVELOPE_SPEC|Job Envelope Spec]]
+- [[MODEL_ROUTING|Model Routing]]

@@ -565,8 +565,9 @@ New-Item -ItemType Directory -Path "C:\SFV_BLUEPRINT\.hermes\skills" -Force
 ---
 
 ## CONNECTED FILES
-- [[05_AI_LAYER/HERMES_INTEGRATION|Hermes Integration]]
-- [[01_CANON_RULES/DIRECTIVE_TEMPLATE|Directive Template]]
-- [[05_AI_LAYER/AI_USE_CASE_PROFILE|AI Use Case Profile]]
-- [[05_AI_LAYER/JOB_ENVELOPE_SPEC|Job Envelope Spec]]
-- [[05_AI_LAYER/COST_CEILING_POLICY|Cost Ceiling Policy]]
+- [[MASTER_CONTEXT|Master Context]]
+- [[COMPRESSED_CONTEXT|Compressed Context]]
+- [[JOB_ENVELOPE_SPEC|Job Envelope Specification]]
+- [[ANTIGRAVITY|Antigravity]]
+- [[CLAUDE|Claude]]
+- [[TOOL_STACK|Tool Stack]]

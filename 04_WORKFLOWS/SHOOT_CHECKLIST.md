@@ -162,6 +162,6 @@
 **END OF CHECKLIST**
 
 ## CONNECTED FILES
-- [[03_INFRASTRUCTURE/ENVIRONMENT_CONFIG|Environment Config]]
-- [[03_INFRASTRUCTURE/NAMING_CONVENTIONS|Naming Conventions]]
-- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
+- [[OPERATOR_MODEL|Operator Model]]
+- [[TOOLBOX|Toolbox]]
+- [[MODEL_ROUTING|Model Routing]]

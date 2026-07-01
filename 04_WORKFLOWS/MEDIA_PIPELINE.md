@@ -384,7 +384,9 @@ balance. `large-v2` may push VRAM limits on concurrent system load.
 ---
 
 ## CONNECTED FILES
-- [[AI_STACK_ARCHITECTURE_BLUEPRINT]]
-- [[ENGINE_COMMUNICATION_MODEL]]
-- [[RD_TERMINAL_ARCHITECTURE]]
-- [[workflow1_queue_processor]]
+- [[JOB_ENVELOPE_SPEC|Job Envelope Specification]]
+- [[INTEGRATIONS|n8n and Tool Integrations]]
+- [[FILE_PROCESSING|File Processing and FFmpeg]]
+- [[DATABANK_ARCHITECTURE|Data Bank Architecture]]
+- [[OUTPUT_VALIDATION|Output Validation Rules]]
+- [[ARCHITECTURE_AUDIT|System Architecture Audit]]

@@ -117,11 +117,9 @@ Will is final authority.
 Unclear items labeled: UNCONFIRMED / INFERENCE / FOR HUMAN REVIEW
 
 ## CONNECTED FILES
-- [[MODEL_ROUTING|Model Routing]]
-- [[RULES|Canon Rules]]
+- [[MODEL_ROUTING|Model Routing Policy]]
+- [[SOURCE_OF_TRUTH_RULES|Source of Truth Rules]]
+- [[BLUEPRINT_COVERAGE_MAP|Blueprint Coverage Map]]
 - [[OLLAMA_SETUP|Ollama Setup]]
-- [[MULTI_AGENT_WORKFLOW|Multi-Agent Workflow]]
-- [[ANTIGRAVITY|Antigravity]]
-- [[SFV_ATHLETICS|SFV Athletics]]
-- [[CULLING|Culling]]
-- [[EDGE_CASES|Edge Cases]]
+- [[BUILD_READINESS_CHECKLIST|Build Readiness Checklist]]
+- [[OPERATOR_MODEL|Operator Model]]

@@ -252,8 +252,7 @@ Prerequisites: Docker on Node A installed, PostgreSQL stable, Open WebUI stable.
 ---
 
 ## CONNECTED FILES
-- [[AI_STACK_ARCHITECTURE_BLUEPRINT|AI Stack Architecture]]
-- [[RD_TERMINAL_ARCHITECTURE|R&D Terminal Architecture]]
-- [[FAILOVER_MODEL|Failover Model]]
-- [[DOCKER_INSTALL_CHECKLIST|Docker Install Checklist]]
-- [[COST_CEILING_POLICY|Cost Ceiling Policy]]
+- [[FAILOVER_LOG|FAILOVER LOG]]
+- [[AI_STACK_ARCHITECTURE_BLUEPRINT|AI Stack Architecture Blueprint]]
+- [[TOOL_STATUS|Tool Status]]
+- [[DASHBOARD|Dashboard]]

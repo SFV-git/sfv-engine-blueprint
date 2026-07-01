@@ -48,9 +48,6 @@ BAD: "Here are 400 photos, analyze them"
 GOOD: "Best 18 selects from LIVE shoot. Sequence for carousel."
 
 ## CONNECTED FILES
-- [[05_AI_LAYER/COST_ROUTING|Cost Routing]]
-- [[05_AI_LAYER/LOCAL_MODELS|Local Models]]
-- [[05_AI_LAYER/QUALITY_CONTROL|Quality Control]]
-- [[05_AI_LAYER/MODEL_ROUTING|Model Routing]]
-- [[COMPRESSED_CONTEXT|Compressed Context]]
-- [[EXTERNAL_LINKS|External Links]]
+- [[05_AI_LAYER/COST_CEILING_POLICY|Cost Ceiling Policy]]
+- [[MASTER_CONTEXT|Master Context]]
+- [[05_AI_LAYER/OUTPUT_VALIDATION|Output Validation]]

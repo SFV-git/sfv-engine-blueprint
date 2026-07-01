@@ -47,9 +47,7 @@ Sparse, sequential, consistent.
 %BRANCHES_ROOT%\SFV_ARCHIVE\EXPORT\
 
 ## CONNECTED FILES
-- [[04_WORKFLOWS/EXPORT|Export Workflow]]
-- [[03_INFRASTRUCTURE/MULTI_AGENT_WORKFLOW|Multi-Agent Workflow]]
-- [[09_PROMPTS/EXTRACTION_PROMPTS|Extraction Prompts]]
-- [[12_DATABANKS/BRAND_BANKS|Brand Banks]]
-- [[03_INFRASTRUCTURE/STORAGE_ARCHITECTURE|Storage Architecture]]
-- [[11_VERSIONS/ROADMAP|Roadmap]]
+- [[VIDEO_EDIT_WORKFLOW|Video Edit Workflow]]
+- [[PROMPT_VERSIONING|Prompt Versioning]]
+- [[QUALITY_CONTROL|Quality Control]]
+- [[MODEL_ROUTING|Model Routing]]

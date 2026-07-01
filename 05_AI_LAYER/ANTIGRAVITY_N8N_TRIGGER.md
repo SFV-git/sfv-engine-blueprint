@@ -113,9 +113,8 @@ For now: use `priority` as metadata only. HIGH/CRITICAL tasks can be manually mo
 ---
 
 ## CONNECTED FILES
-- [[ENGINE_COMMUNICATION_MODEL|Engine Communication Model]]
+- [[JOB_ENVELOPE_SPEC|Job Envelope Specification]]
+- [[SESSION_STATE|Session State]]
 - [[STACK_INTEGRATION_PLAN|Stack Integration Plan]]
-- [[ANTIGRAVITY_RULES|Antigravity Rules]]
-- [[AI_STACK_ARCHITECTURE_BLUEPRINT|AI Stack Architecture]]
-- [[CONCURRENCY_QUEUE_SPEC|Concurrency and Queue Mode]]
-- [[workflow1_queue_processor|Workflow 1 JSON]]
+- [[OUTPUT_VALIDATION|Output Validation]]
+- [[DATABANK_ARCHITECTURE|Databank Architecture]]
